@@ -86,7 +86,7 @@ curl "https://node.ucic.vc/api/v05/themes/search?query=oliv" -H "Authorization: 
 ```json
 [
   {
-    "title": "Bolivia",
+    "name": "Bolivia",
     "id": "EF60D822-67DB-4E2D-8F01-4B31F54AF21E"
   }
 ]
