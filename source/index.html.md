@@ -14,6 +14,7 @@ includes:
   - map
   - themes
   - users
+  - entities
   - errors
   - changelog
 

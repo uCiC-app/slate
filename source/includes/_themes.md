@@ -105,7 +105,7 @@ This endpoint searches for themes matching their title against the provided quer
 
 Parameter | Type | Description
 --------- | ---- | -----------
-SEARCH_QUERY | String | The search substring to search for
+query | String | The search substring to find matching themes for 
 
 ## Get the Cards for a Theme 
 
