@@ -121,18 +121,18 @@
 
 <p>Welcome to the uCiC API! You can use our API to access uCiC API endpoints, which can return information on various themes, cards, and media in our database.</p>
 
-<p>We presently only have language bindings in Shell! You can view code examples in the dark area to the right.</p>
+<p>We presently only have language bindings in Shell. You can view code examples in the dark area to the right.</p>
 
 <h1 id="authentication">Authentication</h1>
 
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>An authenticated request looks like this</p>
 </blockquote>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"https://node.ucic.vc/api/v05/user/get"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">&lt;AUTHORIZATION_TOKEN&gt;</code> with your API key.</p>
+<p>Make sure to replace <code class="prettyprint">&lt;AUTHORIZATION_TOKEN&gt;</code> with your access token.</p>
 </blockquote>
 
 <p>uCiC uses auth tokens to allow access to the API. You can obtain a new auth token with a login request.</p>
@@ -142,7 +142,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v05/user/get"</span> -H <span cl
 <p><code class="prettyprint">Authorization: &lt;AUTHORIZATION_TOKEN&gt;</code></p>
 
 <aside class="notice">
-You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal API key.
+You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal access token.
 </aside>
 
           <h1 id="cards">Cards</h1>
