@@ -9,9 +9,13 @@ toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - themes
   - cards
+  - conversations
+  - map
+  - themes
+  - users
   - errors
+  - changelog
 
 search: true
 ---
