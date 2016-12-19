@@ -147,6 +147,114 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 
           <h1 id="cards">Cards</h1>
 
+<h2 id="get-the-cards-for-a-theme">Get the Cards for a Theme</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/cards"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tagId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"928CF4AC-A5BF-4A8B-8C47-62E58AE1F655"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40839"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:02:37.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36001"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jack Liu"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jackjack_liu@hotmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">48.715</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.5174639</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:01:54.446Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anything interesting to see around you?"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14062"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:29:23.530Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uCiC_app"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ashley"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"responses"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-31T18:44:51.156Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mural"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11831"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/original.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.4513854980469</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.498664855957</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:29:37.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the cards for a theme.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v05/themes/&lt;ID&gt;/cards</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>UUID</td>
+<td>The ID of the theme to retrieve cards for</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Unsigned Integer</td>
+<td>Maximum number of cards to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Unsigned Integer</td>
+<td>Offset in list of cards to start return from</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Unsigned Integer</td>
+<td>Page of cards to return</td>
+</tr>
+</tbody></table>
+
 <h2 id="get-a-specific-card">Get a Specific Card</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
@@ -226,6 +334,192 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 <td>The ID of the card to retrieve</td>
 </tr>
 </tbody></table>
+
+<h2 id="get-the-cards-that-a-user-has-requested">Get the Cards that a User has Requested.</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/users/requests"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88F95DFB-0080-40F1-9529-55FBB74FC55D"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tagId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"928CF4AC-A5BF-4A8B-8C47-62E58AE1F655"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45691"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-28T18:15:15.166Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"611"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z@z.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.9035393</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.2095869</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T12:06:48.363Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How is the beach there?"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15790"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-28T18:15:15.166Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39086"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yhhji"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hgdf@hjjh.bh"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"responses"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-30T00:53:19.180Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"for"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88F95DFB-0080-40F1-9529-55FBB74FC55D"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13254"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/88F95DFB-0080-40F1-9529-55FBB74FC55D/original.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/88F95DFB-0080-40F1-9529-55FBB74FC55D/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.45162600766234</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.4984725455851</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-30T00:57:14.213Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the cards that a user has requested.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/requests</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Unsigned Integer</td>
+<td>Maximum number of comments to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Unsigned Integer</td>
+<td>Offset in list of commentss to start return from</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Unsigned Integer</td>
+<td>Page of comments to return</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-the-cards-that-a-user-has-responded">Get the Cards that a User has Responded.</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/users/responses"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08241390-F145-4245-A68A-5D7852488673"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tagId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F45AA05-0522-4674-8178-FE9983DE4BC4"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45220"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-08T23:01:13.260Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38992"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"duty3test"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"duty3@test.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.2156041</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-96.7934718</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-07T19:42:06.203Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you close to the beach? Can you show me a photo?"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15957"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-08T23:01:13.260Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"611"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z@z.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"responses"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T12:06:48.363Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi There!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08241390-F145-4245-A68A-5D7852488673"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13369"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/08241390-F145-4245-A68A-5D7852488673/original.mp4"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/2A6F06F8-6CCE-45AE-9920-D7F7D515E31B/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.9035393</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.2095869</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T19:50:12.830Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the cards that the current user has responded to requests with.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/responses</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Unsigned Integer</td>
+<td>Maximum number of comments to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Unsigned Integer</td>
+<td>Offset in list of commentss to start return from</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Unsigned Integer</td>
+<td>Page of comments to return</td>
+</tr>
+</tbody></table>
+
+          <h1 id="comments">Comments</h1>
 
 <h2 id="get-the-comments-for-a-specific-card">Get the Comments for a Specific Card</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"</span>  -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
@@ -767,300 +1061,6 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 <td>query</td>
 <td>String</td>
 <td>The search substring to find matching themes for</td>
-</tr>
-</tbody></table>
-
-<h2 id="get-the-cards-for-a-theme">Get the Cards for a Theme</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/cards"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tagId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"928CF4AC-A5BF-4A8B-8C47-62E58AE1F655"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40839"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:02:37.000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36001"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jack Liu"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jackjack_liu@hotmail.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">48.715</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.5174639</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:01:54.446Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anything interesting to see around you?"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14062"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:29:23.530Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uCiC_app"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ashley"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"responses"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-31T18:44:51.156Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mural"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11831"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/original.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/thumb.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.4513854980469</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.498664855957</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:29:37.000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves the cards for a theme.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://node.ucic.vc/api/v05/themes/&lt;ID&gt;/cards</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>UUID</td>
-<td>The ID of the theme to retrieve cards for</td>
-</tr>
-</tbody></table>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>limit</td>
-<td>Unsigned Integer</td>
-<td>Maximum number of cards to return</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Unsigned Integer</td>
-<td>Offset in list of cards to start return from</td>
-</tr>
-<tr>
-<td>page</td>
-<td>Unsigned Integer</td>
-<td>Page of cards to return</td>
-</tr>
-</tbody></table>
-
-          <h1 id="users">Users</h1>
-
-<h2 id="get-the-cards-that-a-user-has-requested">Get the Cards that a User has Requested.</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/users/requests"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88F95DFB-0080-40F1-9529-55FBB74FC55D"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tagId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"928CF4AC-A5BF-4A8B-8C47-62E58AE1F655"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45691"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-28T18:15:15.166Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"611"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z@z.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.9035393</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.2095869</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T12:06:48.363Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How is the beach there?"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15790"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-28T18:15:15.166Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39086"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yhhji"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hgdf@hjjh.bh"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"responses"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-30T00:53:19.180Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"for"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88F95DFB-0080-40F1-9529-55FBB74FC55D"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13254"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/88F95DFB-0080-40F1-9529-55FBB74FC55D/original.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/88F95DFB-0080-40F1-9529-55FBB74FC55D/thumb.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.45162600766234</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.4984725455851</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-30T00:57:14.213Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves the cards that a user has requested.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/requests</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>limit</td>
-<td>Unsigned Integer</td>
-<td>Maximum number of comments to return</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Unsigned Integer</td>
-<td>Offset in list of commentss to start return from</td>
-</tr>
-<tr>
-<td>page</td>
-<td>Unsigned Integer</td>
-<td>Page of comments to return</td>
-</tr>
-</tbody></table>
-
-<h2 id="get-the-cards-that-a-user-has-responded">Get the Cards that a User has Responded.</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/users/responses"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08241390-F145-4245-A68A-5D7852488673"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tagId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F45AA05-0522-4674-8178-FE9983DE4BC4"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45220"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-08T23:01:13.260Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38992"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"duty3test"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"duty3@test.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.2156041</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-96.7934718</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-07T19:42:06.203Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you close to the beach? Can you show me a photo?"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15957"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-08T23:01:13.260Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"611"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z@z.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"responses"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T12:06:48.363Z"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi There!"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08241390-F145-4245-A68A-5D7852488673"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13369"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/08241390-F145-4245-A68A-5D7852488673/original.mp4"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/2A6F06F8-6CCE-45AE-9920-D7F7D515E31B/thumb.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.9035393</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.2095869</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T19:50:12.830Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves the cards that the current user has responded to requests with.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/responses</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>limit</td>
-<td>Unsigned Integer</td>
-<td>Maximum number of comments to return</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Unsigned Integer</td>
-<td>Offset in list of commentss to start return from</td>
-</tr>
-<tr>
-<td>page</td>
-<td>Unsigned Integer</td>
-<td>Page of comments to return</td>
 </tr>
 </tbody></table>
 
