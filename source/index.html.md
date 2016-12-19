@@ -10,10 +10,10 @@ toc_footers:
 
 includes:
   - cards
+  - comments
   - conversations
   - map
   - themes
-  - users
   - entities
   - errors
   - changelog
