@@ -74,3 +74,36 @@ Parameter | Type | Description
 --------- | ---- | -----------
 ID | UUID | The ID of the theme to retrieve
 
+## Search for a Theme 
+
+```shell
+curl "https://node.ucic.vc/api/v05/themes/search?query=oliv"
+  -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+
+```javascript
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "title": "Bolivia",
+    "id": "EF60D822-67DB-4E2D-8F01-4B31F54AF21E"
+  }
+]
+```
+
+This endpoint searches for themes matching their title against the provided query.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v05/themes/search?query=<SEARCH_QUERY>`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+SEARCH_QUERY | String | The search substring to search for
+
