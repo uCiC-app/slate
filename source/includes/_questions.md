@@ -4,8 +4,7 @@
 
 ```shell
 
-curl "https://node.ucic.vc/api/v04/questions?lang=fr"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v04/questions?lang=fr" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript

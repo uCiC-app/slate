@@ -3,8 +3,7 @@
 ## Get all of the current user's conversations 
 
 ```shell
-curl "https://node.ucic.vc/api/v04/conversations"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v04/conversations" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
@@ -71,8 +70,7 @@ page | Unsigned Integer | Page of themes to return
 ## Get a specific Conversation
 
 ```shell
-curl "https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 ```javascript
 ```
@@ -134,8 +132,7 @@ ID | UUID | The ID of the conversation to retrieve
 ## Get the Messages for a Specific Conversation 
 
 ```shell
-curl "https://node.ucic.vc/api/v04/conversation/d524f62b-e0c6-43cc-86e6-464fee903b24/messages"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v04/conversation/d524f62b-e0c6-43cc-86e6-464fee903b24/messages" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 ```javascript
 ```

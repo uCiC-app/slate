@@ -3,8 +3,7 @@
 ## Get the Cards that a User has Requested.
 
 ```shell
-curl "https://node.ucic.vc/api/v04/users/requests"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v04/users/requests" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
@@ -86,8 +85,7 @@ page | Unsigned Integer | Page of comments to return
 ## Get the Cards that a User has Responded.
 
 ```shell
-curl "https://node.ucic.vc/api/v04/users/responses"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v04/users/responses" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript

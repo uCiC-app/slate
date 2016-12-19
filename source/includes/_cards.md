@@ -3,8 +3,7 @@
 ## Get a Specific Card 
 
 ```shell
-curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
@@ -81,8 +80,7 @@ ID | UUID | The ID of the card to retrieve
 ## Get the Comments for a Specific Card
 
 ```shell
-curl "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"  -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 ```javascript
 ```

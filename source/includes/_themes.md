@@ -3,8 +3,7 @@
 ## Get All Themes 
 
 ```shell
-curl "https://node.ucic.vc/api/v05/themes/get"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v05/themes/get" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
@@ -44,8 +43,7 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 ## Get a Specific Theme 
 
 ```shell
-curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
@@ -77,8 +75,7 @@ ID | UUID | The ID of the theme to retrieve
 ## Search for a Theme 
 
 ```shell
-curl "https://node.ucic.vc/api/v05/themes/search?query=oliv"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v05/themes/search?query=oliv" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
@@ -110,8 +107,7 @@ query | String | The search substring to find matching themes for
 ## Get the Cards for a Theme 
 
 ```shell
-curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/cards"
-  -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/cards" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
