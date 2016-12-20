@@ -336,7 +336,7 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 </tr>
 </tbody></table>
 
-<h2 id="get-the-cards-that-a-user-has-requested">Get the Cards that a User has Requested.</h2>
+<h2 id="get-user-39-s-requested-cards">Get User&rsquo;s Requested Cards</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/users/requests"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
@@ -428,7 +428,7 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 </tr>
 </tbody></table>
 
-<h2 id="get-the-cards-that-a-user-has-responded">Get the Cards that a User has Responded.</h2>
+<h2 id="get-user-39-s-responded-cards">Get User&rsquo;s Responded Cards</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/users/responses"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
@@ -522,7 +522,7 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 
           <h1 id="comments">Comments</h1>
 
-<h2 id="get-the-comments-for-a-specific-card">Get the Comments for a Specific Card</h2>
+<h2 id="get-a-card-39-s-comments">Get a Card&rsquo;s Comments</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"</span>  -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
@@ -653,7 +653,7 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 
           <h1 id="conversations">Conversations</h1>
 
-<h2 id="get-all-of-the-current-user-39-s-conversations">Get all of the current user&rsquo;s conversations</h2>
+<h2 id="get-all-conversations">Get All Conversations</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/conversations"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
@@ -686,7 +686,7 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all of a user&rsquo;s conversations.</p>
+<p>This endpoint retrieves all of the current user&rsquo;s conversations.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -718,7 +718,7 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 </tr>
 </tbody></table>
 
-<h2 id="get-a-specific-conversation">Get a specific Conversation</h2>
+<h2 id="get-a-conversation">Get a Conversation</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
@@ -771,7 +771,7 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 </tr>
 </tbody></table>
 
-<h2 id="get-the-messages-for-a-specific-conversation">Get the Messages for a Specific Conversation</h2>
+<h2 id="get-conversation-messages">Get Conversation Messages</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/conversation/d524f62b-e0c6-43cc-86e6-464fee903b24/messages"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
@@ -845,7 +845,7 @@ have access to this conversation.</p>
 
           <h1 id="map">Map</h1>
 
-<h2 id="get-markers-and-clusters-on-the-map">Get markers and clusters on the map</h2>
+<h2 id="get-map-markers-and-clusters">Get Map Markers and Clusters</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/map/?north=72.57706249077567&amp;south=-72.57707684644146&amp;east=72.32144437730312&amp;west=-72.32142057269812&amp;zoom=2"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
