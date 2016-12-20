@@ -135,7 +135,7 @@ curl "https://node.ucic.vc/api/v04/conversation/d524f62b-e0c6-43cc-86e6-464fee90
 ```
 
 This endpoint retrieves the messages for a conversation.  The current user must
-have access to this conversation.
+have access to this conversation.  Messages are sorted in createdAt descending order.
 
 ### HTTP Request
 

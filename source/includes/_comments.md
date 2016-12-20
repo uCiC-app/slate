@@ -30,7 +30,7 @@ curl "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/com
 ]
 ```
 
-This endpoint retrieves the comments for a card.
+This endpoint retrieves the comments for a card.  Comments are sorted in descending createdAt order.
 
 ### HTTP Request
 
