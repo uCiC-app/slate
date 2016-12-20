@@ -1,6 +1,6 @@
 # Conversations 
 
-## Get all of the current user's conversations 
+## Get All Conversations 
 
 ```shell
 curl "https://node.ucic.vc/api/v04/conversations" -H "Authorization: <AUTHORIZATION_TOKEN>"
@@ -40,7 +40,7 @@ curl "https://node.ucic.vc/api/v04/conversations" -H "Authorization: <AUTHORIZAT
 ]
 ```
 
-This endpoint retrieves all of a user's conversations.
+This endpoint retrieves all of the current user's conversations.
 
 ### HTTP Request
 
@@ -55,7 +55,7 @@ offset | Unsigned Integer | Offset in list of themes to start return from
 page | Unsigned Integer | Page of themes to return
 
 
-## Get a specific Conversation
+## Get a Conversation
 
 ```shell
 curl "https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24" -H "Authorization: <AUTHORIZATION_TOKEN>"
@@ -105,7 +105,7 @@ Parameter | Type | Description
 ID | UUID | The ID of the conversation to retrieve
 
 
-## Get the Messages for a Specific Conversation 
+## Get Conversation Messages 
 
 ```shell
 curl "https://node.ucic.vc/api/v04/conversation/d524f62b-e0c6-43cc-86e6-464fee903b24/messages" -H "Authorization: <AUTHORIZATION_TOKEN>"

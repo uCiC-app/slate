@@ -1,6 +1,6 @@
 # Comments 
 
-## Get the Comments for a Specific Card
+## Get a Card's Comments
 
 ```shell
 curl "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"  -H "Authorization: <AUTHORIZATION_TOKEN>"

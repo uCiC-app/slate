@@ -1,6 +1,6 @@
 # Map 
 
-## Get markers and clusters on the map
+## Get Map Markers and Clusters
 
 ```shell
 curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/map/?north=72.57706249077567&south=-72.57707684644146&east=72.32144437730312&west=-72.32142057269812&zoom=2"

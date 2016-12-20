@@ -166,7 +166,7 @@ Parameter | Type | Description
 ID | UUID | The ID of the card to retrieve
 
 
-## Get the Cards that a User has Requested.
+## Get User's Requested Cards
 
 ```shell
 curl "https://node.ucic.vc/api/v04/users/requests" -H "Authorization: <AUTHORIZATION_TOKEN>"
@@ -248,7 +248,7 @@ offset | Unsigned Integer | Offset in list of commentss to start return from
 page | Unsigned Integer | Page of comments to return
 
 
-## Get the Cards that a User has Responded.
+## Get User's Responded Cards
 
 ```shell
 curl "https://node.ucic.vc/api/v04/users/responses" -H "Authorization: <AUTHORIZATION_TOKEN>"
