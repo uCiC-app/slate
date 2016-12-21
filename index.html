@@ -1148,6 +1148,10 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tbody></table>
 
 <h2 id="response">Response</h2>
+
+<blockquote>
+<p>Sample Response</p>
+</blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guy  has sent a photo of \"How's the sunset there?\""</span><span class="p">,</span><span class="w">
@@ -1197,6 +1201,10 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tbody></table>
 
 <h2 id="comment">Comment</h2>
+
+<blockquote>
+<p>Sample Response </p>
+</blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Falak commented on your photo"</span><span class="p">,</span><span class="w">
@@ -1242,6 +1250,55 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 <td>video</td>
 <td>String</td>
 <td>The request format identifier.  Unused for comment</td>
+</tr>
+</tbody></table>
+
+<h2 id="like">Like</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guy  likes your photo"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"317666D8-8113-4323-B2FA-C60CA9F4066E"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents a like to a media item.  It is sent to the media creator as well as requester.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and media type</td>
+</tr>
+<tr>
+<td>badge</td>
+<td>String</td>
+<td>Presently unused</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>Related media/card UUID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, Like is type 9</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>The request format identifier.  Unused for like</td>
 </tr>
 </tbody></table>
 
