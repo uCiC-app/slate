@@ -14,6 +14,7 @@ includes:
   - conversations
   - map
   - themes
+  - notifications
   - entities
   - errors
   - changelog
