@@ -1344,7 +1344,7 @@ Remember — a happy uCiC client is an authenticated uCiC client!
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Comments represent a comment with the associated creator user;</p>
+<p>Comments represent a comment along with the associated creator user;</p>
 
 <table><thead>
 <tr>
@@ -1353,31 +1353,200 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>Comment reference UUID</td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>Content of comment</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>Associated item id of comment (Today only a Media/card reference)</td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>Today only &lsquo;card&rsquo;</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>Creation date of comment</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>User</td>
+<td>User who created the comment</td>
+</tr>
+<tr>
+<td>creator - UI</td>
+<td>String</td>
+<td>User&rsquo;s reference integer ID  (note this is in string format for future UUID support)</td>
+</tr>
+<tr>
+<td>creator - avatar</td>
+<td>HTTP URI</td>
+<td>Full path to User&rsquo;s avatar thumbnail</td>
+</tr>
+<tr>
+<td>creator - Username</td>
+<td>String</td>
+<td>User&rsquo;s username</td>
+</tr>
+<tr>
+<td>creator - email</td>
+<td>Email</td>
+<td>User&rsquo;s email address</td>
+</tr>
+<tr>
+<td>creator - rating</td>
+<td>Unsigned Integer</td>
+<td>User&rsquo;s rating determined by likes and requests/responses</td>
+</tr>
+<tr>
+<td>creator - createdAt</td>
+<td>DateTime</td>
+<td>Date user was created at</td>
+</tr>
 </tbody></table>
-
-<p>id
-text
-itemId
-itemType
-createdAt
-creator
-creator - UI
-creator - avatar
-creator - Username
-creator - email
-creator - rating</p>
 
 <h2 id="conversation">Conversation</h2>
 
+<blockquote>
+<p>Sample Payload</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D524F62B-E0C6-43CC-86E6-464FEE903B24"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-15T23:07:44.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-15T23:07:44.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lastMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HELLO THERE!!!!"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lastMessageDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-15T23:07:44.056Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"UI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"611"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"Karma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"z@z.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T12:06:48.363Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/611/thumb.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"located"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"Lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.9035393</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"Lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.2095869</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Conversation is a list of chat thread participants with some useful metadata</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>Conversation reference UUID</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>DateTime</td>
+<td>Conversation created date</td>
+</tr>
+<tr>
+<td>lastMessage</td>
+<td>String</td>
+<td>The last Content sent in a conversation</td>
+</tr>
+<tr>
+<td>lastMessageDate</td>
+<td>DateTime</td>
+<td>When the last Content sent in a conversation was sent</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>Currently unused</td>
+</tr>
+<tr>
+<td>seen</td>
+<td>Boolean</td>
+<td>Whether a seen update has been sent for your user since the last message in the conversation</td>
+</tr>
+<tr>
+<td>participants</td>
+<td>[User]</td>
+<td>User array of participants excluding the current user</td>
+</tr>
+</tbody></table>
+
 <h2 id="map">Map</h2>
 
+<blockquote>
+<p>Sample Payload</p>
+</blockquote>
+
 <h2 id="theme">Theme</h2>
+
+<blockquote>
+<p>Sample Payload</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E73CD7C4-35E7-4A37-9850-950E22B2BCCF"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States of America"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"maxLikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/assets/tags/US.png"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>A theme is a tag that can be applied to Media/Card items</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>Theme tag ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Name of tag</td>
+</tr>
+<tr>
+<td>maxLikes</td>
+<td>Integer</td>
+<td>The maximum number of likes attributed to Media/Card with this theme</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>HTTP URI</td>
+<td>URL to the tag&rsquo;s logo</td>
+</tr>
+</tbody></table>
 
 <h2 id="user">User</h2>
 
           <h1 id="errors">Errors</h1>
 
-<p>The Theme API uses the following error codes:</p>
+<p>uCiC uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, etc.), and codes in the 5xx range indicate an error with Stripe&rsquo;s servers (these are rare).</p>
+
+<p>We will soon be adding a unified error response structure.</p>
 
 <table><thead>
 <tr>
