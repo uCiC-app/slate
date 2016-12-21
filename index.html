@@ -1037,6 +1037,214 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tr>
 </tbody></table>
 
+          <h1 id="notifications">Notifications</h1>
+
+<p>Notifications are delivered via Firebase Cloud Messaging.  The notification format is largely constrained by legacy support purposes.</p>
+
+<h2 id="request">Request</h2>
+
+<blockquote>
+<p>Sample Payload</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Falak wants you to take a photo of \"Is it busy there now?\""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46445"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents a user request for image/video.  It is sent to response candidates when a request is created.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text with user question and request type</td>
+</tr>
+<tr>
+<td>badge</td>
+<td>String</td>
+<td>Presently unused</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>Request identifier (currently integer)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, Request is type 0</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>The request format identifier. 0 is photo and 1 is video</td>
+</tr>
+</tbody></table>
+
+<h2 id="message">Message</h2>
+
+<blockquote>
+<p>Sample Payload</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guy Streetley  has sent you a message"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EB57B50B-21D3-41AF-B1F3-8E3F8235AAB1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents an incoming message.  It is sent to the other participants in a conversation.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username that sent the message</td>
+</tr>
+<tr>
+<td>badge</td>
+<td>String</td>
+<td>Presently unused</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>Conversation UUID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, Message is type 1</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>The request format identifier.  Unused for message</td>
+</tr>
+</tbody></table>
+
+<h2 id="response">Response</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guy  has sent a photo of \"How's the sunset there?\""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16100"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents an incoming response to a user&rsquo;s request.  It is sent to the requester.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and question (always denotes &lsquo;photo&rsquo; for legacy purposes)</td>
+</tr>
+<tr>
+<td>badge</td>
+<td>String</td>
+<td>Presently unused</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>Response identifier (currently integer)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, Response is type 4</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>The request format identifier.  Unused for response</td>
+</tr>
+</tbody></table>
+
+<h2 id="comment">Comment</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Falak commented on your photo"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C6214A68-055D-4D71-A5F4-29727B6A301D"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents an incoming comment to a media item.  It is sent to the media creator as well as requester.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and media type</td>
+</tr>
+<tr>
+<td>badge</td>
+<td>String</td>
+<td>Presently unused</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>Related media/card UUID</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, Comment is type 11</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>The request format identifier.  Unused for comment</td>
+</tr>
+</tbody></table>
+
           <h1 id="entities">Entities</h1>
 
 <h2 id="card">Card</h2>
