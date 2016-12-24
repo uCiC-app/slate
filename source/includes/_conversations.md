@@ -96,7 +96,7 @@ This endpoint retrieves a conversation.   The current user must have access to t
 
 ### HTTP Request
 
-`GET https://node.ucic.vc/api/v05/conversation/<ID>`
+`GET https://node.ucic.vc/api/v05/conversations/<ID>`
 
 ### URL Parameters
 
@@ -108,7 +108,7 @@ ID | UUID | The ID of the conversation to retrieve
 ## Get Conversation Messages 
 
 ```shell
-curl "https://node.ucic.vc/api/v04/conversation/d524f62b-e0c6-43cc-86e6-464fee903b24/messages" -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24/messages" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 ```javascript
 ```
