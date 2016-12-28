@@ -86,7 +86,8 @@ Parameter | Type | Description
 limit | Unsigned Integer | Maximum number of cards to return
 offset | Unsigned Integer | Offset in list of cards to start return from
 page | Unsigned Integer | Page of cards to return
-
+sort | String | Sort by 'createdAt' or likes'.  Default is 'likes'
+order | String | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC 
 
 ## Get a Specific Card 
 
