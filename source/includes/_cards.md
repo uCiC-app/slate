@@ -247,6 +247,8 @@ Parameter | Type | Description
 limit | Unsigned Integer | Maximum number of comments to return
 offset | Unsigned Integer | Offset in list of commentss to start return from
 page | Unsigned Integer | Page of comments to return
+sort | String | Sort by 'createdAt' or likes'.  Default is 'likes'
+order | String | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC 
 
 
 ## Get User's Responded Cards
@@ -329,5 +331,7 @@ Parameter | Type | Description
 limit | Unsigned Integer | Maximum number of comments to return
 offset | Unsigned Integer | Offset in list of commentss to start return from
 page | Unsigned Integer | Page of comments to return
+sort | String | Sort by 'createdAt' or likes'.  Default is 'likes'
+order | String | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC 
 
 
