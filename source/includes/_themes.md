@@ -35,6 +35,8 @@ Parameter | Default | Description
 limit | Unsigned Integer | Maximum number of themes to return
 offset | Unsigned Integer | Offset in list of themes to start return from
 page | Unsigned Integer | Page of themes to return
+sort | String | Sort of results.  'random' sorts randomly and returns a Sort-Seed header with the random sort seed.  'likes' sorts by likes descending.  Default is sort by likes descending.
+seed | UUID | Sorting seed for random sorting.  Returned as header when a random sort is requested
 
 <aside class="success">
 Remember — a happy uCiC client is an authenticated uCiC client!
