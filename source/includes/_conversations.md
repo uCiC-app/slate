@@ -53,6 +53,7 @@ Parameter | Type | Description
 limit | Unsigned Integer | Maximum number of themes to return
 offset | Unsigned Integer | Offset in list of themes to start return from
 page | Unsigned Integer | Page of themes to return
+participant | Unsigned Integer | Find only the conversation with this participant
 
 
 ## Get a Conversation
