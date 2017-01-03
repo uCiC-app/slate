@@ -13,6 +13,7 @@ includes:
   - comments
   - conversations
   - map
+  - requests
   - themes
   - notifications
   - entities
