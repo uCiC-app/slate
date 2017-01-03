@@ -949,6 +949,115 @@ have access to this conversation.  Messages are sorted in createdAt descending o
 </tr>
 </tbody></table>
 
+          <h1 id="requests">Requests</h1>
+
+<h2 id="create-and-send-a-request">Create and send a request</h2>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{
+    "karma": 10,
+    "location": {
+        "lat": 33.7490,
+        "lon": -84.3884
+    },
+    "message": "How are you doing today?",
+    "override": false,
+    "rating": 5,
+    "type": "image"
+}'</span> <span class="s2">"https://node.ucic.vc/api/v04/requests"</span>
+</code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"ReportedText"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"RI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46985"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214 Capitol Pl SW, Atlanta, GA 30303, USA"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atlanta"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Competes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"CreatorUI"</span><span class="p">:</span><span class="w"> </span><span class="mi">611</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"End"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-05T17:44:16.603Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Karma"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.749</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-84.3884</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How are you doing today?"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03T17:44:16.603Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214, Capitol Place Southwest"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Vulgar"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Reported"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates and sends a request.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>POST https://node.ucic.vc/api/v04/requests`</p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>karma</td>
+<td>Unsigned Integer</td>
+<td>Karma to be awarded for this request. Default is 10</td>
+</tr>
+<tr>
+<td>location</td>
+<td>{ lat, lon }</td>
+<td>location lat lon request coordinates</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>Request message content body</td>
+</tr>
+<tr>
+<td>override</td>
+<td>Boolean</td>
+<td>Override time of day exception and send request anyway</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>Unsigned Integer</td>
+<td>Default request rating (unused). Default is 5</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>Type of request.  &lsquo;image&rsquo; for image or &#39;video&rsquo; for video</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>MAX_ACTIVE_REQUESTS_EXCEEDED &ndash; You have too many active requests pending</td>
+</tr>
+<tr>
+<td>400</td>
+<td>REQUIRED_FIELD_MISSING &ndash; You are missing required fields location, message, or type</td>
+</tr>
+<tr>
+<td>400</td>
+<td>REQUEST_OUTSIDE_PERMITTED_TIME &ndash; Your request is outside the hours of 07 - 22 in the local time</td>
+</tr>
+</tbody></table>
+
           <h1 id="themes">Themes</h1>
 
 <h2 id="get-all-themes">Get All Themes</h2>
