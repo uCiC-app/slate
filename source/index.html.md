@@ -12,6 +12,7 @@ includes:
   - cards
   - comments
   - conversations
+  - events
   - map
   - requests
   - themes
