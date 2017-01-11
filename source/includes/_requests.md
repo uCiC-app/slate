@@ -61,6 +61,7 @@ message | String | Request message content body
 override | Boolean | Override time of day exception and send request anyway
 rating | Unsigned Integer | Default request rating (unused). Default is 5
 type | String | Type of request.  'image' for image or 'video' for video
+receivers | [ Unsigned Integer ] | (Optional) List of receiver user IDs
 
 ### Errors
 Error | Meaning

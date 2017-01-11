@@ -54,4 +54,26 @@ limit | Unsigned Integer | Maximum number of comments to return
 offset | Unsigned Integer | Offset in list of commentss to start return from
 page | Unsigned Integer | Page of comments to return
 
+## Update a user's event's seen status
+
+```shell
+curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "seen": true }' "https://node.ucic.vc/api/v04/events/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" 
+```
+
+```javascript
+```
+
+> The above command returns 204 on success:
+
+This endpoint update's the current user's event's status.
+
+### HTTP Request
+
+`PUT https://node.ucic.vc/api/v04/events/<ID>`
+
+### Body Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+seen | Boolean | Seen status of event
 
