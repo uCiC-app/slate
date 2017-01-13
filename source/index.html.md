@@ -16,6 +16,7 @@ includes:
   - map
   - requests
   - themes
+  - users
   - notifications
   - entities
   - errors
