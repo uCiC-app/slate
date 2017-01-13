@@ -38,5 +38,10 @@ email | String | The user's email address
 address | String | (Optional) The user's address
 username | String | The user's desired username
 
-
+### Errors
+Error | Meaning
+---------- | -------
+401 | Unauthorized, login has been rejected
+730 | User has been deleted
+844 | Account is locked
 
