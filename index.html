@@ -1292,6 +1292,78 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tr>
 </tbody></table>
 
+          <h1 id="users">Users</h1>
+
+<h2 id="login">Login</h2>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "token": "df976sdf9sd6ff6g679adfg59fdg995df8ag697dfg694daf9g96adfg96", "os": 0, "pushId": "kjsfgsadgf899ya7w4bv7b4b4tvhhbt4va0b4vbva9b34c4b8g6438bcgc4", "photoURL": "https://myAvatar.com/media/avatar.png", "email": "somebody@whoknows.com", "address": "233 Bucksville, Atlanta, Georgia United States 30309", "username": "Dude DaDuder" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/users/login"</span>
+
+
+</code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns the current authorization token as well as the user object:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEC604AC-C29F-4764-B9C6-2CEC7351ABB6"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">User</span><span class="w"> </span><span class="err">Object</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint logs in a user.  It creates the user in the database if the fid is not found.  The endpoint will alternatively link an existing legacy app token with a fid if one is provided.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/users/login</code></p>
+
+<h3 id="request-body">Request Body</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>The signed firebase token containing a firebase id (fid)</td>
+</tr>
+<tr>
+<td>legacyToken</td>
+<td>String</td>
+<td>(Optional)  The existing V1 app authorization token.  If present, the fid is linked to the owner of this provided legacy token rather than creating a new user in the database</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Integer</td>
+<td>Device operating system.  0 for iOS, 1 for Android (This is largely deprecated, replaced by the user-agent header.  However, some obscure parts of the system still make use of it)</td>
+</tr>
+<tr>
+<td>pushId</td>
+<td>String</td>
+<td>(Optional) Firebase (FCM) Push ID</td>
+</tr>
+<tr>
+<td>photoURL</td>
+<td>String</td>
+<td>(Optional) Publically accessible path to an avatar photo for the user</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>The user&rsquo;s email address</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>(Optional) The user&rsquo;s address</td>
+</tr>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>The user&rsquo;s desired username</td>
+</tr>
+</tbody></table>
+
           <h1 id="notifications">Notifications</h1>
 
 <p>Notifications are delivered via Firebase Cloud Messaging.  The notification format is largely constrained by legacy support purposes.</p>
