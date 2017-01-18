@@ -1258,7 +1258,7 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tbody></table>
 
 <h2 id="search-for-a-theme">Search for a Theme</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/search?query=oliv"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/search?query=Boliv"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1323,9 +1323,19 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tr>
 </thead><tbody>
 <tr>
-<td>token</td>
+<td>address</td>
 <td>String</td>
-<td>The signed firebase token containing a firebase id (fid)</td>
+<td>(Optional) The user&rsquo;s address</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>UUID</td>
+<td>Device identifier</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>The user&rsquo;s email address</td>
 </tr>
 <tr>
 <td>legacyToken</td>
@@ -1338,24 +1348,19 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 <td>Device operating system.  0 for iOS, 1 for Android (This is largely deprecated, replaced by the user-agent header.  However, some obscure parts of the system still make use of it)</td>
 </tr>
 <tr>
-<td>pushId</td>
-<td>String</td>
-<td>(Optional) Firebase (FCM) Push ID</td>
-</tr>
-<tr>
 <td>photoURL</td>
 <td>String</td>
 <td>(Optional) Publically accessible path to an avatar photo for the user</td>
 </tr>
 <tr>
-<td>email</td>
+<td>pushId</td>
 <td>String</td>
-<td>The user&rsquo;s email address</td>
+<td>(Optional) Firebase (FCM) Push ID</td>
 </tr>
 <tr>
-<td>address</td>
+<td>token</td>
 <td>String</td>
-<td>(Optional) The user&rsquo;s address</td>
+<td>The signed firebase token containing a firebase id (fid)</td>
 </tr>
 <tr>
 <td>username</td>
