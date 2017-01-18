@@ -77,7 +77,7 @@ ID | UUID | The ID of the theme to retrieve
 ## Search for a Theme 
 
 ```shell
-curl "https://node.ucic.vc/api/v05/themes/search?query=oliv" -H "Authorization: <AUTHORIZATION_TOKEN>"
+curl "https://node.ucic.vc/api/v05/themes/search?query=Boliv" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript

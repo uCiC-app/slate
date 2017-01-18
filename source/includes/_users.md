@@ -29,13 +29,14 @@ This endpoint logs in a user.  It creates the user in the database if the fid is
 
 Parameter | Type | Description
 --------- | ---- | -----------
-token | String | The signed firebase token containing a firebase id (fid)
+address | String | (Optional) The user's address
+deviceId | UUID | Device identifier
+email | String | The user's email address
 legacyToken | String | (Optional)  The existing V1 app authorization token.  If present, the fid is linked to the owner of this provided legacy token rather than creating a new user in the database
 os | Integer | Device operating system.  0 for iOS, 1 for Android (This is largely deprecated, replaced by the user-agent header.  However, some obscure parts of the system still make use of it)
-pushId | String | (Optional) Firebase (FCM) Push ID
 photoURL | String | (Optional) Publically accessible path to an avatar photo for the user
-email | String | The user's email address
-address | String | (Optional) The user's address
+pushId | String | (Optional) Firebase (FCM) Push ID
+token | String | The signed firebase token containing a firebase id (fid)
 username | String | The user's desired username
 
 ### Errors
