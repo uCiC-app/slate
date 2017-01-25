@@ -14,6 +14,7 @@ includes:
   - conversations
   - events
   - map
+  - questions
   - requests
   - themes
   - users

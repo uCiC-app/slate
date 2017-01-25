@@ -1,9 +1,8 @@
 # Questions 
 
-## Get set of questions
+## Get questions
 
 ```shell
-
 curl "https://node.ucic.vc/api/v04/questions?lang=fr" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
@@ -24,7 +23,7 @@ curl "https://node.ucic.vc/api/v04/questions?lang=fr" -H "Authorization: <AUTHOR
 ]
 ```
 
-This endpoint retrieves the current user's events.
+This endpoint retrieves categorized questions.
 
 ### HTTP Request
 
@@ -35,8 +34,8 @@ This endpoint retrieves the current user's events.
 Parameter | Type | Description
 --------- | ---- | -----------
 lang | String | UTF8 Language Code
-category | String | Category of request, valid categories are ['ucic', 'onboarding']
+category | String | Category of request, valid categories are ['ucic', 'intro2'].  Default is 'ucic'
 limit | Unsigned Integer | Maximum number of comments to return
-offset | Unsigned Integer | Offset in list of commentss to start return from
+offset | Unsigned Integer | Offset in list of comments to start return from
 page | Unsigned Integer | Page of comments to return
 
