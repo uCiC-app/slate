@@ -33,7 +33,7 @@ This endpoint retrieves categorized questions.
 
 Parameter | Type | Description
 --------- | ---- | -----------
-lang | String | UTF8 Language Code
+lang | String | UTF8 Language Code.  Default is 'en'
 category | String | Category of request, valid categories are ['ucic', 'intro2'].  Default is 'ucic'
 limit | Unsigned Integer | Maximum number of comments to return
 offset | Unsigned Integer | Offset in list of comments to start return from
