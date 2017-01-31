@@ -46,3 +46,22 @@ Error | Meaning
 730 | User has been deleted
 844 | Account is locked
 
+
+## Block
+
+```shell
+curl -X POST "https://node.ucic.vc/api/v04/users/132406/block"
+```
+```javascript
+```
+
+> The above command returns a 204 success status
+
+
+This endpoint blocks a user.
+
+
+### HTTP Request
+
+`POST https://node.ucic.vc/api/v04/users/:id/block`
+
