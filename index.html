@@ -1451,6 +1451,19 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tr>
 </tbody></table>
 
+<h2 id="block">Block</h2>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://node.ucic.vc/api/v04/users/132406/block"</span>
+</code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns a 204 success status</p>
+</blockquote>
+
+<p>This endpoint blocks a user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/users/:id/block</code></p>
+
           <h1 id="notifications">Notifications</h1>
 
 <p>Notifications are delivered via Firebase Cloud Messaging.  The notification format is largely constrained by legacy support purposes.</p>
