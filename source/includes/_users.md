@@ -103,4 +103,4 @@ This endpoint allows the client to update the server with important information 
 | 400   | Bad request; missing lat, lon, or timeZoneMinutes |
 | 401   | Unauthorized, login has been rejected    |
 | 500   | User has been deleted                    |
-| 844   | Account is locked                        |
+
