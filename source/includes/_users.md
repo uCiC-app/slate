@@ -75,27 +75,24 @@ curl -X POST "https://node.ucic.vc/api/v04/users/geo"
 ```javascript
 
 ```
-```json
-The body of the POST request to send
-{
-  "location": {
-    "lat": -43.45,
-    "lon": 25.525
-  },
-  "timeZoneMinutes": -300, // the client's current offset from UTC in minutes (EasternTime = UTC-5h = -300)
-  "pushId": "fC7PixY5BDY:APA91bHV_kkjQN951uAKyVajBxPv9m050nqkeJwG_lWXCPcfbOgFXEsR1bFT0hnTaWmogI1ybr7IazFXvH6iixzUxFKVuPpaxxkmz2zjOMpbc3EhWo1DoI3i8uwB28NgM_7wb5AN4qx-" // for receiving remote push notifications
-}
-```
 
 > The above command returns a 200 success status
 
 
-This endpoint allows the client to update the server with important information about it's state. The enpoint accepts the location, time zone and push ID of the client in the format shown to the right.
+This endpoint allows the client to update the server with important information about it's state. The enpoint accepts and updates the location, time zone and push ID of the client.
 
 
 ### HTTP Request
 
 `POST https://node.ucic.vc/api/v04/users/geo`
+
+### Request Body
+
+| Parameter       | Type       | Description                              |
+| --------------- | ---------- | ---------------------------------------- |
+| location        | {lat, lon} | floating point numbers representing the client's location |
+| timeZoneMinutes | Integer    | The client's current offset from UTC in minutes. (Ex. Eastern Time is UTC -5 hours which is -300 minutes.) |
+| pushId          | String     | (optional) The client's key for receiving remote push notifications |
 
 ### Errors
 | Error | Meaning                                  |
