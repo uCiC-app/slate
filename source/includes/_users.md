@@ -88,16 +88,16 @@ This endpoint allows the client to update the server with important information 
 
 ### Request Body
 
-| Parameter       | Type       | Description                              |
-| --------------- | ---------- | ---------------------------------------- |
-| location        | {lat, lon} | floating point numbers representing the client's location |
-| timeZoneMinutes | Integer    | The client's current offset from UTC in minutes. (Ex. Eastern Time is UTC -5 hours which is -300 minutes.) |
-| pushId          | String     | (optional) The client's key for receiving remote push notifications |
+| Parameter       | Type         | Description                              |
+| --------------- | ------------ | ---------------------------------------- |
+| location        | { lat, lon } | Floating point numbers representing the client's location |
+| timeZoneMinutes | Integer      | The client's current offset from UTC in minutes. (Ex. Eastern Time is UTC -5 hours which is -300 minutes.) |
+| pushId          | String       | (Optional) The client's key for receiving remote push notifications |
 
 ### Errors
 | Error | Meaning                                  |
 | ----- | ---------------------------------------- |
 | 400   | Bad request; missing lat, lon, or timeZoneMinutes |
-| 401   | Unauthorized, login has been rejected    |
-| 500   | User has been deleted                    |
+| 401   | Unauthorized, authorization token was rejected |
+| 500   | Server encountered an error              |
 
