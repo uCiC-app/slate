@@ -111,6 +111,8 @@ curl -X POST "https://node.ucic.vc/api/v04/users/set"
 
 ```
 > The above command returns a 200 success status along with the updated values of the changed fields
+> Note: the response will contain only the field(s) that were modified by the request, since all of the fields are optional.
+
 ```json
 {
   "visibleLocation": "1",
@@ -119,7 +121,6 @@ curl -X POST "https://node.ucic.vc/api/v04/users/set"
   "email": "not@mylov.er"
 }
 ```
->Note: the response will contain only the field(s) that were modified by the request, since all of the fields are optional.
 
 This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email and username may be changed with this route.
 
