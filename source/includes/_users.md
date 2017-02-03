@@ -101,3 +101,45 @@ This endpoint allows the client to update the server with important information 
 | 401   | Unauthorized, authorization token was rejected |
 | 500   | Server encountered an error              |
 
+
+##Set
+
+```shell
+curl -X POST "https://node.ucic.vc/api/v04/users/set"
+```
+```javascript
+
+```
+> The above command returns a 200 success status along with the updated values of the changed fields
+```json
+{
+  "visibleLocation": "1",
+  "username": "BillyJean",
+  "avatar": "http://media.ucic.vc/media/427F0DC4-B2B6-4182-8088-D31BB5CB0934/thumb.jpg",
+  "email": "not@mylov.er"
+}
+```
+>Note: the response will contain only the field(s) that were modified by the request, since all of the fields are optional.
+
+This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email and username may be changed with this route.
+
+### Request Body
+
+| Parameter       | Type       | Description                              |
+| --------------- | ---------- | ---------------------------------------- |
+| visibleLocation | Int {0, 1} | (Optional\*) Integer representing the desired map visibility for the user, where 1 represents a public profile and 0 a private one. Note: the v03/settings/get route will return the inverse integer for legacy reasons (0 for public, 1 for private) |
+| username        | String     | (Optional\*) The new string to update the username to. |
+| avatarBuffer    | String     | (Optional\*) The base 64 encoded image buffer representing the image to change the user's avatar to. |
+| email           | String     | (Optional\*) The new email to set for the user. |
+
+\*Note: though all four parameters are optional, **at least one must be sent** with the call, or a 400 error message will be returned.
+
+### Errors
+| Error | Meaning                                  |
+| ----- | ---------------------------------------- |
+| 400   | Bad request; Either no recognized parameters were sent, or invalid values for at least one that was. |
+| 401   | Unauthorized, authorization token was rejected |
+| 500   | Server encountered an error              |
+
+
+
