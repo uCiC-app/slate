@@ -1528,6 +1528,80 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tr>
 </tbody></table>
 
+<h2 id="set">Set</h2>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://node.ucic.vc/api/v04/users/set"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success status along with the updated values of the changed fields
+<code class="prettyprint">json
+{
+  &quot;visibleLocation&quot;: &quot;1&quot;,
+  &quot;username&quot;: &quot;BillyJean&quot;,
+  &quot;avatar&quot;: &quot;http://media.ucic.vc/media/427F0DC4-B2B6-4182-8088-D31BB5CB0934/thumb.jpg&quot;,
+  &quot;email&quot;: &quot;not@mylov.er&quot;
+}
+</code>
+Note: the response will contain only the field(s) that were modified by the request, since all of the fields are optional.</p>
+</blockquote>
+
+<p>This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email and username may be changed with this route.</p>
+
+<h3 id="request-body">Request Body</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>visibleLocation</td>
+<td>Int {0, 1}</td>
+<td>(Optional*) Integer representing the desired map visibility for the user, where 1 represents a public profile and 0 a private one. Note: the v03/settings/get route will return the inverse integer for legacy reasons (0 for public, 1 for private)</td>
+</tr>
+<tr>
+<td>username</td>
+<td>String</td>
+<td>(Optional*) The new string to update the username to.</td>
+</tr>
+<tr>
+<td>avatarBuffer</td>
+<td>String</td>
+<td>(Optional*) The base 64 encoded image buffer representing the image to change the user&rsquo;s avatar to.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>(Optional*) The new email to set for the user.</td>
+</tr>
+</tbody></table>
+
+<p>*Note: though all four parameters are optional, <strong>at least one must be sent</strong> with the call, or a 400 error message will be returned.</p>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad request; Either no recognized parameters were sent, or invalid values for at least one that was.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized, authorization token was rejected</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Server encountered an error</td>
+</tr>
+</tbody></table>
+
           <h1 id="notifications">Notifications</h1>
 
 <p>Notifications are delivered via Firebase Cloud Messaging.  The notification format is largely constrained by legacy support purposes.</p>
