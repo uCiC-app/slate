@@ -1534,17 +1534,15 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </code></pre>
 <blockquote>
 <p>The above command returns a 200 success status along with the updated values of the changed fields
-<code class="prettyprint">json
-{
-  &quot;visibleLocation&quot;: &quot;1&quot;,
-  &quot;username&quot;: &quot;BillyJean&quot;,
-  &quot;avatar&quot;: &quot;http://media.ucic.vc/media/427F0DC4-B2B6-4182-8088-D31BB5CB0934/thumb.jpg&quot;,
-  &quot;email&quot;: &quot;not@mylov.er&quot;
-}
-</code>
 Note: the response will contain only the field(s) that were modified by the request, since all of the fields are optional.</p>
 </blockquote>
-
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"visibleLocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BillyJean"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.ucic.vc/media/427F0DC4-B2B6-4182-8088-D31BB5CB0934/thumb.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not@mylov.er"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email and username may be changed with this route.</p>
 
 <h3 id="request-body">Request Body</h3>
