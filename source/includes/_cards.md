@@ -88,6 +88,8 @@ offset | Unsigned Integer | Offset in list of cards to start return from
 page | Unsigned Integer | Page of cards to return
 sort | String | Sort by 'createdAt' or likes'.  Default is 'likes'
 order | String | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC 
+cutoff | unsigned Integer | Restrict the scope of the query to the cutoff number of cards 
+cutoffBy | String | Scopes the query to the largest likes or the most recent cutoff documents.  'likes' or 'createdAt' are supported.  Default is 'createdAt'.
 
 ## Get a Specific Card 
 
