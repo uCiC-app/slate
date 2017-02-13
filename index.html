@@ -358,6 +358,8 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 
 <h2 id="get-user-39-s-requested-cards">Get User&rsquo;s Requested Cards</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/users/requests"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+
+curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/requests"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -422,6 +424,10 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 
 <p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/requests</code></p>
 
+<h3 id="route-parameters">Route parameters</h3>
+
+<p>ID | Unsigned Integer | Optional. User&rsquo;s id to get cards for</p>
+
 <h3 id="query-parameters">Query Parameters</h3>
 
 <table><thead>
@@ -460,6 +466,8 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 
 <h2 id="get-user-39-s-responded-cards">Get User&rsquo;s Responded Cards</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/users/responses"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+
+curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -523,6 +531,10 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/responses</code></p>
+
+<h3 id="route-parameters">Route parameters</h3>
+
+<p>ID | Unsigned Integer | Optional. User&rsquo;s id to get cards for</p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
