@@ -243,6 +243,7 @@ This endpoint retrieves the cards that a user has requested.
 ### HTTP Request
 
 `GET https://node.ucic.vc/api/v04/users/requests`
+`GET https://node.ucic.vc/api/v04/users/611/requests`
 
 ### Route parameters
 ID | Unsigned Integer | Optional. User's id to get cards for
@@ -332,6 +333,7 @@ This endpoint retrieves the cards that the current user has responded to request
 ### HTTP Request
 
 `GET https://node.ucic.vc/api/v04/users/responses`
+`GET https://node.ucic.vc/api/v04/users/611/responses`
 
 
 ### Route parameters
