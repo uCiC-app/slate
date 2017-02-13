@@ -173,6 +173,8 @@ ID | UUID | The ID of the card to retrieve
 
 ```shell
 curl "https://node.ucic.vc/api/v04/users/requests" -H "Authorization: <AUTHORIZATION_TOKEN>"
+
+curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
@@ -242,6 +244,9 @@ This endpoint retrieves the cards that a user has requested.
 
 `GET https://node.ucic.vc/api/v04/users/requests`
 
+### Route parameters
+ID | Unsigned Integer | Optional. User's id to get cards for
+
 ### Query Parameters
 
 Parameter | Type | Description
@@ -257,6 +262,8 @@ order | String | Direction of sort, either 'ASC' for ascending or 'DESC' for des
 
 ```shell
 curl "https://node.ucic.vc/api/v04/users/responses" -H "Authorization: <AUTHORIZATION_TOKEN>"
+
+curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 
 ```javascript
@@ -325,6 +332,10 @@ This endpoint retrieves the cards that the current user has responded to request
 ### HTTP Request
 
 `GET https://node.ucic.vc/api/v04/users/responses`
+
+
+### Route parameters
+ID | Unsigned Integer | Optional. User's id to get cards for
 
 ### Query Parameters
 
