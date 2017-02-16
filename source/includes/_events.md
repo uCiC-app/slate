@@ -15,27 +15,28 @@ curl "https://node.ucic.vc/api/v04/events" -H "Authorization: <AUTHORIZATION_TOK
 ```json
 [
   {
-    "category": "response",
-    "kind": "send",
+    "id": "31035070-7179-44AE-A142-90D4DEF16E24",
+    "category": "message",
+    "kind": "new",
     "content": {
-      "sender": 38890,
-      "receiver": "38988",
-      "mimeType": "image/png",
-      "url": "http://staging-media.ucic.vc/media/C6214A68-055D-4D71-A5F4-29727B6A301D/original.png"
+      "sender": 176039,
+      "receiver": "18",
+      "id": "84780"
     },
-    "thumb": "http://staging-media.ucic.vc/media/C6214A68-055D-4D71-A5F4-29727B6A301D/thumb.png",
-    "refId": "16087",
-    "createdAt": "2016-12-18T15:41:13.000Z",
-    "card": "https://node.ucic.vc/api/v05/card/C6214A68-055D-4D71-A5F4-29727B6A301D",
+    "thumb": null,
+    "refId": "84780",
+    "createdAt": "2017-02-10T02:08:32.000Z",
+    "card": "https://api3.ucic.vc/api/v04/conversation/085170C2-7A3A-4DF7-9AF4-6B889DDBF1B9",
     "creator": {
-      "UI": "38890",
-      "Username": "Guy Streetley ",
-      "Karma": "101",
-      "email": "guy.streetley@gmail.com",
+      "UI": "176039",
+      "Username": "Guy Streetley",
+      "Karma": "115",
+      "email": "guy@gmail.com",
       "rating": 5,
-      "createdAt": "2016-10-25T01:46:44.133Z",
-      "avatar": "http://staging-media.ucic.vc/media/18B050D2-D4A4-49B8-9D0C-D92DC9FAFC32/thumb.png"
-    }
+      "createdAt": "2016-10-20T18:16:35.960Z",
+      "avatar": "http://media.ucic.vc/media/AC725D7D-72C0-41D8-85E0-F602091420D7/thumb.jpg"
+    },
+    "seen": false
   }
 ]
 ```
