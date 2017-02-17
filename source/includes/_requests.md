@@ -70,3 +70,26 @@ Error | Meaning
 400 | REQUIRED_FIELD_MISSING -- You are missing required fields location, message, or type
 400 | REQUEST_OUTSIDE_PERMITTED_TIME -- Your request is outside the hours of 07 - 22 in the local time
 
+## Update a user's request's seen status
+
+```shell
+curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "seen": true }' "https://node.ucic.vc/api/v04/requests/31832" 
+```
+
+```javascript
+```
+
+> The above command returns 204 on success:
+
+This endpoint update's the current user's request's status.
+
+### HTTP Request
+
+`PUT https://node.ucic.vc/api/v04/requests/<ID>`
+
+### Body Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+seen | Boolean | Seen status of request 
+
