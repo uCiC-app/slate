@@ -1270,6 +1270,35 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 </tbody></table>
 
+<h2 id="update-a-user-39-s-request-39-s-seen-status">Update a user&rsquo;s request&rsquo;s seen status</h2>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "seen": true }'</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/31832"</span> 
+</code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns 204 on success:</p>
+</blockquote>
+
+<p>This endpoint update&rsquo;s the current user&rsquo;s request&rsquo;s status.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://node.ucic.vc/api/v04/requests/&lt;ID&gt;</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>seen</td>
+<td>Boolean</td>
+<td>Seen status of request</td>
+</tr>
+</tbody></table>
+
           <h1 id="themes">Themes</h1>
 
 <h2 id="get-all-themes">Get All Themes</h2>
