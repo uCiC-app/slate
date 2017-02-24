@@ -135,6 +135,7 @@ This endpoint creates a response for a request.
 
 ### Multi-Part Parameters
 Parameter | Type | Description
+--------- | ---- | -----------
 image | File | The response image (Preview if video provided)
 video | File | The response video
 
