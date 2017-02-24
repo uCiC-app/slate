@@ -16,6 +16,7 @@ includes:
   - map
   - questions
   - requests
+  - responses
   - themes
   - users
   - notifications
