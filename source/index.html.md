@@ -4,6 +4,8 @@ title: API Reference
 language_tabs:
   - shell
   - javascript
+  - swift
+  - java
 
 toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
