@@ -1102,7 +1102,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <h2 id="get-questions">Get questions</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/questions?lang=fr"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1111,12 +1112,15 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w">          </span><span class="s2">"98B69E4B-08DF-4C8F-B10F-1A224CF737BC"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"question"</span><span class="p">:</span><span class="w">    </span><span class="s2">"How's the sunset there?"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w">    </span><span class="s2">"ucic"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"askCounter"</span><span class="p">:</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nt">"translation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comment est le coucher du soleil l?-bas?"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves categorized questions.</p>
+
+<h4 id="dynamic-questions">Dynamic Questions</h4>
+
+<p>The &lsquo;dynamic&rsquo; category of questions attempts to pull in data sources for the askee&rsquo;s location (and any other contextual information added later) to build more customized suggested questions. Note that if using the dynamic category, the lat and lon url parameters become required.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1134,27 +1138,22 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>lang</td>
 <td>String</td>
-<td>UTF8 Language Code.  Default is &lsquo;en&rsquo;</td>
+<td>UTF8 Language Code.  Default is &#39;en&rsquo;</td>
 </tr>
 <tr>
 <td>category</td>
 <td>String</td>
-<td>Category of request, valid categories are [&#39;ucic&rsquo;, &#39;intro2&rsquo;].  Default is &#39;ucic&rsquo;</td>
+<td>Category of request, valid categories are [&#39;ucic&rsquo;, &#39;intro2&rsquo;, &#39;dynamic&rsquo;].  Default is &#39;ucic&rsquo;</td>
 </tr>
 <tr>
-<td>limit</td>
-<td>Unsigned Integer</td>
-<td>Maximum number of comments to return</td>
+<td>lat</td>
+<td>Double</td>
+<td>latitude coord of askee (required if category is &#39;dynamic&rsquo;, ignored otherwise)</td>
 </tr>
 <tr>
-<td>offset</td>
-<td>Unsigned Integer</td>
-<td>Offset in list of comments to start return from</td>
-</tr>
-<tr>
-<td>page</td>
-<td>Unsigned Integer</td>
-<td>Page of comments to return</td>
+<td>lon</td>
+<td>Double</td>
+<td>longitude coord of askee (required if category is &#39;dynamic&rsquo;, ignored otherwise)</td>
 </tr>
 </tbody></table>
 
