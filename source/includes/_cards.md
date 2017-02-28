@@ -240,7 +240,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
         "likes": "0",
         "responses": 1,
-        "createdAt": "2016-11-30T00:53:19.180Z"
+        "createdAt": "2016-11-30T00:53:19.180Z",
+        "tags": []
       },
       "receiver": null,
       "body": "for",
@@ -255,7 +256,16 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "likes": 10,
         "liked": false,
         "createdAt": "2016-11-30T00:57:14.213Z",
-        "tags": []
+        "tags": [
+          {
+            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+            "name": "United States of America",
+          },
+          {
+            "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "name": "spaniel"
+          }
+        ]
       }
     }
   }
@@ -333,7 +343,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
         "likes": "10",
         "responses": 14,
-        "createdAt": "2015-01-19T12:06:48.363Z"
+        "createdAt": "2015-01-19T12:06:48.363Z",
+        "tags": []
       },
       "receiver": null,
       "body": "Hi There!",
@@ -348,7 +359,16 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "likes": 10,
         "liked": true,
         "createdAt": "2016-12-09T19:50:12.830Z",
-        "tags": []
+        "tags": [
+          {
+            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+            "name": "United States of America",
+          },
+          {
+            "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "name": "spaniel"
+          }
+        ]
       }
     }
   }
