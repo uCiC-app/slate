@@ -20,7 +20,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     "logo": "http://staging-media.ucic.vc/media/58FBBD39-8172-4271-A9B0-8ED4E27A79D0/micro.jpg",
     "lon": -6.9485274,
     "subtitle": "",
-    "timeZoneMinutes": -300
+    "timeZoneMinutes": -300,
     "title": "Khan Jan",
     "type": "user"
   }],
