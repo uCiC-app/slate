@@ -46,6 +46,9 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "likes": "10",
         "responses": 84,
         "createdAt": "2014-08-31T18:44:51.156Z"
+        "tags": [
+          "EBE0C181-A0D9-4633-ABF2-436D55B36B32"
+        ]
       },
       "receiver": null,
       "body": "Mural",
@@ -60,7 +63,16 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "likes": 28,
         "liked": false,
         "createdAt": "2016-04-22T01:29:37.000Z",
-        "tags": []
+        "tags": [
+          {
+            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+            "name": "United States of America",
+          },
+          {
+            "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "name": "spaniel"
+          }
+        ]
       }
     }
   }
@@ -135,7 +147,10 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
       "likes": "0",
       "responses": 2,
-      "createdAt": "2016-12-09T19:00:53.233Z"
+      "createdAt": "2016-12-09T19:00:53.233Z",
+      "tags": [
+        "EBE0C181-A0D9-4633-ABF2-436D55B36B32"
+      ]
     },
     "receiver": null,
     "body": "",
@@ -150,7 +165,16 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "likes": 10,
       "liked": false,
       "createdAt": "2016-12-10T01:58:01.653Z",
-      "tags": []
+      "tags": [
+        {
+          "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+          "name": "United States of America",
+        },
+        {
+          "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+          "name": "spaniel"
+        }
+      ]
     }
   }
 }
@@ -216,7 +240,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
         "likes": "0",
         "responses": 1,
-        "createdAt": "2016-11-30T00:53:19.180Z"
+        "createdAt": "2016-11-30T00:53:19.180Z",
+        "tags": []
       },
       "receiver": null,
       "body": "for",
@@ -231,7 +256,16 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "likes": 10,
         "liked": false,
         "createdAt": "2016-11-30T00:57:14.213Z",
-        "tags": []
+        "tags": [
+          {
+            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+            "name": "United States of America",
+          },
+          {
+            "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "name": "spaniel"
+          }
+        ]
       }
     }
   }
@@ -309,7 +343,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
         "likes": "10",
         "responses": 14,
-        "createdAt": "2015-01-19T12:06:48.363Z"
+        "createdAt": "2015-01-19T12:06:48.363Z",
+        "tags": []
       },
       "receiver": null,
       "body": "Hi There!",
@@ -324,7 +359,16 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "likes": 10,
         "liked": true,
         "createdAt": "2016-12-09T19:50:12.830Z",
-        "tags": []
+        "tags": [
+          {
+            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+            "name": "United States of America",
+          },
+          {
+            "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "name": "spaniel"
+          }
+        ]
       }
     }
   }
