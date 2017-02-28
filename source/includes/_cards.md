@@ -46,9 +46,10 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "likes": "10",
         "responses": 84,
         "createdAt": "2014-08-31T18:44:51.156Z"
-        "tags": [
-          "EBE0C181-A0D9-4633-ABF2-436D55B36B32"
-        ]
+        "tags": [{
+          id: "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
+          name: ''
+        }]
       },
       "receiver": null,
       "body": "Mural",
@@ -148,9 +149,10 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "likes": "0",
       "responses": 2,
       "createdAt": "2016-12-09T19:00:53.233Z",
-      "tags": [
-        "EBE0C181-A0D9-4633-ABF2-436D55B36B32"
-      ]
+      "tags": [{
+        id: "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
+        name: ''
+      }]
     },
     "receiver": null,
     "body": "",
