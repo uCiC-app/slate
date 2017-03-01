@@ -26,7 +26,7 @@ curl "https://node.ucic.vc/api/v04/questions?lang=fr" -H "Authorization: <AUTHOR
 This endpoint retrieves categorized questions.
 
 ####Dynamic Questions
-The 'dynamic' category of questions attempts to pull in data sources for the askee's location (and any other contextual information added later) to build more customized suggested questions. Note that if using the dynamic category, the lat and lon url parameters become required.
+The questions attempt to pull in data sources for the askee's location (and any other contextual information added later) to build more customized suggested questions.
 
 ### HTTP Request
 
@@ -37,7 +37,6 @@ The 'dynamic' category of questions attempts to pull in data sources for the ask
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
 | lang      | String | UTF8 Language Code.  Default is 'en'     |
-| category  | String | Category of request, valid categories are ['ucic', 'intro2', 'dynamic'].  Default is 'ucic' |
-| lat       | Double | latitude coord of askee (required if category is 'dynamic', ignored otherwise) |
-| lon       | Double | longitude coord of askee (required if category is 'dynamic', ignored otherwise) |
+| lat       | Double | latitude coord of askee. Used to populate dynamic quesiton components |
+| lon       | Double | longitude coord of askee. Used to populate dynamic quesiton components |
 
