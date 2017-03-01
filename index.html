@@ -1176,7 +1176,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <h4 id="dynamic-questions">Dynamic Questions</h4>
 
-<p>The &lsquo;dynamic&rsquo; category of questions attempts to pull in data sources for the askee&rsquo;s location (and any other contextual information added later) to build more customized suggested questions. Note that if using the dynamic category, the lat and lon url parameters become required.</p>
+<p>The questions attempt to pull in data sources for the askee&rsquo;s location (and any other contextual information added later) to build more customized suggested questions.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1194,22 +1194,17 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>lang</td>
 <td>String</td>
-<td>UTF8 Language Code.  Default is &#39;en&rsquo;</td>
-</tr>
-<tr>
-<td>category</td>
-<td>String</td>
-<td>Category of request, valid categories are [&#39;ucic&rsquo;, &#39;intro2&rsquo;, &#39;dynamic&rsquo;].  Default is &#39;ucic&rsquo;</td>
+<td>UTF8 Language Code.  Default is &lsquo;en&rsquo;</td>
 </tr>
 <tr>
 <td>lat</td>
 <td>Double</td>
-<td>latitude coord of askee (required if category is &#39;dynamic&rsquo;, ignored otherwise)</td>
+<td>latitude coord of askee. Used to populate dynamic quesiton components</td>
 </tr>
 <tr>
 <td>lon</td>
 <td>Double</td>
-<td>longitude coord of askee (required if category is &#39;dynamic&rsquo;, ignored otherwise)</td>
+<td>longitude coord of askee. Used to populate dynamic quesiton components</td>
 </tr>
 </tbody></table>
 
