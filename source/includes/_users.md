@@ -5,7 +5,6 @@
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{ "token": "df976sdf9sd6ff6g679adfg59fdg995df8ag697dfg694daf9g96adfg96", "os": 0, "pushId": "kjsfgsadgf899ya7w4bv7b4b4tvhhbt4va0b4vbva9b34c4b8g6438bcgc4", "photoURL": "https://myAvatar.com/media/avatar.png", "email": "somebody@whoknows.com", "address": "233 Bucksville, Atlanta, Georgia United States 30309", "username": "Dude DaDuder" }' "https://node.ucic.vc/api/v04/users/login"
 
-
 ```
 ```javascript
 
@@ -94,6 +93,7 @@ This endpoint allows the client to update the server with important information 
 | location        | { lat, lon } | Floating point numbers representing the client's location |
 | timeZoneMinutes | Integer      | The client's current offset from UTC in minutes. (Ex. Eastern Time is UTC -5 hours which is -300 minutes.) |
 | pushId          | String       | (Optional) The client's key for receiving remote push notifications |
+| country         | String       | (Optional) The client's current country of location |
 
 ### Errors
 | Error | Meaning                                  |
