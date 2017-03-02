@@ -1669,7 +1669,6 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 <h2 id="login">Login</h2>
 <pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "token": "df976sdf9sd6ff6g679adfg59fdg995df8ag697dfg694daf9g96adfg96", "os": 0, "pushId": "kjsfgsadgf899ya7w4bv7b4b4tvhhbt4va0b4vbva9b34c4b8g6438bcgc4", "photoURL": "https://myAvatar.com/media/avatar.png", "email": "somebody@whoknows.com", "address": "233 Bucksville, Atlanta, Georgia United States 30309", "username": "Dude DaDuder" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/users/login"</span>
 
-
 </code></pre><pre class="highlight javascript"><code>
 </code></pre>
 <blockquote>
@@ -1820,6 +1819,11 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 <td>pushId</td>
 <td>String</td>
 <td>(Optional) The client&rsquo;s key for receiving remote push notifications</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td>(Optional) The client&rsquo;s current country of location</td>
 </tr>
 </tbody></table>
 
