@@ -48,8 +48,8 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "responses": 84,
         "createdAt": "2014-08-31T18:44:51.156Z",
         "tags": [{
-          id: "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
-          name: ''
+          "id": "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
+          "name": ''
         }]
       },
       "receiver": null,
@@ -75,7 +75,7 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "tags": [
           {
             "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
-            "name": "United States of America",
+            "name": "United States of America"
           },
           {
             "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
@@ -186,7 +186,7 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "tags": [
         {
           "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
-          "name": "United States of America",
+          "name": "United States of America"
         },
         {
           "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
@@ -285,7 +285,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "tags": [
           {
             "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
-            "name": "United States of America",
+            "name": "United States of America"
           },
           {
             "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
@@ -396,7 +396,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "tags": [
           {
             "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
-            "name": "United States of America",
+            "name": "United States of America"
           },
           {
             "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
