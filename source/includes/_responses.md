@@ -147,5 +147,5 @@ This endpoint creates a response for a request.
 | contentType        | String                                   | The content type                         |
 | requestId          | Integer                                  | The request identifier                   |
 | previewContentType | String                                   | (Required with video) The preview content type |
-| metadata           | Object { lat: double, lon: double, createdAt: Date } | (Optional) additional metadata about the attached media. Date is an ISO 8601 String. |
+| metadata           | Object { lat: double, lon: double, createdAt: Date } | (Optional) additional metadata about the attached media. Date is an ISO 8601 String. All subfields are optional. |
 
