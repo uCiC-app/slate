@@ -134,17 +134,18 @@ This endpoint creates a response for a request.
 `POST https://node.ucic.vc/api/v04/responses`
 
 ### Multi-Part Parameters
-Parameter | Type | Description
---------- | ---- | -----------
-image | File | The response image (Preview if video provided)
-video | File | The response video
+| Parameter | Type | Description                              |
+| --------- | ---- | ---------------------------------------- |
+| image     | File | The response image (Preview if video provided) |
+| video     | File | The response video                       |
 
 ### Request Body
 
-Parameter | Type | Description
---------- | ---- | -----------
-caption            | String  | The response caption
-contentType        | String  | The content type
-requestId          | Integer | The request identifier
-previewContentType | String  | (Required with video) The preview content type
+| Parameter          | Type                                     | Description                              |
+| ------------------ | ---------------------------------------- | ---------------------------------------- |
+| caption            | String                                   | The response caption                     |
+| contentType        | String                                   | The content type                         |
+| requestId          | Integer                                  | The request identifier                   |
+| previewContentType | String                                   | (Required with video) The preview content type |
+| metadata           | Object { lat: double, lon: double, createdAt: Date | (Optional) additional metadata about the attached media. Date is an ISO 8601 String. |
 

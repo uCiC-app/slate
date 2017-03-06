@@ -7,6 +7,7 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
 ```
 
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -45,7 +46,7 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
         "likes": "10",
         "responses": 84,
-        "createdAt": "2014-08-31T18:44:51.156Z"
+        "createdAt": "2014-08-31T18:44:51.156Z",
         "tags": [{
           id: "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
           name: ''
@@ -64,9 +65,16 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "likes": 28,
         "liked": false,
         "createdAt": "2016-04-22T01:29:37.000Z",
+        "metaData": {
+          "createdAt": "2017-01-25T12:00:00.000Z",
+          "location": {
+            "lat": 47.45,
+            "lon": 6.93546
+          }
+        },
         "tags": [
           {
-            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
             "name": "United States of America",
           },
           {
@@ -88,21 +96,21 @@ This endpoint retrieves the cards for a theme.
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-ID | UUID | The ID of the theme to retrieve cards for
+| Parameter | Type | Description                              |
+| --------- | ---- | ---------------------------------------- |
+| ID        | UUID | The ID of the theme to retrieve cards for |
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ------- | -----------
-limit | Unsigned Integer | Maximum number of cards to return
-offset | Unsigned Integer | Offset in list of cards to start return from
-page | Unsigned Integer | Page of cards to return
-sort | String | Sort by 'createdAt' or likes'.  Default is 'likes'
-order | String | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC 
-cutoff | unsigned Integer | Restrict the scope of the query to the cutoff number of cards 
-cutoffBy | String | Scopes the query to the largest likes or the most recent cutoff documents.  'likes' or 'createdAt' are supported.  Default is 'createdAt'.
+| Parameter | Type             | Description                              |
+| --------- | ---------------- | ---------------------------------------- |
+| limit     | Unsigned Integer | Maximum number of cards to return        |
+| offset    | Unsigned Integer | Offset in list of cards to start return from |
+| page      | Unsigned Integer | Page of cards to return                  |
+| sort      | String           | Sort by 'createdAt' or likes'.  Default is 'likes' |
+| order     | String           | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC |
+| cutoff    | unsigned Integer | Restrict the scope of the query to the cutoff number of cards |
+| cutoffBy  | String           | Scopes the query to the largest likes or the most recent cutoff documents.  'likes' or 'createdAt' are supported.  Default is 'createdAt'. |
 
 ## Get a Specific Card 
 
@@ -111,6 +119,7 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
 ```
 
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -150,8 +159,8 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "responses": 2,
       "createdAt": "2016-12-09T19:00:53.233Z",
       "tags": [{
-        id: "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
-        name: ''
+        "id": "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
+        "name": ''
       }]
     },
     "receiver": null,
@@ -167,9 +176,16 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "likes": 10,
       "liked": false,
       "createdAt": "2016-12-10T01:58:01.653Z",
+      "metaData": {
+        "createdAt": "2016-01-25T12:00:00.000Z",
+        "location": {
+          "lat": 47.45,
+          "lon": 6.93546
+        }
+      },
       "tags": [
         {
-          "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+          "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
           "name": "United States of America",
         },
         {
@@ -190,9 +206,9 @@ This endpoint retrieves a specific card.
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-ID | UUID | The ID of the card to retrieve
+| Parameter | Type | Description                    |
+| --------- | ---- | ------------------------------ |
+| ID        | UUID | The ID of the card to retrieve |
 
 
 ## Get User's Requested Cards
@@ -204,6 +220,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
 ```
 
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -258,9 +275,16 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "likes": 10,
         "liked": false,
         "createdAt": "2016-11-30T00:57:14.213Z",
+        "metaData": {
+          "createdAt": "2016-01-25T12:00:00.000Z",
+          "location": {
+            "lat": 47.45,
+            "lon": 6.93546
+          }
+        },
         "tags": [
           {
-            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
             "name": "United States of America",
           },
           {
@@ -283,19 +307,19 @@ This endpoint retrieves the cards that a user has requested.
 `GET https://node.ucic.vc/api/v04/users/611/requests`
 
 ### Route parameters
-Parameter | Type | Description
---------- | ---- | -----------
-ID | Unsigned Integer | Optional. User's id to get cards for
+| Parameter | Type             | Description                          |
+| --------- | ---------------- | ------------------------------------ |
+| ID        | Unsigned Integer | Optional. User's id to get cards for |
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-limit | Unsigned Integer | Maximum number of comments to return
-offset | Unsigned Integer | Offset in list of commentss to start return from
-page | Unsigned Integer | Page of comments to return
-sort | String | Sort by 'createdAt' or likes'.  Default is 'likes'
-order | String | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC 
+| Parameter | Type             | Description                              |
+| --------- | ---------------- | ---------------------------------------- |
+| limit     | Unsigned Integer | Maximum number of comments to return     |
+| offset    | Unsigned Integer | Offset in list of commentss to start return from |
+| page      | Unsigned Integer | Page of comments to return               |
+| sort      | String           | Sort by 'createdAt' or likes'.  Default is 'likes' |
+| order     | String           | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC |
 
 
 ## Get User's Responded Cards
@@ -307,6 +331,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
 ```
 
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -361,9 +386,16 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "likes": 10,
         "liked": true,
         "createdAt": "2016-12-09T19:50:12.830Z",
+        "metaData": {
+          "createdAt": "2016-01-25T12:00:00.000Z",
+          "location": {
+            "lat": 47.45,
+            "lon": 6.93546
+          }
+        },
         "tags": [
           {
-            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF"
+            "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
             "name": "United States of America",
           },
           {
@@ -387,18 +419,18 @@ This endpoint retrieves the cards that the current user has responded to request
 
 
 ### Route parameters
-Parameter | Type | Description
---------- | ---- | -----------
-ID | Unsigned Integer | Optional. User's id to get cards for
+| Parameter | Type             | Description                          |
+| --------- | ---------------- | ------------------------------------ |
+| ID        | Unsigned Integer | Optional. User's id to get cards for |
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-limit | Unsigned Integer | Maximum number of comments to return
-offset | Unsigned Integer | Offset in list of commentss to start return from
-page | Unsigned Integer | Page of comments to return
-sort | String | Sort by 'createdAt' or likes'.  Default is 'likes'
-order | String | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC 
+| Parameter | Type             | Description                              |
+| --------- | ---------------- | ---------------------------------------- |
+| limit     | Unsigned Integer | Maximum number of comments to return     |
+| offset    | Unsigned Integer | Offset in list of commentss to start return from |
+| page      | Unsigned Integer | Page of comments to return               |
+| sort      | String           | Sort by 'createdAt' or likes'.  Default is 'likes' |
+| order     | String           | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC |
 
 
