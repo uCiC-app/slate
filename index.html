@@ -1958,6 +1958,21 @@ Note: the response will contain only the field(s) that were modified by the requ
 </tr>
 </tbody></table>
 
+<h2 id="logout">Logout</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/logout"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a 204 success status</p>
+</blockquote>
+
+<p>This endpoint is used to notify the service that the user has logged out of the uCiC client. This removes the user from the world map and prevents the server sending push notifications to this device until a user logs in on it again.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/logout</code></p>
+
+<p>The token in the &ldquo;Authorization&rdquo; header is used to determine the user to log out.</p>
+
           <h1 id="notifications">Notifications</h1>
 
 <p>Notifications are delivered via Firebase Cloud Messaging.  The notification format is largely constrained by legacy support purposes.</p>
