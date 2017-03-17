@@ -145,3 +145,20 @@ This endpoint allows the clients to update user information. Specifically, the m
 
 
 
+##Logout
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/logout"
+```
+
+> The above command returns a 204 success status
+
+
+This endpoint is used to notify the service that the user has logged out of the uCiC client. This removes the user from the world map and prevents the server sending push notifications to this device until a user logs in on it again.
+
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/users/logout`
+
+The token in the "Authorization" header is used to determine the user to log out.
