@@ -149,6 +149,15 @@ curl <span class="s2">"https://node.ucic.vc/api/v05/user/get"</span> -H <span cl
 You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal access token.
 </aside>
 
+<h1 id="idempotency">Idempotency</h1>
+
+<blockquote>
+<p>An idempotent request looks like this</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -H <span class="s2">"Idempotency-Key: iuovbzsafgQfSDdasd"</span> -d <span class="s1">'{ "text": "Adding an idempotent comment to a card" }'</span> <span class="s2">"https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"</span>
+</code></pre>
+<p>Idempotency is supported for retrying POST requests.  To make an idempotent request, add the Idempotency-Key header with a string value.  This key along with the user, route, and response are stored in redis.  If the provided idempotency key for the same user and route is found in redis, the cached response is returned (instead of processing the request).  Redis will expire the key after 24 hours.</p>
+
           <h1 id="cards">Cards</h1>
 
 <h2 id="get-the-cards-for-a-theme">Get the Cards for a Theme</h2>
