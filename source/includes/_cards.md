@@ -434,3 +434,25 @@ This endpoint retrieves the cards that the current user has responded to request
 | order     | String           | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC |
 
 
+## Hide a Card
+
+```shell
+curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/hide"
+```
+```javascript
+```
+
+> The above command returns No Content 204
+
+This endpoint hides a user's card.  The user must be the author of the card to hide
+
+### HTTP Request
+
+`PUT https://node.ucic.vc/api/v05/cards/<ID>/hide`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+ID | UUID | The ID of the card to hide
+
