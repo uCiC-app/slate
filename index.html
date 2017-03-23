@@ -706,6 +706,35 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 </tr>
 </tbody></table>
 
+<h2 id="hide-a-card">Hide a Card</h2>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/hide"</span>
+</code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns No Content 204:</p>
+</blockquote>
+
+<p>This endpoint hides a user&rsquo;s card.  The user must be the author of the card to hide</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v05/cards/&lt;ID&gt;/hide</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>UUID</td>
+<td>The ID of the card to hide</td>
+</tr>
+</tbody></table>
+
           <h1 id="comments">Comments</h1>
 
 <h2 id="get-a-card-39-s-comments">Get a Card&rsquo;s Comments</h2>
