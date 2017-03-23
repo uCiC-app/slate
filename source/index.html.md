@@ -66,3 +66,9 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 ```
 
 Idempotency is supported for retrying POST requests.  To make an idempotent request, add the Idempotency-Key header with a string value.  This key along with the user, route, and response are stored in redis.  If the provided idempotency key for the same user and route is found in redis, the cached response is returned (instead of processing the request).  Redis will expire the key after 24 hours.
+
+### Header Parameter
+Paramter | Type | Description
+--------- | ---- | -----------
+Idempotency-Key | String | The client generated idempotency key for the provided post request
+
