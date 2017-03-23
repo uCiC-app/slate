@@ -57,3 +57,12 @@ uCiC expects your authorization token to be included in all API requests to the 
 You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal access token.
 </aside>
 
+# Idempotency
+
+> An idempotent request looks like this
+
+```shell
+curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -H "Idempotency-Key: iuovbzsafgQfSDdasd" -d '{ "text": "Adding an idempotent comment to a card" }' "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"
+```
+
+Idempotency is supported for retrying POST requests.  To make an idempotent request, add the Idempotency-Key header with a string value.  This key along with the user, route, and response are stored in redis.  If the provided idempotency key for the same user and route is found in redis, the cached response is returned (instead of processing the request).  Redis will expire the key after 24 hours.
