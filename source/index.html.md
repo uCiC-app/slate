@@ -72,3 +72,7 @@ Paramter | Type | Description
 --------- | ---- | -----------
 Idempotency-Key | String | The client generated idempotency key for the provided post request
 
+### Response Codes
+Paramter | Type | Description
+--------- | ---- | -----------
+Retry-After | 503 | if an Idempotent request matching an existing Idempotent request which is still being processed arrives, a Retry-After 503 is returned requesting that the request wait until the prior idempotent request completes.
