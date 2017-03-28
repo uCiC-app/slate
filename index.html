@@ -1079,6 +1079,50 @@ have access to this conversation.  Messages are sorted in createdAt descending o
 </tr>
 </tbody></table>
 
+<h2 id="send-a-message-in-a-conversation">Send a message in a conversation</h2>
+<pre class="highlight shell"><code></code></pre><pre class="highlight javascript"><code></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code></code></pre>
+<p>This endpoint sends a new message for a conversation.  The message is then returned.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/conversations/&lt;ID&gt;/messages/new</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>UUID</td>
+<td>The ID of the conversation to send a message for</td>
+</tr>
+</tbody></table>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The message to send</td>
+</tr>
+</tbody></table>
+
           <h1 id="events">Events</h1>
 
 <h2 id="get-the-current-user-39-s-events">Get the Current User&rsquo;s Events</h2>
