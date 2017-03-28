@@ -126,7 +126,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 1,
-	"receiverUI": 39329
+	"receiverUI": 39329,
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
@@ -159,7 +159,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 1,
-	"receiverUI": 39329
+	"receiverUI": 39329,
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
@@ -167,7 +167,9 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	}
 }
 ```
+
 > for a direct request and the following for a map request:
+
 ```json
 { 
 	"requestId": 51239,
