@@ -1315,40 +1315,30 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <h2 id="create-and-send-a-request">Create and send a request</h2>
 <pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{
-    "karma": 10,
     "location": {
         "lat": 33.7490,
-        "lon": -84.3884
+        "lon": -84.3884,
+        "radius": 750
     },
     "message": "How are you doing today?",
     "override": false,
-    "rating": 5,
-    "type": "image"
+    "requestType": 1
 }'</span> <span class="s2">"https://node.ucic.vc/api/v04/requests"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns a 201 success code along with a json response like:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"ReportedText"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"RI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46985"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214 Capitol Pl SW, Atlanta, GA 30303, USA"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"City"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atlanta"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Competes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"CreatorUI"</span><span class="p">:</span><span class="w"> </span><span class="mi">611</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"End"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-05T17:44:16.603Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Karma"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.749</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-84.3884</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How are you doing today?"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03T17:44:16.603Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214, Capitol Place Southwest"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Vulgar"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Reported"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>In the event of an error, the response will be structured as:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_CODE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates and sends a request.</p>
@@ -1357,7 +1347,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <p>POST https://node.ucic.vc/api/v04/requests</p>
 
-<h3 id="query-parameters">Query Parameters</h3>
+<h3 id="body-parameters">Body Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1367,14 +1357,9 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 </thead><tbody>
 <tr>
-<td>karma</td>
-<td>Unsigned Integer</td>
-<td>Karma to be awarded for this request. Default is 10</td>
-</tr>
-<tr>
-<td>location</td>
-<td>{ lat, lon }</td>
-<td>location lat lon request coordinates</td>
+<td>location*</td>
+<td>{ lat, lon, radius }</td>
+<td>(Optional if receiverUI is provided) location request lat lon coordinates and radius(m).</td>
 </tr>
 <tr>
 <td>message</td>
@@ -1384,24 +1369,16 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>override</td>
 <td>Boolean</td>
-<td>Override time of day exception and send request anyway</td>
+<td>(Optional, default: false) Override time of day exception and send request anyway</td>
 </tr>
 <tr>
-<td>rating</td>
+<td>receiverUI*</td>
 <td>Unsigned Integer</td>
-<td>Default request rating (unused). Default is 5</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>Type of request.  &lsquo;image&rsquo; for image or &#39;video&rsquo; for video</td>
-</tr>
-<tr>
-<td>receivers</td>
-<td>[ Unsigned Integer ]</td>
-<td>(Optional) List of receiver user IDs</td>
+<td>(Optional if location is provided) List of receiver user IDs</td>
 </tr>
 </tbody></table>
+
+<p>* <strong>Note:</strong> one of <em>location</em> or <em>receiverUI</em> must be provided which dictates whether this request will be a map request or direct request, respectively. If both are provided, the location will be ignored.</p>
 
 <h3 id="errors">Errors</h3>
 
@@ -1425,9 +1402,152 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 </tbody></table>
 
+<h2 id="get-nearby-requests">Get Nearby Requests</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/nearest?lat=33.7490&amp;lon=-84.3884"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success code along with a json response like:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w"> 
+    </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requestType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.7490</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-84.3884</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">525</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">39266</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Billy Jean"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Retrieve the map requests that the provided coordinate falls under. A maximum of 25 Requests will be returned, sorted by recency of their creation. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>GET https://node.ucic.vc/api/v04/requests/nearest?lat=33.7490&amp;lon=-84.3884</p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lat</td>
+<td>float</td>
+<td>(Required) user&rsquo;s latitude</td>
+</tr>
+<tr>
+<td>lon</td>
+<td>float</td>
+<td>(Required) user&rsquo;s longitude</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Missing required query parameter</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-direct-requests">Get Direct Requests</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/direct"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success code along with a json response like:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w"> 
+    </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requestType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"receiverUI"</span><span class="p">:</span><span class="w"> </span><span class="mi">39329</span><span class="w">
+    </span><span class="s2">"creator"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">39266</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Billy Jean"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Retrieve the direct requests for the authorized user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>GET https://node.ucic.vc/api/v04/requests/direct</p>
+
+<h2 id="get-specific-request-by-id">Get Specific Request By Id</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/31832"</span> 
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 200 success code along with a json response like:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requestType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"receiverUI"</span><span class="p">:</span><span class="w"> </span><span class="mi">39329</span><span class="w">
+    </span><span class="s2">"creator"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">39266</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Billy Jean"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>for a direct request and the following for a map request:
+<code class="prettyprint">json
+{ 
+    &quot;requestId&quot;: 51239,
+    &quot;message&quot;: &quot;Can you show me what&#39;s happening there?&quot;,
+    &quot;start&quot;: &quot;2017-03-28T18:45:33.286Z&quot;,
+    &quot;end&quot;: &quot;2017-04-04T18:45:33.286Z&quot;,
+    &quot;requestType&quot;: 0,
+    &quot;location&quot;: {
+      &quot;lat&quot;: 33.7490,
+      &quot;lon&quot;: -84.3884,
+      &quot;radius&quot;: 525
+    },
+    &quot;creator&quot;: {
+      &quot;userId&quot;: 39266,
+      &quot;userName&quot;: &quot;Billy Jean&quot;,
+      &quot;userAvatar&quot;: &quot;http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg&quot;
+    }
+}
+</code>
+This endpoint retrieves a single Request by its id.</p>
+</blockquote>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/requests/&lt;ID&gt;</code></p>
+
 <h2 id="update-a-user-39-s-request-39-s-seen-status">Update a user&rsquo;s request&rsquo;s seen status</h2>
 <pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "seen": true }'</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/31832"</span> 
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
 <p>The above command returns 204 on success:</p>
 </blockquote>
