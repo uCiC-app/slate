@@ -157,3 +157,32 @@ offset | Unsigned Integer | Offset in list of commentss to start return from
 page | Unsigned Integer | Page of comments to return
 
 
+## Send a message in a conversation
+```shell
+```
+```javascript
+```
+
+> The above command returns JSON structured like this:
+
+```json
+```
+
+This endpoint sends a new message for a conversation.  The message is then returned.
+
+### HTTP Request
+
+`POST https://node.ucic.vc/api/v04/conversations/<ID>/messages/new`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+ID | UUID | The ID of the conversation to send a message for
+
+### Body Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+text | String | The message to send
+
