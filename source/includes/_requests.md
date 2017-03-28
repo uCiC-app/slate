@@ -189,7 +189,8 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	}
 }
 ```
-This endpoint retrieves a single Request by its id.
+This endpoint retrieves a single Request by its id. 
+**Note:** requestType specifies whether the Request is a Map Request (0), or Direct Request (1). The response type (image/video) is no longer decided in the Request, but by the responding client.
 
 ### HTTP Request
 
