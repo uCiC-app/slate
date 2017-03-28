@@ -159,6 +159,7 @@ page | Unsigned Integer | Page of comments to return
 
 ## Send a message in a conversation
 ```shell
+curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "text": "Gimme a new message!" }' "https://node.ucic.vc/api/v04/conversations/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/messages/new"
 ```
 ```javascript
 ```
@@ -166,6 +167,24 @@ page | Unsigned Integer | Page of comments to return
 > The above command returns JSON structured like this:
 
 ```json
+{
+  "MI": "17131",
+  "Text": "Gimme a new message!",
+  "CreateDate": "2017-03-29T05:25:52.000Z",
+  "sender": {
+    "UI": "611",
+    "Username": "Namey Nameson",
+    "Karma": "112",
+    "email": "z@z.com",
+    "rating": 4,
+    "createdAt": "2015-01-19T12:06:48.363Z",
+    "avatar": "http://staging-media.ucic.vc/media/8D33E7DA-D1FC-4DA4-B787-987916062D6D/thumb.jpg",
+    "responseCount": 56,
+    "completedRequests": 16,
+    "S_LocVisibility": 1,
+    "category": "admin"
+  }
+}
 ```
 
 This endpoint sends a new message for a conversation.  The message is then returned.
