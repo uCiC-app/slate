@@ -4,44 +4,34 @@
 
 ```shell
 curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{
-    "karma": 10,
     "location": {
         "lat": 33.7490,
-        "lon": -84.3884
+        "lon": -84.3884,
+        "radius": 750
     },
     "message": "How are you doing today?",
     "override": false,
-    "rating": 5,
-    "type": "image"
+    "requestType": 1
 }' "https://node.ucic.vc/api/v04/requests"
 ```
 
 ```javascript
+
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns a 201 success code along with a json response like:
 
 ```json
-{
-  "ReportedText": null,
-  "RI": "46985",
-  "Address": "214 Capitol Pl SW, Atlanta, GA 30303, USA",
-  "City": "Atlanta",
-  "Competes": 0,
-  "CountryCode": "US",
-  "CreatorUI": 611,
-  "End": "2017-01-05T17:44:16.603Z",
-  "Karma": 10,
-  "Lat": 33.749,
-  "Lon": -84.3884,
-  "Message": "How are you doing today?",
-  "Rating": 5,
-  "Start": "2017-01-03T17:44:16.603Z",
-  "Street": "214, Capitol Place Southwest",
-  "Type": 0,
-  "Vulgar": false,
-  "Reported": null,
-  "Country": "United States"
+{ 
+	"Code": 0,
+	"Message": ""
+}
+```
+> In the event of an error, the response will be structured as:
+
+```json
+{ 
+	"error": "ERROR_CODE"
 }
 ```
 
@@ -51,24 +41,158 @@ This endpoint creates and sends a request.
 
 POST https://node.ucic.vc/api/v04/requests
 
-### Query Parameters
+### Body Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-karma | Unsigned Integer | Karma to be awarded for this request. Default is 10
-location | { lat, lon } | location lat lon request coordinates
-message | String | Request message content body
-override | Boolean | Override time of day exception and send request anyway
-rating | Unsigned Integer | Default request rating (unused). Default is 5
-type | String | Type of request.  'image' for image or 'video' for video
-receivers | [ Unsigned Integer ] | (Optional) List of receiver user IDs
+| Parameter    | Type                 | Description                              |
+| ------------ | -------------------- | ---------------------------------------- |
+| location\*   | { lat, lon, radius } | (Optional if receiverUI is provided) location request lat lon coordinates and radius(m). |
+| message      | String               | Request message content body             |
+| override     | Boolean              | (Optional, default: false) Override time of day exception and send request anyway |
+| receiverUI\* | Unsigned Integer     | (Optional if location is provided) List of receiver user IDs |
+
+\* **Note:** one of *location* or *receiverUI* must be provided which dictates whether this request will be a map request or direct request, respectively. If both are provided, the location will be ignored.
 
 ### Errors
-Error | Meaning
----------- | -------
-400 | MAX_ACTIVE_REQUESTS_EXCEEDED -- You have too many active requests pending
-400 | REQUIRED_FIELD_MISSING -- You are missing required fields location, message, or type
-400 | REQUEST_OUTSIDE_PERMITTED_TIME -- Your request is outside the hours of 07 - 22 in the local time
+| Error | Meaning                                  |
+| ----- | ---------------------------------------- |
+| 400   | MAX_ACTIVE_REQUESTS_EXCEEDED -- You have too many active requests pending |
+| 400   | REQUIRED_FIELD_MISSING -- You are missing required fields location, message, or type |
+| 400   | REQUEST_OUTSIDE_PERMITTED_TIME -- Your request is outside the hours of 07 - 22 in the local time |
+
+## Get Nearby Requests
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/requests/nearest?lat=33.7490&lon=-84.3884"
+```
+```javascript
+
+```
+
+> The above command returns a 200 success code along with a json response like:
+
+```json
+[{ 
+	"requestId": 51239,
+	"message": "Can you show me what's happening there?",
+	"start": "2017-03-28T18:45:33.286Z",
+    "end": "2017-04-04T18:45:33.286Z",
+	"requestType": 0,
+	"location": {
+      "lat": 33.7490,
+      "lon": -84.3884,
+      "radius": 525
+	},
+	"creator": {
+      "userId": 39266,
+      "userName": "Billy Jean",
+      "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
+	}
+}, ...]
+```
+
+Retrieve the map requests that the provided coordinate falls under. A maximum of 25 Requests will be returned, sorted by recency of their creation. 
+
+### HTTP Request
+
+GET https://node.ucic.vc/api/v04/requests/nearest?lat=33.7490&lon=-84.3884
+
+### Query Parameters
+
+| Parameter | Type  | Description                 |
+| --------- | ----- | --------------------------- |
+| lat       | float | (Required) user's latitude  |
+| lon       | float | (Required) user's longitude |
+
+### Errors
+| Error | Meaning                          |
+| ----- | -------------------------------- |
+| 400   | Missing required query parameter |
+
+## Get Direct Requests
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/requests/direct"
+```
+```javascript
+
+```
+
+> The above command returns a 200 success code along with a json response like:
+
+```json
+[{ 
+	"requestId": 51239,
+	"message": "Can you show me what's happening there?",
+	"start": "2017-03-28T18:45:33.286Z",
+    "end": "2017-04-04T18:45:33.286Z",
+	"requestType": 1,
+	"receiverUI": 39329
+	"creator": {
+      "userId": 39266,
+      "userName": "Billy Jean",
+      "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
+	}
+}, ...]
+```
+
+Retrieve the direct requests for the authorized user.
+
+### HTTP Request
+
+GET https://node.ucic.vc/api/v04/requests/direct
+
+## Get Specific Request By Id
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/requests/31832" 
+```
+
+```javascript
+
+```
+> The above command returns 200 success code along with a json response like:
+
+```json
+{ 
+	"requestId": 51239,
+	"message": "Can you show me what's happening there?",
+	"start": "2017-03-28T18:45:33.286Z",
+    "end": "2017-04-04T18:45:33.286Z",
+	"requestType": 1,
+	"receiverUI": 39329
+	"creator": {
+      "userId": 39266,
+      "userName": "Billy Jean",
+      "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
+	}
+}
+```
+> for a direct request and the following for a map request:
+```json
+{ 
+	"requestId": 51239,
+	"message": "Can you show me what's happening there?",
+	"start": "2017-03-28T18:45:33.286Z",
+    "end": "2017-04-04T18:45:33.286Z",
+	"requestType": 0,
+	"location": {
+      "lat": 33.7490,
+      "lon": -84.3884,
+      "radius": 525
+	},
+	"creator": {
+      "userId": 39266,
+      "userName": "Billy Jean",
+      "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
+	}
+}
+```
+This endpoint retrieves a single Request by its id.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/requests/<ID>`
+
 
 ## Update a user's request's seen status
 
@@ -77,6 +201,7 @@ curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 ```
 
 ```javascript
+
 ```
 
 > The above command returns 204 on success:
@@ -89,7 +214,7 @@ This endpoint update's the current user's request's status.
 
 ### Body Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-seen | Boolean | Seen status of request 
+| Parameter | Type    | Description            |
+| --------- | ------- | ---------------------- |
+| seen      | Boolean | Seen status of request |
 
