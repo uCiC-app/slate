@@ -1249,7 +1249,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+  </span><span class="nt">"markers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">   </span><span class="err">//</span><span class="w"> </span><span class="err">note:</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">sent</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">layer</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="nt">"user"</span><span class="w"> </span><span class="err">(or</span><span class="w"> </span><span class="err">missing)</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39293"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">31.6659954</span><span class="p">,</span><span class="w">
     </span><span class="nt">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/58FBBD39-8172-4271-A9B0-8ED4E27A79D0/micro.jpg"</span><span class="p">,</span><span class="w">
@@ -1259,6 +1259,20 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
     </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan Jan"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="w">
   </span><span class="p">}],</span><span class="w">
+  </span><span class="nt">"requests"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">   </span><span class="err">//</span><span class="w"> </span><span class="err">note:</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">sent</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">layer</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="nt">"request"</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300038"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">45.3735</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-84.8978</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's happening over there?"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-06T19:43:39.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-13T19:43:39.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mf">7829.24</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/ADBDACEB-5D03-470C-89F5-C01C29BD8A89/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
   </span><span class="nt">"clusters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">46.09142816319215</span><span class="p">,</span><span class="w">
@@ -1278,7 +1292,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves markers and clusters on the map.</p>
+<p>This endpoint retrieves markers and clusters on the map. It supports a <em>layer</em> query parameter to specify which data type to display on the map. If not provided, it defaults to the &ldquo;user&rdquo; layer.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1317,6 +1331,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>zoom</td>
 <td>Unsigned Integer</td>
 <td>Google Maps Zoom Level to retrieve results at.  Min 0:, Max: 11</td>
+</tr>
+<tr>
+<td>layer</td>
+<td>String</td>
+<td>Specify the request map data layer. Current supported values are &ldquo;request&rdquo; and &ldquo;user&rdquo; (default)</td>
 </tr>
 </tbody></table>
 
