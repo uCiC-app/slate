@@ -14,7 +14,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 
 ```json
 {
-  "markers": [{
+  "markers": [{   // note: only sent if layer is "user" (or missing)
     "id": "39293",
     "lat": 31.6659954,
     "logo": "http://staging-media.ucic.vc/media/58FBBD39-8172-4271-A9B0-8ED4E27A79D0/micro.jpg",
@@ -24,6 +24,20 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     "title": "Khan Jan",
     "type": "user"
   }],
+  "requests": [{   // note: only sent if layer is "request"
+      "id": "300038",
+      "lat": 45.3735,
+      "lon": -84.8978,
+      "message": "What's happening over there?",
+      "start": "2017-04-06T19:43:39.000Z",
+      "end": "2017-04-13T19:43:39.000Z",
+      "radius": 7829.24,
+      "creator": {
+        "userAvatar": "https://media.ucic.vc/media/ADBDACEB-5D03-470C-89F5-C01C29BD8A89/thumb.jpg",
+        "userId": 195685,
+        "userName": "Khan"
+      }
+    }],
   "clusters": [
     {
       "lat": 46.09142816319215,
@@ -44,7 +58,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 }
 ```
 
-This endpoint retrieves markers and clusters on the map.
+This endpoint retrieves markers and clusters on the map. It supports a *layer* query parameter to specify which data type to display on the map. If not provided, it defaults to the "user" layer.
 
 ### HTTP Request
 
@@ -59,4 +73,5 @@ This endpoint retrieves markers and clusters on the map.
 | east      | Decimal (38)     | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
 | west      | Decimal (38)     | Western longitude boundary of bounding box. Max: 180, Min: -180 |
 | zoom      | Unsigned Integer | Google Maps Zoom Level to retrieve results at.  Min 0:, Max: 11 |
+| layer     | String           | Specify the request map data layer. Current supported values are "request" and "user" (default) |
 
