@@ -66,6 +66,9 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "liked": false,
         "createdAt": "2016-04-22T01:29:37.000Z",
         "metaData": {
+          "city": "Mozhaysk",
+          "region": "Moskovskaya oblast'",
+          "country": "Russia"
           "createdAt": "2017-01-25T12:00:00.000Z",
           "location": {
             "lat": 47.45,
@@ -177,6 +180,9 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "liked": false,
       "createdAt": "2016-12-10T01:58:01.653Z",
       "metaData": {
+        "city": "Mozhaysk",
+        "region": "Moskovskaya oblast'",
+        "country": "Russia"
         "createdAt": "2016-01-25T12:00:00.000Z",
         "location": {
           "lat": 47.45,
@@ -276,6 +282,9 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "liked": false,
         "createdAt": "2016-11-30T00:57:14.213Z",
         "metaData": {
+          "city": "Mozhaysk",
+          "region": "Moskovskaya oblast'",
+          "country": "Russia"
           "createdAt": "2016-01-25T12:00:00.000Z",
           "location": {
             "lat": 47.45,
@@ -387,6 +396,9 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "liked": true,
         "createdAt": "2016-12-09T19:50:12.830Z",
         "metaData": {
+          "city": "Mozhaysk",
+          "region": "Moskovskaya oblast'",
+          "country": "Russia"
           "createdAt": "2016-01-25T12:00:00.000Z",
           "location": {
             "lat": 47.45,
@@ -440,6 +452,7 @@ This endpoint retrieves the cards that the current user has responded to request
 curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/hide"
 ```
 ```javascript
+
 ```
 
 > The above command returns No Content 204
@@ -452,7 +465,7 @@ This endpoint hides a user's card.  The user must be the author of the card to h
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-ID | UUID | The ID of the card to hide
+| Parameter | Type | Description                |
+| --------- | ---- | -------------------------- |
+| ID        | UUID | The ID of the card to hide |
 

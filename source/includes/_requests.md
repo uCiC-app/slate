@@ -57,7 +57,6 @@ POST https://node.ucic.vc/api/v04/requests
 | ----- | ---------------------------------------- |
 | 400   | MAX_ACTIVE_REQUESTS_EXCEEDED -- You have too many active requests pending |
 | 400   | REQUIRED_FIELD_MISSING -- You are missing required fields location, message, or type |
-| 400   | REQUEST_OUTSIDE_PERMITTED_TIME -- Your request is outside the hours of 07 - 22 in the local time |
 
 ## Get Nearby Requests
 
@@ -77,6 +76,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 0,
+    "seen": false,
 	"location": {
       "lat": 33.7490,
       "lon": -84.3884,
@@ -126,6 +126,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 1,
+    "seen": true,
 	"receiverUI": 39329,
 	"creator": {
       "userId": 39266,
@@ -159,6 +160,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 1,
+    "seen": false,
 	"receiverUI": 39329,
 	"creator": {
       "userId": 39266,
@@ -177,6 +179,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 0,
+    "seen": false,
 	"location": {
       "lat": 33.7490,
       "lon": -84.3884,
