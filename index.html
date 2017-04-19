@@ -734,6 +734,138 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 </tr>
 </tbody></table>
 
+<h2 id="get-the-cards-for-a-request">Get the Cards for a Request</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/requests/300106/cards"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tagId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"928CF4AC-A5BF-4A8B-8C47-62E58AE1F655"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40839"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:02:37.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36001"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jack Liu"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jackjack_liu@hotmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">48.715</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.5174639</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:01:54.446Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anything interesting to see around you?"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14062"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:29:23.530Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uCiC_app"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ashley"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"responses"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-31T18:44:51.156Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EBE0C181-A0D9-4633-ABF2-436D55B36B32"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mural"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11831"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/original.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.4513854980469</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.498664855957</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:29:37.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"metaData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozhaysk"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moskovskaya oblast'"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Russia"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-25T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.45</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.93546</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E73CD7C4-35E7-4A37-9850-950E22B2BCCF"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States of America"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spaniel"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the cards for a specified request..</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/requests/&lt;ID&gt;/cards</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Integer</td>
+<td>The ID of the Request to retrieve cards for</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Unsigned Integer</td>
+<td>Maximum number of cards to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Unsigned Integer</td>
+<td>Offset in list of cards to start return from</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Unsigned Integer</td>
+<td>Page of cards to return (note: overrides offset value if both are sent)</td>
+</tr>
+</tbody></table>
+
 <h2 id="hide-a-card">Hide a Card</h2>
 <pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/hide"</span>
 </code></pre><pre class="highlight javascript"><code>
@@ -1284,7 +1416,12 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
         </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/ADBDACEB-5D03-470C-89F5-C01C29BD8A89/thumb.jpg"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
         </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carl Sagan"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/ADBDACEB-5D03-470C-89F5-C01C29BD8A89/thumb.jpg"</span><span class="w">
+      </span><span class="p">}]</span><span class="w">
     </span><span class="p">}],</span><span class="w">
   </span><span class="nt">"clusters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1666,6 +1803,118 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>seen</td>
 <td>Boolean</td>
 <td>Seen status of request</td>
+</tr>
+</tbody></table>
+
+<h2 id="renew-a-request">Renew a Request</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/renew/300106"</span> 
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 204 on success
+In the event of an error, the response will be structured as:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_CODE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows the original creator of a request to extend the end date of the request to timeOfRequest + the default request lifespan (currently 7 days).</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/requests/renew/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Integer</td>
+<td>The id of the request to renew</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>404</td>
+<td>Specified request was not found (error = REQUEST_NOT_FOUND)</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Specified request does not belong to the authorized user (error = NOT_REQUEST_OWNER)</td>
+</tr>
+</tbody></table>
+
+<h2 id="follow-a-request">Follow a Request</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/follow/300106"</span> 
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 204 on success</p>
+</blockquote>
+
+<p>This endpoint allows a user to &ldquo;follow&rdquo; a request and receive alerts and push notifications when new responses are added to it.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/requests/follow/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Integer</td>
+<td>The id of the request to renew</td>
+</tr>
+</tbody></table>
+
+<h2 id="unfollow-a-request">UnFollow a Request</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/unfollow/300106"</span> 
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 204 on success</p>
+</blockquote>
+
+<p>This endpoint allows a user to stop &ldquo;following&rdquo; a request and no longer receive alerts and push notifications when new responses are added to it.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/requests/unfollow/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Integer</td>
+<td>The id of the request to renew</td>
 </tr>
 </tbody></table>
 
@@ -2521,6 +2770,55 @@ Note: the response will contain only the field(s) that were modified by the requ
 <td>video</td>
 <td>String</td>
 <td>The request format identifier.  Unused for like</td>
+</tr>
+</tbody></table>
+
+<h2 id="response-on-followed-request">Response on followed Request</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name added a response to \"What's going on over there?\""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300101"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents a response to a request that the receiver is following. </p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and request text</td>
+</tr>
+<tr>
+<td>badge</td>
+<td>String</td>
+<td>Presently unused</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>The id of the followed request</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, Response on followed request is 14</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>The request format identifier.  Unused for this PN</td>
 </tr>
 </tbody></table>
 
