@@ -8,6 +8,7 @@ curl "https://node.ucic.vc/api/v04/events" -H "Authorization: <AUTHORIZATION_TOK
 ```
 
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -21,7 +22,8 @@ curl "https://node.ucic.vc/api/v04/events" -H "Authorization: <AUTHORIZATION_TOK
     "content": {
       "sender": 176039,
       "receiver": "18",
-      "id": "84780"
+      "id": "84780",
+      "message": "for followed request response, this is the original request message"
     },
     "thumb": null,
     "refId": "84780",
@@ -49,11 +51,11 @@ This endpoint retrieves the current user's events.
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-limit | Unsigned Integer | Maximum number of comments to return
-offset | Unsigned Integer | Offset in list of commentss to start return from
-page | Unsigned Integer | Page of comments to return
+| Parameter | Type             | Description                              |
+| --------- | ---------------- | ---------------------------------------- |
+| limit     | Unsigned Integer | Maximum number of comments to return     |
+| offset    | Unsigned Integer | Offset in list of commentss to start return from |
+| page      | Unsigned Integer | Page of comments to return               |
 
 ## Update a user's event's seen status
 
@@ -62,6 +64,7 @@ curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 ```
 
 ```javascript
+
 ```
 
 > The above command returns 204 on success:
@@ -74,7 +77,7 @@ This endpoint update's the current user's event's status.
 
 ### Body Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-seen | Boolean | Seen status of event
+| Parameter | Type    | Description          |
+| --------- | ------- | -------------------- |
+| seen      | Boolean | Seen status of event |
 

@@ -257,10 +257,10 @@ This endpoint allows the original creator of a request to extend the end date of
 | ID        | Integer | The id of the request to renew |
 
 ### Errors
-| Error | Meaning                                  |
-| ----- | ---------------------------------------- |
-| 404   | Specified request was not found (error = REQUEST_NOT_FOUND) |
-| 400   | Specified request does not belong to the authorized user (error = NOT_REQUEST_OWNER) |
+| Error | Code              | Meaning                                  |
+| ----- | ----------------- | ---------------------------------------- |
+| 404   | REQUEST_NOT_FOUND | Specified request was not found          |
+| 400   | NOT_REQUEST_OWNER | Specified request does not belong to the authorized user |
 
 ## Follow a Request
 
