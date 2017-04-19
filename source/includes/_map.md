@@ -36,7 +36,12 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
         "userAvatar": "https://media.ucic.vc/media/ADBDACEB-5D03-470C-89F5-C01C29BD8A89/thumb.jpg",
         "userId": 195685,
         "userName": "Khan"
-      }
+      },
+      "followers": [{
+        "userId": 12345,
+        "userName": "Carl Sagan",
+        "userAvatar": "https://media.ucic.vc/media/ADBDACEB-5D03-470C-89F5-C01C29BD8A89/thumb.jpg"
+      }]
     }],
   "clusters": [
     {

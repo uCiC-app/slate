@@ -22,13 +22,13 @@ This notification represents a user request for image/video.  It is sent to resp
 
 ### Notification Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-alert | String | Display text with user question and request type
-badge | String | Presently unused
-ID    | String | Request identifier (currently integer)
-type  | String | The type of notification, Request is type 0
-video | String | The request format identifier. 0 is photo and 1 is video
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text with user question and request type |
+| badge     | String | Presently unused                         |
+| ID        | String | Request identifier (currently integer)   |
+| type      | String | The type of notification, Request is type 0 |
+| video     | String | The request format identifier. 0 is photo and 1 is video |
 
 
 ## Message
@@ -51,13 +51,13 @@ This notification represents an incoming message.  It is sent to the other parti
 
 ### Notification Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-alert | String | Display text including username that sent the message 
-badge | String | Presently unused
-ID    | String | Conversation UUID
-type  | String | The type of notification, Message is type 1
-video | String | The request format identifier.  Unused for message
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username that sent the message |
+| badge     | String | Presently unused                         |
+| ID        | String | Conversation UUID                        |
+| type      | String | The type of notification, Message is type 1 |
+| video     | String | The request format identifier.  Unused for message |
 
 
 ## Response 
@@ -80,13 +80,13 @@ This notification represents an incoming response to a user's request.  It is se
 
 ### Notification Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-alert | String | Display text including username and question (always denotes 'photo' for legacy purposes)
-badge | String | Presently unused
-ID    | String | Response identifier (currently integer) 
-type  | String | The type of notification, Response is type 4
-video | String | The request format identifier.  Photo is 0 and Video is 1 
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and question (always denotes 'photo' for legacy purposes) |
+| badge     | String | Presently unused                         |
+| ID        | String | Response identifier (currently integer)  |
+| type      | String | The type of notification, Response is type 4 |
+| video     | String | The request format identifier.  Photo is 0 and Video is 1 |
 
 
 ## Comment 
@@ -109,13 +109,13 @@ This notification represents an incoming comment to a media item.  It is sent to
 
 ### Notification Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-alert | String | Display text including username and media type
-badge | String | Presently unused
-ID    | String | Related media/card UUID
-type  | String | The type of notification, Comment is type 11
-video | String | The request format identifier.  Unused for comment 
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and media type |
+| badge     | String | Presently unused                         |
+| ID        | String | Related media/card UUID                  |
+| type      | String | The type of notification, Comment is type 11 |
+| video     | String | The request format identifier.  Unused for comment |
 
 
 ## Like 
@@ -136,12 +136,38 @@ This notification represents a like to a media item.  It is sent to the media cr
 
 ### Notification Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-alert | String | Display text including username and media type
-badge | String | Presently unused
-ID    | String | Related media/card UUID
-type  | String | The type of notification, Like is type 9
-video | String | The request format identifier.  Unused for like 
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and media type |
+| badge     | String | Presently unused                         |
+| ID        | String | Related media/card UUID                  |
+| type      | String | The type of notification, Like is type 9 |
+| video     | String | The request format identifier.  Unused for like |
+
+## Response on followed Request 
+
+```json
+{
+  "data": {
+    "alert": "Name added a response to \"What's going on over there?\"",
+    "badge": "0",
+    "ID": "300101",
+    "type": "14",
+    "video": "0"
+  }
+}
+```
+
+This notification represents a response to a request that the receiver is following. 
+
+### Notification Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and request text |
+| badge     | String | Presently unused                         |
+| ID        | String | The id of the followed request           |
+| type      | String | The type of notification, Response on followed request is 14 |
+| video     | String | The request format identifier.  Unused for this PN |
 
 

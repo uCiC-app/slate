@@ -224,3 +224,90 @@ This endpoint update's the current user's request's status.
 | --------- | ------- | ---------------------- |
 | seen      | Boolean | Seen status of request |
 
+
+## Renew a Request
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/requests/renew/300106" 
+```
+
+```javascript
+
+```
+
+> The above command returns 204 on success
+> In the event of an error, the response will be structured as:
+
+```json
+{ 
+	"error": "ERROR_CODE"
+}
+```
+
+This endpoint allows the original creator of a request to extend the end date of the request to timeOfRequest + the default request lifespan (currently 7 days).
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/requests/renew/<ID>`
+
+### URL Parameters
+
+| Parameter | Type    | Description                    |
+| --------- | ------- | ------------------------------ |
+| ID        | Integer | The id of the request to renew |
+
+### Errors
+| Error | Meaning                                  |
+| ----- | ---------------------------------------- |
+| 404   | Specified request was not found (error = REQUEST_NOT_FOUND) |
+| 400   | Specified request does not belong to the authorized user (error = NOT_REQUEST_OWNER) |
+
+## Follow a Request
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/requests/follow/300106" 
+```
+
+```javascript
+
+```
+
+> The above command returns 204 on success
+
+
+This endpoint allows a user to "follow" a request and receive alerts and push notifications when new responses are added to it.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/requests/follow/<ID>`
+
+### URL Parameters
+
+| Parameter | Type    | Description                    |
+| --------- | ------- | ------------------------------ |
+| ID        | Integer | The id of the request to renew |
+
+## UnFollow a Request
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/requests/unfollow/300106" 
+```
+
+```javascript
+
+```
+
+> The above command returns 204 on success
+
+
+This endpoint allows a user to stop "following" a request and no longer receive alerts and push notifications when new responses are added to it.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/requests/unfollow/<ID>`
+
+### URL Parameters
+
+| Parameter | Type    | Description                    |
+| --------- | ------- | ------------------------------ |
+| ID        | Integer | The id of the request to renew |
