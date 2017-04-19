@@ -1812,12 +1812,18 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <h2 id="renew-a-request">Renew a Request</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/renew/300106"</span> 
 </code></pre><pre class="highlight javascript"><code><span class="p">{</span>
-  <span class="s2">"newEnd"</span><span class="p">:</span> <span class="s2">"2017-04-20T16:20:00.000Z"</span>
+
 <span class="p">}</span>
 </code></pre>
 <blockquote>
-<p>The above command returns 200 on success
-In the event of an error, the response will be structured as:</p>
+<p>The above command returns 200 on success along with a response structured as:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"newEnd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-20T16:20:00.000Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>In the event of an error, the response will be structured as:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w"> 
     </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_CODE"</span><span class="w">
