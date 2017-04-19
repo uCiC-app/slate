@@ -233,11 +233,17 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 
 ```javascript
 {
-  "newEnd": "2017-04-20T16:20:00.000Z"
+  
 }
 ```
 
 > The above command returns 200 on success
+
+```json
+{ 
+	"newEnd": "2017-04-20T16:20:00.000Z"
+}
+```
 > In the event of an error, the response will be structured as:
 
 ```json
