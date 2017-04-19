@@ -237,7 +237,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 }
 ```
 
-> The above command returns 200 on success
+> The above command returns 200 on success along with a response structured as:
 
 ```json
 { 
