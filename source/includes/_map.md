@@ -32,6 +32,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
       "start": "2017-04-06T19:43:39.000Z",
       "end": "2017-04-13T19:43:39.000Z",
       "radius": 7829.24,
+      "responseCount": 2,
       "creator": {
         "userAvatar": "https://media.ucic.vc/media/ADBDACEB-5D03-470C-89F5-C01C29BD8A89/thumb.jpg",
         "userId": 195685,

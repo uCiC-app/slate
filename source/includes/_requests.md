@@ -76,6 +76,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 0,
+    "responseCount": 1,
     "seen": false,
 	"location": {
       "lat": 33.7490,
@@ -126,6 +127,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 1,
+    "responseCount": 2,
     "seen": true,
 	"receiverUI": 39329,
 	"creator": {
@@ -160,6 +162,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 1,
+    "responseCount": 3,
     "seen": false,
 	"receiverUI": 39329,
 	"creator": {
@@ -179,6 +182,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 0,
+    "responseCount": 0,
     "seen": false,
 	"location": {
       "lat": 33.7490,
