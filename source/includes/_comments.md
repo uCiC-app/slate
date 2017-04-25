@@ -6,6 +6,7 @@
 curl "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"  -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -38,17 +39,17 @@ This endpoint retrieves the comments for a card.  Comments are sorted in descend
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-ID | UUID | The ID of the card to retrieve comments for
+| Parameter | Type | Description                              |
+| --------- | ---- | ---------------------------------------- |
+| ID        | UUID | The ID of the card to retrieve comments for |
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-limit | Unsigned Integer | Maximum number of comments to return
-offset | Unsigned Integer | Offset in list of commentss to start return from
-page | Unsigned Integer | Page of comments to return
+| Parameter | Type             | Description                              |
+| --------- | ---------------- | ---------------------------------------- |
+| limit     | Unsigned Integer | Maximum number of comments to return     |
+| offset    | Unsigned Integer | Offset in list of commentss to start return from |
+| page      | Unsigned Integer | Page of comments to return               |
 
 
 ## Create a Comment for a Card
@@ -57,6 +58,7 @@ page | Unsigned Integer | Page of comments to return
 curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "text": "Adding a comment to a card" }' "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"
 ```
 ```javascript
+
 ```
 
 > The above command returns Created 201 with the new comment:
@@ -84,13 +86,13 @@ This endpoint creates a comment for a card.
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-ID | UUID | The ID of the card to create a comment 
+| Parameter | Type | Description                            |
+| --------- | ---- | -------------------------------------- |
+| ID        | UUID | The ID of the card to create a comment |
 
 ### Request Body
 
-Parameter | Type | Description
---------- | ---- | -----------
-text | String | The comment body text
+| Parameter | Type   | Description           |
+| --------- | ------ | --------------------- |
+| text      | String | The comment body text |
 

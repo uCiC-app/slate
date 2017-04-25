@@ -16,6 +16,7 @@ includes:
   - conversations
   - events
   - map
+  - mobile
   - questions
   - requests
   - responses
@@ -68,11 +69,11 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 Idempotency is supported for retrying POST requests.  To make an idempotent request, add the Idempotency-Key header with a string value.  This key along with the user, route, and response are stored in redis.  If the provided idempotency key for the same user and route is found in redis, the cached response is returned (instead of processing the request).  Redis will expire the key after 24 hours.
 
 ### Header Parameter
-Paramter | Type | Description
---------- | ---- | -----------
-Idempotency-Key | String | The client generated idempotency key for the provided post request
+| Paramter        | Type   | Description                              |
+| --------------- | ------ | ---------------------------------------- |
+| Idempotency-Key | String | The client generated idempotency key for the provided post request |
 
 ### Response Codes
-Paramter | Type | Description
---------- | ---- | -----------
-Retry-After | 503 | if an Idempotent request matching an existing Idempotent request which is still being processed arrives, a Retry-After 503 is returned requesting that the request wait until the prior idempotent request completes.
+| Paramter    | Type | Description                              |
+| ----------- | ---- | ---------------------------------------- |
+| Retry-After | 503  | if an Idempotent request matching an existing Idempotent request which is still being processed arrives, a Retry-After 503 is returned requesting that the request wait until the prior idempotent request completes. |
