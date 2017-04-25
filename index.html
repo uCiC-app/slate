@@ -900,7 +900,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 
 <h2 id="get-a-card-39-s-comments">Get a Card&rsquo;s Comments</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"</span>  -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -972,7 +973,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 
 <h2 id="create-a-comment-for-a-card">Create a Comment for a Card</h2>
 <pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "text": "Adding a comment to a card" }'</span> <span class="s2">"https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/comments"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
 <p>The above command returns Created 201 with the new comment:</p>
 </blockquote>
@@ -1490,6 +1492,44 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>layer</td>
 <td>String</td>
 <td>Specify the request map data layer. Current supported values are &ldquo;request&rdquo; and &ldquo;user&rdquo; (default)</td>
+</tr>
+</tbody></table>
+
+          <h1 id="mobile">Mobile</h1>
+
+<h2 id="get-minimum-and-latest-app-versions">Get Minimum and Latest App Versions</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/mobile/versions"</span>  -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"minVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"latestVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.7"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>This endpoint retrieves the current latest and minimum supported app versions for the requesting client. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/mobile/versions</code></p>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>UNSUPPORTED_USER_AGENT</td>
+<td>The user-agent string sent with the request does not match a recognized uCiC Mobile Client</td>
 </tr>
 </tbody></table>
 
