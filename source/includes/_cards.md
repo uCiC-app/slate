@@ -554,6 +554,7 @@ This endpoint retrieves the cards for a specified request..
 | --------- | ---------------- | ---------------------------------------- |
 | limit     | Unsigned Integer | Maximum number of cards to return        |
 | offset    | Unsigned Integer | Offset in list of cards to start return from |
+| sort      | String           | Specifies the order to return cards in. Supports a value of 'distance' with which returned cards will be ordered by their distance from the original request location (closest response first). If not specified (or any other value provided), defaults to sorting by most recently created cards first. |
 | page      | Unsigned Integer | Page of cards to return (note: overrides offset value if both are sent) |
 
 ## Hide a Card
