@@ -83,6 +83,10 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
       "lon": -84.3884,
       "radius": 525
 	},
+    "discoverResponses": [{  // up to 3 entries in this array
+        "type": 0,
+        "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
+    }]
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
@@ -130,6 +134,10 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
     "responseCount": 2,
     "seen": true,
 	"receiverUI": 39329,
+    "discoverResponses": [{  // up to 3 entries in array
+        "type": 0,
+        "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
+    }]
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
@@ -184,6 +192,10 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"requestType": 0,
     "responseCount": 0,
     "seen": false,
+    "discoverResponses": [{  // up to 3 entries in array
+        "type": 0,
+        "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
+    }]
 	"location": {
       "lat": 33.7490,
       "lon": -84.3884,
