@@ -1232,7 +1232,7 @@ have access to this conversation.  Messages are sorted in createdAt descending o
 </tbody></table>
 
 <h2 id="send-a-message-in-a-conversation">Send a message in a conversation</h2>
-<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "text": "Gimme a new message!" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/conversations/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/messages/new"</span>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "text": "Gimme a new message!" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/conversations/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/messages"</span>
 </code></pre><pre class="highlight javascript"><code></code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1260,7 +1260,7 @@ have access to this conversation.  Messages are sorted in createdAt descending o
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/conversations/&lt;ID&gt;/messages/new</code></p>
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/conversations/&lt;ID&gt;/messages</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
