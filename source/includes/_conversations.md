@@ -159,7 +159,7 @@ page | Unsigned Integer | Page of comments to return
 
 ## Send a message in a conversation
 ```shell
-curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "text": "Gimme a new message!" }' "https://node.ucic.vc/api/v04/conversations/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/messages/new"
+curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "text": "Gimme a new message!" }' "https://node.ucic.vc/api/v04/conversations/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/messages"
 ```
 ```javascript
 ```
@@ -191,7 +191,7 @@ This endpoint sends a new message for a conversation.  The message is then retur
 
 ### HTTP Request
 
-`POST https://node.ucic.vc/api/v04/conversations/<ID>/messages/new`
+`POST https://node.ucic.vc/api/v04/conversations/<ID>/messages`
 
 ### URL Parameters
 
