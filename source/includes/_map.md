@@ -35,6 +35,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
       "responseCount": 2,
       "discoverResponses": [{  // up to 3 entries in array
         "type": 0,
+      	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
         "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
       }],
       "creator": {
