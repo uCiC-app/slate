@@ -85,6 +85,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	},
     "discoverResponses": [{  // up to 3 entries in this array
         "type": 0,
+        "badge": "https://media.ucic.vc/assets/tags/CA.png",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
         "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
     }],
@@ -137,6 +138,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"receiverUI": 39329,
     "discoverResponses": [{  // up to 3 entries in array
         "type": 0,
+        "badge": "https://media.ucic.vc/assets/tags/CA.png",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
         "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
     }],
@@ -177,6 +179,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"receiverUI": 39329,
     "discoverResponses": [{  // up to 3 entries in array
         "type": 0,
+        "badge": "https://media.ucic.vc/assets/tags/CA.png",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
         "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
     }],
@@ -201,6 +204,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
     "seen": false,
     "discoverResponses": [{  // up to 3 entries in array
         "type": 0,
+        "badge": "https://media.ucic.vc/assets/tags/CA.png",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
         "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
     }],
