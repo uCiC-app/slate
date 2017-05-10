@@ -181,7 +181,8 @@ This endpoint retrieves all themes based on Requests. The most recently responde
 
 ### Query Parameters
 
-| Parameter | Default          | Description                              |
+| Parameter | Type             | Description                              |
 | --------- | ---------------- | ---------------------------------------- |
 | limit     | Unsigned Integer | Maximum number of themes to return       |
 | offset    | Unsigned Integer | Offset in list of themes to start return from |
+| sort      | String<'latestResponse:desc','totalLikes:desc','latestLike:desc' | Sort order, default is 'latestResponse:desc'
