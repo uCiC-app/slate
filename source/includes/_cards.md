@@ -63,6 +63,7 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "lon": -80.498664855957,
         "mimeType": "image/jpeg",
         "likes": 28,
+        "badge": "https://media.ucic.vc/assets/tags/RU.png",
         "liked": false,
         "createdAt": "2016-04-22T01:29:37.000Z",
         "metaData": {
@@ -177,6 +178,7 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "lon": -80.495723,
       "mimeType": "image/png",
       "likes": 10,
+      "badge": "https://media.ucic.vc/assets/tags/RU.png",
       "liked": false,
       "createdAt": "2016-12-10T01:58:01.653Z",
       "metaData": {
@@ -279,6 +281,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "lon": -80.4984725455851,
         "mimeType": "image/jpeg",
         "likes": 10,
+        "badge": "https://media.ucic.vc/assets/tags/RU.png",
         "liked": false,
         "createdAt": "2016-11-30T00:57:14.213Z",
         "metaData": {
@@ -393,6 +396,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "lon": -43.2095869,
         "mimeType": "video/mp4",
         "likes": 10,
+        "badge": "https://media.ucic.vc/assets/tags/RU.png",
         "liked": true,
         "createdAt": "2016-12-09T19:50:12.830Z",
         "metaData": {
@@ -508,6 +512,7 @@ curl "https://node.ucic.vc/api/v04/requests/300106/cards" -H "Authorization: <AU
         "lon": -80.498664855957,
         "mimeType": "image/jpeg",
         "likes": 28,
+        "badge": "https://media.ucic.vc/assets/tags/RU.png",
         "liked": false,
         "createdAt": "2016-04-22T01:29:37.000Z",
         "metaData": {
