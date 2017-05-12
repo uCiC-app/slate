@@ -138,7 +138,7 @@ curl "https://node.ucic.vc/api/v05/themes/requests" -H "Authorization: <AUTHORIZ
         "userAvatar": "https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"
       }
     ],
-    "discoverResponses": [  // up to 3 entries in this array
+    "discoverResponses": [  // up to 10 entries in this array
       {
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",

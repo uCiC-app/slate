@@ -83,7 +83,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
       "lon": -84.3884,
       "radius": 525
 	},
-    "discoverResponses": [{  // up to 3 entries in this array
+    "discoverResponses": [{  // up to 10 entries in this array
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
@@ -136,7 +136,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
     "responseCount": 2,
     "seen": true,
 	"receiverUI": 39329,
-    "discoverResponses": [{  // up to 3 entries in array
+    "discoverResponses": [{  // up to 10 entries in array
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
@@ -177,7 +177,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
     "responseCount": 3,
     "seen": false,
 	"receiverUI": 39329,
-    "discoverResponses": [{  // up to 3 entries in array
+    "discoverResponses": [{  // up to 10 entries in array
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
@@ -202,7 +202,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"requestType": 0,
     "responseCount": 0,
     "seen": false,
-    "discoverResponses": [{  // up to 3 entries in array
+    "discoverResponses": [{  // up to 10 entries in array
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
