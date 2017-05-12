@@ -752,6 +752,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
     </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40839"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:02:37.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"following"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36001"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -863,11 +864,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 <td>offset</td>
 <td>Unsigned Integer</td>
 <td>Offset in list of cards to start return from</td>
-</tr>
-<tr>
-<td>sort</td>
-<td>String</td>
-<td>Specifies the order to return cards in. Supports a value of &#39;distance&rsquo; with which returned cards will be ordered by their distance from the original request location (closest response first). If not specified (or any other value provided), defaults to sorting by most recently created cards first.</td>
 </tr>
 <tr>
 <td>page</td>
