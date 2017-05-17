@@ -9,9 +9,9 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
         "lon": -84.3884,
         "radius": 750
     },
+    "receiverUI": 197244,
     "message": "How are you doing today?",
-    "override": false,
-    "requestType": 1
+    "override": false
 }' "https://node.ucic.vc/api/v04/requests"
 ```
 
@@ -35,7 +35,7 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 }
 ```
 
-This endpoint creates and sends a request.
+This endpoint creates and sends a request. 
 
 ### HTTP Request
 
@@ -45,12 +45,12 @@ POST https://node.ucic.vc/api/v04/requests
 
 | Parameter    | Type                 | Description                              |
 | ------------ | -------------------- | ---------------------------------------- |
-| location\*   | { lat, lon, radius } | (Optional if receiverUI is provided) location request lat lon coordinates and radius(m). |
-| message      | String               | Request message content body             |
+| location\*   | { lat, lon, radius } | (Optional) location request lat lon coordinates and radius(m). |
+| message      | String               | Request message content body (required)  |
 | override     | Boolean              | (Optional, default: false) Override time of day exception and send request anyway |
-| receiverUI\* | Unsigned Integer     | (Optional if location is provided) List of receiver user IDs |
+| receiverUI\* | Unsigned Integer     | (Optional) List of receiver user IDs     |
 
-\* **Note:** one of *location* or *receiverUI* must be provided which dictates whether this request will be a map request or direct request, respectively. If both are provided, the location will be ignored.
+\* **Note:** The use of *location* or *receiverUI* or **neither** dictates what kind of request is created. If *receiverUI* is provided, it will become a direct request. If a *location* is provided, it'll become a map request (if both, a direct request). If neither is provided, it will become a global request.
 
 ### Errors
 | Error | Meaning                                  |
@@ -155,6 +155,53 @@ Retrieve the direct requests for the authorized user.
 ### HTTP Request
 
 GET https://node.ucic.vc/api/v04/requests/direct
+
+## Get Global Requests
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/requests/global"
+```
+```javascript
+
+```
+
+> The above command returns a 200 success code along with a json response like:
+
+```json
+[{ 
+	"requestId": 51239,
+	"message": "Can you show me what's happening there?",
+	"start": "2017-03-28T18:45:33.286Z",
+    "end": "2017-04-04T18:45:33.286Z",
+	"requestType": 2,
+    "responseCount": 2,
+    "seen": false,
+    "discoverResponses": [{  // up to 10 entries in array
+        "type": 0,
+        "badge": "https://media.ucic.vc/assets/tags/CA.png",
+      	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
+        "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
+    }],
+	"creator": {
+      "userId": 39266,
+      "userName": "Billy Jean",
+      "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
+	}
+}, ...]
+```
+
+Retrieve global requests in order of most recent first. Route supports pagination.
+
+### HTTP Request
+
+GET https://node.ucic.vc/api/v04/requests/global
+
+### Query Parameters
+
+| Parameter | Type    | Description                              |
+| --------- | ------- | ---------------------------------------- |
+| limit     | Integer | Maximum number of requests to return     |
+| offset    | Integer | Offset in list of requests to start return from |
 
 ## Get Specific Request By Id
 
