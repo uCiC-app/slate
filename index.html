@@ -1608,9 +1608,9 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
         "lon": -84.3884,
         "radius": 750
     },
+    "receiverUI": 197244,
     "message": "How are you doing today?",
-    "override": false,
-    "requestType": 1
+    "override": false
 }'</span> <span class="s2">"https://node.ucic.vc/api/v04/requests"</span>
 </code></pre><pre class="highlight javascript"><code>
 </code></pre>
@@ -1629,7 +1629,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
     </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_CODE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates and sends a request.</p>
+<p>This endpoint creates and sends a request. </p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1647,12 +1647,12 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>location*</td>
 <td>{ lat, lon, radius }</td>
-<td>(Optional if receiverUI is provided) location request lat lon coordinates and radius(m).</td>
+<td>(Optional) location request lat lon coordinates and radius(m).</td>
 </tr>
 <tr>
 <td>message</td>
 <td>String</td>
-<td>Request message content body</td>
+<td>Request message content body (required)</td>
 </tr>
 <tr>
 <td>override</td>
@@ -1662,11 +1662,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>receiverUI*</td>
 <td>Unsigned Integer</td>
-<td>(Optional if location is provided) List of receiver user IDs</td>
+<td>(Optional) List of receiver user IDs</td>
 </tr>
 </tbody></table>
 
-<p>* <strong>Note:</strong> one of <em>location</em> or <em>receiverUI</em> must be provided which dictates whether this request will be a map request or direct request, respectively. If both are provided, the location will be ignored.</p>
+<p>* <strong>Note:</strong> The use of <em>location</em> or <em>receiverUI</em> or <strong>neither</strong> dictates what kind of request is created. If <em>receiverUI</em> is provided, it will become a direct request. If a <em>location</em> is provided, it&rsquo;ll become a map request (if both, a direct request). If neither is provided, it will become a global request.</p>
 
 <h3 id="errors">Errors</h3>
 
@@ -1794,6 +1794,61 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <h3 id="http-request">HTTP Request</h3>
 
 <p>GET https://node.ucic.vc/api/v04/requests/direct</p>
+
+<h2 id="get-global-requests">Get Global Requests</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/global"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success code along with a json response like:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w"> 
+    </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requestType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"responseCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"discoverResponses"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">up</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">10</span><span class="w"> </span><span class="err">entries</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">array</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F3A0F6F1-E61B-43E0-B78E-9309E0E60A55"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">39266</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Billy Jean"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Retrieve global requests in order of most recent first. Route supports pagination.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>GET https://node.ucic.vc/api/v04/requests/global</p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Maximum number of requests to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>Offset in list of requests to start return from</td>
+</tr>
+</tbody></table>
 
 <h2 id="get-specific-request-by-id">Get Specific Request By Id</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/31832"</span> 
