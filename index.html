@@ -1375,10 +1375,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </code></pre><pre class="highlight javascript"><code>
 </code></pre>
 <blockquote>
-<p>The above command returns 204 on success:</p>
+<p>The above command returns 204 on success</p>
 </blockquote>
 
-<p>This endpoint update&rsquo;s the current user&rsquo;s event&rsquo;s status.</p>
+<p>This endpoint updates the current user&rsquo;s event&rsquo;s status.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1399,6 +1399,20 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>Seen status of event</td>
 </tr>
 </tbody></table>
+
+<h2 id="update-all-user-39-s-events-to-seen">Update all user&rsquo;s events to seen</h2>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{}'</span> <span class="s2">"https://node.ucic.vc/api/v04/events/bulkSeen"</span> 
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 204 on success:</p>
+</blockquote>
+
+<p>This endpoint marks all of the user&rsquo;s events as seen. No body parameters are necessary.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://node.ucic.vc/api/v04/events/bulkSeen</code></p>
 
           <h1 id="map">Map</h1>
 
@@ -1925,10 +1939,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </code></pre><pre class="highlight javascript"><code>
 </code></pre>
 <blockquote>
-<p>The above command returns 204 on success:</p>
+<p>The above command returns 204 on success</p>
 </blockquote>
 
-<p>This endpoint update&rsquo;s the current user&rsquo;s request&rsquo;s status.</p>
+<p>This endpoint updates the current user&rsquo;s request&rsquo;s status.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1947,6 +1961,50 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>seen</td>
 <td>Boolean</td>
 <td>Seen status of request</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-multiple-request-39-s-seen-status">Update multiple request&rsquo;s seen status</h2>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "requestIds": ['</span>300102<span class="s1">', '</span>300120<span class="s1">'] }'</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/bulkSeen"</span> 
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 204 on success</p>
+</blockquote>
+
+<p>This endpoint updates the current user&rsquo;s request&rsquo;s status to seen for all provided request identifiers.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://node.ucic.vc/api/v04/requests/bulkSeen</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>requestIds</td>
+<td>String Array</td>
+<td>Array of request identifiers which will be marked as seen</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Missing required field. Sent if requestIds is not present, or is not an array</td>
 </tr>
 </tbody></table>
 
@@ -2738,6 +2796,25 @@ Note: the response will contain only the field(s) that were modified by the requ
 <td>Server encountered an error</td>
 </tr>
 </tbody></table>
+
+<h2 id="unseen-items">Unseen Items</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/unseenCounts"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success status along with a response body structured as shown:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"unseenEvents"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"unseenConversations"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"unseenDirectRequests"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"unseenGlobalRequests"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This route returns the itemized counts of various items in the app that the user&rsquo;s client has not yet marked as seen. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/unseenCounts</code></p>
 
 <h2 id="logout">Logout</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/logout"</span>
