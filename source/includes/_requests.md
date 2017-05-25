@@ -285,9 +285,9 @@ curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 
 ```
 
-> The above command returns 204 on success:
+> The above command returns 204 on success
 
-This endpoint update's the current user's request's status.
+This endpoint updates the current user's request's status.
 
 ### HTTP Request
 
@@ -299,6 +299,31 @@ This endpoint update's the current user's request's status.
 | --------- | ------- | ---------------------- |
 | seen      | Boolean | Seen status of request |
 
+##Update multiple request's seen status
+```shell
+curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "requestIds": ['300102', '300120'] }' "https://node.ucic.vc/api/v04/requests/bulkSeen" 
+```
+```javascript
+
+```
+> The above command returns 204 on success
+
+This endpoint updates the current user's request's status to seen for all provided request identifiers.
+
+### HTTP Request
+
+`PUT https://node.ucic.vc/api/v04/requests/bulkSeen`
+
+### Body Parameters
+
+| Parameter  | Type         | Description                              |
+| ---------- | ------------ | ---------------------------------------- |
+| requestIds | String Array | Array of request identifiers which will be marked as seen |
+
+### Errors
+| Error | Meaning                                  |
+| ----- | ---------------------------------------- |
+| 400   | Missing required field. Sent if requestIds is not present, or is not an array |
 
 ## Renew a Request
 

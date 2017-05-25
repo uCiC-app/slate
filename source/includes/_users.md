@@ -143,7 +143,26 @@ This endpoint allows the clients to update user information. Specifically, the m
 | 401   | Unauthorized, authorization token was rejected |
 | 500   | Server encountered an error              |
 
+##Unseen Items
 
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/unseenCounts"
+```
+> The above command returns a 200 success status along with a response body structured as shown:
+
+```json
+{
+  "unseenEvents": 1,
+  "unseenConversations": 5,
+  "unseenDirectRequests": 1,
+  "unseenGlobalRequests": 10
+}
+```
+This route returns the itemized counts of various items in the app that the user's client has not yet marked as seen. 
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/users/unseenCounts`
 
 ##Logout
 

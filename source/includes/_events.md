@@ -67,9 +67,9 @@ curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 
 ```
 
-> The above command returns 204 on success:
+> The above command returns 204 on success
 
-This endpoint update's the current user's event's status.
+This endpoint updates the current user's event's status.
 
 ### HTTP Request
 
@@ -81,3 +81,18 @@ This endpoint update's the current user's event's status.
 | --------- | ------- | -------------------- |
 | seen      | Boolean | Seen status of event |
 
+## Update all user's events to seen
+
+```shell
+curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{}' "https://node.ucic.vc/api/v04/events/bulkSeen" 
+```
+```javascript
+
+```
+> The above command returns 204 on success:
+
+This endpoint marks all of the user's events as seen. No body parameters are necessary.
+
+### HTTP Request
+
+`PUT https://node.ucic.vc/api/v04/events/bulkSeen`
