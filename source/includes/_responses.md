@@ -129,6 +129,8 @@ Response response = client.newCall(request).execute();
 
 This endpoint creates a response for a request.
 
+**Note:** The `metadata.uploaded` integer flag is used to distinguish captured (0) vs attached (1) media in the response. If not provided, the server will assume the media was captured, unless one of the other metadata fields are provided, which implicitly indicates that the media is attached.
+
 ### HTTP Request
 
 `POST https://node.ucic.vc/api/v04/responses`
@@ -147,5 +149,5 @@ This endpoint creates a response for a request.
 | contentType        | String                                   | The content type                         |
 | requestId          | Integer                                  | The request identifier                   |
 | previewContentType | String                                   | (Required with video) The preview content type |
-| metadata           | Object { lat: double, lon: double, createdAt: Date } | (Optional) additional metadata about the attached media. Date is an ISO 8601 String. All subfields are optional. |
+| metadata           | Object { lat: double, lon: double, createdAt: Date, uploaded: Integer } | Additional metadata about the media. Date is an ISO 8601 String. All subfields are optional. The `uploaded` field tells the server if the client captured the media during the response flow (`uploaded: 0`) or attached an existing piece of media (`uploaded:1`). |
 

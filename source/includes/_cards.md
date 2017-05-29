@@ -20,6 +20,7 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
     "request": {
       "id": "40839",
       "createdAt": "2016-04-22T01:02:37.000Z",
+      "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "sender": {
         "id": "36001",
         "login": null,
@@ -71,6 +72,7 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
           "city": "Mozhaysk",
           "region": "Moskovskaya oblast'",
           "country": "Russia",
+          "uploaded": 1,  // 0 = captured in-app, 1 = attached
           "createdAt": "2017-01-25T12:00:00.000Z",
           "location": {
             "lat": 47.45,
@@ -136,6 +138,7 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
   "request": {
     "id": "46154",
     "createdAt": "2016-12-09T22:40:22.100Z",
+    "requestType": 0,   // 0 = map, 1 = direct, 2 = global
     "sender": {
       "id": "38988",
       "login": null,
@@ -187,6 +190,7 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
         "city": "Mozhaysk",
         "region": "Moskovskaya oblast'",
         "country": "Russia",
+        "uploaded": 1,
         "createdAt": "2016-01-25T12:00:00.000Z",
         "location": {
           "lat": 47.45,
@@ -243,6 +247,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
     "request": {
       "id": "45691",
       "createdAt": "2016-11-28T18:15:15.166Z",
+      "requestType": 2,   // 0 = map, 1 = direct, 2 = global
       "sender": {
         "id": "611",
         "login": "z",
@@ -291,6 +296,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
           "city": "Mozhaysk",
           "region": "Moskovskaya oblast'",
           "country": "Russia",
+          "uploaded": 1,
           "createdAt": "2016-01-25T12:00:00.000Z",
           "location": {
             "lat": 47.45,
@@ -359,6 +365,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
     "request": {
       "id": "45220",
       "createdAt": "2016-11-08T23:01:13.260Z",
+      "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "sender": {
         "id": "38992",
         "login": null,
@@ -407,6 +414,7 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
           "city": "Mozhaysk",
           "region": "Moskovskaya oblast'",
           "country": "Russia",
+          "uploaded": 0,
           "createdAt": "2016-01-25T12:00:00.000Z",
           "location": {
             "lat": 47.45,
@@ -473,6 +481,7 @@ curl "https://node.ucic.vc/api/v04/requests/300106/cards" -H "Authorization: <AU
     "request": {
       "id": "40839",
       "createdAt": "2016-04-22T01:02:37.000Z",
+      "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "following": true,
       "sender": {
         "id": "36001",
@@ -525,6 +534,7 @@ curl "https://node.ucic.vc/api/v04/requests/300106/cards" -H "Authorization: <AU
           "city": "Mozhaysk",
           "region": "Moskovskaya oblast'",
           "country": "Russia",
+          "uploaded": 0,
           "createdAt": "2017-01-25T12:00:00.000Z",
           "location": {
             "lat": 47.45,
