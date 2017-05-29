@@ -17,7 +17,7 @@ curl "https://node.ucic.vc/api/v04/questions?lang=fr" -H "Authorization: <AUTHOR
   {
     "id":          "98B69E4B-08DF-4C8F-B10F-1A224CF737BC",
     "question":    "How's the sunset there?",
-    "category":    "ucic",
+    "category":    "dynamic",
     "translation": "Comment est le coucher du soleil l?-bas?"
   }
 ]
@@ -34,9 +34,11 @@ The questions attempt to pull in data sources for the askee's location (and any 
 
 ### Url Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| lang      | String | UTF8 Language Code.  Default is 'en'     |
-| lat       | Double | latitude coord of askee. Used to populate dynamic quesiton components |
-| lon       | Double | longitude coord of askee. Used to populate dynamic quesiton components |
+| Parameter | Type    | Description                              |
+| --------- | ------- | ---------------------------------------- |
+| lang      | String  | UTF8 Language Code.  Default is 'en'     |
+| lat       | Double  | latitude coord of askee. Used to populate dynamic quesiton components |
+| lon       | Double  | longitude coord of askee. Used to populate dynamic quesiton components |
+| category  | String  | Which category of questions to return. Currently supports `'dynamic'` (default), and `'global'`. **Note:** previous categories that have been deprecated will be overridden by 'dynamic' when used. Deprecated categories are: {'ucic', 'intro2', 'onboarding'} |
+| limit     | Integer | Maximum number of questions to return (optional). Defaults to 20 |
 
