@@ -10,6 +10,7 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
         "radius": 750
     },
     "receiverUI": 197244,
+    "questionId": "50b08a47-608f-41d6-a788-dcc9b34d3c9f",
     "message": "How are you doing today?",
     "override": false
 }' "https://node.ucic.vc/api/v04/requests"
@@ -47,6 +48,7 @@ POST https://node.ucic.vc/api/v04/requests
 | ------------ | -------------------- | ---------------------------------------- |
 | location\*   | { lat, lon, radius } | (Optional) location request lat lon coordinates and radius(m). |
 | message      | String               | Request message content body (required)  |
+| questionId      | String               | (Optional) The id of the question the user chose from the suggested questions list if they did not write their own.  |
 | override     | Boolean              | (Optional, default: false) Override time of day exception and send request anyway |
 | receiverUI\* | Unsigned Integer     | (Optional) List of receiver user IDs     |
 
