@@ -1658,6 +1658,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
         "radius": 750
     },
     "receiverUI": 197244,
+    "questionId": "50b08a47-608f-41d6-a788-dcc9b34d3c9f",
     "message": "How are you doing today?",
     "override": false
 }'</span> <span class="s2">"https://node.ucic.vc/api/v04/requests"</span>
@@ -1702,6 +1703,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>message</td>
 <td>String</td>
 <td>Request message content body (required)</td>
+</tr>
+<tr>
+<td>questionId</td>
+<td>String</td>
+<td>(Optional) The id of the question the user chose from the suggested questions list if they did not write their own.</td>
 </tr>
 <tr>
 <td>override</td>
@@ -2340,6 +2346,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>previewContentType</td>
 <td>String</td>
 <td>(Required with video) The preview content type</td>
+</tr>
+<tr>
+<td>questionId</td>
+<td>String</td>
+<td>(Optional) The</td>
 </tr>
 <tr>
 <td>metadata</td>
