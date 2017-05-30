@@ -161,6 +161,7 @@ curl "https://node.ucic.vc/api/v05/themes/requests" -H "Authorization: <AUTHORIZ
     "creator": {
       "userId": 414383,
       "userName": "Safe 2",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png",
       "userAvatar": "https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"
     },
     "location": {         // only present when requestType = 0
