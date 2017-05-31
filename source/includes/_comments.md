@@ -21,6 +21,7 @@ curl "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/com
     "createdAt": "2016-12-18T22:18:04.000Z",
     "creator": {
       "UI": "611",
+      "badge": "https://media.ucic.vc/assets/tags/RU.png",
       "avatar": "http://staging-media.ucic.vc/media/8D33E7DA-D1FC-4DA4-B787-987916062D6D/thumb.png",
       "Username": "John Doe",
       "email": "z@z.com",
