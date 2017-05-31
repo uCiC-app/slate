@@ -201,13 +201,13 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 <p>The thumbor server is used by generating a new URL to request the image from based on the original image URL, the client&rsquo;s desired image specifications and the URL of the thumbor server.</p>
 
 <p>For example, given the original image URL
-https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</p>
+<code class="prettyprint">https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</code></p>
 
 <p>Say the client only has 150x200 pixels to display the image in. We create a new URL to request it as</p>
 
-<p>https://thumbor.ucic.vc/<Security_Hash>/150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</p>
+<p><code class="prettyprint">https://thumbor.ucic.vc/{Security_Hash}/150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</code></p>
 
-<p>where https://thumbor.ucic.vc is the uCiC Thumbor server address.</p>
+<p>where <code class="prettyprint">https://thumbor.ucic.vc</code> is the uCiC Thumbor server address.</p>
 
 <p>The Security_Hash is generated as follows:
 Take the entire trailing end of the url (including requesting parameters and the original URL) and create a HMAC-SHA-1 hash using the private security key and encode the output to URL-safe Base64 (Standard Base64 encoding, but replace any <code class="prettyprint">/</code> with <code class="prettyprint">_</code> and any <code class="prettyprint">+</code> with <code class="prettyprint">-</code>).</p>
@@ -218,7 +218,7 @@ Take the entire trailing end of the url (including requesting parameters and the
 
 <p>Thus, the final url to request the image from becomes</p>
 
-<p>https://thumbor.ucic.vc/BUG2ADek_lpGRGj8ROPw9xDIkz8=/150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</p>
+<p><code class="prettyprint">https://thumbor.ucic.vc/BUG2ADek_lpGRGj8ROPw9xDIkz8=/150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</code></p>
 
 <h2 id="smart-cropping">Smart Cropping</h2>
 
