@@ -190,6 +190,48 @@ You must replace <code>&lt;AUTHORIZATION_TOKEN&gt;</code> with your personal acc
 </tr>
 </tbody></table>
 
+          <h1 id="thumbor">Thumbor</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>uCiC has a set of image processing servers available to serve modified versions of images to clients based on their specific needs using the <a href="https://thumbor.readthedocs.io/en/latest/index.html">Thumbor</a> library . The most practical usage of this allows clients to request a pixel-specific sizing of an image which the server will resize and/or crop on the fly for the client. This reduces the bandwidth the client consumes to load the image, which in turn improves performance.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>The thumbor server is used by generating a new URL to request the image from based on the original image URL, the client&rsquo;s desired image specifications and the URL of the thumbor server.</p>
+
+<p>For example, given the original image URL
+https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</p>
+
+<p>Say the client only has 150x200 pixels to display the image in. We create a new URL to request it as</p>
+
+<p>https://thumbor.ucic.vc/<Security_Hash>/150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</p>
+
+<p>where https://thumbor.ucic.vc is the uCiC Thumbor server address.</p>
+
+<p>The Security_Hash is generated as follows:
+Take the entire trailing end of the url (including requesting parameters and the original URL) and create a HMAC-SHA-1 hash using the private security key and encode the output to URL-safe Base64 (Standard Base64 encoding, but replace any <code class="prettyprint">/</code> with <code class="prettyprint">_</code> and any <code class="prettyprint">+</code> with <code class="prettyprint">-</code>).</p>
+
+<p><code class="prettyprint">150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</code></p>
+
+<p>Encodes to <code class="prettyprint">BUG2ADek_lpGRGj8ROPw9xDIkz8=</code> in standard Base 64</p>
+
+<p>Thus, the final url to request the image from becomes</p>
+
+<p>https://thumbor.ucic.vc/BUG2ADek_lpGRGj8ROPw9xDIkz8=/150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</p>
+
+<h2 id="smart-cropping">Smart Cropping</h2>
+
+<p>Thumbor supports a specialized kind of image cropping where it employs feature detection to identify the &ldquo;most interesting&rdquo; part of an image and crop towards that, rather than the default centre. To use this, simply include the <code class="prettyprint">/smart</code> url component following the desired resolution. <strong>Make sure that this is included before creating the security hash</strong> for the request.</p>
+
+<p>Original Image <code class="prettyprint">https://i.imgur.com/eVdqKNZ.jpg</code></p>
+
+<p>Desired spec URL <code class="prettyprint">/150x150/smart/https://i.imgur.com/eVdqKNZ.jpg</code></p>
+
+<p>URL-Safe Base64 Encode of SHA-1 Hash <code class="prettyprint">en5sXMhgAzBCPRRdJt2uXKFWZF0=</code></p>
+
+<p>Final URL <code class="prettyprint">https://thumbor.ucic.vc/en5sXMhgAzBCPRRdJt2uXKFWZF0=/150x150/smart/https://i.imgur.com/eVdqKNZ.jpg</code></p>
+
           <h1 id="cards">Cards</h1>
 
 <h2 id="get-the-cards-for-a-theme">Get the Cards for a Theme</h2>
