@@ -22,9 +22,9 @@ Take the entire trailing end of the url (including requesting parameters and the
 
 `150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg`
 
-Hashes to `0541B60037A4FE5A464468FC44E3F0F710C8933F`.
-Which then encodes to `BUG2ADek/lpGRGj8ROPw9xDIkz8=` in standard Base 64.
-Which then converts to `BUG2ADek_lpGRGj8ROPw9xDIkz8=` in URL-safe Base 64.
+Hashes to `0541B60037A4FE5A464468FC44E3F0F710C8933F`.  
+Which then encodes to `BUG2ADek/lpGRGj8ROPw9xDIkz8=` in standard Base 64.  
+Which then converts to `BUG2ADek_lpGRGj8ROPw9xDIkz8=` in URL-safe Base 64.  
 
 Thus, the final url to request the image from becomes
 
