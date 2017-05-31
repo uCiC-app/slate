@@ -214,7 +214,9 @@ Take the entire trailing end of the url (including requesting parameters and the
 
 <p><code class="prettyprint">150x200/https://media.ucic.vc/media/23585E7D-D7DB-45A6-8877-889668CA1762/display.jpg</code></p>
 
-<p>Encodes to <code class="prettyprint">BUG2ADek_lpGRGj8ROPw9xDIkz8=</code> in standard Base 64</p>
+<p>Hashes to <code class="prettyprint">0541B60037A4FE5A464468FC44E3F0F710C8933F</code>.
+Which then encodes to <code class="prettyprint">BUG2ADek/lpGRGj8ROPw9xDIkz8=</code> in standard Base 64.
+Which then converts to <code class="prettyprint">BUG2ADek_lpGRGj8ROPw9xDIkz8=</code> in URL-safe Base 64.</p>
 
 <p>Thus, the final url to request the image from becomes</p>
 
