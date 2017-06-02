@@ -941,6 +941,145 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 </tr>
 </tbody></table>
 
+<h2 id="get-the-cards-for-a-question">Get the Cards for a Question</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/questions/a29c2a61-7fee-492e-80e6-907c859b4419/cards"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tagId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"928CF4AC-A5BF-4A8B-8C47-62E58AE1F655"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40839"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:02:37.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"requestType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">   </span><span class="err">//</span><span class="w"> </span><span class="err">0</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">map,</span><span class="w"> </span><span class="err">1</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">direct,</span><span class="w"> </span><span class="err">2</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">global</span><span class="w">
+      </span><span class="nt">"following"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36001"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jack Liu"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jackjack_liu@hotmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">48.715</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.5174639</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:01:54.446Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anything interesting to see around you?"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14062"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:29:23.530Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uCiC_app"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ashley"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/default/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"responses"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-31T18:44:51.156Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EBE0C181-A0D9-4633-ABF2-436D55B36B32"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mural"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11831"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/original.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/display.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.4513854980469</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.498664855957</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/RU.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-22T01:29:37.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"metaData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozhaysk"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moskovskaya oblast'"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Russia"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"uploaded"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-25T12:00:00.000Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.45</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.93546</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E73CD7C4-35E7-4A37-9850-950E22B2BCCF"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States of America"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spaniel"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the cards for a specified question..</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/questions/&lt;ID&gt;/cards</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>The ID of the Question to retrieve cards for</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Unsigned Integer</td>
+<td>Maximum number of cards to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Unsigned Integer</td>
+<td>Offset in list of cards to start return from</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Unsigned Integer</td>
+<td>Page of cards to return (note: overrides offset value if both are sent)</td>
+</tr>
+</tbody></table>
+
 <h2 id="hide-a-card">Hide a Card</h2>
 <pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/hide"</span>
 </code></pre><pre class="highlight javascript"><code>
@@ -1693,6 +1832,66 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 </tbody></table>
 
+<h2 id="follow-a-question">Follow a Question</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/questions/follow/2ef28167-29bd-46bf-851f-c05e2b7e8619"</span> 
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 204 on success</p>
+</blockquote>
+
+<p>This endpoint allows a user to &ldquo;follow&rdquo; a question and receive alerts and push notifications when new responses are added to it.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/questions/follow/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>The id of the question to follow</td>
+</tr>
+</tbody></table>
+
+<h2 id="unfollow-a-question">UnFollow a Question</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/questions/unfollow/2ef28167-29bd-46bf-851f-c05e2b7e8619"</span>  
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 204 on success</p>
+</blockquote>
+
+<p>This endpoint allows a user to stop &ldquo;following&rdquo; a question and no longer receive alerts and push notifications when new responses are added to it.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/questions/unfollow/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>String</td>
+<td>The id of the question to unfollow</td>
+</tr>
+</tbody></table>
+
           <h1 id="requests">Requests</h1>
 
 <h2 id="create-and-send-a-request">Create and send a request</h2>
@@ -2178,7 +2377,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>ID</td>
 <td>Integer</td>
-<td>The id of the request to renew</td>
+<td>The id of the request to follow</td>
 </tr>
 </tbody></table>
 
@@ -2208,7 +2407,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>ID</td>
 <td>Integer</td>
-<td>The id of the request to renew</td>
+<td>The id of the request to unfollow</td>
 </tr>
 </tbody></table>
 
@@ -2406,7 +2605,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
           <h1 id="themes">Themes</h1>
 
-<h2 id="get-all-themes">Get All Themes</h2>
+<h2 id="get-themes-by-country">Get Themes by Country</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/get"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code>
 </code></pre>
@@ -2467,6 +2666,192 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <aside class="success">
 Remember — a happy uCiC client is an authenticated uCiC client!
 </aside>
+
+<h2 id="get-themes-by-request">Get Themes by Request</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/requests"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300123"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a29c2a61-7fee-492e-80e6-907c859b4419"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's going on over there?"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-24T13:42:39.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-01T13:42:39.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requestType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"responseCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414383</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safe 2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"discoverResponses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">up</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="err">entries</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">array</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"87F5E446-4395-4034-99F0-EF14A3E8FD39"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"displayMedia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/display.jpg"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"992D8E8E-EDE0-42BF-97B0-2940D91E7CA0"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"displayMedia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/display.jpg"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"033FE824-97E1-4458-80D6-B1ED62902380"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"displayMedia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/display.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414383</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safe 2"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">requestType</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">0</span><span class="w">
+      </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.4555</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.3977</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"receiverUI"</span><span class="p">:</span><span class="w"> </span><span class="mi">414380</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">requestType</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all themes based on Requests. The most recently responded-to requests are shown first. The field <em>discoverResponses</em> contains data for up to 10 responses to the request, sorted by most recent first.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v05/themes/requests</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Unsigned Integer</td>
+<td>Maximum number of themes to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Unsigned Integer</td>
+<td>Offset in list of themes to start return from</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String&lt;&#39;latestResponse:desc&rsquo;,&#39;totalLikes:desc&rsquo;,&#39;latestLike:desc&rsquo;</td>
+<td>Sort order, default is &#39;latestResponse:desc&rsquo;</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-themes-by-question">Get Themes by Question</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/questions"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300123"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a29c2a61-7fee-492e-80e6-907c859b4419"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's going on over there?"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-24T13:42:39.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-01T13:42:39.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requestType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"responseCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414383</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safe 2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"discoverResponses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">up</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="err">entries</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">array</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"87F5E446-4395-4034-99F0-EF14A3E8FD39"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"displayMedia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/display.jpg"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"992D8E8E-EDE0-42BF-97B0-2940D91E7CA0"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"displayMedia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/display.jpg"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"033FE824-97E1-4458-80D6-B1ED62902380"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"displayMedia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/display.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414383</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safe 2"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">requestType</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">0</span><span class="w">
+      </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.4555</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.3977</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"receiverUI"</span><span class="p">:</span><span class="w"> </span><span class="mi">414380</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">requestType</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all themes based on Question ID. The most recently responded-to questions are shown first. The field <em>discoverResponses</em> contains data for up to 10 responses to the request, sorted by most recent first.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v05/themes/questions</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Unsigned Integer</td>
+<td>Maximum number of themes to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Unsigned Integer</td>
+<td>Offset in list of themes to start return from</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>String&lt;&#39;latestResponse:desc&rsquo;,&#39;totalLikes:desc&rsquo;,&#39;latestLike:desc&rsquo;</td>
+<td>Sort order, default is &#39;latestResponse:desc&rsquo;</td>
+</tr>
+</tbody></table>
 
 <h2 id="get-a-specific-theme">Get a Specific Theme</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
@@ -2537,95 +2922,6 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 <td>query</td>
 <td>String</td>
 <td>The search substring to find matching themes for</td>
-</tr>
-</tbody></table>
-
-<h2 id="get-all-request-based-themes">Get All Request-Based Themes</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/requests"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300123"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's going on over there?"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-24T13:42:39.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-01T13:42:39.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"requestType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"responseCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414383</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safe 2"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"discoverResponses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">up</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="err">entries</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">array</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"87F5E446-4395-4034-99F0-EF14A3E8FD39"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/thumb.jpg"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"992D8E8E-EDE0-42BF-97B0-2940D91E7CA0"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/thumb.jpg"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"033FE824-97E1-4458-80D6-B1ED62902380"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/thumb.jpg"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414383</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safe 2"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">requestType</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">0</span><span class="w">
-      </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.4555</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.3977</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"receiverUI"</span><span class="p">:</span><span class="w"> </span><span class="mi">414380</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">requestType</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all themes based on Requests. The most recently responded-to requests are shown first. The field <em>discoverResponses</em> contains data for up to 3 responses to the request, sorted by most recent first for direct requests, and closest to the request location for map requests.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://node.ucic.vc/api/v05/themes/requests</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>limit</td>
-<td>Unsigned Integer</td>
-<td>Maximum number of themes to return</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Unsigned Integer</td>
-<td>Offset in list of themes to start return from</td>
-</tr>
-<tr>
-<td>sort</td>
-<td>String&lt;&#39;latestResponse:desc&rsquo;,&#39;totalLikes:desc&rsquo;,&#39;latestLike:desc&rsquo;</td>
-<td>Sort order, default is &#39;latestResponse:desc&rsquo;</td>
 </tr>
 </tbody></table>
 
