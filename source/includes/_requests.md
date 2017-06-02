@@ -48,7 +48,7 @@ POST https://node.ucic.vc/api/v04/requests
 | ------------ | -------------------- | ---------------------------------------- |
 | location\*   | { lat, lon, radius } | (Optional) location request lat lon coordinates and radius(m). |
 | message      | String               | Request message content body (required)  |
-| questionId      | String               | (Optional) The id of the question the user chose from the suggested questions list if they did not write their own.  |
+| questionId   | String               | (Optional) The id of the question the user chose from the suggested questions list if they did not write their own. |
 | override     | Boolean              | (Optional, default: false) Override time of day exception and send request anyway |
 | receiverUI\* | Unsigned Integer     | (Optional) List of receiver user IDs     |
 
@@ -395,7 +395,7 @@ This endpoint allows a user to "follow" a request and receive alerts and push no
 
 | Parameter | Type    | Description                    |
 | --------- | ------- | ------------------------------ |
-| ID        | Integer | The id of the request to renew |
+| ID        | Integer | The id of the request to follow |
 
 ## UnFollow a Request
 
@@ -420,4 +420,4 @@ This endpoint allows a user to stop "following" a request and no longer receive 
 
 | Parameter | Type    | Description                    |
 | --------- | ------- | ------------------------------ |
-| ID        | Integer | The id of the request to renew |
+| ID        | Integer | The id of the request to unfollow |

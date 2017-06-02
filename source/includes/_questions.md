@@ -42,3 +42,52 @@ The questions attempt to pull in data sources for the askee's location (and any 
 | category  | String  | Which category of questions to return. Currently supports `'dynamic'` (default), and `'global'`. **Note:** previous categories that have been deprecated will be overridden by 'dynamic' when used. Deprecated categories are: {'ucic', 'intro2', 'onboarding'} |
 | limit     | Integer | Maximum number of questions to return (optional). Defaults to 20 |
 
+## Follow a Question
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/questions/follow/2ef28167-29bd-46bf-851f-c05e2b7e8619" 
+```
+
+```javascript
+
+```
+
+> The above command returns 204 on success
+
+
+This endpoint allows a user to "follow" a question and receive alerts and push notifications when new responses are added to it.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/questions/follow/<ID>`
+
+### URL Parameters
+
+| Parameter | Type   | Description                      |
+| --------- | ------ | -------------------------------- |
+| ID        | String | The id of the question to follow |
+
+## UnFollow a Question
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/questions/unfollow/2ef28167-29bd-46bf-851f-c05e2b7e8619"  
+```
+
+```javascript
+
+```
+
+> The above command returns 204 on success
+
+
+This endpoint allows a user to stop "following" a question and no longer receive alerts and push notifications when new responses are added to it.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/questions/unfollow/<ID>`
+
+### URL Parameters
+
+| Parameter | Type   | Description                        |
+| --------- | ------ | ---------------------------------- |
+| ID        | String | The id of the question to unfollow |
