@@ -102,6 +102,43 @@ This endpoint allows the client to update the server with important information 
 | 401   | Unauthorized, authorization token was rejected |
 | 500   | Server encountered an error              |
 
+##Get
+```shell
+curl -X GET "https://node.ucic.vc/api/v04/users/414559"
+```
+```javascript
+
+```
+> A successful call will return a user's profile information in the format:
+
+```json
+{
+  "avatar": "https://media.ucic.vc/media/default/thumb.jpg",
+  "createdAt": "2017-05-18T21:32:11.000Z",
+  "fullname": "Samsung",
+  "tagLine": "A Samsung test device on Jan's desk.",
+  "rating": 5,
+  "id": "414559",
+  "lat": 43.4507874,
+  "lon": -80.4983869,
+  "likes": 100,
+  "responseCount": 0,
+  "completedRequests": 0,
+  "timeZoneMinutes": -240
+}
+
+```
+This endpoint provides a means of retrieving the profile information for a given user Id. 
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/users/:id`
+
+### URL Parameters
+| Parameter | Type    | Description                              |
+| --------- | ------- | ---------------------------------------- |
+| id        | Integer | The user Id of the user to retrieve the profile for |
+
 
 ##Set
 
@@ -119,11 +156,16 @@ curl -X POST "https://node.ucic.vc/api/v04/users/set"
   "visibleLocation": "1",
   "username": "BillyJean",
   "avatar": "http://media.ucic.vc/media/427F0DC4-B2B6-4182-8088-D31BB5CB0934/thumb.jpg",
-  "email": "not@mylov.er"
+  "email": "not@mylov.er",
+  "tagLine": "Not my Lover."
 }
 ```
 
-This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email and username may be changed with this route.
+This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email, tagline, and username may be changed with this route.
+
+### HTTP Request
+
+`POST https://node.ucic.vc/api/v04/users/set`
 
 ### Request Body
 
@@ -133,8 +175,9 @@ This endpoint allows the clients to update user information. Specifically, the m
 | username        | String     | (Optional\*) The new string to update the username to. |
 | avatarBuffer    | String     | (Optional\*) The base 64 encoded image buffer representing the image to change the user's avatar to. |
 | email           | String     | (Optional\*) The new email to set for the user. |
+| tagLine         | String     | (Optional\*) A short bio for the user's profile. Up to 255 characters, an error will be returned if this limit is not respected. |
 
-\*Note: though all four parameters are optional, **at least one must be sent** with the call, or a 400 error message will be returned.
+\*Note: though all five parameters are optional, **at least one must be sent** with the call, or a 400 error message will be returned.
 
 ### Errors
 | Error | Meaning                                  |
