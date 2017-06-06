@@ -3110,6 +3110,51 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tr>
 </tbody></table>
 
+<h2 id="get">Get</h2>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"https://node.ucic.vc/api/v04/users/414559"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>A successful call will return a user&rsquo;s profile information in the format:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/default/thumb.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-18T21:32:11.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Samsung"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tagLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Samsung test device on Jan's desk."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"414559"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">43.4507874</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-80.4983869</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"responseCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"completedRequests"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"timeZoneMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">-240</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>This endpoint provides a means of retrieving the profile information for a given user Id. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/:id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The user Id of the user to retrieve the profile for</td>
+</tr>
+</tbody></table>
+
 <h2 id="set">Set</h2>
 <pre class="highlight shell"><code>curl -X POST <span class="s2">"https://node.ucic.vc/api/v04/users/set"</span>
 </code></pre><pre class="highlight javascript"><code>
@@ -3122,10 +3167,15 @@ Note: the response will contain only the field(s) that were modified by the requ
   </span><span class="nt">"visibleLocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BillyJean"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.ucic.vc/media/427F0DC4-B2B6-4182-8088-D31BB5CB0934/thumb.jpg"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not@mylov.er"</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not@mylov.er"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tagLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not my Lover."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email and username may be changed with this route.</p>
+<p>This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email, tagline, and username may be changed with this route.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/users/set</code></p>
 
 <h3 id="request-body">Request Body</h3>
 
@@ -3156,9 +3206,14 @@ Note: the response will contain only the field(s) that were modified by the requ
 <td>String</td>
 <td>(Optional*) The new email to set for the user.</td>
 </tr>
+<tr>
+<td>tagLine</td>
+<td>String</td>
+<td>(Optional*) A short bio for the user&rsquo;s profile. Up to 255 characters, an error will be returned if this limit is not respected.</td>
+</tr>
 </tbody></table>
 
-<p>*Note: though all four parameters are optional, <strong>at least one must be sent</strong> with the call, or a 400 error message will be returned.</p>
+<p>*Note: though all five parameters are optional, <strong>at least one must be sent</strong> with the call, or a 400 error message will be returned.</p>
 
 <h3 id="errors">Errors</h3>
 
