@@ -17,45 +17,39 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
   {
     "id": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
     "tagId": "928CF4AC-A5BF-4A8B-8C47-62E58AE1F655",
+    "comments": [{
+      "id": "a8c1236a-5ab1-4874-b25e-3aeebdc15909",
+        "text": "This is a comment ",
+        "itemId": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
+        "itemType": "card",
+        "createdAt": "2017-06-09 19:47:43",
+        "creator": {
+          "UI": "195502",
+          "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
+          "Username": "Jay Jay"
+         }
+    }],
     "request": {
       "id": "40839",
+      "body": "Anything interesting to see around you?"
       "createdAt": "2016-04-22T01:02:37.000Z",
       "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "sender": {
         "id": "36001",
-        "login": null,
         "fullname": "Jack Liu",
-        "email": "jackjack_liu@hotmail.com",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "lat": 48.715,
-        "lon": -80.5174639,
-        "likes": "10",
-        "createdAt": "2016-04-22T01:01:54.446Z"
-      },
-      "receiver": null,
-      "body": "Anything interesting to see around you?",
-      "media": null
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
+      }
     },
     "response": {
       "id": "14062",
       "createdAt": "2016-04-22T01:29:23.530Z",
       "sender": {
         "id": "71",
-        "login": "uCiC_app",
         "fullname": "Ashley",
-        "email": "",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "likes": "10",
-        "responses": 84,
-        "createdAt": "2014-08-31T18:44:51.156Z",
-        "tags": [{
-          "id": "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
-          "name": ""
-        }]
-      },
-      "receiver": null,
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
+      }
       "body": "Mural",
       "media": {
         "id": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
@@ -84,10 +78,12 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "tags": [
           {
             "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
+            "category": "country",
             "name": "United States of America"
           },
           {
             "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "category": "vision",
             "name": "spaniel"
           }
         ]
@@ -137,46 +133,40 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
 {
   "id": "F48F16C0-81BE-418D-B44B-9F97DD2D3A70",
   "tagId": "928CF4AC-A5BF-4A8B-8C47-62E58AE1F655",
+  "comments": [{
+    "id": "a8c1236a-5ab1-4874-b25e-3aeebdc15909",
+    "text": "This is a comment ",
+    "itemId": "F48F16C0-81BE-418D-B44B-9F97DD2D3A70",
+    "itemType": "card",
+    "createdAt": "2017-06-09 19:47:43",
+    "creator": {
+      "UI": "195502",
+      "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
+      "Username": "Jay Jay"
+    }
+  }],
   "request": {
     "id": "46154",
+    "body": "How's the sunset there?",
     "createdAt": "2016-12-09T22:40:22.100Z",
     "requestType": 0,   // 0 = map, 1 = direct, 2 = global
     "sender": {
       "id": "38988",
-      "login": null,
       "fullname": "Falak",
-      "email": "a@b.com",
       "badge": "https://media.ucic.vc/assets/tags/CA.png",
-      "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-      "lat": 43.4509175,
-      "lon": -80.498604,
-      "likes": "0",
-      "createdAt": "2016-11-05T05:43:08.916Z"
-    },
-    "receiver": null,
-    "body": "How's the sunset there?",
-    "media": null
+      "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
+    }
   },
   "response": {
     "id": "15958",
+    "body": "Very Pretty!",
     "createdAt": "2016-12-09T22:40:22.100Z",
     "sender": {
       "id": "39124",
-      "login": null,
       "fullname": "Gbs",
-      "email": "guy@gmail.com",
       "badge": "https://media.ucic.vc/assets/tags/CA.png",
-      "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-      "likes": "0",
-      "responses": 2,
-      "createdAt": "2016-12-09T19:00:53.233Z",
-      "tags": [{
-        "id": "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
-        "name": ""
-      }]
+      "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
     },
-    "receiver": null,
-    "body": "",
     "media": {
       "id": "F48F16C0-81BE-418D-B44B-9F97DD2D3A70",
       "mi": "13370",
@@ -204,10 +194,12 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "tags": [
         {
           "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
+          "category": "country"
           "name": "United States of America"
         },
         {
           "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+          "category": "vision",
           "name": "spaniel"
         }
       ]
@@ -248,43 +240,40 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
   {
     "id": "88F95DFB-0080-40F1-9529-55FBB74FC55D",
     "tagId": "928CF4AC-A5BF-4A8B-8C47-62E58AE1F655",
+    "comments": [{
+      "id": "a8c1236a-5ab1-4874-b25e-3aeebdc15909",
+      "text": "This is a comment ",
+      "itemId": "88F95DFB-0080-40F1-9529-55FBB74FC55D",
+      "itemType": "card",
+      "createdAt": "2017-06-09 19:47:43",
+      "creator": {
+        "UI": "195502",
+        "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
+        "Username": "Jay Jay"
+      }
+    }],
     "request": {
       "id": "45691",
+      "body": "How is the beach there?",
       "createdAt": "2016-11-28T18:15:15.166Z",
       "requestType": 2,   // 0 = map, 1 = direct, 2 = global
       "sender": {
         "id": "611",
-        "login": "z",
         "fullname": "John Doe",
-        "email": "z@z.com",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "lat": -22.9035393,
-        "lon": -43.2095869,
-        "likes": "10",
-        "createdAt": "2015-01-19T12:06:48.363Z"
-      },
-      "receiver": null,
-      "body": "How is the beach there?",
-      "media": null
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
+      }
     },
     "response": {
       "id": "15790",
+      "body": "Ain't no beaches round here",
       "createdAt": "2016-11-28T18:15:15.166Z",
       "sender": {
         "id": "39086",
-        "login": null,
         "fullname": "yhhji",
-        "email": "hgdf@hjjh.bh",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "likes": "0",
-        "responses": 1,
-        "createdAt": "2016-11-30T00:53:19.180Z",
-        "tags": []
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
       },
-      "receiver": null,
-      "body": "for",
       "media": {
         "id": "88F95DFB-0080-40F1-9529-55FBB74FC55D",
         "mi": "13254",
@@ -312,10 +301,12 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
         "tags": [
           {
             "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
+            "category": "country",
             "name": "United States of America"
           },
           {
             "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "category": "vision",
             "name": "spaniel"
           }
         ]
@@ -368,43 +359,40 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
   {
     "id": "08241390-F145-4245-A68A-5D7852488673",
     "tagId": "4F45AA05-0522-4674-8178-FE9983DE4BC4",
+    "comments": [{
+      "id": "a8c1236a-5ab1-4874-b25e-3aeebdc15909",
+      "text": "This is a comment ",
+      "itemId": "08241390-F145-4245-A68A-5D7852488673",
+      "itemType": "card",
+      "createdAt": "2017-06-09 19:47:43",
+      "creator": {
+        "UI": "195502",
+        "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
+        "Username": "Jay Jay"
+      }
+    }],
     "request": {
       "id": "45220",
+      "body": "What's something you show your out of twon guests?",
       "createdAt": "2016-11-08T23:01:13.260Z",
       "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "sender": {
         "id": "38992",
-        "login": null,
         "fullname": "duty3test",
-        "email": "duty3@test.com",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "lat": 33.2156041,
-        "lon": -96.7934718,
-        "likes": "0",
-        "createdAt": "2016-11-07T19:42:06.203Z"
-      },
-      "receiver": null,
-      "body": "Are you close to the beach? Can you show me a photo?",
-      "media": null
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
+      }
     },
     "response": {
       "id": "15957",
       "createdAt": "2016-11-08T23:01:13.260Z",
+      "body": "Hi There!",
       "sender": {
         "id": "611",
-        "login": "z",
         "fullname": "John Doe",
-        "email": "z@z.com",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "likes": "10",
-        "responses": 14,
-        "createdAt": "2015-01-19T12:06:48.363Z",
-        "tags": []
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
       },
-      "receiver": null,
-      "body": "Hi There!",
       "media": {
         "id": "08241390-F145-4245-A68A-5D7852488673",
         "mi": "13369",
@@ -432,10 +420,12 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
         "tags": [
           {
             "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
+            "category": "country",
             "name": "United States of America"
           },
           {
             "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "category": "vision",
             "name": "spaniel"
           }
         ]
@@ -486,47 +476,41 @@ curl "https://node.ucic.vc/api/v04/requests/300106/cards" -H "Authorization: <AU
   {
     "id": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
     "tagId": "928CF4AC-A5BF-4A8B-8C47-62E58AE1F655",
+    "comments": [{
+      "id": "a8c1236a-5ab1-4874-b25e-3aeebdc15909",
+      "text": "This is a comment ",
+      "itemId": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
+      "itemType": "card",
+      "createdAt": "2017-06-09 19:47:43",
+      "creator": {
+        "UI": "195502",
+        "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
+        "Username": "Jay Jay"
+      }
+    }],
     "request": {
       "id": "40839",
+      "body": "Anything interesting to see around you?",
       "createdAt": "2016-04-22T01:02:37.000Z",
       "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "following": true,
       "sender": {
         "id": "36001",
-        "login": null,
         "fullname": "Jack Liu",
-        "email": "jackjack_liu@hotmail.com",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "lat": 48.715,
-        "lon": -80.5174639,
-        "likes": "10",
-        "createdAt": "2016-04-22T01:01:54.446Z"
-      },
-      "receiver": null,
-      "body": "Anything interesting to see around you?",
-      "media": null
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
+      }
     },
     "response": {
       "id": "14062",
+      "body": "Mural",
       "createdAt": "2016-04-22T01:29:23.530Z",
       "sender": {
         "id": "71",
-        "login": "uCiC_app",
         "fullname": "Ashley",
-        "email": "",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "likes": "10",
-        "responses": 84,
-        "createdAt": "2014-08-31T18:44:51.156Z",
-        "tags": [{
-          "id": "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
-          "name": ""
-        }]
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
       },
-      "receiver": null,
-      "body": "Mural",
       "media": {
         "id": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
         "mi": "11831",
@@ -554,10 +538,12 @@ curl "https://node.ucic.vc/api/v04/requests/300106/cards" -H "Authorization: <AU
         "tags": [
           {
             "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
+            "category": "country",
             "name": "United States of America"
           },
           {
             "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "category": "vision",
             "name": "spaniel"
           }
         ]
@@ -604,6 +590,18 @@ curl "https://node.ucic.vc/api/v04/questions/a29c2a61-7fee-492e-80e6-907c859b441
   {
     "id": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
     "tagId": "928CF4AC-A5BF-4A8B-8C47-62E58AE1F655",
+    "comments": [{
+      "id": "a8c1236a-5ab1-4874-b25e-3aeebdc15909",
+      "text": "This is a comment ",
+      "itemId": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
+      "itemType": "card",
+      "createdAt": "2017-06-09 19:47:43",
+      "creator": {
+        "UI": "195502",
+        "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
+        "Username": "Jay Jay"
+      }
+    }],
     "request": {
       "id": "40839",
       "createdAt": "2016-04-22T01:02:37.000Z",
@@ -627,24 +625,14 @@ curl "https://node.ucic.vc/api/v04/questions/a29c2a61-7fee-492e-80e6-907c859b441
     },
     "response": {
       "id": "14062",
+      "body": "Mural",
       "createdAt": "2016-04-22T01:29:23.530Z",
       "sender": {
         "id": "71",
-        "login": "uCiC_app",
         "fullname": "Ashley",
-        "email": "",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "likes": "10",
-        "responses": 84,
-        "createdAt": "2014-08-31T18:44:51.156Z",
-        "tags": [{
-          "id": "EBE0C181-A0D9-4633-ABF2-436D55B36B32",
-          "name": ""
-        }]
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
       },
-      "receiver": null,
-      "body": "Mural",
       "media": {
         "id": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
         "mi": "11831",
@@ -672,10 +660,12 @@ curl "https://node.ucic.vc/api/v04/questions/a29c2a61-7fee-492e-80e6-907c859b441
         "tags": [
           {
             "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
+            "category": "country",
             "name": "United States of America"
           },
           {
             "id": "F8E5FF35-3CAD-462C-B115-3E0D0B0DF4D7",
+            "category": "vision",
             "name": "spaniel"
           }
         ]
@@ -693,8 +683,8 @@ This endpoint retrieves the cards for a specified question..
 
 ### URL Parameters
 
-| Parameter | Type    | Description                              |
-| --------- | ------- | ---------------------------------------- |
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
 | ID        | String | The ID of the Question to retrieve cards for |
 
 ### Query Parameters
