@@ -385,8 +385,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
     },
     "response": {
       "id": "15957",
-      "createdAt": "2016-11-08T23:01:13.260Z",
       "body": "Hi There!",
+      "createdAt": "2016-11-08T23:01:13.260Z",
       "sender": {
         "id": "611",
         "fullname": "John Doe",
@@ -604,24 +604,16 @@ curl "https://node.ucic.vc/api/v04/questions/a29c2a61-7fee-492e-80e6-907c859b441
     }],
     "request": {
       "id": "40839",
+      "body": "Anything interesting to see around you?",
       "createdAt": "2016-04-22T01:02:37.000Z",
       "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "following": true,
       "sender": {
         "id": "36001",
-        "login": null,
         "fullname": "Jack Liu",
-        "email": "jackjack_liu@hotmail.com",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
-        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png",
-        "lat": 48.715,
-        "lon": -80.5174639,
-        "likes": "10",
-        "createdAt": "2016-04-22T01:01:54.446Z"
-      },
-      "receiver": null,
-      "body": "Anything interesting to see around you?",
-      "media": null
+        "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
+      }
     },
     "response": {
       "id": "14062",
