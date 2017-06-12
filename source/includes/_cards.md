@@ -31,7 +31,7 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
     }],
     "request": {
       "id": "40839",
-      "body": "Anything interesting to see around you?"
+      "body": "Anything interesting to see around you?",
       "createdAt": "2016-04-22T01:02:37.000Z",
       "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "sender": {
@@ -43,14 +43,14 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
     },
     "response": {
       "id": "14062",
+      "body": "Mural",
       "createdAt": "2016-04-22T01:29:23.530Z",
       "sender": {
         "id": "71",
         "fullname": "Ashley",
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
         "avatar": "http://staging-media.ucic.vc/media/default/thumb.png"
-      }
-      "body": "Mural",
+      },
       "media": {
         "id": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
         "mi": "11831",
@@ -194,7 +194,7 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
       "tags": [
         {
           "id": "E73CD7C4-35E7-4A37-9850-950E22B2BCCF",
-          "category": "country"
+          "category": "country",
           "name": "United States of America"
         },
         {
