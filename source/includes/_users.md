@@ -124,7 +124,12 @@ curl -X GET "https://node.ucic.vc/api/v04/users/414559"
   "likes": 100,
   "responseCount": 0,
   "completedRequests": 0,
-  "timeZoneMinutes": -240
+  "timeZoneMinutes": -240,
+  "youFollowUser": true,
+  "userFollowsYou": false,
+  "userFollowCount": 2,
+  "followUserCount": 1,
+  "canChat": true
 }
 
 ```
@@ -185,6 +190,123 @@ This endpoint allows the clients to update user information. Specifically, the m
 | 400   | Bad request; Either no recognized parameters were sent, or invalid values for at least one that was. |
 | 401   | Unauthorized, authorization token was rejected |
 | 500   | Server encountered an error              |
+
+
+
+# Follow User
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/follow/:id"
+```
+> The above command returns a 204 success status
+
+```json
+
+```
+Follow the user specified by the url id param to subscribe to notification for their activity.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/users/follow/:id`
+
+### URL Params
+| param | Type    | Description                  |
+| ----- | ------- | ---------------------------- |
+| id    | Integer | The id of the user to follow |
+
+### Errors
+| Error | Meaning                               |
+| ----- | ------------------------------------- |
+| 400   | Bad request; Attempted to follow self |
+
+# Unfollow User
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/unfollow/:id"
+```
+> The above command returns a 204 success status
+
+```json
+
+```
+Stop following the user specified by the url id param to no longer receive notifications for their activity.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/users/follow/:id`
+
+### URL Params
+| param | Type    | Description                  |
+| ----- | ------- | ---------------------------- |
+| id    | Integer | The id of the user to unfollow |
+
+### Errors
+| Error | Meaning                               |
+| ----- | ------------------------------------- |
+| 400   | Bad request; Attempted to unfollow self |
+
+# User's Followers
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/followers/:id"
+```
+> The above command returns a 200 success status along with a json response like:
+
+```json
+[
+    {
+        "id": 195685,
+        "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg",
+        "username": "Khan",
+        "likes": 114,
+        "youFollow": false
+    },
+    ...
+]
+
+```
+Returns an array of the users that follow the user specified by the url id param.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/users/followers/:id`
+
+### URL Params
+| param | Type    | Description                  |
+| ----- | ------- | ---------------------------- |
+| id    | Integer | The id of the user whose followers with be returned |
+
+# User's Following
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/following/:id"
+```
+> The above command returns a 200 success status along with a json response like:
+
+```json
+[
+    {
+        "id": 195685,
+        "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg",
+        "username": "Khan",
+        "likes": 114,
+        "youFollow": false
+    },
+    ...
+]
+
+```
+Returns an array of the users that the user specified by the url id param follows.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/users/followers/:id`
+
+### URL Params
+| param | Type    | Description                  |
+| ----- | ------- | ---------------------------- |
+| id    | Integer | The id of the user whose following users with be returned |
+
 
 ##Unseen Items
 

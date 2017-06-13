@@ -7,6 +7,7 @@ curl "https://node.ucic.vc/api/v04/conversations" -H "Authorization: <AUTHORIZAT
 ```
 
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -30,6 +31,7 @@ curl "https://node.ucic.vc/api/v04/conversations" -H "Authorization: <AUTHORIZAT
         "rating": 4,
         "createdAt": "2015-01-19T12:06:48.363Z",
         "avatar": "http://staging-media.ucic.vc/media/611/thumb.png",
+        "youFollowUser": true,
         "located": {
           "Lat": -22.9035393,
           "Lon": -43.2095869
@@ -48,12 +50,12 @@ This endpoint retrieves all of the current user's conversations.
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-limit | Unsigned Integer | Maximum number of themes to return
-offset | Unsigned Integer | Offset in list of themes to start return from
-page | Unsigned Integer | Page of themes to return
-participant | Unsigned Integer | Find only the conversation with this participant
+| Parameter   | Type             | Description                              |
+| ----------- | ---------------- | ---------------------------------------- |
+| limit       | Unsigned Integer | Maximum number of themes to return       |
+| offset      | Unsigned Integer | Offset in list of themes to start return from |
+| page        | Unsigned Integer | Page of themes to return                 |
+| participant | Unsigned Integer | Find only the conversation with this participant |
 
 
 ## Get a Conversation
@@ -62,6 +64,7 @@ participant | Unsigned Integer | Find only the conversation with this participan
 curl "https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -84,6 +87,7 @@ curl "https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee9
       "rating": 4,
       "createdAt": "2015-01-19T12:06:48.363Z",
       "avatar": "http://staging-media.ucic.vc/media/611/thumb.png",
+      "youFollowUser": false,
       "located": {
         "Lat": -22.9035393,
         "Lon": -43.2095869
@@ -101,9 +105,9 @@ This endpoint retrieves a conversation.   The current user must have access to t
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-ID | UUID | The ID of the conversation to retrieve
+| Parameter | Type | Description                            |
+| --------- | ---- | -------------------------------------- |
+| ID        | UUID | The ID of the conversation to retrieve |
 
 
 ## Get Conversation Messages 
@@ -112,6 +116,7 @@ ID | UUID | The ID of the conversation to retrieve
 curl "https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24/messages" -H "Authorization: <AUTHORIZATION_TOKEN>"
 ```
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -144,17 +149,17 @@ have access to this conversation.  Messages are sorted in createdAt descending o
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-ID | UUID | The ID of the conversation to retrieve messages for
+| Parameter | Type | Description                              |
+| --------- | ---- | ---------------------------------------- |
+| ID        | UUID | The ID of the conversation to retrieve messages for |
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-limit | Unsigned Integer | Maximum number of comments to return
-offset | Unsigned Integer | Offset in list of commentss to start return from
-page | Unsigned Integer | Page of comments to return
+| Parameter | Type             | Description                              |
+| --------- | ---------------- | ---------------------------------------- |
+| limit     | Unsigned Integer | Maximum number of comments to return     |
+| offset    | Unsigned Integer | Offset in list of commentss to start return from |
+| page      | Unsigned Integer | Page of comments to return               |
 
 
 ## Send a message in a conversation
@@ -162,6 +167,7 @@ page | Unsigned Integer | Page of comments to return
 curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "text": "Gimme a new message!" }' "https://node.ucic.vc/api/v04/conversations/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/messages"
 ```
 ```javascript
+
 ```
 
 > The above command returns JSON structured like this:
@@ -195,13 +201,13 @@ This endpoint sends a new message for a conversation.  The message is then retur
 
 ### URL Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-ID | UUID | The ID of the conversation to send a message for
+| Parameter | Type | Description                              |
+| --------- | ---- | ---------------------------------------- |
+| ID        | UUID | The ID of the conversation to send a message for |
 
 ### Body Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-text | String | The message to send
+| Parameter | Type   | Description         |
+| --------- | ------ | ------------------- |
+| text      | String | The message to send |
 
