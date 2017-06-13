@@ -1230,7 +1230,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 
 <h2 id="get-all-conversations">Get All Conversations</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/conversations"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1252,6 +1253,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
         </span><span class="nt">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
         </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T12:06:48.363Z"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/611/thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"youFollowUser"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nt">"located"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nt">"Lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.9035393</span><span class="p">,</span><span class="w">
           </span><span class="nt">"Lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.2095869</span><span class="w">
@@ -1300,7 +1302,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 
 <h2 id="get-a-conversation">Get a Conversation</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1321,6 +1324,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
       </span><span class="nt">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-19T12:06:48.363Z"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging-media.ucic.vc/media/611/thumb.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"youFollowUser"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nt">"located"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"Lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.9035393</span><span class="p">,</span><span class="w">
         </span><span class="nt">"Lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.2095869</span><span class="w">
@@ -1353,7 +1357,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 
 <h2 id="get-conversation-messages">Get Conversation Messages</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24/messages"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1425,7 +1430,8 @@ have access to this conversation.  Messages are sorted in createdAt descending o
 
 <h2 id="send-a-message-in-a-conversation">Send a message in a conversation</h2>
 <pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "text": "Gimme a new message!" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/conversations/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/messages"</span>
-</code></pre><pre class="highlight javascript"><code></code></pre>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -3111,7 +3117,12 @@ Remember — a happy uCiC client is an authenticated uCiC client!
   </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
   </span><span class="nt">"responseCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nt">"completedRequests"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timeZoneMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">-240</span><span class="w">
+  </span><span class="nt">"timeZoneMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">-240</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"youFollowUser"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"userFollowsYou"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"userFollowCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"followUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"canChat"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -3216,6 +3227,174 @@ Note: the response will contain only the field(s) that were modified by the requ
 <tr>
 <td>500</td>
 <td>Server encountered an error</td>
+</tr>
+</tbody></table>
+
+<h1 id="follow-user">Follow User</h1>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/follow/:id"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a 204 success status</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span></code></pre>
+<p>Follow the user specified by the url id param to subscribe to notification for their activity.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/follow/:id</code></p>
+
+<h3 id="url-params">URL Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The id of the user to follow</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad request; Attempted to follow self</td>
+</tr>
+</tbody></table>
+
+<h1 id="unfollow-user">Unfollow User</h1>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/unfollow/:id"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a 204 success status</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span></code></pre>
+<p>Stop following the user specified by the url id param to no longer receive notifications for their activity.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/follow/:id</code></p>
+
+<h3 id="url-params">URL Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The id of the user to unfollow</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad request; Attempted to unfollow self</td>
+</tr>
+</tbody></table>
+
+<h1 id="user-39-s-followers">User&rsquo;s Followers</h1>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/followers/:id"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success status along with a json response like:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"youFollow"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre>
+<p>Returns an array of the users that follow the user specified by the url id param.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/followers/:id</code></p>
+
+<h3 id="url-params">URL Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The id of the user whose followers with be returned</td>
+</tr>
+</tbody></table>
+
+<h1 id="user-39-s-following">User&rsquo;s Following</h1>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/following/:id"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success status along with a json response like:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"youFollow"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre>
+<p>Returns an array of the users that the user specified by the url id param follows.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/followers/:id</code></p>
+
+<h3 id="url-params">URL Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>The id of the user whose following users with be returned</td>
 </tr>
 </tbody></table>
 
