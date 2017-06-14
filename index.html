@@ -3230,7 +3230,7 @@ Note: the response will contain only the field(s) that were modified by the requ
 </tr>
 </tbody></table>
 
-<h1 id="follow-user">Follow User</h1>
+<h2 id="follow-user">Follow User</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/follow/:id"</span>
 </code></pre>
 <blockquote>
@@ -3274,7 +3274,7 @@ Note: the response will contain only the field(s) that were modified by the requ
 </tr>
 </tbody></table>
 
-<h1 id="unfollow-user">Unfollow User</h1>
+<h2 id="unfollow-user">Unfollow User</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/unfollow/:id"</span>
 </code></pre>
 <blockquote>
@@ -3318,7 +3318,7 @@ Note: the response will contain only the field(s) that were modified by the requ
 </tr>
 </tbody></table>
 
-<h1 id="user-39-s-followers">User&rsquo;s Followers</h1>
+<h2 id="user-39-s-followers">User&rsquo;s Followers</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/followers/:id"</span>
 </code></pre>
 <blockquote>
@@ -3358,7 +3358,28 @@ Note: the response will contain only the field(s) that were modified by the requ
 </tr>
 </tbody></table>
 
-<h1 id="user-39-s-following">User&rsquo;s Following</h1>
+<h3 id="query-params">Query Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Maximum number of followers to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>Offset in the list of followers to start return from</td>
+</tr>
+</tbody></table>
+
+<h2 id="user-39-s-following">User&rsquo;s Following</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/following/:id"</span>
 </code></pre>
 <blockquote>
@@ -3395,6 +3416,27 @@ Note: the response will contain only the field(s) that were modified by the requ
 <td>id</td>
 <td>Integer</td>
 <td>The id of the user whose following users with be returned</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-params">Query Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Maximum number of followers to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>Offset in the list of followers to start return from</td>
 </tr>
 </tbody></table>
 
