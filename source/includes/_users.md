@@ -193,7 +193,7 @@ This endpoint allows the clients to update user information. Specifically, the m
 
 
 
-# Follow User
+## Follow User
 
 ```shell
 curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/follow/:id"
@@ -219,7 +219,7 @@ Follow the user specified by the url id param to subscribe to notification for t
 | ----- | ------------------------------------- |
 | 400   | Bad request; Attempted to follow self |
 
-# Unfollow User
+## Unfollow User
 
 ```shell
 curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/unfollow/:id"
@@ -236,16 +236,16 @@ Stop following the user specified by the url id param to no longer receive notif
 `GET https://node.ucic.vc/api/v04/users/follow/:id`
 
 ### URL Params
-| param | Type    | Description                  |
-| ----- | ------- | ---------------------------- |
+| param | Type    | Description                    |
+| ----- | ------- | ------------------------------ |
 | id    | Integer | The id of the user to unfollow |
 
 ### Errors
-| Error | Meaning                               |
-| ----- | ------------------------------------- |
+| Error | Meaning                                 |
+| ----- | --------------------------------------- |
 | 400   | Bad request; Attempted to unfollow self |
 
-# User's Followers
+## User's Followers
 
 ```shell
 curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/followers/:id"
@@ -272,11 +272,17 @@ Returns an array of the users that follow the user specified by the url id param
 `GET https://node.ucic.vc/api/v04/users/followers/:id`
 
 ### URL Params
-| param | Type    | Description                  |
-| ----- | ------- | ---------------------------- |
+| param | Type    | Description                              |
+| ----- | ------- | ---------------------------------------- |
 | id    | Integer | The id of the user whose followers with be returned |
 
-# User's Following
+### Query Params
+| param | Type    | Description                              |
+| ----- | ------- | ---------------------------------------- |
+| limit    | Integer | Maximum number of followers to return |
+| offset    | Integer | Offset in the list of followers to start return from |
+
+## User's Following
 
 ```shell
 curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/following/:id"
@@ -303,9 +309,15 @@ Returns an array of the users that the user specified by the url id param follow
 `GET https://node.ucic.vc/api/v04/users/followers/:id`
 
 ### URL Params
-| param | Type    | Description                  |
-| ----- | ------- | ---------------------------- |
+| param | Type    | Description                              |
+| ----- | ------- | ---------------------------------------- |
 | id    | Integer | The id of the user whose following users with be returned |
+
+### Query Params
+| param | Type    | Description                              |
+| ----- | ------- | ---------------------------------------- |
+| limit    | Integer | Maximum number of followers to return |
+| offset    | Integer | Offset in the list of followers to start return from |
 
 
 ##Unseen Items
