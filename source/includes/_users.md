@@ -36,6 +36,8 @@ This endpoint logs in a user.  It creates the user in the database if the fid is
 | os          | Integer | Device operating system.  0 for iOS, 1 for Android (This is largely deprecated, replaced by the user-agent header.  However, some obscure parts of the system still make use of it) |
 | photoURL    | String  | (Optional) Publically accessible path to an avatar photo for the user |
 | pushId      | String  | (Optional) Firebase (FCM) Push ID        |
+| FI      | String  | (Optional) Facebook Identifier for Firebase User      |
+| GI      | String  | (Optional) Google Identifier for Firebase User  |
 | token       | String  | (Optional) The signed firebase token containing a firebase id (fid).  Required for firebase logins |
 | username    | String  | The user's desired username              |
 | category    | String  | (Optional) The login category.  Currently only 'guest' is supported |
@@ -277,10 +279,10 @@ Returns an array of the users that follow the user specified by the url id param
 | id    | Integer | The id of the user whose followers with be returned |
 
 ### Query Params
-| param | Type    | Description                              |
-| ----- | ------- | ---------------------------------------- |
-| limit    | Integer | Maximum number of followers to return |
-| offset    | Integer | Offset in the list of followers to start return from |
+| param  | Type    | Description                              |
+| ------ | ------- | ---------------------------------------- |
+| limit  | Integer | Maximum number of followers to return    |
+| offset | Integer | Offset in the list of followers to start return from |
 
 ## User's Following
 
@@ -314,10 +316,10 @@ Returns an array of the users that the user specified by the url id param follow
 | id    | Integer | The id of the user whose following users with be returned |
 
 ### Query Params
-| param | Type    | Description                              |
-| ----- | ------- | ---------------------------------------- |
-| limit    | Integer | Maximum number of followers to return |
-| offset    | Integer | Offset in the list of followers to start return from |
+| param  | Type    | Description                              |
+| ------ | ------- | ---------------------------------------- |
+| limit  | Integer | Maximum number of followers to return    |
+| offset | Integer | Offset in the list of followers to start return from |
 
 
 ##Unseen Items
