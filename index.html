@@ -1355,6 +1355,22 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 </tr>
 </tbody></table>
 
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>participant</td>
+<td>Integer</td>
+<td>The ID of the user on the other side of the conversation to retrieve. Mutually exclusive with ID URL param. If both are provided, URL ID param takes priority.</td>
+</tr>
+</tbody></table>
+
 <h2 id="get-conversation-messages">Get Conversation Messages</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/conversations/d524f62b-e0c6-43cc-86e6-464fee903b24/messages"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code>
@@ -1628,6 +1644,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
   </span><span class="p">}],</span><span class="w">
   </span><span class="nt">"requests"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">   </span><span class="err">//</span><span class="w"> </span><span class="err">note:</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">sent</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">layer</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="nt">"request"</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300038"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8285A6A7-BF41-4EE5-BDDE-4C7377FC68ED"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">45.3735</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-84.8978</span><span class="p">,</span><span class="w">
       </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's happening over there?"</span><span class="p">,</span><span class="w">
@@ -1982,6 +1999,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </blockquote>
 <pre class="highlight json"><code><span class="p">[{</span><span class="w"> 
     </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0d56a3c5-1c80-4de2-b151-d5d1f875ed6c"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
@@ -2056,6 +2074,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </blockquote>
 <pre class="highlight json"><code><span class="p">[{</span><span class="w"> 
     </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0d56a3c5-1c80-4de2-b151-d5d1f875ed6c"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
@@ -2091,6 +2110,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </blockquote>
 <pre class="highlight json"><code><span class="p">[{</span><span class="w"> 
     </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0d56a3c5-1c80-4de2-b151-d5d1f875ed6c"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
@@ -2146,6 +2166,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w"> 
     </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0d56a3c5-1c80-4de2-b151-d5d1f875ed6c"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
@@ -2171,6 +2192,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w"> 
     </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="mi">51239</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0d56a3c5-1c80-4de2-b151-d5d1f875ed6c"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can you show me what's happening there?"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:45:33.286Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04T18:45:33.286Z"</span><span class="p">,</span><span class="w">
@@ -2399,6 +2421,36 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 </tbody></table>
 
+<h2 id="skip-a-request">Skip a Request</h2>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> <span class="s2">"https://node.ucic.vc/api/v04/requests/skip/300106"</span> 
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns 204 on success</p>
+</blockquote>
+
+<p>This endpoint allows a user to &ldquo;skip&rdquo; a request and have it permanently removed from the results of the various GET request endpoints for this user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/requests/skip/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Integer</td>
+<td>The id of the request to skip</td>
+</tr>
+</tbody></table>
+
           <h1 id="responses">Responses</h1>
 
 <h2 id="create-a-response">Create a Response</h2>
@@ -2582,7 +2634,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>questionId</td>
 <td>String</td>
-<td>(Optional) The</td>
+<td>(Optional) The id of the question associated with the request.</td>
 </tr>
 <tr>
 <td>metadata</td>
@@ -3338,13 +3390,12 @@ Note: the response will contain only the field(s) that were modified by the requ
     </span><span class="p">{</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
         </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"youFollow"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="nt">"youFollowUser"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
-
 </span></code></pre>
 <p>Returns an array of the users that follow the user specified by the url id param.</p>
 
@@ -3399,13 +3450,12 @@ Note: the response will contain only the field(s) that were modified by the requ
     </span><span class="p">{</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
         </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Khan"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"youFollow"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="nt">"youFollowUser"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
-
 </span></code></pre>
 <p>Returns an array of the users that the user specified by the url id param follows.</p>
 
