@@ -36,7 +36,8 @@ curl "https://node.ucic.vc/api/v04/events" -H "Authorization: <AUTHORIZATION_TOK
       "email": "guy@gmail.com",
       "rating": 5,
       "createdAt": "2016-10-20T18:16:35.960Z",
-      "avatar": "http://media.ucic.vc/media/AC725D7D-72C0-41D8-85E0-F602091420D7/thumb.jpg"
+      "avatar": "http://media.ucic.vc/media/AC725D7D-72C0-41D8-85E0-F602091420D7/thumb.jpg",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png"
     },
     "seen": false
   }

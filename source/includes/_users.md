@@ -116,6 +116,7 @@ curl -X GET "https://node.ucic.vc/api/v04/users/414559"
 ```json
 {
   "avatar": "https://media.ucic.vc/media/default/thumb.jpg",
+  "badge": "https://media.ucic.vc/assets/tags/CA.png",
   "createdAt": "2017-05-18T21:32:11.000Z",
   "fullname": "Samsung",
   "tagLine": "A Samsung test device on Jan's desk.",
@@ -133,7 +134,6 @@ curl -X GET "https://node.ucic.vc/api/v04/users/414559"
   "followUserCount": 1,
   "canChat": true
 }
-
 ```
 This endpoint provides a means of retrieving the profile information for a given user Id. 
 
@@ -261,7 +261,8 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
         "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg",
         "fullname": "Khan",
         "likes": 114,
-        "youFollowUser": false
+        "youFollowUser": false,
+        "badge": "https://media.ucic.vc/assets/tags/CA.png"
     },
     ...
 ]
@@ -297,7 +298,8 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
         "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg",
         "fullname": "Khan",
         "likes": 114,
-        "youFollowUser": false
+        "youFollowUser": false,
+        "badge": "https://media.ucic.vc/assets/tags/CA.png"
     },
     ...
 ]
@@ -340,6 +342,33 @@ This route returns the itemized counts of various items in the app that the user
 ### HTTP Request
 
 `GET https://node.ucic.vc/api/v04/users/unseenCounts`
+
+## List Facebook Friends
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{ "FI": ["167217543790267", "237747386665479", "1942446369318771"] }' "https://node.ucic.vc/api/v04/user/fbFriends"
+```
+> The route returns an array of JSON user objects with the format: 
+```json
+[{
+  "id": "414624",
+  "avatar": "https://media.ucic.vc/media/default/thumb.jpg",
+  "fullname": "Spock",
+  "likes": 0,
+  "youFollowUser": false,
+  "badge": "https://media.ucic.vc/assets/tags/CA.png"
+}]
+```
+
+This route accepts an array of Facebook Ids (as strings) and returns a list of any existing uCiC users who are in the array (ie. Facebook friends of the requesting user).
+
+### HTTP Request
+
+`POST https://node.ucic.vc/api/v04/user/fbFriends`
+
+### Body Params
+| param | Type         | Description                              |
+| ----- | ------------ | ---------------------------------------- |
+| FI    | String Array | The array of FI identifying the friends of the requesting user to match against existing uCiC users. |
 
 ##Logout
 

@@ -26,7 +26,8 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "creator": {
           "UI": "195502",
           "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
-          "Username": "Jay Jay"
+          "Username": "Jay Jay",
+          "badge": "https://media.ucic.vc/assets/tags/CA.png"
          }
     }],
     "request": {
@@ -142,7 +143,8 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
     "creator": {
       "UI": "195502",
       "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
-      "Username": "Jay Jay"
+      "Username": "Jay Jay",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png"
     }
   }],
   "request": {
@@ -249,7 +251,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
       "creator": {
         "UI": "195502",
         "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
-        "Username": "Jay Jay"
+        "Username": "Jay Jay",
+        "badge": "https://media.ucic.vc/assets/tags/CA.png"
       }
     }],
     "request": {
@@ -368,7 +371,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
       "creator": {
         "UI": "195502",
         "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
-        "Username": "Jay Jay"
+        "Username": "Jay Jay",
+        "badge": "https://media.ucic.vc/assets/tags/CA.png"
       }
     }],
     "request": {
@@ -485,7 +489,8 @@ curl "https://node.ucic.vc/api/v04/requests/300106/cards" -H "Authorization: <AU
       "creator": {
         "UI": "195502",
         "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
-        "Username": "Jay Jay"
+        "Username": "Jay Jay",
+        "badge": "https://media.ucic.vc/assets/tags/CA.png"
       }
     }],
     "request": {
@@ -599,7 +604,8 @@ curl "https://node.ucic.vc/api/v04/questions/a29c2a61-7fee-492e-80e6-907c859b441
       "creator": {
         "UI": "195502",
         "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
-        "Username": "Jay Jay"
+        "Username": "Jay Jay",
+        "badge": "https://media.ucic.vc/assets/tags/CA.png"
       }
     }],
     "request": {
