@@ -347,7 +347,8 @@ This route returns the itemized counts of various items in the app that the user
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{ "FI": ["167217543790267", "237747386665479", "1942446369318771"] }' "https://node.ucic.vc/api/v04/user/fbFriends"
 ```
-> The route returns an array of JSON user objects with the format: 
+> The route returns an array of JSON user objects with the format:   
+
 ```json
 [{
   "id": "414624",
