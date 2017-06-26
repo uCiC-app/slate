@@ -3534,19 +3534,17 @@ Note: the response will contain only the field(s) that were modified by the requ
 <pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "FI": ["167217543790267", "237747386665479", "1942446369318771"] }'</span> <span class="s2">"https://node.ucic.vc/api/v04/user/fbFriends"</span>
 </code></pre>
 <blockquote>
-<p>The route returns an array of JSON user objects with the format: 
-<code class="prettyprint">json
-[{
-  &quot;id&quot;: &quot;414624&quot;,
-  &quot;avatar&quot;: &quot;https://media.ucic.vc/media/default/thumb.jpg&quot;,
-  &quot;fullname&quot;: &quot;Spock&quot;,
-  &quot;likes&quot;: 0,
-  &quot;youFollowUser&quot;: false,
-  &quot;badge&quot;: &quot;https://media.ucic.vc/assets/tags/CA.png&quot;
-}]
-</code></p>
+<p>The route returns an array of JSON user objects with the format:   </p>
 </blockquote>
-
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"414624"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/default/thumb.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spock"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"youFollowUser"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
 <p>This route accepts an array of Facebook Ids (as strings) and returns a list of any existing uCiC users who are in the array (ie. Facebook friends of the requesting user).</p>
 
 <h3 id="http-request">HTTP Request</h3>
