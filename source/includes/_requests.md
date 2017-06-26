@@ -74,6 +74,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 ```json
 [{ 
 	"requestId": 51239,
+    "questionId": "0d56a3c5-1c80-4de2-b151-d5d1f875ed6c",
 	"message": "Can you show me what's happening there?",
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
@@ -131,6 +132,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 ```json
 [{ 
 	"requestId": 51239,
+    "questionId": "0d56a3c5-1c80-4de2-b151-d5d1f875ed6c",
 	"message": "Can you show me what's happening there?",
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
@@ -172,6 +174,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 ```json
 [{ 
 	"requestId": 51239,
+    "questionId": "0d56a3c5-1c80-4de2-b151-d5d1f875ed6c",
 	"message": "Can you show me what's happening there?",
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
@@ -219,6 +222,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 ```json
 { 
 	"requestId": 51239,
+    "questionId": "0d56a3c5-1c80-4de2-b151-d5d1f875ed6c",
 	"message": "Can you show me what's happening there?",
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
@@ -245,6 +249,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 ```json
 { 
 	"requestId": 51239,
+    "questionId": "0d56a3c5-1c80-4de2-b151-d5d1f875ed6c",
 	"message": "Can you show me what's happening there?",
 	"start": "2017-03-28T18:45:33.286Z",
     "end": "2017-04-04T18:45:33.286Z",
@@ -393,8 +398,8 @@ This endpoint allows a user to "follow" a request and receive alerts and push no
 
 ### URL Parameters
 
-| Parameter | Type    | Description                    |
-| --------- | ------- | ------------------------------ |
+| Parameter | Type    | Description                     |
+| --------- | ------- | ------------------------------- |
 | ID        | Integer | The id of the request to follow |
 
 ## UnFollow a Request
@@ -418,6 +423,31 @@ This endpoint allows a user to stop "following" a request and no longer receive 
 
 ### URL Parameters
 
-| Parameter | Type    | Description                    |
-| --------- | ------- | ------------------------------ |
+| Parameter | Type    | Description                       |
+| --------- | ------- | --------------------------------- |
 | ID        | Integer | The id of the request to unfollow |
+
+## Skip a Request
+
+```shell
+curl -X PUT -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" "https://node.ucic.vc/api/v04/requests/skip/300106" 
+```
+
+```javascript
+
+```
+
+> The above command returns 204 on success
+
+
+This endpoint allows a user to "skip" a request and have it permanently removed from the results of the various GET request endpoints for this user.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/requests/skip/<ID>`
+
+### URL Parameters
+
+| Parameter | Type    | Description                       |
+| --------- | ------- | --------------------------------- |
+| ID        | Integer | The id of the request to skip |

@@ -109,6 +109,12 @@ This endpoint retrieves a conversation.   The current user must have access to t
 | --------- | ---- | -------------------------------------- |
 | ID        | UUID | The ID of the conversation to retrieve |
 
+### Query Parameters
+
+| Parameter | Type | Description                            |
+| --------- | ---- | -------------------------------------- |
+| participant | Integer | The ID of the user on the other side of the conversation to retrieve. Mutually exclusive with ID URL param. If both are provided, URL ID param takes priority. |
+
 
 ## Get Conversation Messages 
 

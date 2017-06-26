@@ -36,8 +36,8 @@ This endpoint logs in a user.  It creates the user in the database if the fid is
 | os          | Integer | Device operating system.  0 for iOS, 1 for Android (This is largely deprecated, replaced by the user-agent header.  However, some obscure parts of the system still make use of it) |
 | photoURL    | String  | (Optional) Publically accessible path to an avatar photo for the user |
 | pushId      | String  | (Optional) Firebase (FCM) Push ID        |
-| FI      | String  | (Optional) Facebook Identifier for Firebase User      |
-| GI      | String  | (Optional) Google Identifier for Firebase User  |
+| FI          | String  | (Optional) Facebook Identifier for Firebase User |
+| GI          | String  | (Optional) Google Identifier for Firebase User |
 | token       | String  | (Optional) The signed firebase token containing a firebase id (fid).  Required for firebase logins |
 | username    | String  | The user's desired username              |
 | category    | String  | (Optional) The login category.  Currently only 'guest' is supported |
@@ -259,13 +259,12 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     {
         "id": 195685,
         "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg",
-        "username": "Khan",
+        "fullname": "Khan",
         "likes": 114,
-        "youFollow": false
+        "youFollowUser": false
     },
     ...
 ]
-
 ```
 Returns an array of the users that follow the user specified by the url id param.
 
@@ -296,13 +295,12 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     {
         "id": 195685,
         "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg",
-        "username": "Khan",
+        "fullname": "Khan",
         "likes": 114,
-        "youFollow": false
+        "youFollowUser": false
     },
     ...
 ]
-
 ```
 Returns an array of the users that the user specified by the url id param follows.
 

@@ -149,6 +149,6 @@ This endpoint creates a response for a request.
 | contentType        | String                                   | The content type                         |
 | requestId          | Integer                                  | The request identifier                   |
 | previewContentType | String                                   | (Required with video) The preview content type |
-| questionId         | String                                   | (Optional) The                           |
+| questionId         | String                                   | (Optional) The id of the question associated with the request. |
 | metadata           | Object { lat: double, lon: double, createdAt: Date, uploaded: Integer } | Additional metadata about the media. Date is an ISO 8601 String. All subfields are optional. The `uploaded` field tells the server if the client captured the media during the response flow (`uploaded: 0`) or attached an existing piece of media (`uploaded:1`). |
 

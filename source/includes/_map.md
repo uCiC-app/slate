@@ -26,6 +26,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   }],
   "requests": [{   // note: only sent if layer is "request"
       "id": "300038",
+      "questionId": "8285A6A7-BF41-4EE5-BDDE-4C7377FC68ED",
       "lat": 45.3735,
       "lon": -84.8978,
       "message": "What's happening over there?",
