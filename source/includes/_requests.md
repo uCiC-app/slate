@@ -444,10 +444,10 @@ This endpoint allows a user to "skip" a request and have it permanently removed 
 
 ### HTTP Request
 
-`GET https://node.ucic.vc/api/v04/requests/skip/<ID>`
+`PUT https://node.ucic.vc/api/v04/requests/skip/<ID>`
 
 ### URL Parameters
 
-| Parameter | Type    | Description                       |
-| --------- | ------- | --------------------------------- |
+| Parameter | Type    | Description                   |
+| --------- | ------- | ----------------------------- |
 | ID        | Integer | The id of the request to skip |
