@@ -2584,6 +2584,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <p>This endpoint creates a response for a request.</p>
 
+<p><strong>Note:</strong> When creating a text-only response, use the <code class="prettyprint">caption</code> field as the text response content and send <code class="prettyprint">contentType</code> field with the string value <code class="prettyprint">&quot;text&quot;</code>;</p>
+
 <p><strong>Note:</strong> The <code class="prettyprint">metadata.uploaded</code> integer flag is used to distinguish captured (0) vs attached (1) media in the response. If not provided, the server will assume the media was captured, unless one of the other metadata fields are provided, which implicitly indicates that the media is attached.</p>
 
 <h3 id="http-request">HTTP Request</h3>
@@ -2628,7 +2630,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>contentType</td>
 <td>String</td>
-<td>The content type</td>
+<td>(required) The content type (Either the file extension or the string &lsquo;text&rsquo; for text-only responses)</td>
 </tr>
 <tr>
 <td>requestId</td>
