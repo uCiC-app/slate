@@ -129,6 +129,8 @@ Response response = client.newCall(request).execute();
 
 This endpoint creates a response for a request.
 
+**Note:** When creating a text-only response, use the `caption` field as the text response content and send `contentType` field with the string value `"text"`;
+
 **Note:** The `metadata.uploaded` integer flag is used to distinguish captured (0) vs attached (1) media in the response. If not provided, the server will assume the media was captured, unless one of the other metadata fields are provided, which implicitly indicates that the media is attached.
 
 ### HTTP Request
@@ -146,7 +148,7 @@ This endpoint creates a response for a request.
 | Parameter          | Type                                     | Description                              |
 | ------------------ | ---------------------------------------- | ---------------------------------------- |
 | caption            | String                                   | The response caption                     |
-| contentType        | String                                   | The content type                         |
+| contentType        | String                                   | (required) The content type (Either the file extension or the string 'text' for text-only responses) |
 | requestId          | Integer                                  | The request identifier                   |
 | previewContentType | String                                   | (Required with video) The preview content type |
 | questionId         | String                                   | (Optional) The id of the question associated with the request. |
