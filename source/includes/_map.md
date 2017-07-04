@@ -34,11 +34,13 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
       "end": "2017-04-13T19:43:39.000Z",
       "radius": 7829.24,
       "responseCount": 2,
-      "discoverResponses": [{  // up to 3 entries in array
+      "discoverResponses": [{  // up to 10 entries in array
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
+        "caption": "some text that's part of the response",
       	"cardId": "F3A0F6F1-E61B-43E0-B78E-9309E0E60A55",
-        "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg"
+        "media": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/thumb.jpg",
+        "displayMedia": "https://media.ucic.vc/media/F3A0F6F1-E61B-43E0-B78E-9309E0E60A55/display.jpg"
       }],
       "creator": {
         "userAvatar": "https://media.ucic.vc/media/ADBDACEB-5D03-470C-89F5-C01C29BD8A89/thumb.jpg",

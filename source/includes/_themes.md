@@ -76,6 +76,7 @@ curl "https://node.ucic.vc/api/v05/themes/requests" -H "Authorization: <AUTHORIZ
       {
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
+        "caption": "some text that's part of the response",
         "cardId": "87F5E446-4395-4034-99F0-EF14A3E8FD39",
         "media": "https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/thumb.jpg",
         "displayMedia": "https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/display.jpg"
@@ -83,6 +84,7 @@ curl "https://node.ucic.vc/api/v05/themes/requests" -H "Authorization: <AUTHORIZ
       {
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
+        "caption": "some text that's part of the response",
         "cardId": "992D8E8E-EDE0-42BF-97B0-2940D91E7CA0",
         "media": "https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/thumb.jpg",
         "displayMedia": "https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/display.jpg"
@@ -90,6 +92,7 @@ curl "https://node.ucic.vc/api/v05/themes/requests" -H "Authorization: <AUTHORIZ
       {
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
+        "caption": "some text that's part of the response",
         "cardId": "033FE824-97E1-4458-80D6-B1ED62902380",
         "media": "https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/thumb.jpg",
         "displayMedia": "https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/display.jpg"
@@ -159,6 +162,7 @@ curl "https://node.ucic.vc/api/v05/themes/questions" -H "Authorization: <AUTHORI
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
         "cardId": "87F5E446-4395-4034-99F0-EF14A3E8FD39",
+        "caption": "some text that's part of the response",
         "media": "https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/thumb.jpg",
         "displayMedia": "https://media.ucic.vc/media/87F5E446-4395-4034-99F0-EF14A3E8FD39/display.jpg"
       },
@@ -166,6 +170,7 @@ curl "https://node.ucic.vc/api/v05/themes/questions" -H "Authorization: <AUTHORI
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
         "cardId": "992D8E8E-EDE0-42BF-97B0-2940D91E7CA0",
+        "caption": "some text that's part of the response",
         "media": "https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/thumb.jpg",
         "displayMedia": "https://media.ucic.vc/media/992D8E8E-EDE0-42BF-97B0-2940D91E7CA0/display.jpg"
       },
@@ -173,6 +178,7 @@ curl "https://node.ucic.vc/api/v05/themes/questions" -H "Authorization: <AUTHORI
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
         "cardId": "033FE824-97E1-4458-80D6-B1ED62902380",
+        "caption": "some text that's part of the response",
         "media": "https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/thumb.jpg",
         "displayMedia": "https://media.ucic.vc/media/033FE824-97E1-4458-80D6-B1ED62902380/display.jpg"
       }

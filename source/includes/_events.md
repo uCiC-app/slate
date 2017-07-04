@@ -20,10 +20,9 @@ curl "https://node.ucic.vc/api/v04/events" -H "Authorization: <AUTHORIZATION_TOK
     "category": "message",
     "kind": "new",
     "content": {
-      "sender": 176039,
-      "receiver": "18",
-      "id": "84780",
-      "message": "for followed request response, this is the original request message"
+      "caption": "The caption for the response in events pertaining to one.",
+      "mimeType": "image/jpeg",
+      "url": "https://media.ucic.vc/media/8602814D-0CE1-444D-95BF-824CD6CBF186/display.jpg"
     },
     "thumb": null,
     "refId": "84780",
