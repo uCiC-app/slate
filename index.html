@@ -2589,6 +2589,32 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <p><strong>Note:</strong> The <code class="prettyprint">metadata.uploaded</code> integer flag is used to distinguish captured (0) vs attached (1) media in the response. If not provided, the server will assume the media was captured, unless one of the other metadata fields are provided, which implicitly indicates that the media is attached.</p>
 
+<h3 id="uploading-to-s3-directly">Uploading to S3 Directly</h3>
+
+<p>The service now supports letting the clients upload the video file to S3 directly to free up uCiC serivce&rsquo;s bandwidth and processing power for other work. In order to upload from the client to the S3 bucket, you will need to use a TransferUtility (<a href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transferutility.html">Android</a>, <a href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/s3transferutility.html">iOS</a>) properly configured to point to the US-WEST-2 region and identifying itself using the predefined key to be allowed write access (Note, this key is not posted here as these docs are public). </p>
+
+<p><strong>Note</strong> By default, the Transfer Utility does not allow public read of the uploaded files. Make sure you pass the <code class="prettyprint">PublicRead</code> argument to the .upload method when called to ensure clients can later view the media.</p>
+
+<p>When calling the TansferUtility .upload method, use the following arguments: </p>
+
+<p><code class="prettyprint">bucketName = &quot;ucic-production&quot;</code>
+<code class="prettyprint">key = &quot;media/videoId/original.mp4&quot;</code></p>
+
+<p><strong>VideoId Generation</strong>
+The videoId must be a unique String of length up to 36 characters. Use the following method to generate the key: </p>
+
+<p><code class="prettyprint">videoId = platformInitial + &quot;_&quot; + userId + &quot;_&quot; + unixTimestamp</code></p>
+
+<p>where  </p>
+
+<p><code class="prettyprint">platformInitial</code> is &ldquo;i&rdquo; for iOS and &ldquo;A&rdquo; for Android</p>
+
+<p><code class="prettyprint">userId</code> is the numerical ID of the logged in user</p>
+
+<p><code class="prettyprint">unixTimestamp</code> is the 13 digit unit timestamp expressed in milliseconds.</p>
+
+<p>The resulting videoId should look soething like <code class="prettyprint">A_414695_1499280905159</code></p>
+
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST https://node.ucic.vc/api/v04/responses</code></p>
@@ -2627,6 +2653,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>caption</td>
 <td>String</td>
 <td>The response caption</td>
+</tr>
+<tr>
+<td>videoId</td>
+<td>String</td>
+<td>If the client has already uploaded the video file to the S3 bucket, pass this param instead of the video file. This is the id of the media object in the S3 bucket,  where the path to the object is <code class="prettyprint">&quot;ucic-production/media/{videoId}/original.mp4&quot;</code> (see <strong>videoId Generation</strong> above in the <strong>Uploading to S3 Directly</strong> section above for more details)</td>
 </tr>
 <tr>
 <td>contentType</td>
