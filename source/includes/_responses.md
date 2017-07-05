@@ -137,7 +137,7 @@ This endpoint creates a response for a request.
 ### Uploading to S3 Directly
 The service now supports letting the clients upload the video file to S3 directly to free up uCiC serivce's bandwidth and processing power for other work. In order to upload from the client to the S3 bucket, you will need to use a TransferUtility ([Android](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transferutility.html), [iOS](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/s3transferutility.html)) properly configured to point to the US-WEST-2 region and identifying itself using the predefined key to be allowed write access (Note, this key is not posted here as these docs are public). 
 
-**Note** By default, the Transfer Utility does not allow public read of the uploaded files. Make sure you pass the `PublicRead` argument to the .upload method when called to ensure clients can later view the media.
+**Note:** By default, the Transfer Utility does not allow public read of the uploaded files. Make sure you pass the `PublicRead` argument to the .upload method when called to ensure clients can later view the media.
 
 When calling the TansferUtility .upload method, use the following arguments: 
 
