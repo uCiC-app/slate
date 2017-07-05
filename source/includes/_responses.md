@@ -141,10 +141,10 @@ The service now supports letting the clients upload the video file to S3 directl
 
 When calling the TansferUtility .upload method, use the following arguments: 
 
-`bucketName = "ucic-production"`
+`bucketName = "ucic-production"`  
 `key = "media/videoId/original.mp4"`
 
-**VideoId Generation**
+**VideoId Generation**  
 The videoId must be a unique String of length up to 36 characters. Use the following method to generate the key: 
 
 `videoId = platformInitial + "_" + userId + "_" + unixTimestamp`
