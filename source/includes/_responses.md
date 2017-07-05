@@ -133,6 +133,33 @@ This endpoint creates a response for a request.
 
 **Note:** The `metadata.uploaded` integer flag is used to distinguish captured (0) vs attached (1) media in the response. If not provided, the server will assume the media was captured, unless one of the other metadata fields are provided, which implicitly indicates that the media is attached.
 
+
+### Uploading to S3 Directly
+The service now supports letting the clients upload the video file to S3 directly to free up uCiC serivce's bandwidth and processing power for other work. In order to upload from the client to the S3 bucket, you will need to use a TransferUtility ([Android](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transferutility.html), [iOS](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/s3transferutility.html)) properly configured to point to the US-WEST-2 region and identifying itself using the predefined key to be allowed write access (Note, this key is not posted here as these docs are public). 
+
+**Note** By default, the Transfer Utility does not allow public read of the uploaded files. Make sure you pass the `PublicRead` argument to the .upload method when called to ensure clients can later view the media.
+
+When calling the TansferUtility .upload method, use the following arguments: 
+
+`bucketName = "ucic-production"`
+`key = "media/videoId/original.mp4"`
+
+**VideoId Generation**
+The videoId must be a unique String of length up to 36 characters. Use the following method to generate the key: 
+
+`videoId = platformInitial + "_" + userId + "_" + unixTimestamp`
+
+where  
+
+ `platformInitial` is "i" for iOS and "A" for Android
+
+`userId` is the numerical ID of the logged in user
+
+`unixTimestamp` is the 13 digit unit timestamp expressed in milliseconds.
+
+The resulting videoId should look soething like `A_414695_1499280905159`
+
+
 ### HTTP Request
 
 `POST https://node.ucic.vc/api/v04/responses`
@@ -148,6 +175,7 @@ This endpoint creates a response for a request.
 | Parameter          | Type                                     | Description                              |
 | ------------------ | ---------------------------------------- | ---------------------------------------- |
 | caption            | String                                   | The response caption                     |
+| videoId            | String                                   | If the client has already uploaded the video file to the S3 bucket, pass this param instead of the video file. This is the id of the media object in the S3 bucket,  where the path to the object is `"ucic-production/media/{videoId}/original.mp4"` (see **videoId Generation** above in the **Uploading to S3 Directly** section above for more details) |
 | contentType        | String                                   | (required) The content type (Either the file extension or the string 'text' for text-only responses) |
 | requestId          | Integer                                  | The request identifier                   |
 | previewContentType | String                                   | (Required with video) The preview content type |
