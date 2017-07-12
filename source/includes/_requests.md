@@ -95,6 +95,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png",
       "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
 	}
 }, ...]
@@ -149,6 +150,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png",
       "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
 	}
 }, ...]
@@ -190,6 +192,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png",
       "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
 	}
 }, ...]
@@ -239,6 +242,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png",
       "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
 	}
 }
@@ -270,6 +274,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"creator": {
       "userId": 39266,
       "userName": "Billy Jean",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png",
       "userAvatar": "http://staging-media.ucic.vc/media/B94667C1-19A6-4973-9003-9723A36BBF0F/thumb.jpg"
 	}
 }
