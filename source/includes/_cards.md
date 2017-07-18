@@ -687,11 +687,13 @@ This endpoint retrieves the cards for a specified question..
 
 ### Query Parameters
 
-| Parameter | Type             | Description                              |
-| --------- | ---------------- | ---------------------------------------- |
-| limit     | Unsigned Integer | Maximum number of cards to return        |
-| offset    | Unsigned Integer | Offset in list of cards to start return from |
-| page      | Unsigned Integer | Page of cards to return (note: overrides offset value if both are sent) |
+| Parameter | Type                                     | Description                              |
+| --------- | ---------------------------------------- | ---------------------------------------- |
+| limit     | Unsigned Integer                         | Maximum number of cards to return        |
+| offset    | Unsigned Integer                         | Offset in list of cards to start return from |
+| page      | Unsigned Integer                         | Page of cards to return (note: overrides offset value if both are sent) |
+| sort      | String<'latestLike:desc', 'mediaCreated'> | What sort to apply to the returned cards. Default is `mediaCreated` |
+
 
 ## Hide a Card
 
