@@ -1066,6 +1066,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 <td>Unsigned Integer</td>
 <td>Page of cards to return (note: overrides offset value if both are sent)</td>
 </tr>
+<tr>
+<td>sort</td>
+<td>String&lt;&#39;latestLike:desc&rsquo;, &#39;mediaCreated&rsquo;&gt;</td>
+<td>What sort to apply to the returned cards. Default is <code class="prettyprint">mediaCreated</code></td>
+</tr>
 </tbody></table>
 
 <h2 id="hide-a-card">Hide a Card</h2>
@@ -2942,7 +2947,7 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tr>
 <tr>
 <td>sort</td>
-<td>String&lt;&#39;latestResponse:desc&rsquo;,&#39;totalLikes:desc&rsquo;,&#39;latestLike:desc&rsquo;</td>
+<td>String&lt;&#39;latestResponse:desc&rsquo;,&#39;latestLike:desc&rsquo;&gt;</td>
 <td>Sort order, default is &#39;latestResponse:desc&rsquo;</td>
 </tr>
 </tbody></table>
