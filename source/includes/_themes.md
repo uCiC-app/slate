@@ -246,6 +246,63 @@ This endpoint retrieves a specific theme.
 | --------- | ---- | ------------------------------- |
 | ID        | UUID | The ID of the theme to retrieve |
 
+
+## Get Themes for Followed Items
+
+```shell
+curl "https://node.ucic.vc/api/v05/themes/following" -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+
+[{
+  "type": "q",  // or 'user'
+  "refId": "2793219a-9cf7-451f-92a3-04a12fe3d270",
+  "message": "What you are looking at?",
+  "responseCount": 24,
+  "followers": [{
+    "userId": 414375,
+    "userName": "The North",
+    "avatar": "https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"
+  }],
+  "discoverResponses": [{
+    "type": 0,
+    "badge": "https://media.ucic.vc/assets/tags/CA.png",
+    "caption": "",
+    "cardId": "CEC62D28-950D-4AE3-830D-21E05C48AD3A",
+    "media": "https://media.ucic.vc/media/CEC62D28-950D-4AE3-830D-21E05C48AD3A/thumb.jpg",
+    "displayMedia": "https://media.ucic.vc/media/CEC62D28-950D-4AE3-830D-21E05C48AD3A/display.jpg"
+  }],
+  "creator": {
+    "userId": "414739",
+    "userName": "Jan Snow",
+    "userAvatar": "https://media.ucic.vc/media/default/thumb.jpg",
+    "badge": "https://media.ucic.vc/assets/tags/CA.png"
+  }
+}]
+```
+
+This endpoint retrieves themes based on the various entities that the authorized user follows, sorted by most recent response first. In addition to the data returned by other theme GET routes, two additional fields are provided to distinguish *what* the theme is for. These fields are `type` and `refId`. The `type` field currently has 2 possible values: 'q' and 'user' to indicate a theme for a followed question or user, respectively. The `refId` field in turn, specifies the unique identifier of the question or user that the theme refers to, so that the client can then open the full card set for that theme with either a call to GET /questions/:refId/cards, or GET users/:refId/responses. 
+
+**Special considerations:** generating the following theme is very computationally expensive per page, and involves throwing away a bit of work during each call. Further, due to the limitations of Elasticsearch's Aggregation implementation, there is a slightly increased chance of repeated or missed rows at the borders of "pages". As such, it is recommended that the clients use a slightly larger page size (say, 15 instead of 10 rows per call) for this theme to lower the overall load on the server and decrease the chances that they encounter pagination related row discrepencies.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v05/themes/following`
+
+### Query Parameters
+
+| Parameter | Type             | Description                              |
+| --------- | ---------------- | ---------------------------------------- |
+| limit     | Unsigned Integer | Maximum number of themes to return       |
+| offset    | Unsigned Integer | Offset in list of themes to start return from |
+
 ## Search for a Theme 
 
 ```shell
