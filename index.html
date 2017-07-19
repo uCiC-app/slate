@@ -2988,6 +2988,69 @@ Remember — a happy uCiC client is an authenticated uCiC client!
 </tr>
 </tbody></table>
 
+<h2 id="get-themes-for-followed-items">Get Themes for Followed Items</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/following"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span><span class="p">[{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"q"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">'user'</span><span class="w">
+  </span><span class="nt">"refId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2793219a-9cf7-451f-92a3-04a12fe3d270"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What you are looking at?"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"responseCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414375</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The North"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/F77318CA-AD36-4BC2-9EF1-607A76051E3F/thumb.jpg"</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
+  </span><span class="nt">"discoverResponses"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CEC62D28-950D-4AE3-830D-21E05C48AD3A"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/CEC62D28-950D-4AE3-830D-21E05C48AD3A/thumb.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"displayMedia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/CEC62D28-950D-4AE3-830D-21E05C48AD3A/display.jpg"</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
+  </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"414739"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jan Snow"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/default/thumb.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves themes based on the various entities that the authorized user follows, sorted by most recent response first. In addition to the data returned by other theme GET routes, two additional fields are provided to distinguish <em>what</em> the theme is for. These fields are <code class="prettyprint">type</code> and <code class="prettyprint">refId</code>. The <code class="prettyprint">type</code> field currently has 2 possible values: &#39;q&rsquo; and &#39;user&rsquo; to indicate a theme for a followed question or user, respectively. The <code class="prettyprint">refId</code> field in turn, specifies the unique identifier of the question or user that the theme refers to, so that the client can then open the full card set for that theme with either a call to GET /questions/:refId/cards, or GET users/:refId/responses. </p>
+
+<p><strong>Special considerations:</strong> generating the following theme is very computationally expensive per page, and involves throwing away a bit of work during each call. Further, due to the limitations of Elasticsearch&rsquo;s Aggregation implementation, there is a slightly increased chance of repeated or missed rows at the borders of &ldquo;pages&rdquo;. As such, it is recommended that the clients use a slightly larger page size (say, 15 instead of 10 rows per call) for this theme to lower the overall load on the server and decrease the chances that they encounter pagination related row discrepencies.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v05/themes/following</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Unsigned Integer</td>
+<td>Maximum number of themes to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Unsigned Integer</td>
+<td>Offset in list of themes to start return from</td>
+</tr>
+</tbody></table>
+
 <h2 id="search-for-a-theme">Search for a Theme</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v05/themes/search?query=Boliv"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code>
