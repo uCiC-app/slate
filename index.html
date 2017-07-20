@@ -1741,7 +1741,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>zoom</td>
 <td>Unsigned Integer</td>
-<td>Google Maps Zoom Level to retrieve results at.  Min 0:, Max: 11</td>
+<td>Google Maps Zoom Level to retrieve results at.  Min: 0, Max: 11</td>
 </tr>
 <tr>
 <td>layer</td>
@@ -1828,13 +1828,13 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 <tr>
 <td>zoom</td>
-<td>Unsigned Integer</td>
-<td>Google Maps Zoom Level to retrieve results at.  Min 0:, Max: 11</td>
+<td>float</td>
+<td>Map zoom level to retrieve results at.  Min: 0, Max: 20. Determines what events are returned</td>
 </tr>
 <tr>
 <td>layer</td>
 <td>String (&lsquo;events&rsquo;)</td>
-<td>(Required) specifies the event map layer is the one to return. If omitted, will return the deault (user) map layer</td>
+<td>(Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer</td>
 </tr>
 <tr>
 <td>categories</td>
