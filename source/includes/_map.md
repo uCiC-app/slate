@@ -87,7 +87,7 @@ This endpoint retrieves markers and clusters on the map. It supports a *layer* q
 | south     | Decimal (38)     | Southern latitude boundary of bounding box.  Max: 90, Min: -90 |
 | east      | Decimal (38)     | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
 | west      | Decimal (38)     | Western longitude boundary of bounding box. Max: 180, Min: -180 |
-| zoom      | Unsigned Integer | Google Maps Zoom Level to retrieve results at.  Min 0:, Max: 11 |
+| zoom      | Unsigned Integer | Google Maps Zoom Level to retrieve results at.  Min: 0, Max: 11 |
 | layer     | String           | Specify the request map data layer. Current supported values are "request" and "user" (default) |
 
 ## Get Map Event layer
@@ -149,7 +149,7 @@ Every event falls into one of the following categories. When requesting the even
 | south      | Decimal (38)      | Southern latitude boundary of bounding box.  Max: 90, Min: -90 |
 | east       | Decimal (38)      | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
 | west       | Decimal (38)      | Western longitude boundary of bounding box. Max: 180, Min: -180 |
-| zoom       | Unsigned Integer  | Google Maps Zoom Level to retrieve results at.  Min 0:, Max: 11 |
-| layer      | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the deault (user) map layer |
+| zoom       | float             | Map zoom level to retrieve results at.  Min: 0, Max: 20. Determines what events are returned |
+| layer      | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
 | categories | String            | A comma-seperated list of event categories to return. The full list of supported events is lised above. For example `&categories=sports,festivals,severe-weather` |
 
