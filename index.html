@@ -1750,6 +1750,99 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 </tbody></table>
 
+<h2 id="get-map-event-layer">Get Map Event layer</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/map/?north=72.57706249077567&amp;south=-72.57707684644146&amp;east=72.32144437730312&amp;west=-72.32142057269812&amp;zoom=2&amp;layer=events&amp;categories=sports,festivals"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02b6qM8epkmW"</span><span class="w">
+  </span><span class="s2">"title"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Montana Avenue ART WALK"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Join us for a family/friends/date night of art, music, treats &amp; shopping on 11th blocks of the scenic Montana Avenue. View many local and famed artists, sample the treats and dine in USA Today's top restaurant pics. 6th - 17th street."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"festivals"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.0345</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.492</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">69</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21T04:00:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-13T07:29:03.000Z"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves event markers for the map. This layer does not do any clustering, instead the events returned are filtered based on the zoom level provided in the query parameters such that higher &ldquo;rank&rdquo; events appear at lower zoom levels (higher altitudes). </p>
+
+<p>Note: many of the events are submitted by users of the Predict HQ api and as such, the reliability of the data in each field should be taken with a grain of salt; start/end times may not be completely accurate, rank may be overstated, description may be missing, etc.</p>
+
+<h3 id="event-categories">Event Categories</h3>
+
+<p>Every event falls into one of the following categories. When requesting the event map layer, the client may specify which categories the service shoudl return.</p>
+
+<ul>
+<li><code class="prettyprint">concerts</code><br></li>
+<li><code class="prettyprint">expos</code><br></li>
+<li><code class="prettyprint">festivals</code><br></li>
+<li><code class="prettyprint">sports</code><br></li>
+<li><code class="prettyprint">severe-weather</code><br></li>
+<li><code class="prettyprint">disasters</code><br></li>
+<li><code class="prettyprint">terror</code><br></li>
+<li><code class="prettyprint">community</code><br></li>
+</ul>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/map?layer=events&amp;categories=sports,festivals,expos,severe-weather&amp;north=72.577&amp;south=68.584&amp;east=72.321&amp;west=69.765&amp;zoom=3</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>north</td>
+<td>Decimal (38)</td>
+<td>Northern latitude boundary of bounding box.  Max: 90, Min: 90</td>
+</tr>
+<tr>
+<td>south</td>
+<td>Decimal (38)</td>
+<td>Southern latitude boundary of bounding box.  Max: 90, Min: -90</td>
+</tr>
+<tr>
+<td>east</td>
+<td>Decimal (38)</td>
+<td>Eastern longitude boundary of bounding box.  Max: 180, Min: -180</td>
+</tr>
+<tr>
+<td>west</td>
+<td>Decimal (38)</td>
+<td>Western longitude boundary of bounding box. Max: 180, Min: -180</td>
+</tr>
+<tr>
+<td>zoom</td>
+<td>Unsigned Integer</td>
+<td>Google Maps Zoom Level to retrieve results at.  Min 0:, Max: 11</td>
+</tr>
+<tr>
+<td>layer</td>
+<td>String (&lsquo;events&rsquo;)</td>
+<td>(Required) specifies the event map layer is the one to return. If omitted, will return the deault (user) map layer</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>String</td>
+<td>A comma-seperated list of event categories to return. The full list of supported events is lised above. For example <code class="prettyprint">&amp;categories=sports,festivals,severe-weather</code></td>
+</tr>
+</tbody></table>
+
           <h1 id="mobile">Mobile</h1>
 
 <h2 id="get-minimum-and-latest-app-versions">Get Minimum and Latest App Versions</h2>
