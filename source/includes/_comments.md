@@ -51,6 +51,8 @@ This endpoint retrieves the comments for a card.  Comments are sorted in descend
 | limit     | Unsigned Integer | Maximum number of comments to return     |
 | offset    | Unsigned Integer | Offset in list of commentss to start return from |
 | page      | Unsigned Integer | Page of comments to return               |
+| sort      | String           | what to sort returned comments by, currently only supports `createdAt` |
+| order     | String           | Either `ASC` or `DESC`                   |
 
 
 ## Create a Comment for a Card
