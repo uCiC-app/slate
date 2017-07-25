@@ -280,7 +280,7 @@ curl "https://node.ucic.vc/api/v05/themes/following" -H "Authorization: <AUTHORI
     "displayMedia": "https://media.ucic.vc/media/CEC62D28-950D-4AE3-830D-21E05C48AD3A/display.jpg"
   }],
   "creator": {
-    "userId": "414739",
+    "userId": 414739,
     "userName": "Jan Snow",
     "userAvatar": "https://media.ucic.vc/media/default/thumb.jpg",
     "badge": "https://media.ucic.vc/assets/tags/CA.png"

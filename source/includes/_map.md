@@ -104,7 +104,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 
 ```json
 [{
-  "id": "02b6qM8epkmW"
+  "id": "02b6qM8epkmW",
   "title": "Montana Avenue ART WALK",
   "description": "Join us for a family/friends/date night of art, music, treats & shopping on 11th blocks of the scenic Montana Avenue. View many local and famed artists, sample the treats and dine in USA Today's top restaurant pics. 6th - 17th street.",
   "category": "festivals",
