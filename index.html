@@ -1768,8 +1768,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">[{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02b6qM8epkmW"</span><span class="w">
-  </span><span class="s2">"title"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Montana Avenue ART WALK"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02b6qM8epkmW"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Montana Avenue ART WALK"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Join us for a family/friends/date night of art, music, treats &amp; shopping on 11th blocks of the scenic Montana Avenue. View many local and famed artists, sample the treats and dine in USA Today's top restaurant pics. 6th - 17th street."</span><span class="p">,</span><span class="w">
   </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"festivals"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
@@ -1787,21 +1787,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <p>This endpoint retrieves event markers for the map. This layer does not do any clustering, instead the events returned are filtered based on the zoom level provided in the query parameters such that higher &ldquo;rank&rdquo; events appear at lower zoom levels (higher altitudes). </p>
 
 <p>Note: many of the events are submitted by users of the Predict HQ api and as such, the reliability of the data in each field should be taken with a grain of salt; start/end times may not be completely accurate, rank may be overstated, description may be missing, etc.</p>
-
-<h3 id="event-categories">Event Categories</h3>
-
-<p>Every event falls into one of the following categories. When requesting the event map layer, the client may specify which categories the service shoudl return.</p>
-
-<ul>
-<li><code class="prettyprint">concerts</code><br></li>
-<li><code class="prettyprint">expos</code><br></li>
-<li><code class="prettyprint">festivals</code><br></li>
-<li><code class="prettyprint">sports</code><br></li>
-<li><code class="prettyprint">severe-weather</code><br></li>
-<li><code class="prettyprint">disasters</code><br></li>
-<li><code class="prettyprint">terror</code><br></li>
-<li><code class="prettyprint">community</code><br></li>
-</ul>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1849,9 +1834,34 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>categories</td>
 <td>String</td>
-<td>A comma-seperated list of event categories to return. The full list of supported events is lised above. For example <code class="prettyprint">&amp;categories=sports,festivals,severe-weather</code></td>
+<td>A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: <code class="prettyprint">&amp;categories=sports,culture,shows</code></td>
 </tr>
 </tbody></table>
+
+<h2 id="get-event-map-layer-categories">Get Event Map Layer Categories</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/map/eventCategories"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concerts &amp; Shows"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shows"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">941</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conferences &amp; Expos"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expos"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">185</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint provides the available categories and their associated info for use with the events map layer. When querying the events map layer, use the values provided as the <code class="prettyprint">categoryId</code> for each category to include those events in the returned data.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/map/eventCategories</code></p>
 
           <h1 id="mobile">Mobile</h1>
 
@@ -3118,7 +3128,7 @@ Remember — a happy uCiC client is an authenticated uCiC client!
     </span><span class="nt">"displayMedia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/CEC62D28-950D-4AE3-830D-21E05C48AD3A/display.jpg"</span><span class="w">
   </span><span class="p">}],</span><span class="w">
   </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"414739"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414739</span><span class="p">,</span><span class="w">
     </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jan Snow"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/default/thumb.jpg"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
