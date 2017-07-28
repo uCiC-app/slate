@@ -125,18 +125,6 @@ This endpoint retrieves event markers for the map. This layer does not do any cl
 
 Note: many of the events are submitted by users of the Predict HQ api and as such, the reliability of the data in each field should be taken with a grain of salt; start/end times may not be completely accurate, rank may be overstated, description may be missing, etc.
 
-### Event Categories
-Every event falls into one of the following categories. When requesting the event map layer, the client may specify which categories the service shoudl return.
-
-* `concerts`  
-* `expos`  
-* `festivals`  
-* `sports`  
-* `severe-weather`  
-* `disasters`  
-* `terror`  
-* `community`  
-
 ### HTTP Request
 
 `GET https://node.ucic.vc/api/v04/map?layer=events&categories=sports,festivals,expos,severe-weather&north=72.577&south=68.584&east=72.321&west=69.765&zoom=3`
@@ -151,5 +139,37 @@ Every event falls into one of the following categories. When requesting the even
 | west       | Decimal (38)      | Western longitude boundary of bounding box. Max: 180, Min: -180 |
 | zoom       | float             | Map zoom level to retrieve results at.  Min: 0, Max: 20. Determines what events are returned |
 | layer      | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
-| categories | String            | A comma-seperated list of event categories to return. The full list of supported events is lised above. For example `&categories=sports,festivals,severe-weather` |
+| categories | String            | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: `&categories=sports,culture,shows` |
 
+## Get Event Map Layer Categories
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/map/eventCategories"
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[{
+  "name": "Concerts & Shows",
+  "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows.png",
+  "categoryId": "shows",
+  "eventCount": 941
+},{
+  "name": "Conferences & Expos",
+  "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos.png",
+  "categoryId": "expos",
+  "eventCount": 185
+}]
+```
+
+This endpoint provides the available categories and their associated info for use with the events map layer. When querying the events map layer, use the values provided as the `categoryId` for each category to include those events in the returned data.
+
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/map/eventCategories`
