@@ -11,6 +11,7 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
     },
     "receiverUI": 197244,
     "questionId": "50b08a47-608f-41d6-a788-dcc9b34d3c9f",
+    "eventId": "1GJpe5m8X8Q9",
     "message": "How are you doing today?",
     "override": false
 }' "https://node.ucic.vc/api/v04/requests"
@@ -49,10 +50,11 @@ POST https://node.ucic.vc/api/v04/requests
 | location\*   | { lat, lon, radius } | (Optional) location request lat lon coordinates and radius(m). |
 | message      | String               | Request message content body (required)  |
 | questionId   | String               | (Optional) The id of the question the user chose from the suggested questions list if they did not write their own. |
+| eventId\*   | String         | (Optional) The id of the event to which this request is being posted. |
 | override     | Boolean              | (Optional, default: false) Override time of day exception and send request anyway |
 | receiverUI\* | Unsigned Integer     | (Optional) List of receiver user IDs     |
 
-\* **Note:** The use of *location* or *receiverUI* or **neither** dictates what kind of request is created. If *receiverUI* is provided, it will become a direct request. If a *location* is provided, it'll become a map request (if both, a direct request). If neither is provided, it will become a global request.
+\* **Note:** The use of *location*, or *receiverUI*, or *eventId*,  or **none of these 3** dictates what kind of request is created. If *receiverUI* is provided, it will become a direct request. If a *location* is provided, it'll become a map request (if both, a direct request). If an eventId is provided, it will become an Event Request.  If none of these are provided, it will become a global request.
 
 ### Errors
 | Error | Meaning                                  |

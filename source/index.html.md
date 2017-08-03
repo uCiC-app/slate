@@ -16,6 +16,7 @@ includes:
   - comments
   - conversations
   - events
+  - eventrooms
   - map
   - mobile
   - questions

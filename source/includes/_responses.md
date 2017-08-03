@@ -133,6 +133,8 @@ This endpoint creates a response for a request.
 
 **Note:** The `metadata.uploaded` integer flag is used to distinguish captured (0) vs attached (1) media in the response. If not provided, the server will assume the media was captured, unless one of the other metadata fields are provided, which implicitly indicates that the media is attached.
 
+### Uploading a response to an Event Room
+Event rooms may contain "free floating" media objects. In order to create these, perform a normal response upload, but as the `requestId` body param, provide the ID of the event room, prefixed with `event_`. So if the event room ID is `1GJpe5m8X8Q9`, the requestId will be `event_1GJpe5m8X8Q9` in the body.
 
 ### Uploading to S3 Directly
 The service now supports letting the clients upload the video file to S3 directly to free up uCiC serivce's bandwidth and processing power for other work. In order to upload from the client to the S3 bucket, you will need to use a TransferUtility ([Android](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transferutility.html), [iOS](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/s3transferutility.html)) properly configured to point to the US-WEST-2 region and identifying itself using the predefined key to be allowed write access (Note, this key is not posted here as these docs are public). 
@@ -151,7 +153,7 @@ The videoId must be a unique String of length up to 36 characters. Use the follo
 
 where  
 
- `platformInitial` is "i" for iOS and "A" for Android
+ `platformInitial` is "B" for iOS and "A" for Android
 
 `userId` is the numerical ID of the logged in user
 
