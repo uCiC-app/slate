@@ -1247,6 +1247,58 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 </tr>
 </tbody></table>
 
+<h2 id="create-a-comment-on-an-event-room-or-another-comment">Create a Comment on an Event Room or Another Comment</h2>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "text": "Adding a comment to an event", "itemType": "event", "itemId": "1234567890" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/comment/new"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns Created 201 with the new comment:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20ac70f6-6273-4453-aa7b-f2823ae5641a"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"hidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"creatorId"</span><span class="p">:</span><span class="w"> </span><span class="mi">611</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEC604AC-C29F-4764-B9C6-2CEC7351ABB6"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"card"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adding a comment to a card"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-19T19:42:40.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-19T19:42:40.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a comment for an event room, or as a reply to an existing comment. When using it, the POST body specifies the target item being commented on with the <code class="prettyprint">itemType</code> field (supports <code class="prettyprint">event</code>, <code class="prettyprint">comment</code>) and the identifier of the target item with the <code class="prettyprint">itemId</code> field.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/comment/new</code></p>
+
+<h3 id="request-body">Request Body</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>The comment body text</td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>The type of item being commented on. Currently either <code class="prettyprint">event</code> or <code class="prettyprint">comment</code></td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The unique identifier of the object being commented on. This is the <code class="prettyprint">comment.id</code> in the case of a comment on a comment and <code class="prettyprint">event.id</code> in the event of an event room.</td>
+</tr>
+</tbody></table>
+
           <h1 id="conversations">Conversations</h1>
 
 <h2 id="get-all-conversations">Get All Conversations</h2>
@@ -1645,6 +1697,210 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <p><code class="prettyprint">PUT https://node.ucic.vc/api/v04/events/bulkSeen</code></p>
 
+          <h1 id="event-rooms">Event Rooms</h1>
+
+<h2 id="get-event-room-info">Get Event Room info</h2>
+<pre class="highlight shell"><code>
+curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Dummy event created to centralize testing of various event room aspects"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"News"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mediaCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T00:05:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-31T00:05:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the high level info for a given event room.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/eventRoom/:id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The id of the event room to retrieve the info for</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-event-room-items">Get Event Room Items</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id/items"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-03T16:44:40.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A20E9361-78BD-4244-B867-22BC46537FA2"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"popularCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"atEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414744</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alc"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free floating media!"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A20E9361-78BD-4244-B867-22BC46537FA2"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76055</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/thumb.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/original.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"likeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T20:59:01.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03ba5137-0ca6-4073-bdcd-8a92dcb772fe"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"popularCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"atEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414767</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Someone"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a root level comment!"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414767</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Someone"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T20:59:53.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is an inner comment, replying to a root comment"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"atEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T16:36:53.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300651"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"popularCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"atEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414767</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Someone"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's happening at this event?"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414767</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Someone"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nt">"replies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414744</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alc"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-03T18:33:39.000Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A reply to an event question"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"atEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"cardId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"399E2745-28E0-4041-9A79-BEA80D5B0AD0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76056</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/399E2745-28E0-4041-9A79-BEA80D5B0AD0/thumb.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/399E2745-28E0-4041-9A79-BEA80D5B0AD0/original.jpeg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"likeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the list of items for the specified event room id.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT https://node.ucic.vc/api/v04/events/&lt;ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The id of the event room to retrieve the items for</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sort</td>
+<td>String</td>
+<td>Sorted by most recent first. sort supports a value of &lsquo;popular&rsquo; to bring interesting content to the front.</td>
+</tr>
+<tr>
+<td>atEvent</td>
+<td>String</td>
+<td>If a value of <code class="prettyprint">true</code> is sent for this query param, only items that were generated at the location of the event will be sent (based on the root level item, atEvent of nested items is ignored)</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Comma delimited String</td>
+<td>A comma separated list of what item types to return. supports any combination of <code class="prettyprint">question</code>, <code class="prettyprint">media</code>, <code class="prettyprint">comment</code></td>
+</tr>
+</tbody></table>
+
           <h1 id="map">Map</h1>
 
 <h2 id="get-map-markers-and-clusters">Get Map Markers and Clusters</h2>
@@ -2036,6 +2292,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
     },
     "receiverUI": 197244,
     "questionId": "50b08a47-608f-41d6-a788-dcc9b34d3c9f",
+    "eventId": "1GJpe5m8X8Q9",
     "message": "How are you doing today?",
     "override": false
 }'</span> <span class="s2">"https://node.ucic.vc/api/v04/requests"</span>
@@ -2087,6 +2344,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <td>(Optional) The id of the question the user chose from the suggested questions list if they did not write their own.</td>
 </tr>
 <tr>
+<td>eventId*</td>
+<td>String</td>
+<td>(Optional) The id of the event to which this request is being posted.</td>
+</tr>
+<tr>
 <td>override</td>
 <td>Boolean</td>
 <td>(Optional, default: false) Override time of day exception and send request anyway</td>
@@ -2098,7 +2360,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 </tbody></table>
 
-<p>* <strong>Note:</strong> The use of <em>location</em> or <em>receiverUI</em> or <strong>neither</strong> dictates what kind of request is created. If <em>receiverUI</em> is provided, it will become a direct request. If a <em>location</em> is provided, it&rsquo;ll become a map request (if both, a direct request). If neither is provided, it will become a global request.</p>
+<p>* <strong>Note:</strong> The use of <em>location</em>, or <em>receiverUI</em>, or <em>eventId</em>,  or <strong>none of these 3</strong> dictates what kind of request is created. If <em>receiverUI</em> is provided, it will become a direct request. If a <em>location</em> is provided, it&rsquo;ll become a map request (if both, a direct request). If an eventId is provided, it will become an Event Request.  If none of these are provided, it will become a global request.</p>
 
 <h3 id="errors">Errors</h3>
 
@@ -2712,6 +2974,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <p><strong>Note:</strong> The <code class="prettyprint">metadata.uploaded</code> integer flag is used to distinguish captured (0) vs attached (1) media in the response. If not provided, the server will assume the media was captured, unless one of the other metadata fields are provided, which implicitly indicates that the media is attached.</p>
 
+<h3 id="uploading-a-response-to-an-event-room">Uploading a response to an Event Room</h3>
+
+<p>Event rooms may contain &ldquo;free floating&rdquo; media objects. In order to create these, perform a normal response upload, but as the <code class="prettyprint">requestId</code> body param, provide the ID of the event room, prefixed with <code class="prettyprint">event_</code>. So if the event room ID is <code class="prettyprint">1GJpe5m8X8Q9</code>, the requestId will be <code class="prettyprint">event_1GJpe5m8X8Q9</code> in the body.</p>
+
 <h3 id="uploading-to-s3-directly">Uploading to S3 Directly</h3>
 
 <p>The service now supports letting the clients upload the video file to S3 directly to free up uCiC serivce&rsquo;s bandwidth and processing power for other work. In order to upload from the client to the S3 bucket, you will need to use a TransferUtility (<a href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transferutility.html">Android</a>, <a href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/s3transferutility.html">iOS</a>) properly configured to point to the US-WEST-2 region and identifying itself using the predefined key to be allowed write access (Note, this key is not posted here as these docs are public). </p>
@@ -2730,7 +2996,7 @@ The videoId must be a unique String of length up to 36 characters. Use the follo
 
 <p>where  </p>
 
-<p><code class="prettyprint">platformInitial</code> is &ldquo;i&rdquo; for iOS and &ldquo;A&rdquo; for Android</p>
+<p><code class="prettyprint">platformInitial</code> is &ldquo;B&rdquo; for iOS and &ldquo;A&rdquo; for Android</p>
 
 <p><code class="prettyprint">userId</code> is the numerical ID of the logged in user</p>
 
