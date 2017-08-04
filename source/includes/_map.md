@@ -107,13 +107,14 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "id": "02b6qM8epkmW",
   "title": "Montana Avenue ART WALK",
   "description": "Join us for a family/friends/date night of art, music, treats & shopping on 11th blocks of the scenic Montana Avenue. View many local and famed artists, sample the treats and dine in USA Today's top restaurant pics. 6th - 17th street.",
-  "category": "festivals",
+  "categoryId": "festivals",
   "scope": "locality",
   "country": "US",
   "location": {
     "lat": 34.0345,
     "lon": -118.492
   },
+  "radius": 1500,
   "rank": 69,
   "start": "2017-07-21T00:00:00.000Z",
   "end": "2017-07-21T04:00:00.000Z",
@@ -124,6 +125,8 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 This endpoint retrieves event markers for the map. This layer does not do any clustering, instead the events returned are filtered based on the zoom level provided in the query parameters such that higher "rank" events appear at lower zoom levels (higher altitudes). 
 
 Note: many of the events are submitted by users of the Predict HQ api and as such, the reliability of the data in each field should be taken with a grain of salt; start/end times may not be completely accurate, rank may be overstated, description may be missing, etc.
+
+**Note:** Radius expressed in meters.
 
 ### HTTP Request
 
