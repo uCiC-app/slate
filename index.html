@@ -1716,12 +1716,19 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
     </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
     </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
     </span><span class="nt">"mediaCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.13412</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.124105</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
     </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T00:05:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-31T00:05:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the high level info for a given event room.</p>
+
+<p><strong>Note:</strong> radius is expressed in meters. </p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1821,6 +1828,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
         </span><span class="p">},</span><span class="w">
         </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What's happening at this event?"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"followId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03dabda4-e8a0-4cdc-86ab-5235491beb1c"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414767</span><span class="p">,</span><span class="w">
@@ -1854,6 +1862,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the list of items for the specified event room id.</p>
+
+<p><strong>Note:</strong> When following a question, use the question version of the follow/unfollow routes and provide the value of <code class="prettyprint">item.question.followId</code> as the idenfier in the url</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -2027,13 +2037,14 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02b6qM8epkmW"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Montana Avenue ART WALK"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Join us for a family/friends/date night of art, music, treats &amp; shopping on 11th blocks of the scenic Montana Avenue. View many local and famed artists, sample the treats and dine in USA Today's top restaurant pics. 6th - 17th street."</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"festivals"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"festivals"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.0345</span><span class="p">,</span><span class="w">
     </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.492</span><span class="w">
   </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w">
   </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">69</span><span class="p">,</span><span class="w">
   </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21T00:00:00.000Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21T04:00:00.000Z"</span><span class="p">,</span><span class="w">
@@ -2043,6 +2054,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 <p>This endpoint retrieves event markers for the map. This layer does not do any clustering, instead the events returned are filtered based on the zoom level provided in the query parameters such that higher &ldquo;rank&rdquo; events appear at lower zoom levels (higher altitudes). </p>
 
 <p>Note: many of the events are submitted by users of the Predict HQ api and as such, the reliability of the data in each field should be taken with a grain of salt; start/end times may not be completely accurate, rank may be overstated, description may be missing, etc.</p>
+
+<p><strong>Note:</strong> Radius expressed in meters.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
