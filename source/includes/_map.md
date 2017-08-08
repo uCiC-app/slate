@@ -115,6 +115,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     "lon": -118.492
   },
   "radius": 1500,
+  "mediaCount": 99,
   "rank": 69,
   "start": "2017-07-21T00:00:00.000Z",
   "end": "2017-07-21T04:00:00.000Z",

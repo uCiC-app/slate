@@ -17,6 +17,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
 {
     "id": "1234567890",
     "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png",
+    "name": "The Best Test Event",
     "description": "A Dummy event created to centralize testing of various event room aspects",
     "categoryId": "news",
     "category": "News",
