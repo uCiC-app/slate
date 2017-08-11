@@ -23,6 +23,7 @@ includes:
   - requests
   - responses
   - themes
+  - translate
   - users
   - notifications
   - entities
