@@ -173,7 +173,7 @@ This endpoint retrieves the list of items for the specified event room id.
 
 ### HTTP Request
 
-`PUT https://node.ucic.vc/api/v04/events/<ID>`
+`GET https://node.ucic.vc/api/v04/eventRoom/<ID>/items`
 
 ### URL Parameters
 
@@ -191,3 +191,52 @@ This endpoint retrieves the list of items for the specified event room id.
 
 
 
+## Follow Event Room
+
+```shell
+
+curl "https://node.ucic.vc/api/v04/eventRoom/follow/:id" -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+
+```javascript
+
+```
+
+> The above command returns a 204 success response code  
+
+This endpoint let's a user start following a given event room.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/eventRoom/follow/:id`
+
+### URL Parameters
+
+| Parameter | Type   | Description                                |
+| --------- | ------ | ------------------------------------------ |
+| id        | String | The id of the event room to follow |
+
+## Unfollow Event Room
+
+```shell
+
+curl "https://node.ucic.vc/api/v04/eventRoom/unfollow/:id" -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+
+```javascript
+
+```
+
+> The above command returns a 204 success response code  
+
+This endpoint let's a user stop following a given event room.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/eventRoom/unfollow/:id`
+
+### URL Parameters
+
+| Parameter | Type   | Description                                |
+| --------- | ------ | ------------------------------------------ |
+| id        | String | The id of the event room to stop following |
