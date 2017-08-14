@@ -46,7 +46,21 @@ Use the uuid `.id`  property of the Comment object.
 Use the numeric `.requestId` property from the Request object.  
 
 **Response**  
-Use the numeric `.response.id` property of the Card object.  
+Use the numeric `.response.id` property of the Card object.   
+
+**Question**   
+
+Use the uuid `.questionId` property of the question-based Theme, or of the Request object.  
+
+**Message**  
+
+Use the numeric `.MI` property of the Message object  
+
+**Tag**  
+
+Use the uuid `.id` property of the Tag object
+
+
 
 ### HTTP Request
 
@@ -64,7 +78,7 @@ Use the numeric `.response.id` property of the Card object.
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| type      | String | What type of item is being translated. Currently supports `comment`, `request`, `response` |
+| type      | String | What type of item is being translated. Currently supports `comment`, `request`, `response`, `question`, `message`, `tag` |
 | id        | String | The unique identifier of the entity being translated |
 | text      | String | The text to translate                    |
 
