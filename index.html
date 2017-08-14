@@ -3522,7 +3522,19 @@ Use the uuid <code class="prettyprint">.id</code>  property of the Comment objec
 Use the numeric <code class="prettyprint">.requestId</code> property from the Request object.  </p>
 
 <p><strong>Response</strong><br>
-Use the numeric <code class="prettyprint">.response.id</code> property of the Card object.  </p>
+Use the numeric <code class="prettyprint">.response.id</code> property of the Card object.   </p>
+
+<p><strong>Question</strong>   </p>
+
+<p>Use the uuid <code class="prettyprint">.questionId</code> property of the question-based Theme, or of the Request object.  </p>
+
+<p><strong>Message</strong>  </p>
+
+<p>Use the numeric <code class="prettyprint">.MI</code> property of the Message object  </p>
+
+<p><strong>Tag</strong>  </p>
+
+<p>Use the uuid <code class="prettyprint">.id</code> property of the Tag object</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -3558,7 +3570,7 @@ Use the numeric <code class="prettyprint">.response.id</code> property of the Ca
 <tr>
 <td>type</td>
 <td>String</td>
-<td>What type of item is being translated. Currently supports <code class="prettyprint">comment</code>, <code class="prettyprint">request</code>, <code class="prettyprint">response</code></td>
+<td>What type of item is being translated. Currently supports <code class="prettyprint">comment</code>, <code class="prettyprint">request</code>, <code class="prettyprint">response</code>, <code class="prettyprint">question</code>, <code class="prettyprint">message</code>, <code class="prettyprint">tag</code></td>
 </tr>
 <tr>
 <td>id</td>
