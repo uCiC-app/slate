@@ -1868,7 +1868,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT https://node.ucic.vc/api/v04/events/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/eventRoom/&lt;ID&gt;/items</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -1909,6 +1909,68 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 <td>filter</td>
 <td>Comma delimited String</td>
 <td>A comma separated list of what item types to return. supports any combination of <code class="prettyprint">question</code>, <code class="prettyprint">media</code>, <code class="prettyprint">comment</code></td>
+</tr>
+</tbody></table>
+
+<h2 id="follow-event-room">Follow Event Room</h2>
+<pre class="highlight shell"><code>
+curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/follow/:id"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns a 204 success response code  </p>
+</blockquote>
+
+<p>This endpoint let&rsquo;s a user start following a given event room.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/eventRoom/follow/:id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The id of the event room to follow</td>
+</tr>
+</tbody></table>
+
+<h2 id="unfollow-event-room">Unfollow Event Room</h2>
+<pre class="highlight shell"><code>
+curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns a 204 success response code  </p>
+</blockquote>
+
+<p>This endpoint let&rsquo;s a user stop following a given event room.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/eventRoom/unfollow/:id</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The id of the event room to stop following</td>
 </tr>
 </tbody></table>
 
