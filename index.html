@@ -3484,57 +3484,18 @@ Remember — a happy uCiC client is an authenticated uCiC client!
           <h1 id="translate">Translate</h1>
 
 <h2 id="get-a-set-of-translations">Get a set of translations</h2>
-<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'[{
-  "type": "response",
-  "id": "102374",
-  "text": "The iron throne"
-}, {
-    "type": "comment",
-    "id": "b95053c3-0de3-468c-b0ec-d9621a850eb6",
-    "text": "Haha exactly what I expected"
-}]'</span> <span class="s2">"https://node.ucic.vc/api/v04/translate/pl"</span>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'["hello", "going to send this text"]'</span> <span class="s2">"https://node.ucic.vc/api/v04/translate/pl"</span>
 </code></pre><pre class="highlight javascript"><code>
 </code></pre>
 <blockquote>
 <p>The above command returns a 200 success code along with a json response like:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"102374"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Żelazny tron"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b95053c3-0de3-468c-b0ec-d9621a850eb6"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Haha dokładnie to, czego się spodziewałem"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"cześć"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Zamierza wysłać ten tekst"</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint lets the client request a set of translations for various items in the platform. The client includes the text to translate along with the type and identifier of the parent entity in order for the server to cache the result and be able to re-use it in the future to minimize calls to the google translate api. Note that the structure of the data the client must POST is identical to the structure that is returned (though of course the text is translated on the way back).</p>
-
-<h3 id="which-id">Which id?</h3>
-
-<p><strong>Comments</strong><br>
-Use the uuid <code class="prettyprint">.id</code>  property of the Comment object.  </p>
-
-<p><strong>Request</strong><br>
-Use the numeric <code class="prettyprint">.requestId</code> property from the Request object.  </p>
-
-<p><strong>Response</strong><br>
-Use the numeric <code class="prettyprint">.response.id</code> property of the Card object.   </p>
-
-<p><strong>Question</strong>   </p>
-
-<p>Use the uuid <code class="prettyprint">.questionId</code> property of the question-based Theme, or of the Request object.  </p>
-
-<p><strong>Message</strong>  </p>
-
-<p>Use the numeric <code class="prettyprint">.MI</code> property of the Message object  </p>
-
-<p><strong>Tag</strong>  </p>
-
-<p>Use the uuid <code class="prettyprint">.id</code> property of the Tag object</p>
+<p>This endpoint lets the client request a set of translations for arbitrary text. The client sends an array of strings to be translated and the server responds with a translated string array in the same order.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -3558,31 +3519,7 @@ Use the numeric <code class="prettyprint">.response.id</code> property of the Ca
 
 <h3 id="body-parameters">Body Parameters</h3>
 
-<p><strong>Note:</strong> body is an array of objects. Object properties are described in the table below  </p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>What type of item is being translated. Currently supports <code class="prettyprint">comment</code>, <code class="prettyprint">request</code>, <code class="prettyprint">response</code>, <code class="prettyprint">question</code>, <code class="prettyprint">message</code>, <code class="prettyprint">tag</code></td>
-</tr>
-<tr>
-<td>id</td>
-<td>String</td>
-<td>The unique identifier of the entity being translated</td>
-</tr>
-<tr>
-<td>text</td>
-<td>String</td>
-<td>The text to translate</td>
-</tr>
-</tbody></table>
+<p>Body is an array of strings</p>
 
           <h1 id="users">Users</h1>
 
