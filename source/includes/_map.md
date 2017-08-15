@@ -104,22 +104,35 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 
 ```json
 [{
-  "id": "02b6qM8epkmW",
-  "title": "Montana Avenue ART WALK",
-  "description": "Join us for a family/friends/date night of art, music, treats & shopping on 11th blocks of the scenic Montana Avenue. View many local and famed artists, sample the treats and dine in USA Today's top restaurant pics. 6th - 17th street.",
-  "categoryId": "festivals",
+  "id": "640BlGrpE0Kd",
+  "title": "Psy-Fi Psychedelic Music and Arts Festival 2017",
+  "description": "Psy-Fi Psychedelic Music and Arts Festival 2017 festival in Leeuwarden.",
+  "categoryId": "culture",
   "scope": "locality",
-  "country": "US",
+  "country": "NL",
+  "city": null,
+  "region": "North Netherlands",
   "location": {
-    "lat": 34.0345,
-    "lon": -118.492
+    "lat": 53.2148,
+    "lon": 5.87309
   },
-  "radius": 1500,
-  "mediaCount": 99,
-  "rank": 69,
-  "start": "2017-07-21T00:00:00.000Z",
-  "end": "2017-07-21T04:00:00.000Z",
-  "updated": "2017-07-13T07:29:03.000Z"
+  "radius": 2500,
+  "mediaCount": 0,
+  "rank": 90,
+  "start": "2017-08-15T22:00:00.000Z",
+  "end": "2017-08-19T22:00:00.000Z",
+  "active": true,
+  "lastMediaLike": "2017-08-15T15:15:53.000Z",
+  "lastMediaPost": "2017-08-15T15:15:53.000Z",
+  "thumbs": [{
+    "video": false,
+    "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
+  }],
+  "categoryName": "Festivals and Culture",
+  "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/culture.png",
+  "followerCount": 2,
+  "youFollowEvent": false,
+  "participantCount": 99
 }]
 ```
 

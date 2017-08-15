@@ -1,5 +1,66 @@
 # Event Rooms 
 
+## Get list of event rooms
+
+```shell
+
+curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+
+```javascript
+
+```
+> The above command returns JSON structured like this:
+
+```json
+[{
+  "id": "1234567890",
+  "title": "The Best Test Event",
+  "description": "A Dummy event created to centralize testing of various event room aspects",
+  "categoryId": "news",
+  "scope": "locality",
+  "country": "UN",
+  "city": null,
+  "region": null,
+  "location": {
+    "lat": 47.3302,
+    "lon": -29.5989
+  },
+  "radius": 1000,
+  "mediaCount": 13,
+  "rank": 85,
+  "start": "2017-08-09T08:05:00.000Z",
+  "end": "2017-08-31T00:05:00.000Z",
+  "active": true,
+  "lastMediaLike": "2017-08-15T15:15:53.000Z",
+  "lastMediaPost": "2017-08-15T15:15:53.000Z",
+  "categoryName": "News",
+  "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png",
+  "followerCount": 2,
+  "youFollowEvent": true,
+  "latestMedia": {
+    "video": false,
+    "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
+  },
+  "participantCount": 99
+}]
+```
+
+This route returns a list of event rooms that contain a minimum of one piece of media.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/eventRoom/list`
+
+### Query Parameters
+
+| Parameter | Type   | Description                                      |
+| --------- | ------ | ------------------------------------------------ |
+| sort | String | The type of sort to apply. Currently supports `live`, `popular`, `following` |
+| categories | String | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: &categories=sports,culture,shows. If omitted, event rooms of any category may be returned |
+| limit | integer | The maximum number of event rooms to return |
+| offset | integer | The number of event rooms to skip in the return for paginating results |
+
 ## Get Event Room info
 
 ```shell
@@ -15,23 +76,35 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
 
 ```json
 {
-    "id": "1234567890",
-    "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png",
-    "name": "The Best Test Event",
-    "description": "A Dummy event created to centralize testing of various event room aspects",
-    "categoryId": "news",
-    "category": "News",
-    "rank": 85,
-    "participantCount": 99,
-    "mediaCount": 99,
-    "location": {
-      "lat": 47.13412,
-      "lon": 33.124105
-    },
-    "radius": 1000,
-    "start": "2017-08-02T00:05:00.000Z",
-    "end": "2017-08-31T00:05:00.000Z",
-    "active": true
+  "title": "The Best Test Event",
+  "description": "A Dummy event created to centralize testing of various event room aspects",
+  "categoryId": "news",
+  "scope": "locality",
+  "country": "UN",
+  "city": null,
+  "region": null,
+  "location": {
+    "lat": 47.3302,
+    "lon": -29.5989
+  },
+  "radius": 1000,
+  "mediaCount": 13,
+  "rank": 85,
+  "start": "2017-08-09T08:05:00.000Z",
+  "end": "2017-08-31T00:05:00.000Z",
+  "lastMediaLike": "2017-08-15T15:15:53.000Z",
+  "lastMediaPost": "2017-08-15T15:15:53.000Z",
+  "id": "1234567890",
+  "active": true,
+  "categoryName": "News",
+  "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png",
+  "followerCount": 2,
+  "youFollowEvent": true,
+  "latestMedia": {
+    "video": false,
+    "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
+  },
+  "participantCount": 99
 }
 ```
 
@@ -45,9 +118,9 @@ This endpoint retrieves the high level info for a given event room.
 
 ### URL Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| id        | String | The id of the event room to retrieve the info for |
+| Parameter | Type   | Description                                      |
+| --------- | ------ | ------------------------------------------------ |
+| id       | String | The id of the event room to retrieve the info for |
 
 ## Get Event Room Items
 
@@ -212,8 +285,8 @@ This endpoint let's a user start following a given event room.
 
 ### URL Parameters
 
-| Parameter | Type   | Description                                |
-| --------- | ------ | ------------------------------------------ |
+| Parameter | Type   | Description                        |
+| --------- | ------ | ---------------------------------- |
 | id        | String | The id of the event room to follow |
 
 ## Unfollow Event Room
@@ -237,6 +310,6 @@ This endpoint let's a user stop following a given event room.
 
 ### URL Parameters
 
-| Parameter | Type   | Description                                |
-| --------- | ------ | ------------------------------------------ |
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
 | id        | String | The id of the event room to stop following |
