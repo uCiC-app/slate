@@ -54,12 +54,12 @@ This route returns a list of event rooms that contain a minimum of one piece of 
 
 ### Query Parameters
 
-| Parameter | Type   | Description                                      |
-| --------- | ------ | ------------------------------------------------ |
-| sort | String | The type of sort to apply. Currently supports `live`, `popular`, `following` |
-| categories | String | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: &categories=sports,culture,shows. If omitted, event rooms of any category may be returned |
-| limit | integer | The maximum number of event rooms to return |
-| offset | integer | The number of event rooms to skip in the return for paginating results |
+| Parameter  | Type    | Description                              |
+| ---------- | ------- | ---------------------------------------- |
+| sort       | String  | The type of sort to apply. Currently supports `live`, `popular`, `following` |
+| categories | String  | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: &categories=sports,culture,shows. If omitted, event rooms of any category may be returned |
+| limit      | integer | The maximum number of event rooms to return |
+| offset     | integer | The number of event rooms to skip in the return for paginating results |
 
 ## Get Event Room info
 
@@ -76,6 +76,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
 
 ```json
 {
+  "id": "1234567890",
   "title": "The Best Test Event",
   "description": "A Dummy event created to centralize testing of various event room aspects",
   "categoryId": "news",
@@ -94,7 +95,6 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
   "end": "2017-08-31T00:05:00.000Z",
   "lastMediaLike": "2017-08-15T15:15:53.000Z",
   "lastMediaPost": "2017-08-15T15:15:53.000Z",
-  "id": "1234567890",
   "active": true,
   "categoryName": "News",
   "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png",
@@ -118,9 +118,9 @@ This endpoint retrieves the high level info for a given event room.
 
 ### URL Parameters
 
-| Parameter | Type   | Description                                      |
-| --------- | ------ | ------------------------------------------------ |
-| id       | String | The id of the event room to retrieve the info for |
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| id        | String | The id of the event room to retrieve the info for |
 
 ## Get Event Room Items
 
