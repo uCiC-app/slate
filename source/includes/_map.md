@@ -103,37 +103,46 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 > The above command returns JSON structured like this:
 
 ```json
-[{
-  "id": "640BlGrpE0Kd",
-  "title": "Psy-Fi Psychedelic Music and Arts Festival 2017",
-  "description": "Psy-Fi Psychedelic Music and Arts Festival 2017 festival in Leeuwarden.",
-  "categoryId": "culture",
-  "scope": "locality",
-  "country": "NL",
-  "city": null,
-  "region": "North Netherlands",
-  "location": {
-    "lat": 53.2148,
-    "lon": 5.87309
-  },
-  "radius": 2500,
-  "mediaCount": 0,
-  "rank": 90,
-  "start": "2017-08-15T22:00:00.000Z",
-  "end": "2017-08-19T22:00:00.000Z",
-  "active": true,
-  "lastMediaLike": "2017-08-15T15:15:53.000Z",
-  "lastMediaPost": "2017-08-15T15:15:53.000Z",
-  "thumbs": [{
-    "video": false,
-    "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
+{
+  "events": [{
+    "id": "640BlGrpE0Kd",
+    "title": "Psy-Fi Psychedelic Music and Arts Festival 2017",
+    "description": "Psy-Fi Psychedelic Music and Arts Festival 2017 festival in Leeuwarden.",
+    "categoryId": "culture",
+    "scope": "locality",
+    "country": "NL",
+    "city": null,
+    "region": "North Netherlands",
+    "location": {
+      "lat": 53.2148,
+      "lon": 5.87309
+    },
+    "radius": 2500,
+    "mediaCount": 0,
+    "rank": 90,
+    "start": "2017-08-15T22:00:00.000Z",
+    "end": "2017-08-19T22:00:00.000Z",
+    "active": true,
+    "lastMediaLike": "2017-08-15T15:15:53.000Z",
+    "lastMediaPost": "2017-08-15T15:15:53.000Z",
+    "thumbs": [{
+      "video": false,
+      "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
+    }],
+    "categoryName": "Festivals and Culture",
+    "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/culture.png",
+    "followerCount": 2,
+    "youFollowEvent": false,
+    "participantCount": 14,
+    "size": 2.156
   }],
-  "categoryName": "Festivals and Culture",
-  "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/culture.png",
-  "followerCount": 2,
-  "youFollowEvent": false,
-  "participantCount": 99
-}]
+  "dots": [{
+    "lat": 37.6708,
+    "lon": -122.086,
+    "categoryId": "culture"
+  }]
+}
+
 ```
 
 This endpoint retrieves event markers for the map. This layer does not do any clustering, instead the events returned are filtered based on the zoom level provided in the query parameters such that higher "rank" events appear at lower zoom levels (higher altitudes). 
