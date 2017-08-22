@@ -184,12 +184,14 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "name": "Concerts & Shows",
   "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows.png",
   "categoryId": "shows",
-  "eventCount": 941
+  "eventCount": 941,
+  "colour": "#3cb44b"
 },{
   "name": "Conferences & Expos",
   "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos.png",
   "categoryId": "expos",
-  "eventCount": 185
+  "eventCount": 185,
+  "colour": "#f58231"
 }]
 ```
 

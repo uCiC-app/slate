@@ -146,7 +146,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
         "creator": {
             "userId": 414744,
             "userName": "Alc",
-            "avatar": null,
+            "userAvatar": null,
             "badge": "https://media.ucic.vc/assets/tags/CA.png"
         },
         "media": {
@@ -171,7 +171,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
         "creator": {
             "userId": 414767,
             "userName": "Someone",
-            "avatar": null,
+            "userAvatar": null,
             "badge": null
         },
         "comment": {
@@ -181,7 +181,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
                     "creator": {
                         "userId": 414767,
                         "userName": "Someone",
-                        "avatar": null,
+                        "userAvatar": null,
                         "badge": null
                     },
                     "date": "2017-08-02T20:59:53.000Z",
