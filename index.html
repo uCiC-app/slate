@@ -1247,7 +1247,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 </tr>
 </tbody></table>
 
-<h2 id="create-a-comment-on-an-event-room-or-another-comment">Create a Comment on an Event Room or Another Comment</h2>
+<h2 id="create-a-comment-on-an-arbitrary-entity">Create a Comment on an Arbitrary Entity</h2>
 <pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "text": "Adding a comment to an event", "itemType": "event", "itemId": "1234567890" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/comment/new"</span>
 </code></pre><pre class="highlight javascript"><code>
 </code></pre>
@@ -1267,7 +1267,15 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates a comment for an event room, or as a reply to an existing comment. When using it, the POST body specifies the target item being commented on with the <code class="prettyprint">itemType</code> field (supports <code class="prettyprint">event</code>, <code class="prettyprint">comment</code>) and the identifier of the target item with the <code class="prettyprint">itemId</code> field.</p>
+<p>This endpoint creates a comment for:</p>
+
+<ul>
+<li>an event room</li>
+<li>as a reply to an existing comment</li>
+<li>an external media<br></li>
+</ul>
+
+<p>When using it, the POST body specifies the target item being commented on with the <code class="prettyprint">itemType</code> field (supports <code class="prettyprint">event</code>, <code class="prettyprint">comment</code>, <code class="prettyprint">extMedia</code>) and the identifier of the target item with the <code class="prettyprint">itemId</code> field.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1290,7 +1298,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 <tr>
 <td>itemType</td>
 <td>String</td>
-<td>The type of item being commented on. Currently either <code class="prettyprint">event</code> or <code class="prettyprint">comment</code></td>
+<td>The type of item being commented on. Currently either <code class="prettyprint">event</code>, <code class="prettyprint">comment</code>, or <code class="prettyprint">extMedia</code></td>
 </tr>
 <tr>
 <td>itemId</td>
@@ -1874,6 +1882,36 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extMedia"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-23T17:52:37.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tweet_900415492589928448"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e252c2bf-e58e-45ac-869c-43e0480dc77e"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"popularCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"atEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boat Sales"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pbs.twimg.com/profile_images/656976062447026176/9vF-MU6-_normal.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/twitter/tweet.png"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"extMedia"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter/tweet"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"attributionUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://t.co/3mTuWOP53U"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pbs.twimg.com/media/DH7rHdzUAAATJ-S.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"videoUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"extCreator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"userHandle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BoatSales"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4307191455"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On Twitter https://t.co/3mTuWOP53U"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"likeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"likers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"commenters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">227131</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
         </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T20:59:01.000Z"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03ba5137-0ca6-4073-bdcd-8a92dcb772fe"</span><span class="p">,</span><span class="w">
@@ -1952,6 +1990,15 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the list of items for the specified event room id.</p>
+
+<h3 id="external-media">External Media</h3>
+
+<p>The admin dashboard allows us to import media from twitter for event rooms. Since it is largely external, there are some special considerations:</p>
+
+<ul>
+<li><code class="prettyprint">item.creator</code> does not have a <code class="prettyprint">userId</code> property. Details to be finalized when happens when their avatar is clicked</li>
+<li>The item may have either an <code class="prettyprint">imageUrl</code> or both an <code class="prettyprint">imageUrl</code> and a <code class="prettyprint">videoUrl</code>. If a <code class="prettyprint">videoUrl</code> is present, the <code class="prettyprint">imageUrl</code> is a preview thumbnail</li>
+</ul>
 
 <p><strong>Note:</strong> When following a question, use the question version of the follow/unfollow routes and provide the value of <code class="prettyprint">item.question.followId</code> as the idenfier in the url</p>
 
@@ -2060,6 +2107,71 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <td>id</td>
 <td>String</td>
 <td>The id of the event room to stop following</td>
+</tr>
+</tbody></table>
+
+          <h1 id="like">Like</h1>
+
+<h2 id="like-an-entity">Like an Entity</h2>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "itemType": "media", "itemId": "76092" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/like"</span>
+
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns a 204 status code upon success</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span></code></pre>
+<p>This endpoint lets the client register a &ldquo;like&rdquo; on a specified entity. Currently supports 2 entities as targets for the like: </p>
+
+<ul>
+<li><code class="prettyprint">media</code> (use the <code class="prettyprint">MI</code> as the <code class="prettyprint">itemId</code>)</li>
+<li><code class="prettyprint">extMedia</code> (use the <code class="prettyprint">eventRoomItem.id</code> as the <code class="prettyprint">itemId</code>)</li>
+</ul>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/like</code></p>
+
+<h3 id="request-body">Request Body</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td><code class="prettyprint">media</code> or <code class="prettyprint">extMedia</code></td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The identifier of the entity being liked. Use the <code class="prettyprint">MI</code> for <code class="prettyprint">media</code> itemType and <code class="prettyprint">eventRoomItem.id</code> for <code class="prettyprint">extMedia</code> itemType</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Invalid itemType param</td>
+<td>Client sent an invalid value for itemType</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Missing itemId</td>
+<td>Client did not include an itemId in the request</td>
 </tr>
 </tbody></table>
 
