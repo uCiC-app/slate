@@ -162,6 +162,36 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
         }
     },
     {
+        "type": "extMedia",
+        "date": "2017-08-23T17:52:37.000Z",
+        "id": "tweet_900415492589928448",
+        "eventId": "e252c2bf-e58e-45ac-869c-43e0480dc77e",
+        "popularCount": 1,
+        "atEvent": true,
+        "creator": {
+            "userName": "Boat Sales",
+            "userAvatar": "https://pbs.twimg.com/profile_images/656976062447026176/9vF-MU6-_normal.jpg",
+            "badge": "https://media.ucic.vc/assets/tags/twitter/tweet.png"
+        },
+        "extMedia": {
+            "source": "twitter/tweet",
+            "attributionUrl": "https://t.co/3mTuWOP53U",
+            "imageUrl": "https://pbs.twimg.com/media/DH7rHdzUAAATJ-S.jpg",
+            "videoUrl": null,
+            "extCreator": {
+                "userHandle": "BoatSales",
+                "userId": "4307191455"
+            },
+            "text": "On Twitter https://t.co/3mTuWOP53U",
+            "likeCount": 0,
+            "likers": [],
+            "commentCount": 1,
+            "commenters": [
+                227131
+            ]
+        }
+    },
+    {
         "type": "comment",
         "date": "2017-08-02T20:59:01.000Z",
         "id": "03ba5137-0ca6-4073-bdcd-8a92dcb772fe",
@@ -241,6 +271,15 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
 ```
 
 This endpoint retrieves the list of items for the specified event room id.
+
+### External Media
+
+The admin dashboard allows us to import media from twitter for event rooms. Since it is largely external, there are some special considerations:
+
+- `item.creator` does not have a `userId` property. Details to be finalized when happens when their avatar is clicked
+- The item may have either an `imageUrl` or both an `imageUrl` and a `videoUrl`. If a `videoUrl` is present, the `imageUrl` is a preview thumbnail
+
+
 
 **Note:** When following a question, use the question version of the follow/unfollow routes and provide the value of `item.question.followId` as the idenfier in the url
 

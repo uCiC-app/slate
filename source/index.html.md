@@ -17,6 +17,7 @@ includes:
   - conversations
   - events
   - eventrooms
+  - like
   - map
   - mobile
   - questions

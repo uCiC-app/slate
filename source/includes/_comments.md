@@ -99,7 +99,7 @@ This endpoint creates a comment for a card.
 | --------- | ------ | --------------------- |
 | text      | String | The comment body text |
 
-## Create a Comment on an Event Room or Another Comment
+## Create a Comment on an Arbitrary Entity
 
 ```shell
 curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "text": "Adding a comment to an event", "itemType": "event", "itemId": "1234567890" }' "https://node.ucic.vc/api/v04/comment/new"
@@ -125,7 +125,13 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 }
 ```
 
-This endpoint creates a comment for an event room, or as a reply to an existing comment. When using it, the POST body specifies the target item being commented on with the `itemType` field (supports `event`, `comment`) and the identifier of the target item with the `itemId` field.
+This endpoint creates a comment for:
+
+- an event room
+- as a reply to an existing comment
+- an external media  
+
+When using it, the POST body specifies the target item being commented on with the `itemType` field (supports `event`, `comment`, `extMedia`) and the identifier of the target item with the `itemId` field.
 
 ### HTTP Request
 
@@ -133,8 +139,8 @@ This endpoint creates a comment for an event room, or as a reply to an existing 
 
 ### Request Body
 
-| Parameter | Type   | Description           |
-| --------- | ------ | --------------------- |
-| text      | String | The comment body text |
-| itemType  | String | The type of item being commented on. Currently either `event` or `comment` |
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| text      | String | The comment body text                    |
+| itemType  | String | The type of item being commented on. Currently either `event`, `comment`, or `extMedia` |
 | itemId    | String | The unique identifier of the object being commented on. This is the `comment.id` in the case of a comment on a comment and `event.id` in the event of an event room. |
