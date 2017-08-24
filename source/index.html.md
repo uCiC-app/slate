@@ -23,6 +23,7 @@ includes:
   - questions
   - requests
   - responses
+  - search
   - themes
   - translate
   - users
