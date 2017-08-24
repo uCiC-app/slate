@@ -137,7 +137,7 @@ This endpoint creates a comment for:
 
 When using it, the POST body specifies the target item being commented on with the `itemType` field (supports `event`, `comment`, `extMedia`, `card`) and the identifier of the target item with the `itemId` field.   
 
-See the [Supported Entites table](https://ucic-app.github.io/ucic-docs/#get-comments-for-an-arbitrary-entity) below for more details about which id to use with each itemType.  
+See the [Supported Entites table](https://ucic-app.github.io/ucic-docs/#supported-entities) below for more details about which id to use with each itemType.  
 
 **Note:** the itemTypes `card` and `media` are interchangeable. Also note that when using `media`, the returned json for the created comment will have an itemType of `card`.
 
