@@ -130,11 +130,16 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 
 This endpoint creates a comment for:
 
-- an event room
-- as a reply to an existing comment
+- a card/media item  
+- an event room  
+- as a reply to an existing comment  
 - an external media  
 
-When using it, the POST body specifies the target item being commented on with the `itemType` field (supports `event`, `comment`, `extMedia`) and the identifier of the target item with the `itemId` field.
+When using it, the POST body specifies the target item being commented on with the `itemType` field (supports `event`, `comment`, `extMedia`, `card`) and the identifier of the target item with the `itemId` field.   
+
+See the [Supported Entites table](https://ucic-app.github.io/ucic-docs/#get-comments-for-an-arbitrary-entity) below for more details about which id to use with each itemType.  
+
+**Note:** the itemTypes `card` and `media` are interchangeable. Also note that when using `media`, the returned json for the created comment will have an itemType of `card`.
 
 ### HTTP Request
 
@@ -146,14 +151,14 @@ All 3 body params are required.
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
 | text      | String | The comment body text                    |
-| itemType  | String | The type of item being commented on. Currently either `event`, `comment`, or `extMedia` |
+| itemType  | String | The type of item being commented on. Currently either `event`, `comment`, or `extMedia`, `card`, `media` |
 | itemId    | String | The unique identifier of the object being commented on. This is the `comment.id` in the case of a comment on a comment and `event.id` in the event of an event room. |
 
 ### Errors
-| Code | Text                  | Description                              |
-| ---- | --------------------- | -------------------------------------- |
+| Code | Text                        | Description                              |
+| ---- | --------------------------- | ---------------------------------------- |
 | 400  | Missing body item/type/text | One or more required body params are missing |
-| 201  | *see Silent Failure below* | *see Silent Failure below* |  
+| 201  | *see Silent Failure below*  | *see Silent Failure below*               |
 
 ###Silent Failure
 If profanity is detected in the comment, the server fails pseudo-silently to create the comment. The code returned is still a 201 success, however, the json reply will look like this: 
