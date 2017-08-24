@@ -3536,6 +3536,87 @@ The videoId must be a unique String of length up to 36 characters. Use the follo
 </tr>
 </tbody></table>
 
+          <h1 id="search">Search</h1>
+
+<h2 id="search-for-events-and-or-users">Search for Events and/or Users</h2>
+<pre class="highlight shell"><code>curl -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/search/Something"</span>
+
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns the following json upon success</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"210243"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dave"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/https://media.ucic.vc/media/D4381BD9-5A61-4544-8B6B-EB0D329895CA/micro.jpg/thumb.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/US.png"</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
+  </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atlantis"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Da Atlantic"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UN"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint lets the client search for multiple types of entities at once with the same search string.    </p>
+
+<p><strong>Note:</strong> to avoid flooding the server with requests, it is recommended that the clients wait a handful of miliseconds between keystrokes of entered search text before sending the search request to the server.</p>
+
+<h3 id="placeholders">Placeholders</h3>
+
+<p>The endpoint is set up to return a few (up to 5) placeholder items of each supported type if it is hit with no search text in the param. Note that all query parameters are ignored if no search text is provided.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/search/:searchText</code></p>
+
+<h3 id="url-paramaters">Url Paramaters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>searchText</td>
+<td>String</td>
+<td>The user-entered text to search with</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-paramaters">Query  Paramaters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter</td>
+<td>Comma delimited string</td>
+<td>What types of entities to search for and return. Currently only supports <code class="prettyprint">events</code> and <code class="prettyprint">users</code>. If omitted, all supported types will be searched and returned</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>maximum number of items to return <strong>of each type</strong></td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>How many items to skip in the results if paginating (applies to each sub-array individually)</td>
+</tr>
+</tbody></table>
+
           <h1 id="themes">Themes</h1>
 
 <h2 id="get-themes-by-country">Get Themes by Country</h2>
