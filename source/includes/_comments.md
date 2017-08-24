@@ -23,10 +23,7 @@ curl "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/com
       "UI": "611",
       "badge": "https://media.ucic.vc/assets/tags/RU.png",
       "avatar": "http://staging-media.ucic.vc/media/8D33E7DA-D1FC-4DA4-B787-987916062D6D/thumb.png",
-      "Username": "John Doe",
-      "email": "z@z.com",
-      "rating": 4,
-      "createdAt": "2015-01-19T12:06:48.363Z"
+      "Username": "John Doe"
     }
   }
 ]
@@ -69,14 +66,17 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 ```json
 {
   "comment": {
-    "id": "20ac70f6-6273-4453-aa7b-f2823ae5641a",
-    "hidden": false,
-    "creatorId": 611,
-    "itemId": "DEC604AC-C29F-4764-B9C6-2CEC7351ABB6",
+    "id": "f722ae64-afca-4fde-9599-51c132dd0ec8",
+    "text": "old comment route on card verify same response",
+    "itemId": "B5C0E281-7EC7-4A62-90C9-50BB872A5729",
     "itemType": "card",
-    "text": "Adding a comment to a card",
-    "updatedAt": "2016-12-19T19:42:40.000Z",
-    "createdAt": "2016-12-19T19:42:40.000Z"
+    "createdAt": "2017-08-24T16:07:10.000Z",
+    "creator": {
+      "UI": "195685",
+      "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/micro.jpg",
+      "Username": "Khan",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png"
+    }
   }
 }
 ```
@@ -113,14 +113,17 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 ```json
 {
   "comment": {
-    "id": "20ac70f6-6273-4453-aa7b-f2823ae5641a",
-    "hidden": false,
-    "creatorId": 611,
-    "itemId": "DEC604AC-C29F-4764-B9C6-2CEC7351ABB6",
+    "id": "b70c9f59-b4ab-4e10-adfe-50abd7b136bc",
+    "text": "one more on the new route with updated return values",
+    "itemId": "B5C0E281-7EC7-4A62-90C9-50BB872A5729",
     "itemType": "card",
-    "text": "Adding a comment to a card",
-    "updatedAt": "2016-12-19T19:42:40.000Z",
-    "createdAt": "2016-12-19T19:42:40.000Z"
+    "createdAt": "2017-08-24T16:07:03.000Z",
+    "creator": {
+      "UI": "195502",
+      "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
+      "Username": "Jan",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png"
+    }
   }
 }
 ```
@@ -137,10 +140,90 @@ When using it, the POST body specifies the target item being commented on with t
 
 `POST https://node.ucic.vc/api/v04/comment/new`
 
-### Request Body
+### Request Body  
+All 3 body params are required.
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
 | text      | String | The comment body text                    |
 | itemType  | String | The type of item being commented on. Currently either `event`, `comment`, or `extMedia` |
 | itemId    | String | The unique identifier of the object being commented on. This is the `comment.id` in the case of a comment on a comment and `event.id` in the event of an event room. |
+
+### Errors
+| Code | Text                  | Description                              |
+| ---- | --------------------- | -------------------------------------- |
+| 400  | Missing body item/type/text | One or more required body params are missing |
+| 201  | *see Silent Failure below* | *see Silent Failure below* |  
+
+###Silent Failure
+If profanity is detected in the comment, the server fails pseudo-silently to create the comment. The code returned is still a 201 success, however, the json reply will look like this: 
+
+```
+{
+  "comment": {
+    "id": "ProfanityDetected.CommentNotCreated",
+    "text": "shit",
+    "itemId": "B5C0E281-7EC7-4A62-90C9-50BB872A5729",
+    "itemType": "card",
+    "hidden": true
+  }
+}
+```
+
+## Get Comments for an Arbitrary Entity
+
+```shell
+curl -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/comments"
+```
+```javascript
+
+```
+
+>The above command returns an array of comments for the specified entity
+
+```json
+[{
+  "id": "258c5ef4-3409-431c-81d6-fc4e891ec5a7",
+  "text": "one more on the new route with string creator ui",
+  "itemId": "B5C0E281-7EC7-4A62-90C9-50BB872A5729",
+  "itemType": "card",
+  "createdAt": "2017-08-24T15:10:58.000Z",
+  "creator": {
+    "UI": "195685",
+    "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/micro.jpg",
+    "Username": "Khan",
+    "badge": "https://media.ucic.vc/assets/tags/CA.png"
+  }
+}]
+```
+
+This endpoint retrieves a list of comment for various entities listed below. When fetching comments from the route, the client must specify an itemType and itemId in the query parameters (along with the optional, standard pagination params).
+
+### Supported Entities
+| Entity                              | itemType          | itemId                                   |
+| ----------------------------------- | ----------------- | ---------------------------------------- |
+| Card/Media                          | `card` or `media` | The non-MI id of the card or media. Ie. `card.id` or `cardId`. Note: the `itemType` on the returned comments will always read `card` |
+| External Media                      | `extMedia`        | `extMediaRoomItem.id`                    |
+| Comment (fetch subcomments/replies) | `comment`         | `comment.id`                             |
+| Event Room                          | `event`           | `event.id`                               |
+
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/comment`
+
+### Query Parameters
+
+| Parameter        | Type    | Description                              |
+| ---------------- | ------- | ---------------------------------------- |
+| itemType (req'd) | String  | See Supported Entities table above       |
+| itemId (req'd)   | String  | See Supported Entities table above       |
+| limit            | Integer | Maximum number of comments to return     |
+| offset           | Integer | Where in the list of comments to start the return from |
+| sort             | String  | what to sort returned comments by, currently only supports createdAt |
+| order            | String  | Either ASC or DESC                       |
+
+### Errors
+| Code | Text                  | Description                              |
+| ---- | --------------------- | ---------------------------------------- |
+| 400  | No itemId or itemType | One or more required query params are missing |
