@@ -184,7 +184,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
             },
             "text": "On Twitter https://t.co/3mTuWOP53U",
             "likeCount": 0,
-            "likers": [],
+            "liked": false,
             "commentCount": 1,
             "commenters": [
                 227131
