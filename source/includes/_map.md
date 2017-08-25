@@ -165,6 +165,7 @@ Note: many of the events are submitted by users of the Predict HQ api and as suc
 | zoom       | float             | Map zoom level to retrieve results at.  Min: 0, Max: 20. Determines what events are returned |
 | layer      | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
 | categories | String            | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: `&categories=sports,culture,shows` |
+| limit | integer            | The maximum number of full markers to return. Default is 35 if not provided. |
 
 ## Get Event Map Layer Categories
 
