@@ -107,7 +107,6 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "events": [{
     "id": "640BlGrpE0Kd",
     "title": "Psy-Fi Psychedelic Music and Arts Festival 2017",
-    "description": "Psy-Fi Psychedelic Music and Arts Festival 2017 festival in Leeuwarden.",
     "categoryId": "culture",
     "scope": "locality",
     "country": "NL",
@@ -119,6 +118,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     },
     "radius": 2500,
     "mediaCount": 0,
+    "views": 4,
     "rank": 90,
     "start": "2017-08-15T22:00:00.000Z",
     "end": "2017-08-19T22:00:00.000Z",
@@ -142,7 +142,6 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     "categoryId": "culture"
   }]
 }
-
 ```
 
 This endpoint retrieves event markers for the map. This layer does not do any clustering, instead the events returned are filtered based on the zoom level provided in the query parameters such that higher "rank" events appear at lower zoom levels (higher altitudes). 

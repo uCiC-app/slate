@@ -16,7 +16,6 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
 [{
   "id": "1234567890",
   "title": "The Best Test Event",
-  "description": "A Dummy event created to centralize testing of various event room aspects",
   "categoryId": "news",
   "scope": "locality",
   "country": "UN",
@@ -28,6 +27,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
   },
   "radius": 1000,
   "mediaCount": 13,
+  "views": 4,
   "rank": 85,
   "start": "2017-08-09T08:05:00.000Z",
   "end": "2017-08-31T00:05:00.000Z",
@@ -90,6 +90,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
   },
   "radius": 1000,
   "mediaCount": 13,
+  "views": 5,
   "rank": 85,
   "start": "2017-08-09T08:05:00.000Z",
   "end": "2017-08-31T00:05:00.000Z",
