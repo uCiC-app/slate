@@ -2551,6 +2551,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <td>String</td>
 <td>A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: <code class="prettyprint">&amp;categories=sports,culture,shows</code></td>
 </tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The maximum number of full markers to return. Default is 35 if not provided.</td>
+</tr>
 </tbody></table>
 
 <h2 id="get-event-map-layer-categories">Get Event Map Layer Categories</h2>
