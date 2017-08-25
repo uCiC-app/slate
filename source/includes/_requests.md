@@ -25,8 +25,10 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 
 ```json
 { 
-	"Code": 0,
-	"Message": ""
+  "Code": 0,
+  "Message": "",
+  "questionId": "79d174ca-3efb-4010-8c55-cccff2299460",
+  "RI": "300706"
 }
 ```
 > In the event of an error, the response will be structured as:
@@ -38,6 +40,8 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 ```
 
 This endpoint creates and sends a request. 
+**Note:** The reply now contains the RI and the questionId of the created request for the purposes of responding and following, respectively.
+**Note 2:** The server filters our requests with vulgarity or other malformed text. In these cases, it will reply with a success response  code, BUT the `Message` field will include a message informing the client that the request has failed "silently".
 
 ### HTTP Request
 
@@ -50,7 +54,7 @@ POST https://node.ucic.vc/api/v04/requests
 | location\*   | { lat, lon, radius } | (Optional) location request lat lon coordinates and radius(m). |
 | message      | String               | Request message content body (required)  |
 | questionId   | String               | (Optional) The id of the question the user chose from the suggested questions list if they did not write their own. |
-| eventId\*   | String         | (Optional) The id of the event to which this request is being posted. |
+| eventId\*    | String               | (Optional) The id of the event to which this request is being posted. |
 | override     | Boolean              | (Optional, default: false) Override time of day exception and send request anyway |
 | receiverUI\* | Unsigned Integer     | (Optional) List of receiver user IDs     |
 
