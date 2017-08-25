@@ -2763,8 +2763,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <p>The above command returns a 201 success code along with a json response like:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w"> 
-    </span><span class="nt">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nt">"Code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"questionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d174ca-3efb-4010-8c55-cccff2299460"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"RI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300706"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -2774,7 +2776,9 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
     </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_CODE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates and sends a request. </p>
+<p>This endpoint creates and sends a request. 
+<strong>Note:</strong> The reply now contains the RI and the questionId of the created request for the purposes of responding and following, respectively.
+<strong>Note 2:</strong> The server filters our requests with vulgarity or other malformed text. In these cases, it will reply with a success response  code, BUT the <code class="prettyprint">Message</code> field will include a message informing the client that the request has failed &ldquo;silently&rdquo;.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
