@@ -1877,7 +1877,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
 <pre class="highlight json"><code><span class="p">[{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Dummy event created to centralize testing of various event room aspects"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UN"</span><span class="p">,</span><span class="w">
@@ -1889,6 +1888,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
   </span><span class="nt">"mediaCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
   </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
   </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-09T08:05:00.000Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-31T00:05:00.000Z"</span><span class="p">,</span><span class="w">
@@ -1966,6 +1966,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
   </span><span class="nt">"mediaCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
   </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
   </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-09T08:05:00.000Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-31T00:05:00.000Z"</span><span class="p">,</span><span class="w">
@@ -2460,7 +2461,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
   </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640BlGrpE0Kd"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Psy-Fi Psychedelic Music and Arts Festival 2017"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Psy-Fi Psychedelic Music and Arts Festival 2017 festival in Leeuwarden."</span><span class="p">,</span><span class="w">
     </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"culture"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NL"</span><span class="p">,</span><span class="w">
@@ -2472,6 +2472,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
     </span><span class="nt">"mediaCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
     </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-15T22:00:00.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-19T22:00:00.000Z"</span><span class="p">,</span><span class="w">
@@ -2495,7 +2496,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
     </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"culture"</span><span class="w">
   </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre>
 <p>This endpoint retrieves event markers for the map. This layer does not do any clustering, instead the events returned are filtered based on the zoom level provided in the query parameters such that higher &ldquo;rank&rdquo; events appear at lower zoom levels (higher altitudes). </p>
 
