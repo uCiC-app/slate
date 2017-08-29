@@ -2208,6 +2208,67 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 </tr>
 </tbody></table>
 
+<h2 id="get-event-questions-for-popup">Get Event Questions for Popup</h2>
+<pre class="highlight shell"><code>
+curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/mapQuestions?lat=47.3302&amp;lon=-29.5989"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns json in the following format  </p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300653"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Someone"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How is it at the event on August 4th?"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"followId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5aa25d4d-f7f9-4322-ba63-904e20bda108"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"otherFollowers"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"youFollowRequest"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atlantis"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Da Atlantic"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UN"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+
+</span></code></pre>
+<p>This endpoint lets the client retrieve a short list of questions (up to 10) sorted by popularity, either for all active events at a given set of coordinates, or by eventId.<br>
+<strong>Note:</strong> If this route is used with the eventId, the server does not return the following fields: 
+<code class="prettyprint">title</code>, <code class="prettyprint">categoryId</code>, <code class="prettyprint">city</code>, <code class="prettyprint">region</code>, <code class="prettyprint">country</code>.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/eventRoom/mapQuestions?queryParams</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lat</td>
+<td>float</td>
+<td>The latitude of the location to find active event questions for</td>
+</tr>
+<tr>
+<td>lon</td>
+<td>float</td>
+<td>The longitude of the location to find active event questions for</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>String</td>
+<td>The identifier of the single event to return questions for</td>
+</tr>
+</tbody></table>
+
+<p><strong>Note:</strong> Either the <code class="prettyprint">lat</code>/<code class="prettyprint">lon</code> pair or the <code class="prettyprint">eventId</code> must be provided when calling this route.</p>
+
 <h2 id="follow-event-room">Follow Event Room</h2>
 <pre class="highlight shell"><code>
 curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/follow/:id"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
