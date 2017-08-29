@@ -303,6 +303,55 @@ The admin dashboard allows us to import media from twitter for event rooms. Sinc
 | filter    | Comma delimited String | A comma separated list of what item types to return. supports any combination of `question`, `media`, `comment` |
 
 
+## Get Event Questions for Popup
+
+```shell
+
+curl "https://node.ucic.vc/api/v04/eventRoom/mapQuestions?lat=47.3302&lon=-29.5989" -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+
+```javascript
+
+```
+
+> The above command returns json in the following format  
+
+```json
+[{
+  "requestId": "300653",
+  "userName": "Someone",
+  "text": "How is it at the event on August 4th?",
+  "followId": "5aa25d4d-f7f9-4322-ba63-904e20bda108",
+  "followers": 2,
+  "otherFollowers": 1,
+  "eventId": "1234567890",
+  "youFollowRequest": true,
+  "title": "The Best Test Event ",
+  "categoryId": "news",
+  "city": "Atlantis",
+  "region": "Da Atlantic",
+  "country": "UN"
+}]
+
+```
+
+This endpoint lets the client retrieve a short list of questions (up to 10) sorted by popularity, either for all active events at a given set of coordinates, or by eventId.   
+**Note:** If this route is used with the eventId, the server does not return the following fields: 
+`title`, `categoryId`, `city`, `region`, `country`.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/eventRoom/mapQuestions?queryParams`
+
+### Query Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| lat       | float  | The latitude of the location to find active event questions for |
+| lon       | float  | The longitude of the location to find active event questions for |
+| eventId   | String | The identifier of the single event to return questions for |
+**Note:** Either the `lat`/`lon` pair or the `eventId` must be provided when calling this route.
+
 
 ## Follow Event Room
 
