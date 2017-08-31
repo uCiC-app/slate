@@ -23,6 +23,8 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
         "itemId": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
         "itemType": "card",
         "createdAt": "2017-06-09 19:47:43",
+        "likeCount": 7,
+        "liked": true,
         "creator": {
           "UI": "195502",
           "avatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/micro.jpg",
@@ -34,6 +36,8 @@ curl "https://node.ucic.vc/api/v05/themes/928CF4AC-A5BF-4A8B-8C47-62E58AE1F655/c
       "id": "40839",
       "body": "Anything interesting to see around you?",
       "createdAt": "2016-04-22T01:02:37.000Z",
+      "likeCount": 3,
+      "liked": false,
       "requestType": 0,   // 0 = map, 1 = direct, 2 = global
       "sender": {
         "id": "36001",
@@ -139,6 +143,8 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
     "text": "This is a comment ",
     "itemId": "F48F16C0-81BE-418D-B44B-9F97DD2D3A70",
     "itemType": "card",
+    "likeCount": 7,
+    "liked": true,
     "createdAt": "2017-06-09 19:47:43",
     "creator": {
       "UI": "195502",
@@ -151,7 +157,9 @@ curl "https://node.ucic.vc/api/v05/cards/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6" -
     "id": "46154",
     "body": "How's the sunset there?",
     "createdAt": "2016-12-09T22:40:22.100Z",
-    "requestType": 0,   // 0 = map, 1 = direct, 2 = global
+    "likeCount": 7,
+    "liked": true,
+    "requestType": 0,   // 0 = map, 1 = direct, 2 = global, 3 = event
     "sender": {
       "id": "38988",
       "fullname": "Falak",
@@ -247,6 +255,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
       "text": "This is a comment ",
       "itemId": "88F95DFB-0080-40F1-9529-55FBB74FC55D",
       "itemType": "card",
+      "likeCount": 7,
+      "liked": true,
       "createdAt": "2017-06-09 19:47:43",
       "creator": {
         "UI": "195502",
@@ -259,7 +269,9 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/requests" -H "Authorization: <AUTH
       "id": "45691",
       "body": "How is the beach there?",
       "createdAt": "2016-11-28T18:15:15.166Z",
-      "requestType": 2,   // 0 = map, 1 = direct, 2 = global
+      "likeCount": 3,
+      "liked": false,
+      "requestType": 2,   // 0 = map, 1 = direct, 2 = global, 3 = event
       "sender": {
         "id": "611",
         "fullname": "John Doe",
@@ -367,6 +379,8 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
       "text": "This is a comment ",
       "itemId": "08241390-F145-4245-A68A-5D7852488673",
       "itemType": "card",
+      "likeCount": 7,
+      "liked": true,
       "createdAt": "2017-06-09 19:47:43",
       "creator": {
         "UI": "195502",
@@ -379,7 +393,9 @@ curl "https://node.ucic.vc/api/v04/users/<ID>/responses" -H "Authorization: <AUT
       "id": "45220",
       "body": "What's something you show your out of twon guests?",
       "createdAt": "2016-11-08T23:01:13.260Z",
-      "requestType": 0,   // 0 = map, 1 = direct, 2 = global
+      "requestType": 0,   // 0 = map, 1 = direct, 2 = global, 3 = event
+      "likeCount": 1,
+      "liked": false,
       "sender": {
         "id": "38992",
         "fullname": "duty3test",
@@ -485,6 +501,8 @@ curl "https://node.ucic.vc/api/v04/requests/300106/cards" -H "Authorization: <AU
       "text": "This is a comment ",
       "itemId": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
       "itemType": "card",
+      "likeCount": 7,
+      "liked": true,
       "createdAt": "2017-06-09 19:47:43",
       "creator": {
         "UI": "195502",
@@ -497,8 +515,10 @@ curl "https://node.ucic.vc/api/v04/requests/300106/cards" -H "Authorization: <AU
       "id": "40839",
       "body": "Anything interesting to see around you?",
       "createdAt": "2016-04-22T01:02:37.000Z",
-      "requestType": 0,   // 0 = map, 1 = direct, 2 = global
+      "requestType": 0,   // 0 = map, 1 = direct, 2 = global, 3 = event
       "following": true,
+      "likeCount": 2,
+      "liked": false,
       "sender": {
         "id": "36001",
         "fullname": "Jack Liu",
@@ -600,6 +620,8 @@ curl "https://node.ucic.vc/api/v04/questions/a29c2a61-7fee-492e-80e6-907c859b441
       "text": "This is a comment ",
       "itemId": "4F211D7B-5DA4-42FA-9C44-E8CEAB4C05EC",
       "itemType": "card",
+      "likeCount": 7,
+      "liked": true,
       "createdAt": "2017-06-09 19:47:43",
       "creator": {
         "UI": "195502",
@@ -612,7 +634,9 @@ curl "https://node.ucic.vc/api/v04/questions/a29c2a61-7fee-492e-80e6-907c859b441
       "id": "40839",
       "body": "Anything interesting to see around you?",
       "createdAt": "2016-04-22T01:02:37.000Z",
-      "requestType": 0,   // 0 = map, 1 = direct, 2 = global
+      "requestType": 0,   // 0 = map, 1 = direct, 2 = global, 3 = event
+      "likeCount": 7,
+      "liked": false,
       "following": true,
       "sender": {
         "id": "36001",

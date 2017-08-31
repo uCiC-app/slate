@@ -137,137 +137,144 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
 
 ```json
 [
-    {
-        "type": "media",
-        "date": "2017-08-03T16:44:40.000Z",
-        "id": "A20E9361-78BD-4244-B867-22BC46537FA2",
-        "eventId": "1234567890",
-        "popularCount": 1,
-        "atEvent": false,
-        "creator": {
-            "userId": 414744,
-            "userName": "Alc",
-            "userAvatar": null,
-            "badge": "https://media.ucic.vc/assets/tags/CA.png"
-        },
-        "media": {
-            "text": "Free floating media!",
-            "cardId": "A20E9361-78BD-4244-B867-22BC46537FA2",
-            "MI": 76055,
-            "thumb": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/thumb.jpg",
-            "url": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/original.png",
-            "mimeType": "image/png",
-            "likeCount": 1,
-            "commentCount": 0,
-            "liked": false
-        }
+  {
+    "type": "media",
+    "date": "2017-08-03T16:44:40.000Z",
+    "id": "A20E9361-78BD-4244-B867-22BC46537FA2",
+    "eventId": "1234567890",
+    "popularCount": 1,
+    "atEvent": false,
+    "creator": {
+      "userId": 414744,
+      "userName": "Alc",
+      "userAvatar": null,
+      "badge": "https://media.ucic.vc/assets/tags/CA.png"
     },
-    {
-        "type": "extMedia",
-        "date": "2017-08-23T17:52:37.000Z",
-        "id": "tweet_900415492589928448",
-        "eventId": "e252c2bf-e58e-45ac-869c-43e0480dc77e",
-        "popularCount": 1,
-        "atEvent": true,
-        "creator": {
-            "userName": "Boat Sales",
-            "userAvatar": "https://pbs.twimg.com/profile_images/656976062447026176/9vF-MU6-_normal.jpg",
-            "badge": "https://media.ucic.vc/assets/tags/twitter/tweet.png"
-        },
-        "extMedia": {
-            "source": "twitter/tweet",
-            "attributionUrl": "https://t.co/3mTuWOP53U",
-            "imageUrl": "https://pbs.twimg.com/media/DH7rHdzUAAATJ-S.jpg",
-            "videoUrl": null,
-            "extCreator": {
-                "userHandle": "BoatSales",
-                "userId": "4307191455"
-            },
-            "text": "On Twitter https://t.co/3mTuWOP53U",
-            "likeCount": 0,
-            "liked": false,
-            "commentCount": 1,
-            "commenters": [
-                227131
-            ]
-        }
+    "media": {
+      "text": "Free floating media!",
+      "cardId": "A20E9361-78BD-4244-B867-22BC46537FA2",
+      "MI": 76055,
+      "thumb": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/thumb.jpg",
+      "url": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/original.png",
+      "mimeType": "image/png",
+      "likeCount": 1,
+      "commentCount": 0,
+      "liked": false
+    }
+  },
+  {
+    "type": "extMedia",
+    "date": "2017-08-23T17:52:37.000Z",
+    "id": "tweet_900415492589928448",
+    "eventId": "e252c2bf-e58e-45ac-869c-43e0480dc77e",
+    "popularCount": 1,
+    "atEvent": true,
+    "creator": {
+      "userName": "Boat Sales",
+      "userAvatar": "https://pbs.twimg.com/profile_images/656976062447026176/9vF-MU6-_normal.jpg",
+      "badge": "https://media.ucic.vc/assets/tags/twitter/tweet.png"
     },
-    {
-        "type": "comment",
-        "date": "2017-08-02T20:59:01.000Z",
-        "id": "03ba5137-0ca6-4073-bdcd-8a92dcb772fe",
-        "eventId": "1234567890",
-        "popularCount": 2,
-        "atEvent": false,
-        "creator": {
+    "extMedia": {
+      "source": "twitter/tweet",
+      "attributionUrl": "https://t.co/3mTuWOP53U",
+      "imageUrl": "https://pbs.twimg.com/media/DH7rHdzUAAATJ-S.jpg",
+      "videoUrl": null,
+      "extCreator": {
+        "userHandle": "BoatSales",
+        "userId": "4307191455"
+      },
+      "text": "On Twitter https://t.co/3mTuWOP53U",
+      "likeCount": 0,
+      "liked": false,
+      "commentCount": 1,
+      "commenters": [
+        227131
+      ]
+    }
+  },
+  {
+    "type": "comment",
+    "date": "2017-08-02T20:59:01.000Z",
+    "id": "03ba5137-0ca6-4073-bdcd-8a92dcb772fe",
+    "eventId": "1234567890",
+    "popularCount": 2,
+    "atEvent": false,
+    "creator": {
+      "userId": 414767,
+      "userName": "Someone",
+      "userAvatar": null,
+      "badge": null
+    },
+    "comment": {
+      "text": "This is a root level comment!",
+      "likeCount": 3,
+      "liked": true,
+      "comments": [
+        {
+          "creator": {
             "userId": 414767,
             "userName": "Someone",
             "userAvatar": null,
             "badge": null
-        },
-        "comment": {
-            "text": "This is a root level comment!",
-            "comments": [
-                {
-                    "creator": {
-                        "userId": 414767,
-                        "userName": "Someone",
-                        "userAvatar": null,
-                        "badge": null
-                    },
-                    "date": "2017-08-02T20:59:53.000Z",
-                    "text": "This is an inner comment, replying to a root comment",
-                    "atEvent": false
-                }
-            ]
+          },
+          "id": "1e296c45-c299-4753-8426-c0f01bbeedd9",
+          "likeCount": 2,
+          "liked": false,
+          "date": "2017-08-02T20:59:53.000Z",
+          "text": "This is an inner comment, replying to a root comment",
+          "atEvent": false
         }
-    },
-    {
-        "type": "question",
-        "date": "2017-08-02T16:36:53.000Z",
-        "id": "300651",
-        "eventId": "1234567890",
-        "popularCount": 1,
-        "atEvent": false,
-        "creator": {
-            "userId": 414767,
-            "userName": "Someone",
-            "badge": null,
-            "userAvatar": null
-        },
-        "question": {
-            "text": "What's happening at this event?",
-            "followId": "03dabda4-e8a0-4cdc-86ab-5235491beb1c",
-            "followers": [
-                {
-                    "userId": 414767,
-                    "userName": "Someone",
-                    "userAvatar": null
-                }
-            ],
-            "replies": [
-                {
-                    "creator": {
-                        "userId": 414744,
-                        "userName": "Alc",
-                        "badge": "https://media.ucic.vc/assets/tags/CA.png",
-                        "userAvatar": null
-                    },
-                    "date": "2017-08-03T18:33:39.000Z",
-                    "text": "A reply to an event question",
-                    "atEvent": false,
-                    "cardId": "399E2745-28E0-4041-9A79-BEA80D5B0AD0",
-                    "MI": 76056,
-                    "thumb": "https://media.ucic.vc/media/399E2745-28E0-4041-9A79-BEA80D5B0AD0/thumb.jpg",
-                    "url": "https://media.ucic.vc/media/399E2745-28E0-4041-9A79-BEA80D5B0AD0/original.jpeg",
-                    "mimeType": "image/jpeg",
-                    "likeCount": 1,
-                    "commentCount": 0,
-                    "liked": false
-                }
-            ]
-        }
+      ]
     }
+  },
+  {
+    "type": "question",
+    "date": "2017-08-02T16:36:53.000Z",
+    "id": "300651",
+    "eventId": "1234567890",
+    "popularCount": 1,
+    "atEvent": false,
+    "creator": {
+      "userId": 414767,
+      "userName": "Someone",
+      "badge": null,
+      "userAvatar": null
+    },
+    "question": {
+      "text": "What's happening at this event?",
+      "followId": "03dabda4-e8a0-4cdc-86ab-5235491beb1c",
+      "likeCount": 7,
+      "liked": true,
+      "followers": [
+        {
+          "userId": 414767,
+          "userName": "Someone",
+          "userAvatar": null
+        }
+      ],
+      "replies": [
+        {
+          "creator": {
+            "userId": 414744,
+            "userName": "Alc",
+            "badge": "https://media.ucic.vc/assets/tags/CA.png",
+            "userAvatar": null
+          },
+          "date": "2017-08-03T18:33:39.000Z",
+          "text": "A reply to an event question",
+          "atEvent": false,
+          "cardId": "399E2745-28E0-4041-9A79-BEA80D5B0AD0",
+          "MI": 76056,
+          "thumb": "https://media.ucic.vc/media/399E2745-28E0-4041-9A79-BEA80D5B0AD0/thumb.jpg",
+          "url": "https://media.ucic.vc/media/399E2745-28E0-4041-9A79-BEA80D5B0AD0/original.jpeg",
+          "mimeType": "image/jpeg",
+          "likeCount": 1,
+          "commentCount": 0,
+          "liked": false
+        }
+      ]
+    }
+  }
 ]
 ```
 
@@ -325,6 +332,8 @@ curl "https://node.ucic.vc/api/v04/eventRoom/mapQuestions?lat=47.3302&lon=-29.59
   "followId": "5aa25d4d-f7f9-4322-ba63-904e20bda108",
   "followers": 2,
   "otherFollowers": 1,
+  "likeCount": 8,
+  "liked": true,
   "eventId": "1234567890",
   "youFollowRequest": true,
   "title": "The Best Test Event ",

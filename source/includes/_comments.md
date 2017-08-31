@@ -19,6 +19,8 @@ curl "https://node.ucic.vc/api/v05/card/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6/com
     "itemId": "DEC604AC-C29F-4764-B9C6-2CEC7351ABB6",
     "itemType": "card",
     "createdAt": "2016-12-18T22:18:04.000Z",
+    "likeCount": 12,
+    "liked": true,
     "creator": {
       "UI": "611",
       "badge": "https://media.ucic.vc/assets/tags/RU.png",
@@ -193,6 +195,8 @@ curl -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/com
   "itemId": "B5C0E281-7EC7-4A62-90C9-50BB872A5729",
   "itemType": "card",
   "createdAt": "2017-08-24T15:10:58.000Z",
+  "likeCount": 12,
+  "liked": true,
   "creator": {
     "UI": "195685",
     "avatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/micro.jpg",

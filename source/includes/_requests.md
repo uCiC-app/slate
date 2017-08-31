@@ -86,6 +86,15 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
     "end": "2017-04-04T18:45:33.286Z",
 	"requestType": 0,
     "responseCount": 1,
+    "likeCount": 4,
+    "liked": false,
+    "followerCount": 15,
+    "youFollowRequest": false,
+    "followers": [{
+        "userId":  123456,
+        "userName": "Thor",
+        "userAvatar": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5175b8f318703/landscape_xlarge.jpg"
+    }],
     "seen": false,
 	"location": {
       "lat": 33.7490,
@@ -146,6 +155,15 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"requestType": 1,
     "responseCount": 2,
     "seen": true,
+    "likeCount": 4,
+    "liked": false,
+    "followerCount": 15,
+    "youFollowRequest": false,
+    "followers": [{
+        "userId":  123456,
+        "userName": "Thor",
+        "userAvatar": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5175b8f318703/landscape_xlarge.jpg"
+    }],
 	"receiverUI": 39329,
     "discoverResponses": [{  // up to 10 entries in array
         "type": 0,
@@ -189,6 +207,15 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"requestType": 2,
     "responseCount": 2,
     "seen": false,
+    "likeCount": 4,
+    "liked": false,
+    "followerCount": 15,
+    "youFollowRequest": false,
+    "followers": [{
+        "userId":  123456,
+        "userName": "Thor",
+        "userAvatar": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5175b8f318703/landscape_xlarge.jpg"
+    }],
     "discoverResponses": [{  // up to 10 entries in array
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
@@ -238,6 +265,15 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"requestType": 1,
     "responseCount": 3,
     "seen": false,
+    "likeCount": 4,
+    "liked": false,
+    "followerCount": 15,
+    "youFollowRequest": false,
+    "followers": [{
+        "userId":  123456,
+        "userName": "Thor",
+        "userAvatar": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5175b8f318703/landscape_xlarge.jpg"
+    }],
 	"receiverUI": 39329,
     "discoverResponses": [{  // up to 10 entries in array
         "type": 0,
@@ -266,6 +302,15 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applicat
 	"requestType": 0,
     "responseCount": 0,
     "seen": false,
+    "likeCount": 4,
+    "liked": false,
+    "followerCount": 15,
+    "youFollowRequest": false,
+    "followers": [{
+        "userId":  123456,
+        "userName": "Thor",
+        "userAvatar": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5175b8f318703/landscape_xlarge.jpg"
+    }],
     "discoverResponses": [{  // up to 10 entries in array
         "type": 0,
         "badge": "https://media.ucic.vc/assets/tags/CA.png",
