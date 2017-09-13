@@ -158,7 +158,21 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
       "url": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/original.png",
       "mimeType": "image/png",
       "likeCount": 1,
-      "commentCount": 0,
+      "commentCount": 1,
+      "comments": [{
+        "creator": {
+          "userId": 414767,
+          "userName": "Someone",
+          "userAvatar": null,
+          "badge": null
+        },
+        "id": "1e296c45-c299-4753-8426-c0f01bbeedd9",
+        "likeCount": 2,
+        "liked": false,
+        "date": "2017-08-02T20:59:53.000Z",
+        "text": "This is a comment on a media item",
+        "atEvent": false
+      }]
       "liked": false
     }
   },
@@ -187,9 +201,20 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
       "likeCount": 0,
       "liked": false,
       "commentCount": 1,
-      "commenters": [
-        227131
-      ]
+      "comments": [{
+        "creator": {
+          "userId": 414767,
+          "userName": "Someone",
+          "userAvatar": null,
+          "badge": null
+        },
+        "id": "1e296c45-c299-4753-8426-c0f01bbeedd9",
+        "likeCount": 2,
+        "liked": false,
+        "date": "2017-08-02T20:59:53.000Z",
+        "text": "This is a comment on an external media item",
+        "atEvent": false
+      }]
     }
   },
   {
@@ -209,22 +234,20 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
       "text": "This is a root level comment!",
       "likeCount": 3,
       "liked": true,
-      "comments": [
-        {
-          "creator": {
-            "userId": 414767,
-            "userName": "Someone",
-            "userAvatar": null,
-            "badge": null
-          },
-          "id": "1e296c45-c299-4753-8426-c0f01bbeedd9",
-          "likeCount": 2,
-          "liked": false,
-          "date": "2017-08-02T20:59:53.000Z",
-          "text": "This is an inner comment, replying to a root comment",
-          "atEvent": false
-        }
-      ]
+      "comments": [{
+        "creator": {
+          "userId": 414767,
+          "userName": "Someone",
+          "userAvatar": null,
+          "badge": null
+        },
+        "id": "1e296c45-c299-4753-8426-c0f01bbeedd9",
+        "likeCount": 2,
+        "liked": false,
+        "date": "2017-08-02T20:59:53.000Z",
+        "text": "This is an inner comment, replying to a root comment",
+        "atEvent": false
+      }]
     }
   },
   {
