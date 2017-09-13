@@ -228,6 +228,55 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
     }
   },
   {
+    "type": "response",
+    "date": "2017-09-01T16:42:40.000Z",
+    "latestDate": "2017-09-01T16:42:40.000Z",
+    "id": "BB536353-6356-4150-80C7-145F0D3324D6",
+    "eventId": "1234567890",
+    "popularCount": 1,
+    "atEvent": true,
+    "creator": {
+      "userId": 414785,
+      "userName": "Harleen",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png",
+      "userAvatar": "https://media.ucic.vc/media/0A4C6B33-8B9C-429F-91AC-FD9A95D61F60/thumb.jpg"
+    },
+    "response": {
+      "caption": "Good",
+      "cardId": "BB536353-6356-4150-80C7-145F0D3324D6",
+      "MI": 76103,
+      "thumb": "https://media.ucic.vc/media/BB536353-6356-4150-80C7-145F0D3324D6/thumb.jpg",
+      "url": "https://media.ucic.vc/media/BB536353-6356-4150-80C7-145F0D3324D6/original.jpg",
+      "mimeType": "image/jpeg",
+      "likeCount": 1,
+      "liked": false,
+      "comments": [{
+        "creator": {
+          "userId": 195502,
+          "userName": "Jan",
+          "badge": "https://media.ucic.vc/assets/tags/CA.png",
+          "userAvatar": "https://media.ucic.vc/media/7C21E547-277A-4A23-934A-E7986B82E5EB/thumb.jpg"
+        },
+        "id": "f5170891-090d-4c59-b6f2-0d0b0edd3364",
+        "date": "2017-09-12T17:55:46.000Z",
+        "text": "this am comment.",
+        "atEvent": false,
+        "likeCount": 1,
+        "liked": true
+      }],
+      "question": {
+        "text": "What's going on today?",
+        "requestId": "300720",
+        "creator": {
+          "userId": 194447,
+          "userName": "Ab",
+          "badge": "https://media.ucic.vc/assets/tags/CA.png",
+          "userAvatar": "https://media.ucic.vc/media/0516C323-4125-40D8-9D67-AE8B098F09F7/thumb.jpg"
+        }
+      }
+    }
+  },
+  {
     "type": "question",
     "date": "2017-08-02T16:36:53.000Z",
     "id": "300651",
@@ -250,27 +299,6 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
           "userId": 414767,
           "userName": "Someone",
           "userAvatar": null
-        }
-      ],
-      "replies": [
-        {
-          "creator": {
-            "userId": 414744,
-            "userName": "Alc",
-            "badge": "https://media.ucic.vc/assets/tags/CA.png",
-            "userAvatar": null
-          },
-          "date": "2017-08-03T18:33:39.000Z",
-          "text": "A reply to an event question",
-          "atEvent": false,
-          "cardId": "399E2745-28E0-4041-9A79-BEA80D5B0AD0",
-          "MI": 76056,
-          "thumb": "https://media.ucic.vc/media/399E2745-28E0-4041-9A79-BEA80D5B0AD0/thumb.jpg",
-          "url": "https://media.ucic.vc/media/399E2745-28E0-4041-9A79-BEA80D5B0AD0/original.jpeg",
-          "mimeType": "image/jpeg",
-          "likeCount": 1,
-          "commentCount": 0,
-          "liked": false
         }
       ]
     }

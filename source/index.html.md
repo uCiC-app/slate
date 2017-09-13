@@ -21,6 +21,7 @@ includes:
   - map
   - mobile
   - questions
+  - report
   - requests
   - responses
   - search
