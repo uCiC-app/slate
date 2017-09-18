@@ -63,10 +63,10 @@ This endpoint retrieves the current user's events.
 
 **Note 2:** In the event of an event room item alert that refers to an `extMedia` item specifically, any `content` that would normally contain a String `mimeType` fiield will instead contain a Boolean `video` field for the purpose of placing a "play" button overlay on the thumbnail. This is done because the mimetypes of external media are more diverse and not explicitly calculated. 
 
-#### Category: "followedUser"
-**Kind: "eventResponse"**
+** Category: "followedUser"**
+*Kind: "eventResponse"*
 A user you follow added a response/piece of media to an event room.
-
+> followedUser/eventResponse
 ```
 ...
 content: {
@@ -80,9 +80,9 @@ content: {
 ...
 ```
 
-**Kind: "eventItemComment"**
+*Kind: "eventItemComment"*
 A user you follow added a comment to an event room item. Note: the `refId` is the specific comment the alert refers to.
-
+> followedUser/eventItemComment
 ```
 ...
 content: {
@@ -97,9 +97,10 @@ content: {
 ...
 ```
 
-**Kind: "rootEventComment"**
+*Kind: "rootEventComment"*
 A user you follow added a root level comment to an event room. Note: the `refId` is the specific root level comment the alert refers to.
 
+> followedUser/rootEventComment
 ```
 ...
 content: {
@@ -110,10 +111,10 @@ content: {
 ...
 ```
 
-#### Category: "followedEvent"
-**Kind: "response"**
+**Category: "followedEvent"**
+*Kind: "response"*
 A user added a response to an event room you follow. 
-
+> followedEvent/response
 ```
 ...
 "content": {
@@ -126,8 +127,10 @@ A user added a response to an event room you follow.
 "thumb": "https://media.ucic.vc/media/5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8/thumb.jpg",
 ...
 ```
-**Kind: "comment"**
+*Kind: "comment"*  
+
 A user added a root level comment to an event you follow . Note: the `refId` is the specific root level comment the alert refers to.
+> followedEvent/comment  
 
 ```
 ...
@@ -142,10 +145,10 @@ A user added a root level comment to an event you follow . Note: the `refId` is 
 "refId": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
 ...
 ```
-#### Category: "eventRequest"
-**Kind: "response"**
+**Category: "eventRequest"**
+*Kind: "response"*
 A user added a response to an event room request you asked.
-
+>eventRequest/response
 ```
 ...
 "content": {
@@ -159,8 +162,9 @@ A user added a response to an event room request you asked.
 ...
 ```
 
-**Kind: "like"**
+*Kind: "like"*
 A user liked an event question you asked.
+>eventRequest/like  
 
 ```
 ...
@@ -172,10 +176,10 @@ A user liked an event question you asked.
 },
 ...
 ```
-####Category: "eventItemComment"
-**Kind: "like"**
+**Category: "eventItemComment"**
+*Kind: "like"*
 A user liked your comment on an event room item. Note: `refId` refers to the specific liked comment on the item. Note2: `mimeType` and `thumb` will not be present if the root level item is a comment. 
-
+>eventItemComment/like
 ```
 ...
 "content": {
@@ -189,9 +193,9 @@ A user liked your comment on an event room item. Note: `refId` refers to the spe
 ...
 ```
 
-**Kind: "followOnComment"**
+*Kind: "followOnComment"*
 A user commented on an event room item after you did.  Note: `refId` refers to the comment that was created after yours, thus creating this alert. Note2: `mimeType` and `thumb` will not be present if the root level item is a comment. 
-
+>eventItemComment/followOnComment
 ```
 ...
 "content": {
@@ -205,10 +209,10 @@ A user commented on an event room item after you did.  Note: `refId` refers to t
 ...
 ```
 
-####Category: "eventResponse"
-**Kind: "comment"**
+**Category: "eventResponse"**
+*Kind: "comment"*
 A user commented on a `response` or `media` item that you created. 
-
+>eventResponse/comment
 ```
 ...
 "content": {
@@ -222,8 +226,9 @@ A user commented on a `response` or `media` item that you created.
 ...
 ```
 
-**Kind: "like"**
+*Kind: "like"*
 A user liked a `response` or `media` item that you created. 
+>eventResponse/like  
 
 ```
 ...
@@ -237,10 +242,10 @@ A user liked a `response` or `media` item that you created.
 "thumb": "https://media.ucic.vc/media/03BAE8F6-BE39-4913-A4B8-2D910C6F148A/thumb.jpg",
 ...
 ```
-####Category: "rootComment"
-**Kind: "reply"**
+**Category: "rootComment"**
+*Kind: "reply"*
 A user replied with a comment on a root level `comment` item that you created in an event room. Note: `refId` refers to the specific added comment on the item.
-
+>rootComment/reply
 ```
 ...
 "content": {
@@ -253,9 +258,9 @@ A user replied with a comment on a root level `comment` item that you created in
 ...
 ```
 
-**Kind: "like"**
+*Kind: "like"*
 A user liked a root level `comment` item that you created in an event room.
-
+>rootComment/like
 ```
 ...
 "content": {
