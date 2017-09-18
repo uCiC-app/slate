@@ -360,6 +360,74 @@ The admin dashboard allows us to import media from twitter for event rooms. Sinc
 | atEvent   | String                 | If a value of `true` is sent for this query param, only items that were generated at the location of the event will be sent (based on the root level item, atEvent of nested items is ignored) |
 | filter    | Comma delimited String | A comma separated list of what item types to return. supports any combination of `question`, `media`, `comment` |
 
+## Get Single Event Room item
+
+```shell
+curl "https://node.ucic.vc/api/v04/eventRoom/item/:itemType/:itemId" -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "type": "extMedia",
+  "date": "2017-08-23T17:52:37.000Z",
+  "id": "tweet_900415492589928448",
+  "eventId": "e252c2bf-e58e-45ac-869c-43e0480dc77e",
+  "popularCount": 1,
+  "atEvent": true,
+  "creator": {
+    "userName": "Boat Sales",
+    "userAvatar": "https://pbs.twimg.com/profile_images/656976062447026176/9vF-MU6-_normal.jpg",
+    "badge": "https://media.ucic.vc/assets/tags/twitter/tweet.png"
+  },
+  "extMedia": {
+    "source": "twitter/tweet",
+    "attributionUrl": "https://t.co/3mTuWOP53U",
+    "imageUrl": "https://pbs.twimg.com/media/DH7rHdzUAAATJ-S.jpg",
+    "videoUrl": null,
+    "extCreator": {
+      "userHandle": "BoatSales",
+      "userId": "4307191455"
+    },
+    "text": "On Twitter https://t.co/3mTuWOP53U",
+    "likeCount": 0,
+    "liked": false,
+    "commentCount": 1,
+    "comments": [{
+    "creator": {
+      "userId": 414767,
+      "userName": "Someone",
+      "userAvatar": null,
+      "badge": null
+    },
+    "id": "1e296c45-c299-4753-8426-c0f01bbeedd9",
+    "likeCount": 2,
+    "liked": false,
+    "date": "2017-08-02T20:59:53.000Z",
+    "text": "This is a comment on an external media item",
+    "atEvent": false
+    }]
+  }
+}
+```
+
+This endpoint retrieves a specific event room item by its `type` and `id` values. 
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/eventRoom/item/:itemType/:itemId`
+
+### Query Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| itemType | String | The `type` of the target event room item to retrieve |
+| itemId   | String  | The `id` of the target event room item to retrieve |
+
 
 ## Get Event Questions for Popup
 
