@@ -1859,82 +1859,75 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 A user you follow added a response/piece of media to an event room.</p>
 
 <blockquote>
-<p>followedUser/eventResponse<br>
-<code class="prettyprint">
-...
-content: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;itemId&quot;: &quot;ACDDF71B-1E1E-4445-A0CC-943301479A92&quot;,
-  &quot;itemType&quot;: &quot;response&quot;,
-  &quot;mimeType&quot;: &quot;image/jpeg&quot;
-},
-&quot;thumb&quot;: &quot;https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg&quot;,
-...
-</code></p>
+<p>followedUser/eventResponse</p>
 </blockquote>
-
+<pre class="highlight plaintext"><code>...
+content: {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
+  "itemType": "response",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
+...
+</code></pre>
 <p><em>Kind: &ldquo;eventItemComment&rdquo;</em><br>
 A user you follow added a comment to an event room item. Note: the <code class="prettyprint">refId</code> is the specific comment the alert refers to.</p>
 
 <blockquote>
-<p>followedUser/eventItemComment<br>
-<code class="prettyprint">
-...
-content: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;itemId&quot;: &quot;ACDDF71B-1E1E-4445-A0CC-943301479A92&quot;,
-  &quot;itemType&quot;: &quot;response&quot;,
-  &quot;mimeType&quot;: &quot;image/jpeg&quot;
-},
-&quot;refId&quot;: &quot;7804d8c9-9cbc-48c1-9007-43b16b99ec6f&quot;,
-&quot;thumb&quot;: &quot;https://pbs.twimg.com/media/DKBLEh_VAAAqiXk.jpg&quot;,
-...
-</code></p>
+<p>followedUser/eventItemComment</p>
 </blockquote>
-
+<pre class="highlight plaintext"><code>...
+content: {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
+  "itemType": "response",
+  "mimeType": "image/jpeg"
+},
+"refId": "7804d8c9-9cbc-48c1-9007-43b16b99ec6f",
+"thumb": "https://pbs.twimg.com/media/DKBLEh_VAAAqiXk.jpg",
+...
+</code></pre>
 <p><em>Kind: &ldquo;rootEventComment&rdquo;</em><br>
 A user you follow added a root level comment to an event room. Note: the <code class="prettyprint">refId</code> is the specific root level comment the alert refers to.</p>
 
 <blockquote>
-<p>followedUser/rootEventComment<br>
-<code class="prettyprint">
-...
-content: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;
-},
-&quot;refId&quot;: &quot;7804d8c9-9cbc-48c1-9007-43b16b99ec6f&quot;,
-...
-</code></p>
+<p>followedUser/rootEventComment</p>
 </blockquote>
-
+<pre class="highlight plaintext"><code>...
+content: {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ"
+},
+"refId": "7804d8c9-9cbc-48c1-9007-43b16b99ec6f",
+...
+</code></pre>
 <p><strong>Category: &ldquo;followedEvent&rdquo;</strong><br>
 <em>Kind: &ldquo;response&rdquo;</em><br>
 A user added a response to an event room you follow. </p>
 
 <blockquote>
-<p>followedEvent/response<br>
-<code class="prettyprint">
-...
-&quot;content&quot;: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;id&quot;: &quot;5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8&quot;,
-  &quot;type&quot;: &quot;response&quot;,
-  &quot;mimeType&quot;: &quot;image/jpeg&quot;
-},
-&quot;thumb&quot;: &quot;https://media.ucic.vc/media/5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8/thumb.jpg&quot;,
-...
-</code>
-<em>Kind: &ldquo;comment&rdquo;</em>    </p>
+<p>followedEvent/response</p>
 </blockquote>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "id": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
+  "type": "response",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8/thumb.jpg",
+...
+</code></pre>
+<p><em>Kind: &ldquo;comment&rdquo;</em>    </p>
 
 <p>A user added a root level comment to an event you follow . Note: the <code class="prettyprint">refId</code> is the specific root level comment the alert refers to.</p>
 
 <blockquote>
-<p>followedEvent/comment    </p>
+<p>followedEvent/comment</p>
 </blockquote>
 <pre class="highlight plaintext"><code>...
 "content": {
@@ -1953,26 +1946,24 @@ A user added a response to an event room you follow. </p>
 A user added a response to an event room request you asked.</p>
 
 <blockquote>
-<p>eventRequest/response<br>
-<code class="prettyprint">
-...
-&quot;content&quot;: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;itemId&quot;: &quot;94C547B4-C827-4D12-AC43-D05E2C723D18&quot;,
-  &quot;itemType&quot;: &quot;response&quot;,
-  &quot;mimeType&quot;: &quot;image/jpeg&quot;
-},
-&quot;thumb&quot;: &quot;https://media.ucic.vc/media/94C547B4-C827-4D12-AC43-D05E2C723D18/thumb.jpg&quot;,
-...
-</code></p>
+<p>eventRequest/response</p>
 </blockquote>
-
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemId": "94C547B4-C827-4D12-AC43-D05E2C723D18",
+  "itemType": "response",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/94C547B4-C827-4D12-AC43-D05E2C723D18/thumb.jpg",
+...
+</code></pre>
 <p><em>Kind: &ldquo;like&rdquo;</em>
 A user liked an event question you asked.</p>
 
 <blockquote>
-<p>eventRequest/like   </p>
+<p>eventRequest/like</p>
 </blockquote>
 <pre class="highlight plaintext"><code>...
 "content": {
@@ -1988,65 +1979,59 @@ A user liked an event question you asked.</p>
 A user liked your comment on an event room item. Note: <code class="prettyprint">refId</code> refers to the specific liked comment on the item. Note2: <code class="prettyprint">mimeType</code> and <code class="prettyprint">thumb</code> will not be present if the root level item is a comment. </p>
 
 <blockquote>
-<p>eventItemComment/like<br>
-<code class="prettyprint">
-...
-&quot;content&quot;: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;itemType&quot;: &quot;response&quot;,
-  &quot;itemId&quot;: &quot;ACDDF71B-1E1E-4445-A0CC-943301479A92&quot;,
-  &quot;mimeType&quot;: &quot;image/jpeg&quot;
-},
-&quot;thumb&quot;: &quot;https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg&quot;,
-...
-</code></p>
+<p>eventItemComment/like</p>
 </blockquote>
-
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "response",
+  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
+...
+</code></pre>
 <p><em>Kind: &ldquo;followOnComment&rdquo;</em><br>
 A user commented on an event room item after you did.  Note: <code class="prettyprint">refId</code> refers to the comment that was created after yours, thus creating this alert. Note2: <code class="prettyprint">mimeType</code> and <code class="prettyprint">thumb</code> will not be present if the root level item is a comment. </p>
 
 <blockquote>
-<p>eventItemComment/followOnComment<br>
-<code class="prettyprint">
-...
-&quot;content&quot;: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;itemType&quot;: &quot;response&quot;,
-  &quot;itemId&quot;: &quot;ACDDF71B-1E1E-4445-A0CC-943301479A92&quot;,
-  &quot;mimeType&quot;: &quot;image/jpeg&quot;
-},
-&quot;thumb&quot;: &quot;https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg&quot;,
-...
-</code></p>
+<p>eventItemComment/followOnComment</p>
 </blockquote>
-
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "response",
+  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
+...
+</code></pre>
 <p><strong>Category: &ldquo;eventResponse&rdquo;</strong><br>
 <em>Kind: &ldquo;comment&rdquo;</em><br>
 A user commented on a <code class="prettyprint">response</code> or <code class="prettyprint">media</code> item that you created. </p>
 
 <blockquote>
-<p>eventResponse/comment<br>
-<code class="prettyprint">
-...
-&quot;content&quot;: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;itemType&quot;: &quot;media&quot;,
-  &quot;itemId&quot;: &quot;03BAE8F6-BE39-4913-A4B8-2D910C6F148A&quot;,
-  &quot;mimeType&quot;: &quot;image/jpeg&quot;
-},
-&quot;thumb&quot;: &quot;https://media.ucic.vc/media/03BAE8F6-BE39-4913-A4B8-2D910C6F148A/thumb.jpg&quot;,
-...
-</code></p>
+<p>eventResponse/comment</p>
 </blockquote>
-
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "media",
+  "itemId": "03BAE8F6-BE39-4913-A4B8-2D910C6F148A",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/03BAE8F6-BE39-4913-A4B8-2D910C6F148A/thumb.jpg",
+...
+</code></pre>
 <p><em>Kind: &ldquo;like&rdquo;</em><br>
 A user liked a <code class="prettyprint">response</code> or <code class="prettyprint">media</code> item that you created. </p>
 
 <blockquote>
-<p>eventResponse/like  </p>
+<p>eventResponse/like</p>
 </blockquote>
 <pre class="highlight plaintext"><code>...
 "content": {
@@ -2064,37 +2049,33 @@ A user liked a <code class="prettyprint">response</code> or <code class="prettyp
 A user replied with a comment on a root level <code class="prettyprint">comment</code> item that you created in an event room. Note: <code class="prettyprint">refId</code> refers to the specific added comment on the item.</p>
 
 <blockquote>
-<p>rootComment/reply<br>
-<code class="prettyprint">
-...
-&quot;content&quot;: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;itemType&quot;: &quot;comment&quot;,
-  &quot;itemId&quot;: &quot;9e32a980-3f80-4d31-b941-d9dca21f8aba&quot;
-},
-&quot;refId&quot;: &quot;88c61150-19b9-4450-9489-367d2a5a0d62&quot;,
-...
-</code></p>
+<p>rootComment/reply</p>
 </blockquote>
-
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "comment",
+  "itemId": "9e32a980-3f80-4d31-b941-d9dca21f8aba"
+},
+"refId": "88c61150-19b9-4450-9489-367d2a5a0d62",
+...
+</code></pre>
 <p><em>Kind: &ldquo;like&rdquo;</em><br>
 A user liked a root level <code class="prettyprint">comment</code> item that you created in an event room.</p>
 
 <blockquote>
-<p>rootComment/like<br>
-<code class="prettyprint">
-...
-&quot;content&quot;: {
-  &quot;eventTitle&quot;: &quot;Permian Basin Fair &amp; Exposition&quot;,
-  &quot;eventId&quot;: &quot;Oa8w5r4rrXOZ&quot;,
-  &quot;itemType&quot;: &quot;comment&quot;,
-  &quot;itemId&quot;: &quot;9e32a980-3f80-4d31-b941-d9dca21f8aba&quot;
+<p>rootComment/like</p>
+</blockquote>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "comment",
+  "itemId": "9e32a980-3f80-4d31-b941-d9dca21f8aba"
 },
 ...
-</code></p>
-</blockquote>
-
+</code></pre>
 <h2 id="update-a-user-39-s-event-39-s-seen-status">Update a user&rsquo;s event&rsquo;s seen status</h2>
 <pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "seen": true }'</span> <span class="s2">"https://node.ucic.vc/api/v04/events/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6"</span> 
 </code></pre><pre class="highlight javascript"><code>
