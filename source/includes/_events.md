@@ -66,7 +66,8 @@ This endpoint retrieves the current user's events.
 **Category: "followedUser"**  
 *Kind: "eventResponse"*  
 A user you follow added a response/piece of media to an event room.
-> followedUser/eventResponse  
+> followedUser/eventResponse
+
 ```
 ...
 content: {
@@ -82,7 +83,8 @@ content: {
 
 *Kind: "eventItemComment"*  
 A user you follow added a comment to an event room item. Note: the `refId` is the specific comment the alert refers to.
-> followedUser/eventItemComment  
+> followedUser/eventItemComment
+
 ```
 ...
 content: {
@@ -100,7 +102,8 @@ content: {
 *Kind: "rootEventComment"*  
 A user you follow added a root level comment to an event room. Note: the `refId` is the specific root level comment the alert refers to.
 
-> followedUser/rootEventComment  
+> followedUser/rootEventComment
+
 ```
 ...
 content: {
@@ -114,7 +117,8 @@ content: {
 **Category: "followedEvent"**  
 *Kind: "response"*  
 A user added a response to an event room you follow. 
-> followedEvent/response  
+> followedEvent/response
+
 ```
 ...
 "content": {
@@ -130,7 +134,7 @@ A user added a response to an event room you follow.
 *Kind: "comment"*    
 
 A user added a root level comment to an event you follow . Note: the `refId` is the specific root level comment the alert refers to.
-> followedEvent/comment    
+> followedEvent/comment
 
 ```
 ...
@@ -148,7 +152,8 @@ A user added a root level comment to an event you follow . Note: the `refId` is 
 **Category: "eventRequest"**  
 *Kind: "response"*  
 A user added a response to an event room request you asked.
->eventRequest/response  
+>eventRequest/response
+
 ```
 ...
 "content": {
@@ -164,7 +169,7 @@ A user added a response to an event room request you asked.
 
 *Kind: "like"*
 A user liked an event question you asked.
->eventRequest/like   
+>eventRequest/like
 
 ```
 ...
@@ -179,7 +184,8 @@ A user liked an event question you asked.
 **Category: "eventItemComment"**  
 *Kind: "like"*  
 A user liked your comment on an event room item. Note: `refId` refers to the specific liked comment on the item. Note2: `mimeType` and `thumb` will not be present if the root level item is a comment. 
->eventItemComment/like  
+>eventItemComment/like
+
 ```
 ...
 "content": {
@@ -195,7 +201,8 @@ A user liked your comment on an event room item. Note: `refId` refers to the spe
 
 *Kind: "followOnComment"*  
 A user commented on an event room item after you did.  Note: `refId` refers to the comment that was created after yours, thus creating this alert. Note2: `mimeType` and `thumb` will not be present if the root level item is a comment. 
->eventItemComment/followOnComment  
+>eventItemComment/followOnComment
+
 ```
 ...
 "content": {
@@ -212,7 +219,8 @@ A user commented on an event room item after you did.  Note: `refId` refers to t
 **Category: "eventResponse"**  
 *Kind: "comment"*  
 A user commented on a `response` or `media` item that you created. 
->eventResponse/comment  
+>eventResponse/comment
+
 ```
 ...
 "content": {
@@ -228,7 +236,7 @@ A user commented on a `response` or `media` item that you created.
 
 *Kind: "like"*  
 A user liked a `response` or `media` item that you created. 
->eventResponse/like  
+>eventResponse/like
 
 ```
 ...
@@ -245,7 +253,8 @@ A user liked a `response` or `media` item that you created.
 **Category: "rootComment"**  
 *Kind: "reply"*  
 A user replied with a comment on a root level `comment` item that you created in an event room. Note: `refId` refers to the specific added comment on the item.
->rootComment/reply  
+>rootComment/reply
+
 ```
 ...
 "content": {
@@ -260,7 +269,8 @@ A user replied with a comment on a root level `comment` item that you created in
 
 *Kind: "like"*  
 A user liked a root level `comment` item that you created in an event room.
->rootComment/like  
+>rootComment/like
+
 ```
 ...
 "content": {
