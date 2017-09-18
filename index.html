@@ -1854,12 +1854,12 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 
 <p><strong>Note 2:</strong> In the event of an event room item alert that refers to an <code class="prettyprint">extMedia</code> item specifically, any <code class="prettyprint">content</code> that would normally contain a String <code class="prettyprint">mimeType</code> fiield will instead contain a Boolean <code class="prettyprint">video</code> field for the purpose of placing a &ldquo;play&rdquo; button overlay on the thumbnail. This is done because the mimetypes of external media are more diverse and not explicitly calculated. </p>
 
-<p>** Category: &ldquo;followedUser&rdquo;**
-<em>Kind: &ldquo;eventResponse&rdquo;</em>
+<p><strong>Category: &ldquo;followedUser&rdquo;</strong><br>
+<em>Kind: &ldquo;eventResponse&rdquo;</em><br>
 A user you follow added a response/piece of media to an event room.</p>
 
 <blockquote>
-<p>followedUser/eventResponse
+<p>followedUser/eventResponse<br>
 <code class="prettyprint">
 ...
 content: {
@@ -1874,11 +1874,11 @@ content: {
 </code></p>
 </blockquote>
 
-<p><em>Kind: &ldquo;eventItemComment&rdquo;</em>
+<p><em>Kind: &ldquo;eventItemComment&rdquo;</em><br>
 A user you follow added a comment to an event room item. Note: the <code class="prettyprint">refId</code> is the specific comment the alert refers to.</p>
 
 <blockquote>
-<p>followedUser/eventItemComment
+<p>followedUser/eventItemComment<br>
 <code class="prettyprint">
 ...
 content: {
@@ -1894,11 +1894,11 @@ content: {
 </code></p>
 </blockquote>
 
-<p><em>Kind: &ldquo;rootEventComment&rdquo;</em>
+<p><em>Kind: &ldquo;rootEventComment&rdquo;</em><br>
 A user you follow added a root level comment to an event room. Note: the <code class="prettyprint">refId</code> is the specific root level comment the alert refers to.</p>
 
 <blockquote>
-<p>followedUser/rootEventComment
+<p>followedUser/rootEventComment<br>
 <code class="prettyprint">
 ...
 content: {
@@ -1910,12 +1910,12 @@ content: {
 </code></p>
 </blockquote>
 
-<p><strong>Category: &ldquo;followedEvent&rdquo;</strong>
-<em>Kind: &ldquo;response&rdquo;</em>
+<p><strong>Category: &ldquo;followedEvent&rdquo;</strong><br>
+<em>Kind: &ldquo;response&rdquo;</em><br>
 A user added a response to an event room you follow. </p>
 
 <blockquote>
-<p>followedEvent/response
+<p>followedEvent/response<br>
 <code class="prettyprint">
 ...
 &quot;content&quot;: {
@@ -1928,13 +1928,13 @@ A user added a response to an event room you follow. </p>
 &quot;thumb&quot;: &quot;https://media.ucic.vc/media/5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8/thumb.jpg&quot;,
 ...
 </code>
-<em>Kind: &ldquo;comment&rdquo;</em>  </p>
+<em>Kind: &ldquo;comment&rdquo;</em>    </p>
 </blockquote>
 
 <p>A user added a root level comment to an event you follow . Note: the <code class="prettyprint">refId</code> is the specific root level comment the alert refers to.</p>
 
 <blockquote>
-<p>followedEvent/comment  </p>
+<p>followedEvent/comment    </p>
 </blockquote>
 <pre class="highlight plaintext"><code>...
 "content": {
@@ -1948,12 +1948,12 @@ A user added a response to an event room you follow. </p>
 "refId": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
 ...
 </code></pre>
-<p><strong>Category: &ldquo;eventRequest&rdquo;</strong>
-<em>Kind: &ldquo;response&rdquo;</em>
+<p><strong>Category: &ldquo;eventRequest&rdquo;</strong><br>
+<em>Kind: &ldquo;response&rdquo;</em><br>
 A user added a response to an event room request you asked.</p>
 
 <blockquote>
-<p>eventRequest/response
+<p>eventRequest/response<br>
 <code class="prettyprint">
 ...
 &quot;content&quot;: {
@@ -1972,7 +1972,7 @@ A user added a response to an event room request you asked.</p>
 A user liked an event question you asked.</p>
 
 <blockquote>
-<p>eventRequest/like  </p>
+<p>eventRequest/like   </p>
 </blockquote>
 <pre class="highlight plaintext"><code>...
 "content": {
@@ -1983,12 +1983,12 @@ A user liked an event question you asked.</p>
 },
 ...
 </code></pre>
-<p><strong>Category: &ldquo;eventItemComment&rdquo;</strong>
-<em>Kind: &ldquo;like&rdquo;</em>
+<p><strong>Category: &ldquo;eventItemComment&rdquo;</strong><br>
+<em>Kind: &ldquo;like&rdquo;</em><br>
 A user liked your comment on an event room item. Note: <code class="prettyprint">refId</code> refers to the specific liked comment on the item. Note2: <code class="prettyprint">mimeType</code> and <code class="prettyprint">thumb</code> will not be present if the root level item is a comment. </p>
 
 <blockquote>
-<p>eventItemComment/like
+<p>eventItemComment/like<br>
 <code class="prettyprint">
 ...
 &quot;content&quot;: {
@@ -2003,11 +2003,11 @@ A user liked your comment on an event room item. Note: <code class="prettyprint"
 </code></p>
 </blockquote>
 
-<p><em>Kind: &ldquo;followOnComment&rdquo;</em>
+<p><em>Kind: &ldquo;followOnComment&rdquo;</em><br>
 A user commented on an event room item after you did.  Note: <code class="prettyprint">refId</code> refers to the comment that was created after yours, thus creating this alert. Note2: <code class="prettyprint">mimeType</code> and <code class="prettyprint">thumb</code> will not be present if the root level item is a comment. </p>
 
 <blockquote>
-<p>eventItemComment/followOnComment
+<p>eventItemComment/followOnComment<br>
 <code class="prettyprint">
 ...
 &quot;content&quot;: {
@@ -2022,12 +2022,12 @@ A user commented on an event room item after you did.  Note: <code class="pretty
 </code></p>
 </blockquote>
 
-<p><strong>Category: &ldquo;eventResponse&rdquo;</strong>
-<em>Kind: &ldquo;comment&rdquo;</em>
+<p><strong>Category: &ldquo;eventResponse&rdquo;</strong><br>
+<em>Kind: &ldquo;comment&rdquo;</em><br>
 A user commented on a <code class="prettyprint">response</code> or <code class="prettyprint">media</code> item that you created. </p>
 
 <blockquote>
-<p>eventResponse/comment
+<p>eventResponse/comment<br>
 <code class="prettyprint">
 ...
 &quot;content&quot;: {
@@ -2042,7 +2042,7 @@ A user commented on a <code class="prettyprint">response</code> or <code class="
 </code></p>
 </blockquote>
 
-<p><em>Kind: &ldquo;like&rdquo;</em>
+<p><em>Kind: &ldquo;like&rdquo;</em><br>
 A user liked a <code class="prettyprint">response</code> or <code class="prettyprint">media</code> item that you created. </p>
 
 <blockquote>
@@ -2059,12 +2059,12 @@ A user liked a <code class="prettyprint">response</code> or <code class="prettyp
 "thumb": "https://media.ucic.vc/media/03BAE8F6-BE39-4913-A4B8-2D910C6F148A/thumb.jpg",
 ...
 </code></pre>
-<p><strong>Category: &ldquo;rootComment&rdquo;</strong>
-<em>Kind: &ldquo;reply&rdquo;</em>
+<p><strong>Category: &ldquo;rootComment&rdquo;</strong><br>
+<em>Kind: &ldquo;reply&rdquo;</em><br>
 A user replied with a comment on a root level <code class="prettyprint">comment</code> item that you created in an event room. Note: <code class="prettyprint">refId</code> refers to the specific added comment on the item.</p>
 
 <blockquote>
-<p>rootComment/reply
+<p>rootComment/reply<br>
 <code class="prettyprint">
 ...
 &quot;content&quot;: {
@@ -2078,11 +2078,11 @@ A user replied with a comment on a root level <code class="prettyprint">comment<
 </code></p>
 </blockquote>
 
-<p><em>Kind: &ldquo;like&rdquo;</em>
+<p><em>Kind: &ldquo;like&rdquo;</em><br>
 A user liked a root level <code class="prettyprint">comment</code> item that you created in an event room.</p>
 
 <blockquote>
-<p>rootComment/like
+<p>rootComment/like<br>
 <code class="prettyprint">
 ...
 &quot;content&quot;: {
