@@ -1848,6 +1848,187 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 </tr>
 </tbody></table>
 
+<h3 id="events-as-of-event-room-introduction">Events as of Event Room introduction</h3>
+
+<p><strong>Note:</strong> Alerts that refer to an event room item will contain <code class="prettyprint">itemType</code> and <code class="prettyprint">itemId</code> which will always refer to the root level item in which the interaction took place for the purpose of retrieval of this item with the route <a href="https://ucic-app.github.io/ucic-docs/#get-single-event-room-item">Get Single Event Room Item</a></p>
+
+<p><strong>Note 2:</strong> In the event of an event room item alert that refers to an <code class="prettyprint">extMedia</code> item specifically, any <code class="prettyprint">content</code> that would normally contain a String <code class="prettyprint">mimeType</code> fiield will instead contain a Boolean <code class="prettyprint">video</code> field for the purpose of placing a &ldquo;play&rdquo; button overlay on the thumbnail. This is done because the mimetypes of external media are more diverse and not explicitly calculated. </p>
+
+<h4 id="category-quot-followeduser-quot">Category: &ldquo;followedUser&rdquo;</h4>
+
+<p><strong>Kind: &ldquo;eventResponse&rdquo;</strong>
+A user you follow added a response/piece of media to an event room.</p>
+<pre class="highlight plaintext"><code>...
+content: {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
+  "itemType": "response",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
+...
+</code></pre>
+<p><strong>Kind: &ldquo;eventItemComment&rdquo;</strong>
+A user you follow added a comment to an event room item. Note: the <code class="prettyprint">refId</code> is the specific comment the alert refers to.</p>
+<pre class="highlight plaintext"><code>...
+content: {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
+  "itemType": "response",
+  "mimeType": "image/jpeg"
+},
+"refId": "7804d8c9-9cbc-48c1-9007-43b16b99ec6f",
+"thumb": "https://pbs.twimg.com/media/DKBLEh_VAAAqiXk.jpg",
+...
+</code></pre>
+<p><strong>Kind: &ldquo;rootEventComment&rdquo;</strong>
+A user you follow added a root level comment to an event room. Note: the <code class="prettyprint">refId</code> is the specific root level comment the alert refers to.</p>
+<pre class="highlight plaintext"><code>...
+content: {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ"
+},
+"refId": "7804d8c9-9cbc-48c1-9007-43b16b99ec6f",
+...
+</code></pre>
+<h4 id="category-quot-followedevent-quot">Category: &ldquo;followedEvent&rdquo;</h4>
+
+<p><strong>Kind: &ldquo;response&rdquo;</strong>
+A user added a response to an event room you follow. </p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "id": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
+  "type": "response",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8/thumb.jpg",
+...
+</code></pre>
+<p><strong>Kind: &ldquo;comment&rdquo;</strong>
+A user added a root level comment to an event you follow . Note: the <code class="prettyprint">refId</code> is the specific root level comment the alert refers to.</p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "id": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
+  "type": "response",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8/thumb.jpg",
+"refId": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
+...
+</code></pre>
+<h4 id="category-quot-eventrequest-quot">Category: &ldquo;eventRequest&rdquo;</h4>
+
+<p><strong>Kind: &ldquo;response&rdquo;</strong>
+A user added a response to an event room request you asked.</p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemId": "94C547B4-C827-4D12-AC43-D05E2C723D18",
+  "itemType": "response",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/94C547B4-C827-4D12-AC43-D05E2C723D18/thumb.jpg",
+...
+</code></pre>
+<p><strong>Kind: &ldquo;like&rdquo;</strong>
+A user liked an event question you asked.</p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "question",
+  "itemId": "300763"
+},
+...
+</code></pre>
+<h4 id="category-quot-eventitemcomment-quot">Category: &ldquo;eventItemComment&rdquo;</h4>
+
+<p><strong>Kind: &ldquo;like&rdquo;</strong>
+A user liked your comment on an event room item. Note: <code class="prettyprint">refId</code> refers to the specific liked comment on the item. Note2: <code class="prettyprint">mimeType</code> and <code class="prettyprint">thumb</code> will not be present if the root level item is a comment. </p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "response",
+  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
+...
+</code></pre>
+<p><strong>Kind: &ldquo;followOnComment&rdquo;</strong>
+A user commented on an event room item after you did.  Note: <code class="prettyprint">refId</code> refers to the comment that was created after yours, thus creating this alert. Note2: <code class="prettyprint">mimeType</code> and <code class="prettyprint">thumb</code> will not be present if the root level item is a comment. </p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "response",
+  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
+...
+</code></pre>
+<h4 id="category-quot-eventresponse-quot">Category: &ldquo;eventResponse&rdquo;</h4>
+
+<p><strong>Kind: &ldquo;comment&rdquo;</strong>
+A user commented on a <code class="prettyprint">response</code> or <code class="prettyprint">media</code> item that you created. </p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "media",
+  "itemId": "03BAE8F6-BE39-4913-A4B8-2D910C6F148A",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/03BAE8F6-BE39-4913-A4B8-2D910C6F148A/thumb.jpg",
+...
+</code></pre>
+<p><strong>Kind: &ldquo;like&rdquo;</strong>
+A user liked a <code class="prettyprint">response</code> or <code class="prettyprint">media</code> item that you created. </p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "media",
+  "itemId": "03BAE8F6-BE39-4913-A4B8-2D910C6F148A",
+  "mimeType": "image/jpeg"
+},
+"thumb": "https://media.ucic.vc/media/03BAE8F6-BE39-4913-A4B8-2D910C6F148A/thumb.jpg",
+...
+</code></pre>
+<h4 id="category-quot-rootcomment-quot">Category: &ldquo;rootComment&rdquo;</h4>
+
+<p><strong>Kind: &ldquo;reply&rdquo;</strong>
+A user replied with a comment on a root level <code class="prettyprint">comment</code> item that you created in an event room. Note: <code class="prettyprint">refId</code> refers to the specific added comment on the item.</p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "comment",
+  "itemId": "9e32a980-3f80-4d31-b941-d9dca21f8aba"
+},
+"refId": "88c61150-19b9-4450-9489-367d2a5a0d62",
+...
+</code></pre>
+<p><strong>Kind: &ldquo;like&rdquo;</strong>
+A user liked a root level <code class="prettyprint">comment</code> item that you created in an event room.</p>
+<pre class="highlight plaintext"><code>...
+"content": {
+  "eventTitle": "Permian Basin Fair &amp; Exposition",
+  "eventId": "Oa8w5r4rrXOZ",
+  "itemType": "comment",
+  "itemId": "9e32a980-3f80-4d31-b941-d9dca21f8aba"
+},
+...
+</code></pre>
 <h2 id="update-a-user-39-s-event-39-s-seen-status">Update a user&rsquo;s event&rsquo;s seen status</h2>
 <pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "seen": true }'</span> <span class="s2">"https://node.ucic.vc/api/v04/events/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6"</span> 
 </code></pre><pre class="highlight javascript"><code>
@@ -2291,6 +2472,82 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 <td>filter</td>
 <td>Comma delimited String</td>
 <td>A comma separated list of what item types to return. supports any combination of <code class="prettyprint">question</code>, <code class="prettyprint">media</code>, <code class="prettyprint">comment</code></td>
+</tr>
+</tbody></table>
+
+<h2 id="get-single-event-room-item">Get Single Event Room item</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/item/:itemType/:itemId"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extMedia"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-23T17:52:37.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tweet_900415492589928448"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e252c2bf-e58e-45ac-869c-43e0480dc77e"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"popularCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"atEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boat Sales"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pbs.twimg.com/profile_images/656976062447026176/9vF-MU6-_normal.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/twitter/tweet.png"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"extMedia"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter/tweet"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attributionUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://t.co/3mTuWOP53U"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pbs.twimg.com/media/DH7rHdzUAAATJ-S.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"videoUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"extCreator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userHandle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BoatSales"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4307191455"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On Twitter https://t.co/3mTuWOP53U"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"likeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414767</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Someone"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userAvatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1e296c45-c299-4753-8426-c0f01bbeedd9"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"likeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T20:59:53.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a comment on an external media item"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"atEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific event room item by its <code class="prettyprint">type</code> and <code class="prettyprint">id</code> values. </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/eventRoom/item/:itemType/:itemId</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>The <code class="prettyprint">type</code> of the target event room item to retrieve</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The <code class="prettyprint">id</code> of the target event room item to retrieve</td>
 </tr>
 </tbody></table>
 
