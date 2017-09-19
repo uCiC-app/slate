@@ -171,3 +171,180 @@ This notification represents a response to a request that the receiver is follow
 | video     | String | The request format identifier.  Unused for this PN |
 
 
+## Response on Event Room Question
+
+```json
+{
+  "data": {
+    "alert": "Name responded to your question \"What's going on over there?\"",
+    "type": "20",
+    "video": "0",
+    "eventTitle": "The Best Test Event",
+    "eventId": "1234567890",
+    "itemType": "response",
+    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
+  }
+}
+```
+
+This notification represents a response to a request that the user created in an event room.
+
+### Notification Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and request text |
+| type      | String | The type of notification, Response on event room question is 20 |
+| video     | String | 1 if response is video|
+| eventTitle | String | The name of the event the notification's action took place in |
+| eventId    | String | The id of the event the notification's action took place in |
+| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemId     | String | The `id` of the root event room item the interaction took place with/on |
+
+## Comment on Event Room Item
+
+```json
+{
+  "data": {
+    "alert": "Name commented on your {photo/video/comment}",
+    "type": "21",
+    "video": "0",
+    "eventTitle": "The Best Test Event",
+    "eventId": "1234567890",
+    "itemType": "response",
+    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
+  }
+}
+```
+
+This notification represents receiving the first comment on a root level event room item.
+
+### Notification Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and request text |
+| type      | String | The type of notification, this one uses 21 |
+| video     | String | 1 if the root item is a video|
+| eventTitle | String | The name of the event the notification's action took place in |
+| eventId    | String | The id of the event the notification's action took place in |
+| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemId     | String | The `id` of the root event room item the interaction took place with/on |
+
+## Event Room Item Follow On Comment
+
+```json
+{
+  "data": {
+    "alert": "Name also commented on the {photo/video/comment}",
+    "type": "22",
+    "video": "0",
+    "eventTitle": "The Best Test Event",
+    "eventId": "1234567890",
+    "itemType": "response",
+    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
+  }
+}
+```
+
+This notification represents someone commenting on an event room item after you have. You are only alerted with a PN for the first comment after your own.
+
+### Notification Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and request text |
+| type      | String | The type of notification, this one uses 22 |
+| video     | String | 1 if the root item is a video |
+| eventTitle | String | The name of the event the notification's action took place in |
+| eventId    | String | The id of the event the notification's action took place in |
+| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemId     | String | The `id` of the root event room item the interaction took place with/on |
+
+## New Followed Event Content
+
+```json
+{
+  "data": {
+    "alert": "Name added a {photo/video/comment} to an event you follow",
+    "type": "23",
+    "video": "0",
+    "eventTitle": "The Best Test Event",
+    "eventId": "1234567890",
+    "itemType": "response",
+    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
+  }
+}
+```
+
+This notification represents someone adding a root level item to an event you follow. Note: this PN has a 3 hour cooldown. Alerts for the alert tab are still created during the cooldown without the push notification.
+
+### Notification Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and request text |
+| type      | String | The type of notification, this one uses 23 |
+| video     | String | 1 if the root item is a video |
+| eventTitle | String | The name of the event the notification's action took place in |
+| eventId    | String | The id of the event the notification's action took place in |
+| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemId     | String | The `id` of the root event room item the interaction took place with/on |
+
+## New Followed User Event Content
+
+```json
+{
+  "data": {
+    "alert": "Name added a {photo/video}",
+    "type": "24",
+    "video": "0",
+    "eventTitle": "The Best Test Event",
+    "eventId": "1234567890",
+    "itemType": "response",
+    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
+  }
+}
+```
+
+This notification represents a user you follow adding a piece of media to an event room. Note: this PN has a 24 hour cooldown. Alerts for the alert tab are still created during the cooldown without the push notification.
+
+### Notification Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and request text |
+| type      | String | The type of notification, this one uses 24 |
+| video     | String | 1 if the root item is a video |
+| eventTitle | String | The name of the event the notification's action took place in |
+| eventId    | String | The id of the event the notification's action took place in |
+| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemId     | String | The `id` of the root event room item the interaction took place with/on |
+
+## Event Request Received
+
+```json
+{
+  "data": {
+    "alert": "Name asked a question about \"The Best Test Event\"",
+    "type": "25",
+    "eventTitle": "The Best Test Event",
+    "eventId": "1234567890",
+    "itemType": "question",
+    "itemId": "300767"
+  }
+}
+```
+
+This notification represents a user asking a question to an event that you are either at or very close to (500m grace are on top of the event radius). 
+
+### Notification Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| alert     | String | Display text including username and request text |
+| type      | String | The type of notification, this one uses 25 |
+| eventTitle | String | The name of the event the notification's action took place in |
+| eventId    | String | The id of the event the notification's action took place in |
+| itemType     | String | The `type` of the root event room item the interaction took place with/on. Always `"question"` for this PN type |
+| itemId     | String | The `id` of the root event room item the interaction took place with/on |
