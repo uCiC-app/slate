@@ -5615,6 +5615,366 @@ Note: the response will contain only the field(s) that were modified by the requ
 </tr>
 </tbody></table>
 
+<h2 id="response-on-event-room-question">Response on Event Room Question</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name responded to your question \"What's going on over there?\""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents a response to a request that the user created in an event room.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and request text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, Response on event room question is 20</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>1 if response is video</td>
+</tr>
+<tr>
+<td>eventTitle</td>
+<td>String</td>
+<td>The name of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>String</td>
+<td>The id of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+</tr>
+</tbody></table>
+
+<h2 id="comment-on-event-room-item">Comment on Event Room Item</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name commented on your {photo/video/comment}"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents receiving the first comment on a root level event room item.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and request text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, this one uses 21</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>1 if the root item is a video</td>
+</tr>
+<tr>
+<td>eventTitle</td>
+<td>String</td>
+<td>The name of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>String</td>
+<td>The id of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+</tr>
+</tbody></table>
+
+<h2 id="event-room-item-follow-on-comment">Event Room Item Follow On Comment</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name also commented on the {photo/video/comment}"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents someone commenting on an event room item after you have. You are only alerted with a PN for the first comment after your own.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and request text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, this one uses 22</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>1 if the root item is a video</td>
+</tr>
+<tr>
+<td>eventTitle</td>
+<td>String</td>
+<td>The name of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>String</td>
+<td>The id of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+</tr>
+</tbody></table>
+
+<h2 id="new-followed-event-content">New Followed Event Content</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name added a {photo/video/comment} to an event you follow"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents someone adding a root level item to an event you follow. Note: this PN has a 3 hour cooldown. Alerts for the alert tab are still created during the cooldown without the push notification.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and request text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, this one uses 23</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>1 if the root item is a video</td>
+</tr>
+<tr>
+<td>eventTitle</td>
+<td>String</td>
+<td>The name of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>String</td>
+<td>The id of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+</tr>
+</tbody></table>
+
+<h2 id="new-followed-user-event-content">New Followed User Event Content</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name added a {photo/video}"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents a user you follow adding a piece of media to an event room. Note: this PN has a 24 hour cooldown. Alerts for the alert tab are still created during the cooldown without the push notification.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and request text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, this one uses 24</td>
+</tr>
+<tr>
+<td>video</td>
+<td>String</td>
+<td>1 if the root item is a video</td>
+</tr>
+<tr>
+<td>eventTitle</td>
+<td>String</td>
+<td>The name of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>String</td>
+<td>The id of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+</tr>
+</tbody></table>
+
+<h2 id="event-request-received">Event Request Received</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name asked a question about \"The Best Test Event\""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300767"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This notification represents a user asking a question to an event that you are either at or very close to (500m grace are on top of the event radius). </p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>alert</td>
+<td>String</td>
+<td>Display text including username and request text</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The type of notification, this one uses 25</td>
+</tr>
+<tr>
+<td>eventTitle</td>
+<td>String</td>
+<td>The name of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>eventId</td>
+<td>String</td>
+<td>The id of the event the notification&rsquo;s action took place in</td>
+</tr>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on. Always <code class="prettyprint">&quot;question&quot;</code> for this PN type</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+</tr>
+</tbody></table>
+
           <h1 id="entities">Entities</h1>
 
 <h2 id="card">Card</h2>
