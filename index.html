@@ -2197,6 +2197,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
 <td>integer</td>
 <td>The number of event rooms to skip in the return for paginating results</td>
 </tr>
+<tr>
+<td>cursor</td>
+<td>unix timestamp (seconds)</td>
+<td>minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page.</td>
+</tr>
 </tbody></table>
 
 <h2 id="get-event-room-info">Get Event Room info</h2>
@@ -2519,6 +2524,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 <td>filter</td>
 <td>Comma delimited String</td>
 <td>A comma separated list of what item types to return. supports any combination of <code class="prettyprint">question</code>, <code class="prettyprint">media</code>, <code class="prettyprint">comment</code></td>
+</tr>
+<tr>
+<td>cursor</td>
+<td>unix timestamp (seconds)</td>
+<td>minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page.</td>
 </tr>
 </tbody></table>
 
