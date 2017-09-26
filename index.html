@@ -635,17 +635,17 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/requests"</
 <tr>
 <td>limit</td>
 <td>Unsigned Integer</td>
-<td>Maximum number of comments to return</td>
+<td>Maximum number of cards to return</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>Unsigned Integer</td>
-<td>Offset in list of commentss to start return from</td>
+<td>Offset in list of cards to start return from</td>
 </tr>
 <tr>
 <td>page</td>
 <td>Unsigned Integer</td>
-<td>Page of comments to return</td>
+<td>Page of cards to return</td>
 </tr>
 <tr>
 <td>sort</td>
@@ -788,17 +788,17 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 <tr>
 <td>limit</td>
 <td>Unsigned Integer</td>
-<td>Maximum number of comments to return</td>
+<td>Maximum number of cards to return</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>Unsigned Integer</td>
-<td>Offset in list of commentss to start return from</td>
+<td>Offset in list of cards to start return from</td>
 </tr>
 <tr>
 <td>page</td>
 <td>Unsigned Integer</td>
-<td>Page of comments to return</td>
+<td>Page of cards to return</td>
 </tr>
 <tr>
 <td>sort</td>
@@ -3102,16 +3102,20 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 </blockquote>
 <pre class="highlight json"><code><span class="p">[{</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concerts &amp; Shows"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows_transparent.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows_marker.png"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shows"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">941</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#3cb44b"</span><span class="w">
-</span><span class="p">},{</span><span class="w">
+  </span><span class="nt">"startColour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#4241DE"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"endColour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#C86DD7"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conferences &amp; Expos"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos_transparent.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos_marker.png"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expos"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">185</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#f58231"</span><span class="w">
+  </span><span class="nt">"startColour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#F79A1C"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"endColour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FAD961"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre>
 <p>This endpoint provides the available categories and their associated info for use with the events map layer. When querying the events map layer, use the values provided as the <code class="prettyprint">categoryId</code> for each category to include those events in the returned data.</p>
@@ -3388,7 +3392,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p>POST https://node.ucic.vc/api/v04/requests</p>
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/requests</code></p>
 
 <h3 id="body-parameters">Body Parameters</h3>
 
