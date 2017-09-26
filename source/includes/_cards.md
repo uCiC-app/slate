@@ -348,9 +348,9 @@ This endpoint retrieves the cards that a user has requested.
 
 | Parameter | Type             | Description                              |
 | --------- | ---------------- | ---------------------------------------- |
-| limit     | Unsigned Integer | Maximum number of comments to return     |
-| offset    | Unsigned Integer | Offset in list of commentss to start return from |
-| page      | Unsigned Integer | Page of comments to return               |
+| limit     | Unsigned Integer | Maximum number of cards to return        |
+| offset    | Unsigned Integer | Offset in list of cards to start return from |
+| page      | Unsigned Integer | Page of cards to return                  |
 | sort      | String           | Sort by 'createdAt' or likes'.  Default is 'likes' |
 | order     | String           | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC |
 
@@ -473,9 +473,9 @@ This endpoint retrieves the cards that the current user has responded to request
 
 | Parameter | Type             | Description                              |
 | --------- | ---------------- | ---------------------------------------- |
-| limit     | Unsigned Integer | Maximum number of comments to return     |
-| offset    | Unsigned Integer | Offset in list of commentss to start return from |
-| page      | Unsigned Integer | Page of comments to return               |
+| limit     | Unsigned Integer | Maximum number of cards to return        |
+| offset    | Unsigned Integer | Offset in list of cards to start return from |
+| page      | Unsigned Integer | Page of cards to return                  |
 | sort      | String           | Sort by 'createdAt' or likes'.  Default is 'likes' |
 | order     | String           | Direction of sort, either 'ASC' for ascending or 'DESC' for descending, default is DESC |
 

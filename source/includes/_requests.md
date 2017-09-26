@@ -45,7 +45,7 @@ This endpoint creates and sends a request.
 
 ### HTTP Request
 
-POST https://node.ucic.vc/api/v04/requests
+`POST https://node.ucic.vc/api/v04/requests`
 
 ### Body Parameters
 

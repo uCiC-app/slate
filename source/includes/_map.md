@@ -165,7 +165,7 @@ Note: many of the events are submitted by users of the Predict HQ api and as suc
 | zoom       | float             | Map zoom level to retrieve results at.  Min: 0, Max: 20. Determines what events are returned |
 | layer      | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
 | categories | String            | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: `&categories=sports,culture,shows` |
-| limit | integer            | The maximum number of full markers to return. Default is 35 if not provided. |
+| limit      | integer           | The maximum number of full markers to return. Default is 35 if not provided. |
 
 ## Get Event Map Layer Categories
 
@@ -182,16 +182,20 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 ```json
 [{
   "name": "Concerts & Shows",
-  "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows.png",
+  "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows_transparent.png",
+  "mapMarker": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows_marker.png",
   "categoryId": "shows",
-  "eventCount": 941,
-  "colour": "#3cb44b"
-},{
+  "startColour": "#4241DE",
+  "endColour": "#C86DD7",
+  "eventCount": 14
+}, {
   "name": "Conferences & Expos",
-  "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos.png",
+  "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos_transparent.png",
+  "mapMarker": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos_marker.png",
   "categoryId": "expos",
-  "eventCount": 185,
-  "colour": "#f58231"
+  "startColour": "#F79A1C",
+  "endColour": "#FAD961",
+  "eventCount": 6
 }]
 ```
 
