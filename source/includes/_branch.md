@@ -10,11 +10,11 @@ This link is sent out to twitter users whose media has garnered attention in the
 ```json
 {
   "data": {
-    "type": 'extMediaOutreach',
+    "type": "extMediaOutreach",
     "creatorId": "123124194738651",
     "eventId": "2f47f475-97fb-43d6-b432-69836f7fc39c",
     "eventTitle": "This event is best.",
-    "itemType": 'extMedia',
+    "itemType": "extMedia",
     "itemId": "tweet_914903140209774592"
   },
   ...
@@ -25,7 +25,7 @@ When clicked, the link should follow the following logic.
 
 **If a user is already logged in**  
 Open the target event room item in the modal popup, similar to how alerts are treated with a means of jumping to the full event room.  
-  
+
 **If user logs in with the link**  
 1. During the login process, favour the twitter login option, but still have a means of accessing the default set.
 2. Once logged in, open the event room item as above.
