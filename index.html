@@ -3072,11 +3072,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <td>Western longitude boundary of bounding box. Max: 180, Min: -180</td>
 </tr>
 <tr>
-<td>zoom</td>
-<td>float</td>
-<td>Map zoom level to retrieve results at.  Min: 0, Max: 20. Determines what events are returned</td>
-</tr>
-<tr>
 <td>layer</td>
 <td>String (&lsquo;events&rsquo;)</td>
 <td>(Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer</td>
@@ -3090,6 +3085,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <td>limit</td>
 <td>integer</td>
 <td>The maximum number of full markers to return. Default is 35 if not provided.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>The type of sort to apply. Currently supports <code class="prettyprint">live</code>, <code class="prettyprint">popular</code>, <code class="prettyprint">following</code></td>
 </tr>
 </tbody></table>
 
@@ -5988,6 +5988,40 @@ Note: the response will contain only the field(s) that were modified by the requ
 <td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
 </tr>
 </tbody></table>
+
+          <h1 id="branch-deep-links">Branch Deep Links</h1>
+
+<p>Branch deep links may be generated via the mobile clients, the uCiC API service, or via the Branch browser dashboard. When clicked on a mobile client, the links will route the user to the app (optionally, via the Play/App Store to install) and pass some metadata to the app contained in the link, indicating how the app should react.</p>
+
+<p>Branch links contain a lot of metadata, but most importantly for client handling, they contain a dictionary of key/value pairs as the <code class="prettyprint">data</code> object. The <code class="prettyprint">data.type</code> field will be used by uCiC as the primary key that dictates the intended behaviour of the link.</p>
+
+<h2 id="external-media-activity-threshold">External Media Activity Threshold</h2>
+
+<p>This link is sent out to twitter users whose media has garnered attention in the uCiC platform in the form of likes and comments.   </p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="err">'extMediaOutreach'</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"creatorId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123124194738651"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f47f475-97fb-43d6-b432-69836f7fc39c"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This event is best."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="err">'extMedia'</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tweet_914903140209774592"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+<h3 id="link-behaviour">Link Behaviour</h3>
+
+<p>When clicked, the link should follow the following logic. </p>
+
+<p><strong>If a user is already logged in</strong><br>
+Open the target event room item in the modal popup, similar to how alerts are treated with a means of jumping to the full event room.  </p>
+
+<p><strong>If user logs in with the link</strong><br>
+1. During the login process, favour the twitter login option, but still have a means of accessing the default set.
+2. Once logged in, open the event room item as above.</p>
+
+<p><strong>Note:</strong> It is possible for anyone to click the link, whether they be the creator of the media the deep link points to or not. The <code class="prettyprint">data.creatorId</code> parameter is provided so the client can make this distinction in case the intended behaviour design is updated to perform a different action for the external media&rsquo;s creator vs everyone else. </p>
 
           <h1 id="entities">Entities</h1>
 
