@@ -162,10 +162,10 @@ Note: many of the events are submitted by users of the Predict HQ api and as suc
 | south      | Decimal (38)      | Southern latitude boundary of bounding box.  Max: 90, Min: -90 |
 | east       | Decimal (38)      | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
 | west       | Decimal (38)      | Western longitude boundary of bounding box. Max: 180, Min: -180 |
-| zoom       | float             | Map zoom level to retrieve results at.  Min: 0, Max: 20. Determines what events are returned |
 | layer      | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
 | categories | String            | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: `&categories=sports,culture,shows` |
 | limit      | integer           | The maximum number of full markers to return. Default is 35 if not provided. |
+| sort       | string            | The type of sort to apply. Currently supports `live`, `popular`, `following` |
 
 ## Get Event Map Layer Categories
 
