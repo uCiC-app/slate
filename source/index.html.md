@@ -29,6 +29,7 @@ includes:
   - translate
   - users
   - notifications
+  - branch
   - entities
   - errors
   - changelog
