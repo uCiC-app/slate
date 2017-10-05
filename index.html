@@ -1303,9 +1303,11 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 <li>an event room<br></li>
 <li>as a reply to an existing comment<br></li>
 <li>an external media<br></li>
+<li>a webcam room<br></li>
+<li>a webcam media<br></li>
 </ul>
 
-<p>When using it, the POST body specifies the target item being commented on with the <code class="prettyprint">itemType</code> field (supports <code class="prettyprint">event</code>, <code class="prettyprint">comment</code>, <code class="prettyprint">extMedia</code>, <code class="prettyprint">card</code>) and the identifier of the target item with the <code class="prettyprint">itemId</code> field.   </p>
+<p>When using it, the POST body specifies the target item being commented on with the <code class="prettyprint">itemType</code> field (supports <code class="prettyprint">event</code>, <code class="prettyprint">comment</code>, <code class="prettyprint">extMedia</code>, <code class="prettyprint">card</code>, <code class="prettyprint">webcam</code>, <code class="prettyprint">webcamMedia</code>) and the identifier of the target item with the <code class="prettyprint">itemId</code> field.   </p>
 
 <p>See the <a href="https://ucic-app.github.io/ucic-docs/#supported-entities">Supported Entites table</a> below for more details about which id to use with each itemType.  </p>
 
@@ -1430,6 +1432,16 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/users/&lt;ID&gt;/responses"<
 <td>Event Room</td>
 <td><code class="prettyprint">event</code></td>
 <td><code class="prettyprint">event.id</code></td>
+</tr>
+<tr>
+<td>Webcam Room</td>
+<td><code class="prettyprint">webcam</code></td>
+<td><code class="prettyprint">webcam.id</code></td>
+</tr>
+<tr>
+<td>Webcam Media</td>
+<td><code class="prettyprint">webcamMedia</code></td>
+<td><code class="prettyprint">webcamMedia.id</code></td>
 </tr>
 </tbody></table>
 
@@ -2757,6 +2769,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <li><code class="prettyprint">extMedia</code> (use the <code class="prettyprint">eventRoomItem.id</code> as the <code class="prettyprint">itemId</code>)</li>
 <li><code class="prettyprint">comment</code> (use the <code class="prettyprint">comment.id</code> as the <code class="prettyprint">itemId</code>)</li>
 <li><code class="prettyprint">question</code> (use the numeric <code class="prettyprint">requestId</code> as the <code class="prettyprint">itemId</code> )</li>
+<li><code class="prettyprint">webcamMedia</code> (use the uuid <code class="prettyprint">.id</code> of the webcamMedia object  as the <code class="prettyprint">itemId</code> )</li>
 </ul>
 
 <h3 id="http-request">HTTP Request</h3>
@@ -2775,7 +2788,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <tr>
 <td>itemType</td>
 <td>String</td>
-<td><code class="prettyprint">media</code>, <code class="prettyprint">extMedia</code>, <code class="prettyprint">comment</code>, or <code class="prettyprint">question</code></td>
+<td><code class="prettyprint">media</code>, <code class="prettyprint">extMedia</code>, <code class="prettyprint">comment</code>, <code class="prettyprint">question</code>, or <code class="prettyprint">webcamMedia</code></td>
 </tr>
 <tr>
 <td>itemId</td>
@@ -3123,6 +3136,74 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://node.ucic.vc/api/v04/map/eventCategories</code></p>
+
+<h2 id="get-webcam-map-layer">Get Webcam Map Layer</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/map?north=72.57706249077567&amp;south=-72.57707684644146&amp;east=72.32144437730312&amp;west=-72.32142057269812&amp;zoom=2&amp;layer=webcam"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1351013234"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Playa del Ingles: Beach"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">27.754537</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-15.567627</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images.webcams.travel/thumbnail/1351013234.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images.webcams.travel/preview/1351013234.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spain"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canary Islands"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Playa del Ingles"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves an array of webcam marker objects for a given set of map bounds and zoom.   </p>
+
+<p><strong>Note</strong>: currently, this route is essentially passing through the request to the webcam api which internally determines the number and placement of markers to return. The documentation indicates that the zoom parameter is a major factor in this determination.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/map?layer=webcams&amp;north=72.577&amp;south=68.584&amp;east=72.321&amp;west=69.765&amp;zoom=3</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>north</td>
+<td>Decimal (38)</td>
+<td>Northern latitude boundary of bounding box.  Max: 90, Min: 90</td>
+</tr>
+<tr>
+<td>south</td>
+<td>Decimal (38)</td>
+<td>Southern latitude boundary of bounding box.  Max: 90, Min: -90</td>
+</tr>
+<tr>
+<td>east</td>
+<td>Decimal (38)</td>
+<td>Eastern longitude boundary of bounding box.  Max: 180, Min: -180</td>
+</tr>
+<tr>
+<td>west</td>
+<td>Decimal (38)</td>
+<td>Western longitude boundary of bounding box. Max: 180, Min: -180</td>
+</tr>
+<tr>
+<td>zoom</td>
+<td>Unsigned Integer</td>
+<td>Google Maps Zoom Level to retrieve results at.  Min: 0, Max: 11</td>
+</tr>
+<tr>
+<td>layer</td>
+<td>String</td>
+<td>(required) value <code class="prettyprint">webcams</code></td>
+</tr>
+</tbody></table>
 
           <h1 id="mobile">Mobile</h1>
 
