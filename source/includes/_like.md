@@ -22,6 +22,7 @@ This endpoint lets the client register a "like" on a specified entity. Currently
 - `extMedia` (use the `eventRoomItem.id` as the `itemId`)
 - `comment` (use the `comment.id` as the `itemId`)
 - `question` (use the numeric `requestId` as the `itemId` )
+- `webcamMedia` (use the uuid `.id` of the webcamMedia object  as the `itemId` )
 
 ### HTTP Request
 
@@ -31,7 +32,7 @@ This endpoint lets the client register a "like" on a specified entity. Currently
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| itemType  | String | `media`, `extMedia`, `comment`, or `question` |
+| itemType  | String | `media`, `extMedia`, `comment`, `question`, or `webcamMedia` |
 | itemId    | String | The identifier of the entity being liked. See info above for information on which id to use for each type of entity. |
 
 ### Errors

@@ -136,8 +136,10 @@ This endpoint creates a comment for:
 - an event room  
 - as a reply to an existing comment  
 - an external media  
+- a webcam room  
+- a webcam media  
 
-When using it, the POST body specifies the target item being commented on with the `itemType` field (supports `event`, `comment`, `extMedia`, `card`) and the identifier of the target item with the `itemId` field.   
+When using it, the POST body specifies the target item being commented on with the `itemType` field (supports `event`, `comment`, `extMedia`, `card`, `webcam`, `webcamMedia`) and the identifier of the target item with the `itemId` field.   
 
 See the [Supported Entites table](https://ucic-app.github.io/ucic-docs/#supported-entities) below for more details about which id to use with each itemType.  
 
@@ -215,6 +217,8 @@ This endpoint retrieves a list of comment for various entities listed below. Whe
 | External Media                      | `extMedia`        | `extMediaRoomItem.id`                    |
 | Comment (fetch subcomments/replies) | `comment`         | `comment.id`                             |
 | Event Room                          | `event`           | `event.id`                               |
+| Webcam Room                         | `webcam`          | `webcam.id`                              |
+| Webcam Media                        | `webcamMedia`     | `webcamMedia.id`                         |
 
 
 ### HTTP Request

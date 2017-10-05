@@ -205,3 +205,51 @@ This endpoint provides the available categories and their associated info for us
 ### HTTP Request
 
 `GET https://node.ucic.vc/api/v04/map/eventCategories`
+
+## Get Webcam Map Layer
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/map?north=72.57706249077567&south=-72.57707684644146&east=72.32144437730312&west=-72.32142057269812&zoom=2&layer=webcam"
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[{
+  "id": "1351013234",
+  "title": "Playa del Ingles: Beach",
+  "lat": 27.754537,
+  "lon": -15.567627,
+  "icon": "https://images.webcams.travel/thumbnail/1351013234.jpg",
+  "thumb": "https://images.webcams.travel/preview/1351013234.jpg",
+  "country": "Spain",
+  "region": "Canary Islands",
+  "city": "Playa del Ingles"
+}]
+```
+
+This endpoint retrieves an array of webcam marker objects for a given set of map bounds and zoom.   
+
+**Note**: currently, this route is essentially passing through the request to the webcam api which internally determines the number and placement of markers to return. The documentation indicates that the zoom parameter is a major factor in this determination.
+
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/map?layer=webcams&north=72.577&south=68.584&east=72.321&west=69.765&zoom=3`
+
+
+
+### Query Parameters
+
+| Parameter | Type             | Description                              |
+| --------- | ---------------- | ---------------------------------------- |
+| north     | Decimal (38)     | Northern latitude boundary of bounding box.  Max: 90, Min: 90 |
+| south     | Decimal (38)     | Southern latitude boundary of bounding box.  Max: 90, Min: -90 |
+| east      | Decimal (38)     | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
+| west      | Decimal (38)     | Western longitude boundary of bounding box. Max: 180, Min: -180 |
+| zoom      | Unsigned Integer | Google Maps Zoom Level to retrieve results at.  Min: 0, Max: 11 |
+| layer     | String           | (required) value `webcams`               |
