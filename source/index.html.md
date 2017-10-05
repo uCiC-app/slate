@@ -28,6 +28,7 @@ includes:
   - themes
   - translate
   - users
+  - webcams
   - notifications
   - branch
   - entities
