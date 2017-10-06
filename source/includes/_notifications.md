@@ -2,6 +2,63 @@
 
 Notifications are delivered via Firebase Cloud Messaging.  The notification format is largely constrained by legacy support purposes.
 
+## Mute Notifications for entity
+
+```shell
+curl "https://node.ucic.vc/api/v04/notification/mute/media/E5DBDEE9-B427-4A52-BEB3-538289E96544"  -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+```javascript
+
+```
+
+> The above command returns a 204 success code
+
+Most notifications and alerts are generated for items that the user either owns or follows. Any that are followed may always be unfollowed to stop the creation of these alerts/PNs. However, there are some items that the user may own that can generate a theoretically unlimited number of alerts. This route allows the user to disable alerts and notifications for a specified item.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/notification/mute/:itemType/:itemId`
+
+### URL parameters
+
+| param    | type   | Description                              |
+| -------- | ------ | ---------------------------------------- |
+| itemType | String | The type of item to silence alerts for. Currently supports `media`, `comment`, `question` |
+| itemId   | String | The id of the specific item of itemType type to silence alerts for. See the [Mutable Entites table](https://ucic-app.github.io/ucic-docs/#mutable-entities) table below. |
+
+## Unmute Notifications for entity
+
+
+```shell
+curl "https://node.ucic.vc/api/v04/notification/unmute/media/E5DBDEE9-B427-4A52-BEB3-538289E96544"  -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+```javascript
+
+```
+
+> The above command returns a 204 success code
+
+Undo the mute action of the route above.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/notification/unmute/:itemType/:itemId`
+
+### URL parameters
+
+| param    | type   | Description                              |
+| -------- | ------ | ---------------------------------------- |
+| itemType | String | The type of item to unsilence alerts for. Currently supports `media`, `comment`, `question` |
+| itemId   | String | The id of the specific item of itemType type to unsilence alerts for. See the [Mutable Entites table](https://ucic-app.github.io/ucic-docs/#mutable-entities) below. |
+
+### Mutable Entities
+| Entity                            | itemType   | itemId                                   |
+| --------------------------------- | ---------- | ---------------------------------------- |
+| Event Room Media or Response      | `media`    | The non-MI id of the card or media. Ie. `card.id` or `cardId`. |
+| **Root level** Event Room Comment | `comment`  | `comment.id`                             |
+| Event Room Question               | `question` | The numeric `requestId` (root `.id` value in the context of a `type="question"` event room item) |
+
+
 ## Request
 
 > Sample Payload
@@ -191,14 +248,14 @@ This notification represents a response to a request that the user created in an
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and request text |
-| type      | String | The type of notification, Response on event room question is 20 |
-| video     | String | 1 if response is video|
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| alert      | String | Display text including username and request text |
+| type       | String | The type of notification, Response on event room question is 20 |
+| video      | String | 1 if response is video                   |
 | eventTitle | String | The name of the event the notification's action took place in |
 | eventId    | String | The id of the event the notification's action took place in |
-| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemType   | String | The `type` of the root event room item the interaction took place with/on |
 | itemId     | String | The `id` of the root event room item the interaction took place with/on |
 
 ## Comment on Event Room Item
@@ -221,14 +278,14 @@ This notification represents receiving the first comment on a root level event r
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and request text |
-| type      | String | The type of notification, this one uses 21 |
-| video     | String | 1 if the root item is a video|
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| alert      | String | Display text including username and request text |
+| type       | String | The type of notification, this one uses 21 |
+| video      | String | 1 if the root item is a video            |
 | eventTitle | String | The name of the event the notification's action took place in |
 | eventId    | String | The id of the event the notification's action took place in |
-| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemType   | String | The `type` of the root event room item the interaction took place with/on |
 | itemId     | String | The `id` of the root event room item the interaction took place with/on |
 
 ## Event Room Item Follow On Comment
@@ -251,14 +308,14 @@ This notification represents someone commenting on an event room item after you 
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and request text |
-| type      | String | The type of notification, this one uses 22 |
-| video     | String | 1 if the root item is a video |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| alert      | String | Display text including username and request text |
+| type       | String | The type of notification, this one uses 22 |
+| video      | String | 1 if the root item is a video            |
 | eventTitle | String | The name of the event the notification's action took place in |
 | eventId    | String | The id of the event the notification's action took place in |
-| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemType   | String | The `type` of the root event room item the interaction took place with/on |
 | itemId     | String | The `id` of the root event room item the interaction took place with/on |
 
 ## New Followed Event Content
@@ -281,14 +338,14 @@ This notification represents someone adding a root level item to an event you fo
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and request text |
-| type      | String | The type of notification, this one uses 23 |
-| video     | String | 1 if the root item is a video |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| alert      | String | Display text including username and request text |
+| type       | String | The type of notification, this one uses 23 |
+| video      | String | 1 if the root item is a video            |
 | eventTitle | String | The name of the event the notification's action took place in |
 | eventId    | String | The id of the event the notification's action took place in |
-| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemType   | String | The `type` of the root event room item the interaction took place with/on |
 | itemId     | String | The `id` of the root event room item the interaction took place with/on |
 
 ## New Followed User Event Content
@@ -311,14 +368,14 @@ This notification represents a user you follow adding a piece of media to an eve
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and request text |
-| type      | String | The type of notification, this one uses 24 |
-| video     | String | 1 if the root item is a video |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| alert      | String | Display text including username and request text |
+| type       | String | The type of notification, this one uses 24 |
+| video      | String | 1 if the root item is a video            |
 | eventTitle | String | The name of the event the notification's action took place in |
 | eventId    | String | The id of the event the notification's action took place in |
-| itemType     | String | The `type` of the root event room item the interaction took place with/on |
+| itemType   | String | The `type` of the root event room item the interaction took place with/on |
 | itemId     | String | The `id` of the root event room item the interaction took place with/on |
 
 ## Event Request Received
@@ -340,11 +397,11 @@ This notification represents a user asking a question to an event that you are e
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and request text |
-| type      | String | The type of notification, this one uses 25 |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| alert      | String | Display text including username and request text |
+| type       | String | The type of notification, this one uses 25 |
 | eventTitle | String | The name of the event the notification's action took place in |
 | eventId    | String | The id of the event the notification's action took place in |
-| itemType     | String | The `type` of the root event room item the interaction took place with/on. Always `"question"` for this PN type |
+| itemType   | String | The `type` of the root event room item the interaction took place with/on. Always `"question"` for this PN type |
 | itemId     | String | The `id` of the root event room item the interaction took place with/on |

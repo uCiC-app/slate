@@ -54,13 +54,13 @@ This route returns a list of event rooms that contain a minimum of one piece of 
 
 ### Query Parameters
 
-| Parameter  | Type    | Description                              |
-| ---------- | ------- | ---------------------------------------- |
-| sort       | String  | The type of sort to apply. Currently supports `live`, `popular`, `following` |
-| categories | String  | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: &categories=sports,culture,shows. If omitted, event rooms of any category may be returned |
-| limit      | integer | The maximum number of event rooms to return |
-| offset     | integer | The number of event rooms to skip in the return for paginating results |
-| cursor   | unix timestamp (seconds) | minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page. |
+| Parameter  | Type                     | Description                              |
+| ---------- | ------------------------ | ---------------------------------------- |
+| sort       | String                   | The type of sort to apply. Currently supports `live`, `popular`, `following` |
+| categories | String                   | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: &categories=sports,culture,shows. If omitted, event rooms of any category may be returned |
+| limit      | integer                  | The maximum number of event rooms to return |
+| offset     | integer                  | The number of event rooms to skip in the return for paginating results |
+| cursor     | unix timestamp (seconds) | minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page. |
 
 ## Get Event Room info
 
@@ -155,6 +155,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
       "text": "Free floating media!",
       "cardId": "A20E9361-78BD-4244-B867-22BC46537FA2",
       "MI": 76055,
+      "authorMuted": false,
       "thumb": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/thumb.jpg",
       "url": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/original.png",
       "mimeType": "image/png",
@@ -173,7 +174,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
         "date": "2017-08-02T20:59:53.000Z",
         "text": "This is a comment on a media item",
         "atEvent": false
-      }]
+      }],
       "liked": false
     }
   },
@@ -234,6 +235,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
     "comment": {
       "text": "This is a root level comment!",
       "likeCount": 3,
+      "authorMuted": false,
       "liked": true,
       "comments": [{
         "creator": {
@@ -269,6 +271,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
       "caption": "Good",
       "cardId": "BB536353-6356-4150-80C7-145F0D3324D6",
       "MI": 76103,
+      "authorMuted": false,
       "thumb": "https://media.ucic.vc/media/BB536353-6356-4150-80C7-145F0D3324D6/thumb.jpg",
       "url": "https://media.ucic.vc/media/BB536353-6356-4150-80C7-145F0D3324D6/original.jpg",
       "mimeType": "image/jpeg",
@@ -315,6 +318,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
     },
     "question": {
       "text": "What's happening at this event?",
+      "authorMuted": false,
       "followId": "03dabda4-e8a0-4cdc-86ab-5235491beb1c",
       "likeCount": 7,
       "liked": true,
@@ -355,12 +359,12 @@ The admin dashboard allows us to import media from twitter for event rooms. Sinc
 
 ### Query Parameters
 
-| Parameter | Type                   | Description                              |
-| --------- | ---------------------- | ---------------------------------------- |
-| sort      | String                 | Sorted by most recent first. sort supports a value of 'popular' to bring interesting content to the front. |
-| atEvent   | String                 | If a value of `true` is sent for this query param, only items that were generated at the location of the event will be sent (based on the root level item, atEvent of nested items is ignored) |
-| filter    | Comma delimited String | A comma separated list of what item types to return. supports any combination of `question`, `media`, `comment` |
-| cursor   | unix timestamp (seconds) | minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page. |
+| Parameter | Type                     | Description                              |
+| --------- | ------------------------ | ---------------------------------------- |
+| sort      | String                   | Sorted by most recent first. sort supports a value of 'popular' to bring interesting content to the front. |
+| atEvent   | String                   | If a value of `true` is sent for this query param, only items that were generated at the location of the event will be sent (based on the root level item, atEvent of nested items is ignored) |
+| filter    | Comma delimited String   | A comma separated list of what item types to return. supports any combination of `question`, `media`, `comment` |
+| cursor    | unix timestamp (seconds) | minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page. |
 
 ## Get Single Event Room item
 
