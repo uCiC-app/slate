@@ -16,6 +16,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
 [{
   "id": "1234567890",
   "title": "The Best Test Event",
+  "externalURL": "http://google.ca",
   "categoryId": "news",
   "scope": "locality",
   "country": "UN",
@@ -79,6 +80,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
 {
   "id": "1234567890",
   "title": "The Best Test Event",
+  "externalURL": "http://google.ca",
   "description": "A Dummy event created to centralize testing of various event room aspects",
   "categoryId": "news",
   "scope": "locality",
