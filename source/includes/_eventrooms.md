@@ -454,6 +454,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/mapQuestions?lat=47.3302&lon=-29.59
 [{
   "requestId": "300653",
   "userName": "Someone",
+  "date": "2017-09-30T23:00:00.000Z",
   "isRootEventRequest": false,
   "text": "How is it at the event on August 4th?",
   "followId": "5aa25d4d-f7f9-4322-ba63-904e20bda108",
