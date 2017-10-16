@@ -38,6 +38,7 @@ This endpoint logs in a user.  It creates the user in the database if the fid is
 | pushId      | String  | (Optional) Firebase (FCM) Push ID        |
 | FI          | String  | (Optional) Facebook Identifier for Firebase User |
 | GI          | String  | (Optional) Google Identifier for Firebase User |
+| TI          | String  | (Optional) Twitter Identifier for Firebase User |
 | token       | String  | (Optional) The signed firebase token containing a firebase id (fid).  Required for firebase logins |
 | username    | String  | The user's desired username              |
 | category    | String  | (Optional) The login category.  Currently only 'guest' is supported |
@@ -348,9 +349,9 @@ This route returns the itemized counts of various items in the app that the user
 curl -X POST -H "Content-Type: application/json" -d '{ "FI": ["167217543790267", "237747386665479", "1942446369318771"] }' "https://node.ucic.vc/api/v04/user/fbFriends"
 ```
 > The route returns an array of JSON user objects with the format:   
+
   
-  
-  
+
 ```json
 [{
   "id": "414624",
