@@ -322,6 +322,66 @@ Returns an array of the users that the user specified by the url id param follow
 | limit  | Integer | Maximum number of followers to return    |
 | offset | Integer | Offset in the list of followers to start return from |
 
+## Media
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/media/:userId/:type"
+```
+> The above command returns a 200 success status along with a json response like:
+
+```json
+[{
+  "request": {
+    "id": "300964",
+    "createdAt": "2017-10-07T17:00:00.000Z",
+    "text": "8th Annual Under the Big Sky Buddy Walk®",
+    "likeCount": 0,
+    "liked": false,
+    "creator": {
+      "userId": 194673,
+      "userName": "Hyeon-Ju Kim",
+      "userAvatar": "https://media.ucic.vc/media/416C5EA4-E6B5-4532-9DC3-E7392E397B31/thumb.jpg",
+      "badge": null
+    }
+  },
+  "response": {
+    "cardId": "72F7D8EF-B5B3-455D-8047-413FE89B8080",
+    "MI": "76166",
+    "text": "content",
+    "likeCount": 1,
+    "liked": false,
+    "commentCount": 0,
+    "createdAt": "2017-10-12T16:46:04.000Z",
+    "mimeType": "image/jpeg",
+    "url": "https://media.ucic.vc/media/72F7D8EF-B5B3-455D-8047-413FE89B8080/original.jpg",
+    "thumb": "https://media.ucic.vc/media/72F7D8EF-B5B3-455D-8047-413FE89B8080/thumb.jpg",
+    "display": "https://media.ucic.vc/media/72F7D8EF-B5B3-455D-8047-413FE89B8080/display.jpg",
+    "creator": {
+      "userId": 195685,
+      "userName": "Khan",
+      "userAvatar": "https://media.ucic.vc/media/4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8/thumb.jpg",
+      "badge": "https://media.ucic.vc/assets/tags/CA.png"
+    }
+  }
+}]
+```
+Returns an array of the media that the specified user has sent or received.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/users/media/:userId/:type`
+
+### URL Params
+| param | Type    | Description                              |
+| ----- | ------- | ---------------------------------------- |
+| userId  | Integer | The id of the user whose related media to return |
+| type  | String | currently only supports `sent` and `received` |
+
+### Query Params
+| param  | Type    | Description                              |
+| ------ | ------- | ---------------------------------------- |
+| limit  | Integer | Maximum number of media to return    |
+| offset | Integer | Offset in the list of media to start return from |
 
 ##Unseen Items
 
