@@ -464,6 +464,7 @@ curl "https://node.ucic.vc/api/v04/eventRoom/mapQuestions?lat=47.3302&lon=-29.59
   "liked": true,
   "eventId": "1234567890",
   "youFollowRequest": true,
+  "youFollowEvent": true,
   "title": "The Best Test Event ",
   "categoryId": "news",
   "city": "Atlantis",
