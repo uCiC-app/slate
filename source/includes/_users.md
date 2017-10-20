@@ -417,6 +417,7 @@ curl -X POST -H "Content-Type: application/json" -d '{ "FI": ["167217543790267",
   "id": "414624",
   "avatar": "https://media.ucic.vc/media/default/thumb.jpg",
   "fullname": "Spock",
+  "tagLine": "Live long and prosper",
   "likes": 0,
   "youFollowUser": false,
   "badge": "https://media.ucic.vc/assets/tags/CA.png"
@@ -446,6 +447,7 @@ curl -X POST -H "Content-Type: application/json" -d '{ "followerTIs": ["16721754
   "id": "414846",
   "avatar": "https://media.ucic.vc/media/455535F4-B570-431A-B120-34D085932427/thumb.jpg",
   "fullname": "TwitterJan",
+  "tagLine": "an tagline",
   "likes": 1,
   "youFollowUser": false,
   "twitterFollowState": "follower",
@@ -477,6 +479,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "id": "414844",
   "avatar": "https://media.ucic.vc/media/A6C7B115-96CB-4300-A976-D9C3C8EC0CE8/thumb.jpg",
   "fullname": "Sarah",
+  "tagLine": null,
   "likes": 2,
   "youFollowUser": false,
   "badge": "https://media.ucic.vc/assets/tags/CA.png"
