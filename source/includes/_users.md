@@ -372,15 +372,15 @@ Returns an array of the media that the specified user has sent or received.
 `GET https://node.ucic.vc/api/v04/users/media/:userId/:type`
 
 ### URL Params
-| param | Type    | Description                              |
-| ----- | ------- | ---------------------------------------- |
-| userId  | Integer | The id of the user whose related media to return |
-| type  | String | currently only supports `sent` and `received` |
+| param  | Type    | Description                              |
+| ------ | ------- | ---------------------------------------- |
+| userId | Integer | The id of the user whose related media to return |
+| type   | String  | currently only supports `sent` and `received` |
 
 ### Query Params
 | param  | Type    | Description                              |
 | ------ | ------- | ---------------------------------------- |
-| limit  | Integer | Maximum number of media to return    |
+| limit  | Integer | Maximum number of media to return        |
 | offset | Integer | Offset in the list of media to start return from |
 
 ##Unseen Items
@@ -433,6 +433,66 @@ This route accepts an array of Facebook Ids (as strings) and returns a list of a
 | param | Type         | Description                              |
 | ----- | ------------ | ---------------------------------------- |
 | FI    | String Array | The array of FI identifying the friends of the requesting user to match against existing uCiC users. |
+
+## List Twitter Friends
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{ "followerTIs": ["167217543790267", "237747386665479"], "followingTIs": [] }' "https://node.ucic.vc/api/v04/user/twFriends"
+```
+> The route returns an array of JSON user objects with the format:   
+
+
+```json
+[{
+  "id": "414846",
+  "avatar": "https://media.ucic.vc/media/455535F4-B570-431A-B120-34D085932427/thumb.jpg",
+  "fullname": "TwitterJan",
+  "likes": 1,
+  "youFollowUser": false,
+  "twitterFollowState": "follower",
+  "badge": "https://media.ucic.vc/assets/tags/CA.png"
+}]
+```
+
+This route accepts 2 arrays of Twitter user Ids (as strings) and returns a list of any existing uCiC users who are in the arrays (ie. followers/following Twitter users of the requesting user). Note: the `twitterFollowState` indicates what the twitter relationship of the user is relative to the requesting user. Possible values are `follower`, `following`, and `both`.
+
+### HTTP Request
+
+`POST https://node.ucic.vc/api/v04/user/twFriends`
+
+### Body Params
+| param        | Type         | Description                              |
+| ------------ | ------------ | ---------------------------------------- |
+| followerTIs  | String Array | The array of TI identifying the followers of the requesting user to match against existing uCiC users. |
+| followingTIs | String Array | The array of TI identifying the following users of the requesting user to match against existing uCiC users. |
+
+## Followee Suggestions
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/users/followSuggestions"
+```
+> The route returns an array of JSON user objects with the format:   
+
+
+```json
+[{
+  "id": "414844",
+  "avatar": "https://media.ucic.vc/media/A6C7B115-96CB-4300-A976-D9C3C8EC0CE8/thumb.jpg",
+  "fullname": "Sarah",
+  "likes": 2,
+  "youFollowUser": false,
+  "badge": "https://media.ucic.vc/assets/tags/CA.png"
+}]
+```
+
+This route returns an array of potential users to follow. It is a mix of the 5 most recent users and the 5 users who most recently posted media with the constraints:
+- not already followed
+- follow candidates must have avatar set
+- unique across the 2 categories
+- media was not reported by the querying user (applied to most recet media users only)
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/user/followSuggestions`
+
 
 ##Logout
 
