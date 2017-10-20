@@ -383,6 +383,74 @@ Returns an array of the media that the specified user has sent or received.
 | limit  | Integer | Maximum number of media to return        |
 | offset | Integer | Offset in the list of media to start return from |
 
+##User Trophies
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/user/awards/trophies/195685"
+```
+> The above command returns a 200 success status along with a json response like:
+
+```json
+[{
+  "id": "4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8",
+  "UI": 195685,
+  "type": "ucicDev",
+  "date": "2017-01-09T12:45:50.000Z",
+  "name": "uCiC Developer",
+  "icon": "https://media.ucic.vc/trophy/ucic_dev.png",
+  "description": "Denotes the users directly involved in the development of the uCiC platform."
+}]
+```
+Returns an array of the trophies the given user has earned.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/user/awards/trophies/:ui`
+
+### URL Params
+| param | Type    | Description                              |
+| ----- | ------- | ---------------------------------------- |
+| ui    | Integer | The id of the user whose trophies to return |
+
+### Query Params
+| param  | Type    | Description                              |
+| ------ | ------- | ---------------------------------------- |
+| limit  | Integer | Maximum number of trophies to return     |
+| offset | Integer | Offset in the list of trophies to start return from |
+
+##User Stamps
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/user/awards/stamps/195685"
+```
+> The above command returns a 200 success status along with a json response like:
+
+```json
+[{
+  "id": "4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8",
+  "UI": 195685,
+  "type": "remote",
+  "date": "2017-01-09T12:45:50.000Z",
+  "eventId": "1234567890",
+  "eventName": "The Best Test Event",
+  "thumb": null
+}]
+```
+Returns an array of the stamps the given user has earned.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/user/awards/stamps/:ui`
+
+### URL Params
+| param | Type    | Description                              |
+| ----- | ------- | ---------------------------------------- |
+| ui    | Integer | The id of the user whose stamps to return |
+
+### Query Params
+| param  | Type    | Description                              |
+| ------ | ------- | ---------------------------------------- |
+| limit  | Integer | Maximum number of stamps to return     |
+| offset | Integer | Offset in the list of stamps to start return from |
+
 ##Unseen Items
 
 ```shell
