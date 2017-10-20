@@ -5428,6 +5428,124 @@ Note: the response will contain only the field(s) that were modified by the requ
 </tr>
 </tbody></table>
 
+<h2 id="user-trophies">User Trophies</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/user/awards/trophies/195685"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success status along with a json response like:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"UI"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ucicDev"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-09T12:45:50.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uCiC Developer"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/trophy/ucic_dev.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Denotes the users directly involved in the development of the uCiC platform."</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>Returns an array of the trophies the given user has earned.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/user/awards/trophies/:ui</code></p>
+
+<h3 id="url-params">URL Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ui</td>
+<td>Integer</td>
+<td>The id of the user whose trophies to return</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-params">Query Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Maximum number of trophies to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>Offset in the list of trophies to start return from</td>
+</tr>
+</tbody></table>
+
+<h2 id="user-stamps">User Stamps</h2>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/user/awards/stamps/195685"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a 200 success status along with a json response like:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"UI"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"remote"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-09T12:45:50.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>Returns an array of the stamps the given user has earned.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/user/awards/stamps/:ui</code></p>
+
+<h3 id="url-params">URL Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ui</td>
+<td>Integer</td>
+<td>The id of the user whose stamps to return</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-params">Query Params</h3>
+
+<table><thead>
+<tr>
+<th>param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td>Maximum number of stamps to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Integer</td>
+<td>Offset in the list of stamps to start return from</td>
+</tr>
+</tbody></table>
+
 <h2 id="unseen-items">Unseen Items</h2>
 <pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> <span class="s2">"https://node.ucic.vc/api/v04/users/unseenCounts"</span>
 </code></pre>
