@@ -490,12 +490,15 @@ This route returns a mix of questions that are user-submitted and those generate
 
 ### Query Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| lat       | float  | The latitude of the location to find active event questions for |
-| lon       | float  | The longitude of the location to find active event questions for |
-| eventId   | String | The identifier of the single event to return questions for |
-**Note:** Either the `lat`/`lon` pair or the `eventId` must be provided when calling this route.
+| Parameter | Type    | Description                              |
+| --------- | ------- | ---------------------------------------- |
+| lat       | float   | The latitude of the location to find active event questions for |
+| lon       | float   | The longitude of the location to find active event questions for |
+| eventId   | String  | The identifier of the single event to return questions for |
+| limit     | integer | The maximum number of questions to return. **Note:** Only respected when using the `eventId` query param |
+| offset    | integer | The offset in the questions to return. **Note:** Only respected when using the `eventId` query param` |
+**Note:** Either the `lat`/`lon` pair or the `eventId` must be provided when calling this route.  
+**Note 2:** When using this route with `eventId`, the "placeholder" question with always be the first question in the first page of results (`offset=0`)
 
 
 ## Follow Event Room
