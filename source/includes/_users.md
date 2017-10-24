@@ -448,8 +448,81 @@ Returns an array of the stamps the given user has earned.
 ### Query Params
 | param  | Type    | Description                              |
 | ------ | ------- | ---------------------------------------- |
-| limit  | Integer | Maximum number of stamps to return     |
+| limit  | Integer | Maximum number of stamps to return       |
 | offset | Integer | Offset in the list of stamps to start return from |
+
+## Get Event Subcategory Preferences
+
+```shell
+curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/user/eventCategories"
+```
+> The above command returns a 200 success status along with a json response like:
+
+```json
+{
+  "Headlines_Breaking+News": true,
+  "Headlines_Politics": true,
+  "Headlines_Weather": false,
+  "Headlines_Other": true,
+  "Sports_Tennis": true,
+  "Sports_Golf": true,
+  "Sports_Soccer": true,
+  "Sports_Football": true,
+  "Sports_Baseball": true,
+  "Sports_Rugby": false,
+  "Sports_Cricket": false,
+  "Sports_Hockey": true,
+  "Sports_Basketball": true,
+  "Sports_Volleyball": true,
+  "Sports_Other": true,
+  "Shows_Concerts": true,
+  "Shows_Film+&+Media": true,
+  "Shows_Performing+Arts": true,
+  "Shows_Fashion": true,
+  "Shows_Other": true,
+  "Expos_Trade+Shows": true,
+  "Expos_Science": true,
+  "Expos_Business": true,
+  "Expos_Tech": true,
+  "Expos_Motor+Shows": false,
+  "Expos_Other": false,
+  "Culture_Festivals": true,
+  "Culture_Community": true,
+  "Culture_Charity": false,
+  "Culture_Travel": true,
+  "Culture_Other": true
+}
+```
+Returns the current mapping of subcategories that the user is subscribed to.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/user/eventCategories`
+
+## Update Event Subcategory Preferences
+
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{ "Culture_Charity": true, "Culture_Travel": false }' "https://node.ucic.vc/api/v04/user/eventCategories"
+```
+> The above command returns a 204 success status
+
+```json
+
+```
+Updates the current mapping of subcategories that the user is subscribed to. The keys used should be identical to those returned by the above route to fetch these settings. When constructing the POST body, the client may send all keys back, or only the changed ones; the result will be the same. For example, the body may look like this to update two subcategory preferences. 
+
+```
+{
+  "Culture_Charity": true,
+  "Culture_Travel": false
+}
+```
+
+
+### HTTP Request
+
+`POST https://node.ucic.vc/api/v04/user/eventCategories`
+
 
 ##Unseen Items
 
