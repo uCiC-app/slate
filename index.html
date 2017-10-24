@@ -2692,9 +2692,20 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/mapQuestions?lat=4
 <td>String</td>
 <td>The identifier of the single event to return questions for</td>
 </tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>The maximum number of questions to return. <strong>Note:</strong> Only respected when using the <code class="prettyprint">eventId</code> query param</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>integer</td>
+<td>The offset in the questions to return. <strong>Note:</strong> Only respected when using the <code class="prettyprint">eventId</code> query param`</td>
+</tr>
 </tbody></table>
 
-<p><strong>Note:</strong> Either the <code class="prettyprint">lat</code>/<code class="prettyprint">lon</code> pair or the <code class="prettyprint">eventId</code> must be provided when calling this route.</p>
+<p><strong>Note:</strong> Either the <code class="prettyprint">lat</code>/<code class="prettyprint">lon</code> pair or the <code class="prettyprint">eventId</code> must be provided when calling this route.<br>
+<strong>Note 2:</strong> When using this route with <code class="prettyprint">eventId</code>, the &ldquo;placeholder&rdquo; question with always be the first question in the first page of results (<code class="prettyprint">offset=0</code>)</p>
 
 <h2 id="follow-event-room">Follow Event Room</h2>
 <pre class="highlight shell"><code>
