@@ -504,12 +504,12 @@ Returns the current mapping of subcategories that the user is subscribed to.
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{ "Culture_Charity": true, "Culture_Travel": false }' "https://node.ucic.vc/api/v04/user/eventCategories"
 ```
-> The above command returns a 204 success status
+> The above command returns a 204 success status. Below is an example of a possible body that may be POSTed to this route to update preferences. The keys should match those returned by the GET version of this same route.
 
 ```json
 
 ```
-Updates the current mapping of subcategories that the user is subscribed to. The keys used should be identical to those returned by the above route to fetch these settings. When constructing the POST body, the client may send all keys back, or only the changed ones; the result will be the same. For example, the body may look like this to update two subcategory preferences. 
+Updates the current mapping of subcategories that the user is subscribed to. The keys used should be identical to those returned by the above route to fetch these settings. When constructing the POST body, the client may send all keys back, or only the changed ones; the result will be the same. For example, the body may look like this (on the right) to update two subcategory preferences. 
 
 ```
 {
