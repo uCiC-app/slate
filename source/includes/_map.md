@@ -182,21 +182,39 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 
 ```json
 [{
-  "name": "Concerts & Shows",
-  "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows_transparent.png",
-  "mapMarker": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows_marker.png",
+  "name": "Shows",
+  "icon": "https://media.ucic.vc/assets/events/shows_transparent.png",
+  "mapMarker": "https://media.ucic.vc/assets/events/shows_marker.png",
   "categoryId": "shows",
   "startColour": "#4241DE",
   "endColour": "#C86DD7",
-  "eventCount": 14
+  "eventCount": 14,
+  "subcategories": [{
+    "name": "Concerts",
+    "icon": "https://media.ucic.vc/assets/events/shows_transparent.png",
+    "mapMarker": "https://media.ucic.vc/assets/events/shows_marker.png"
+  }, {
+    "name": "Film & Media",
+    "icon": "https://media.ucic.vc/assets/events/shows_transparent.png",
+    "mapMarker": "https://media.ucic.vc/assets/events/shows_marker.png"
+  }]
 }, {
-  "name": "Conferences & Expos",
-  "icon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos_transparent.png",
-  "mapMarker": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos_marker.png",
+  "name": "Expos",
+  "icon": "https://media.ucic.vc/assets/events/expos_transparent.png",
+  "mapMarker": "https://media.ucic.vc/assets/events/expos_marker.png",
   "categoryId": "expos",
   "startColour": "#F79A1C",
   "endColour": "#FAD961",
-  "eventCount": 6
+  "eventCount": 6,
+  "subcategories": [{
+    "name": "Trade Shows",
+    "icon": "https://media.ucic.vc/assets/events/expos_transparent.png",
+    "mapMarker": "https://media.ucic.vc/assets/events/expos_marker.png"
+  }, {
+    "name": "Science",
+    "icon": "https://media.ucic.vc/assets/events/expos_transparent.png",
+    "mapMarker": "https://media.ucic.vc/assets/events/expos_marker.png"
+  }]
 }]
 ```
 
