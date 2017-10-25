@@ -3134,21 +3134,39 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">[{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concerts &amp; Shows"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows_transparent.png"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/shows_marker.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shows"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_transparent.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_marker.png"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shows"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"startColour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#4241DE"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"endColour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#C86DD7"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"subcategories"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concerts"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_transparent.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_marker.png"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Film &amp; Media"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_transparent.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_marker.png"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
 </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conferences &amp; Expos"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos_transparent.png"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/expos_marker.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expos"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_transparent.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_marker.png"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expos"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"startColour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#F79A1C"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"endColour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FAD961"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+  </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"subcategories"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trade Shows"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_transparent.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_marker.png"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Science"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_transparent.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_marker.png"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre>
 <p>This endpoint provides the available categories and their associated info for use with the events map layer. When querying the events map layer, use the values provided as the <code class="prettyprint">categoryId</code> for each category to include those events in the returned data.</p>
