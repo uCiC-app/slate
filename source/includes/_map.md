@@ -109,6 +109,7 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     "title": "Psy-Fi Psychedelic Music and Arts Festival 2017",
     "externalURL": "http://google.ca",
     "categoryId": "culture",
+    "subCategoryIds": [ "community", "festivals" ],
     "scope": "locality",
     "country": "NL",
     "city": null,
