@@ -191,10 +191,12 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "eventCount": 14,
   "subcategories": [{
     "name": "Concerts",
+    "subcategoryId": "concerts",
     "icon": "https://media.ucic.vc/assets/events/shows_transparent.png",
     "mapMarker": "https://media.ucic.vc/assets/events/shows_marker.png"
   }, {
     "name": "Film & Media",
+    "subcategoryId": "filmMedia",
     "icon": "https://media.ucic.vc/assets/events/shows_transparent.png",
     "mapMarker": "https://media.ucic.vc/assets/events/shows_marker.png"
   }]
@@ -208,10 +210,12 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "eventCount": 6,
   "subcategories": [{
     "name": "Trade Shows",
+    "subcategoryId": "tradeShows",
     "icon": "https://media.ucic.vc/assets/events/expos_transparent.png",
     "mapMarker": "https://media.ucic.vc/assets/events/expos_marker.png"
   }, {
     "name": "Science",
+    "subcategoryId": "scienceExpo",
     "icon": "https://media.ucic.vc/assets/events/expos_transparent.png",
     "mapMarker": "https://media.ucic.vc/assets/events/expos_marker.png"
   }]

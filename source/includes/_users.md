@@ -391,13 +391,33 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 
 ```json
 [{
-  "id": "4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8",
-  "UI": 195685,
-  "type": "ucicDev",
-  "date": "2017-01-09T12:45:50.000Z",
-  "name": "uCiC Developer",
-  "icon": "https://media.ucic.vc/trophy/ucic_dev.png",
-  "description": "Denotes the users directly involved in the development of the uCiC platform."
+  "name": "Commenter",
+  "description": "Join the conversation by adding comments to events and media.",
+  "type": "commentCreation",
+  "maxTierEarned": false,
+  "curentProgress": 0.93,
+  "tiers": [{
+    "tier": 3,
+    "progress": 93,
+    "requirement": 100,
+    "earned": false,
+    "icon": "https://media.ucic.vc/trophy/medal_comment_gold.png",
+    "date": null
+  }, {
+    "tier": 2,
+    "progress": 25,
+    "requirement": 25,
+    "earned": true,
+    "icon": "https://media.ucic.vc/trophy/medal_comment_silver.png",
+    "date": "2017-10-25T20:43:33.000Z"
+  }, {
+    "tier": 1,
+    "progress": 5,
+    "requirement": 5,
+    "earned": true,
+    "icon": "https://media.ucic.vc/trophy/medal_comment_bronze.png",
+    "date": "2017-10-25T20:43:33.000Z"
+  }]
 }]
 ```
 Returns an array of the trophies the given user has earned.
@@ -460,37 +480,37 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 
 ```json
 {
-  "Headlines_Breaking+News": true,
-  "Headlines_Politics": true,
-  "Headlines_Weather": false,
-  "Headlines_Other": true,
-  "Sports_Tennis": true,
-  "Sports_Golf": true,
-  "Sports_Soccer": true,
-  "Sports_Football": true,
-  "Sports_Baseball": true,
-  "Sports_Rugby": false,
-  "Sports_Cricket": false,
-  "Sports_Hockey": true,
-  "Sports_Basketball": true,
-  "Sports_Volleyball": true,
-  "Sports_Other": true,
-  "Shows_Concerts": true,
-  "Shows_Film+&+Media": true,
-  "Shows_Performing+Arts": true,
-  "Shows_Fashion": true,
-  "Shows_Other": true,
-  "Expos_Trade+Shows": true,
-  "Expos_Science": true,
-  "Expos_Business": true,
-  "Expos_Tech": true,
-  "Expos_Motor+Shows": false,
-  "Expos_Other": false,
-  "Culture_Festivals": true,
-  "Culture_Community": true,
-  "Culture_Charity": false,
-  "Culture_Travel": true,
-  "Culture_Other": true
+  "breakingNews": true,
+  "politicsNews": true,
+  "weather": true,
+  "otherNews": true,
+  "tennis": true,
+  "golf": true,
+  "soccer": true,
+  "football": true,
+  "baseball": true,
+  "rugby": true,
+  "cricket": true,
+  "hockey": true,
+  "basketball": true,
+  "volleyball": true,
+  "otherSports": true,
+  "concerts": false,
+  "filmMedia": true,
+  "perfArts": true,
+  "fashion": true,
+  "otherShows": true,
+  "tradeShows": false,
+  "scienceExpo": true,
+  "businessExpo": true,
+  "techExpo": true,
+  "motorExpo": true,
+  "otherExpos": true,
+  "festivals": false,
+  "community": true,
+  "charity": true,
+  "travel": true,
+  "otherCulture": true
 }
 ```
 Returns the current mapping of subcategories that the user is subscribed to.
@@ -502,7 +522,7 @@ Returns the current mapping of subcategories that the user is subscribed to.
 ## Update Event Subcategory Preferences
 
 ```shell
-curl -X POST -H "Content-Type: application/json" -d '{ "Culture_Charity": true, "Culture_Travel": false }' "https://node.ucic.vc/api/v04/user/eventCategories"
+curl -X POST -H "Content-Type: application/json" -d '{ "charity": true, "travel": false }' "https://node.ucic.vc/api/v04/user/eventCategories"
 ```
 > The above command returns a 204 success status. Below is an example of a possible body that may be POSTed to this route to update preferences. The keys should match those returned by the GET version of this same route.
 
@@ -513,8 +533,8 @@ Updates the current mapping of subcategories that the user is subscribed to. The
 
 ```
 {
-  "Culture_Charity": true,
-  "Culture_Travel": false
+  "charity": true,
+  "travel": false
 }
 ```
 
