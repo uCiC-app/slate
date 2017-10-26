@@ -3143,10 +3143,12 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
   </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
   </span><span class="nt">"subcategories"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concerts"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"subcategoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"concerts"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_transparent.png"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_marker.png"</span><span class="w">
   </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Film &amp; Media"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"subcategoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filmMedia"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_transparent.png"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/shows_marker.png"</span><span class="w">
   </span><span class="p">}]</span><span class="w">
@@ -3160,10 +3162,12 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
   </span><span class="nt">"eventCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
   </span><span class="nt">"subcategories"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trade Shows"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"subcategoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tradeShows"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_transparent.png"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_marker.png"</span><span class="w">
   </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Science"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"subcategoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"scienceExpo"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_transparent.png"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"mapMarker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/events/expos_marker.png"</span><span class="w">
   </span><span class="p">}]</span><span class="w">
@@ -5464,13 +5468,33 @@ Note: the response will contain only the field(s) that were modified by the requ
 <p>The above command returns a 200 success status along with a json response like:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">[{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"UI"</span><span class="p">:</span><span class="w"> </span><span class="mi">195685</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ucicDev"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-09T12:45:50.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uCiC Developer"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/trophy/ucic_dev.png"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Denotes the users directly involved in the development of the uCiC platform."</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Commenter"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Join the conversation by adding comments to events and media."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commentCreation"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"maxTierEarned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"curentProgress"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.93</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"tier"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"progress"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requirement"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"earned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/trophy/medal_comment_gold.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tier"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"progress"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requirement"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"earned"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/trophy/medal_comment_silver.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-25T20:43:33.000Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"tier"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"progress"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requirement"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"earned"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/trophy/medal_comment_bronze.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-25T20:43:33.000Z"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre>
 <p>Returns an array of the trophies the given user has earned.</p>
@@ -5582,37 +5606,37 @@ Note: the response will contain only the field(s) that were modified by the requ
 <p>The above command returns a 200 success status along with a json response like:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"Headlines_Breaking+News"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Headlines_Politics"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Headlines_Weather"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Headlines_Other"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Tennis"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Golf"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Soccer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Football"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Baseball"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Rugby"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Cricket"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Hockey"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Basketball"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Volleyball"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Sports_Other"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Shows_Concerts"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Shows_Film+&amp;+Media"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Shows_Performing+Arts"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Shows_Fashion"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Shows_Other"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Expos_Trade+Shows"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Expos_Science"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Expos_Business"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Expos_Tech"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Expos_Motor+Shows"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Expos_Other"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Culture_Festivals"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Culture_Community"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Culture_Charity"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Culture_Travel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Culture_Other"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="nt">"breakingNews"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"politicsNews"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"weather"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"otherNews"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tennis"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"golf"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"soccer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"football"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"baseball"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"rugby"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cricket"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"hockey"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"basketball"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"volleyball"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"otherSports"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"concerts"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"filmMedia"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"perfArts"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"fashion"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"otherShows"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tradeShows"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"scienceExpo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"businessExpo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"techExpo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"motorExpo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"otherExpos"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"festivals"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"community"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"charity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"travel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"otherCulture"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns the current mapping of subcategories that the user is subscribed to.</p>
@@ -5622,7 +5646,7 @@ Note: the response will contain only the field(s) that were modified by the requ
 <p><code class="prettyprint">GET https://node.ucic.vc/api/v04/user/eventCategories</code></p>
 
 <h2 id="update-event-subcategory-preferences">Update Event Subcategory Preferences</h2>
-<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "Culture_Charity": true, "Culture_Travel": false }'</span> <span class="s2">"https://node.ucic.vc/api/v04/user/eventCategories"</span>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "charity": true, "travel": false }'</span> <span class="s2">"https://node.ucic.vc/api/v04/user/eventCategories"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns a 204 success status. Below is an example of a possible body that may be POSTed to this route to update preferences. The keys should match those returned by the GET version of this same route.</p>
@@ -5631,8 +5655,8 @@ Note: the response will contain only the field(s) that were modified by the requ
 </span></code></pre>
 <p>Updates the current mapping of subcategories that the user is subscribed to. The keys used should be identical to those returned by the above route to fetch these settings. When constructing the POST body, the client may send all keys back, or only the changed ones; the result will be the same. For example, the body may look like this (on the right) to update two subcategory preferences. </p>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"Culture_Charity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"Culture_Travel"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="nt">"charity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"travel"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP Request</h3>
