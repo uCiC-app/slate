@@ -375,7 +375,7 @@ Returns an array of the media that the specified user has sent or received.
 | param  | Type    | Description                              |
 | ------ | ------- | ---------------------------------------- |
 | userId | Integer | The id of the user whose related media to return |
-| type   | String  | currently only supports `sent` and `received` |
+| type   | String  | currently supports `sent`, `received`, and `liked` |
 
 ### Query Params
 | param  | Type    | Description                              |
