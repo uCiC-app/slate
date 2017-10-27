@@ -445,16 +445,25 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
 
 ```json
 [{
-  "id": "4A0F0DEA-16E9-49E0-B3C0-5AC38FD759E8",
-  "UI": 195685,
-  "type": "remote",
-  "date": "2017-01-09T12:45:50.000Z",
+  "id": "d3eebda8-a15a-44fc-b2e6-13139607b33f",
+  "date": "2017-10-27T15:44:45.000Z",
   "eventId": "1234567890",
-  "eventName": "The Best Test Event",
-  "thumb": null
+  "eventName": "The Best Test Event ",
+  "attended": true,
+  "templateUrl": "https://media.ucic.vc/stamp/stamp_green_template_1.png",
+  "templateSize": [ 310, 220 ],
+  "decorations": [{
+    "type": "icon",
+    "position": [[ 242, 158 ], [ 286, 202 ] ],
+    "url": "https://media.ucic.vc/assets/events/news_marker.png"
+  }, {
+    "type": "date",
+    "colour": "#2bb341",
+    "position": [[ 25, 86 ], [ 279, 136 ] ]
+  }]
 }]
 ```
-Returns an array of the stamps the given user has earned.
+Returns an array of the stamps the given user has earned. The `templateUrl` is the image to use as the base for the stamp with the `decorations` being rendered on the clinet side, overlaid on the base image. The data structure is tentavive, pending further discussion. Currently, the position of the decorations is expressed using a bounding box, defined by the top left and bottom right corners, where the top left corner of the image is the origin.
 
 ### HTTP Request
 
