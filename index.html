@@ -1790,49 +1790,63 @@ have access to this conversation.  Messages are sorted in createdAt descending o
 </tr>
 </tbody></table>
 
-          <h1 id="events">Events</h1>
+          <h1 id="alerts">Alerts</h1>
 
-<h2 id="get-the-current-user-39-s-events">Get the Current User&rsquo;s Events</h2>
+<p>Alerts are now broken down into 3 categories named <code class="prettyprint">you</code>, <code class="prettyprint">followedEvent</code>, and <code class="prettyprint">followedUser</code>. </p>
+
+<h2 id="get-the-current-user-39-s-alerts">Get the Current User&rsquo;s Alerts</h2>
 <pre class="highlight shell"><code>
-curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+curl <span class="s2">"https://node.ucic.vc/api/v04/alert/:category"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31035070-7179-44AE-A142-90D4DEF16E24"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The caption for the response in events pertaining to one."</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/8602814D-0CE1-444D-95BF-824CD6CBF186/display.jpg"</span><span class="w">
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ea412d0-fa56-4a57-9dda-bab55d25b5ff"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"followedUserLikedQuestion"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T20:27:01.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"301255"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">227108</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir_issac"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"refId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84780"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-10T02:08:32.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api3.ucic.vc/api/v04/conversation/085170C2-7A3A-4DF7-9AF4-6B889DDBF1B9"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"UI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"176039"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"Username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guy Streetley"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"Karma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"115"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guy@gmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-20T18:16:35.960Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.ucic.vc/media/AC725D7D-72C0-41D8-85E0-F602091420D7/thumb.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"RI"</span><span class="p">:</span><span class="w"> </span><span class="mi">301255</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The 15th Best Test Question"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves the current user&rsquo;s events.</p>
+<p>This endpoint retrieves the current user&rsquo;s alerts of the type specified in the url parameters. The specific data structure varies between alerts and each type is broken down in the rest of this section.<br>
+<strong>Note:</strong> All events of a given category are marked as seen after any number of events of that category are returned to the client.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/events</code></p>
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/alert/:category</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category</td>
+<td>String</td>
+<td>One of <code class="prettyprint">you</code>, <code class="prettyprint">followedUser</code>, <code class="prettyprint">followedEvent</code></td>
+</tr>
+</tbody></table>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -1846,291 +1860,448 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/events"</span> -H <span clas
 <tr>
 <td>limit</td>
 <td>Unsigned Integer</td>
-<td>Maximum number of comments to return</td>
+<td>Maximum number of alerts to return</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>Unsigned Integer</td>
-<td>Offset in list of commentss to start return from</td>
-</tr>
-<tr>
-<td>page</td>
-<td>Unsigned Integer</td>
-<td>Page of comments to return</td>
+<td>Offset in list of alerts to start return from</td>
 </tr>
 </tbody></table>
 
-<h3 id="events-as-of-event-room-introduction">Events as of Event Room introduction</h3>
+<h3 id="alerts-as-of-event-room-introduction">Alerts as of Event Room introduction</h3>
 
 <p><strong>Note:</strong> Alerts that refer to an event room item will contain <code class="prettyprint">itemType</code> and <code class="prettyprint">itemId</code> which will always refer to the root level item in which the interaction took place for the purpose of retrieval of this item with the route <a href="https://ucic-app.github.io/ucic-docs/#get-single-event-room-item">Get Single Event Room Item</a></p>
 
 <p><strong>Note 2:</strong> In the event of an event room item alert that refers to an <code class="prettyprint">extMedia</code> item specifically, any <code class="prettyprint">content</code> that would normally contain a String <code class="prettyprint">mimeType</code> fiield will instead contain a Boolean <code class="prettyprint">video</code> field for the purpose of placing a &ldquo;play&rdquo; button overlay on the thumbnail. This is done because the mimetypes of external media are more diverse and not explicitly calculated. </p>
 
-<p><strong>Category: &ldquo;followedUser&rdquo;</strong><br>
-<em>Kind: &ldquo;eventResponse&rdquo;</em><br>
-A user you follow added a response/piece of media to an event room.</p>
+<h2 id="newfollower">newFollower</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75b94e65-b8ca-48a2-b7fd-d25e4d4b6772"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"newFollowers"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-30T22:58:51.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414863</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414869</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ab333"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">you</code></strong><br>
+Generated when you get a new follower. Additional followers stack on the same alert while it is unseen.</p>
 
-<blockquote>
-<p>followedUser/eventResponse</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-content: {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
-  "itemType": "response",
-  "mimeType": "image/jpeg"
-},
-"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
-...
-</code></pre>
-<p><em>Kind: &ldquo;eventItemComment&rdquo;</em><br>
-A user you follow added a comment to an event room item. Note: the <code class="prettyprint">refId</code> is the specific comment the alert refers to.</p>
+<h2 id="contentlikereceive">contentLikeReceive</h2>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d25a0f9f-8b26-449a-b5ce-dfe302d6c1d1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contentLikeReceive"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-31T17:36:55.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E95E09CC-6901-46AB-A207-A399069EABA7"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"likedItemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"otherLikers"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414852</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Good"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A comment for the ages"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fcb3471e-fdd5-4a36-b2b7-c44dd1b08dd5"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contentLikeReceive"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-31T17:10:25.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"301166"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"likedItemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"otherLikers"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414816</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trina Lee"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The 2nd Best Test Question"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"234e621f-bb07-4a36-ba32-f0ce310021db"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contentLikeReceive"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-31T16:02:31.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B_195685_1507756538"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PCR TT - OCTOBER SWCP FUNDRAISER"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"evBrt_36682622712"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B_195685_1507756538"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"likedItemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"otherLikers"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414860</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Someone"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B_195685_1507756538"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76165</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/B_195685_1507756538/original.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/10C52B61-97A9-492F-AFD9-4286E620BFD7/thumb.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">you</code></strong>  </p>
 
-<blockquote>
-<p>followedUser/eventItemComment</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-content: {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
-  "itemType": "response",
-  "mimeType": "image/jpeg"
-},
-"refId": "7804d8c9-9cbc-48c1-9007-43b16b99ec6f",
-"thumb": "https://pbs.twimg.com/media/DKBLEh_VAAAqiXk.jpg",
-...
-</code></pre>
-<p><em>Kind: &ldquo;rootEventComment&rdquo;</em><br>
-A user you follow added a root level comment to an event room. Note: the <code class="prettyprint">refId</code> is the specific root level comment the alert refers to.</p>
+<p>Generated when someone likes a piece of your content. Note that the alert always includes a <code class="prettyprint">latestUser</code> object which denotes the most recent person to like a given piece of content. Multiple likes on the same content are collapsed into the same alert. The <code class="prettyprint">data.otherLikers</code> is the running total of likes on the given content <strong>minus</strong> yourself and the <code class="prettyprint">latestUser</code>, so this count may be used directly in a statement like &ldquo;<strong>Trina Lee</strong> and <strong>1</strong> others liked your question&rdquo; where <strong>1</strong> is the <code class="prettyprint">otherLikers</code> count.<br>
+Note, the <code class="prettyprint">data.likedItemType</code> indicates what type of content was actually liked (not the <code class="prettyprint">itemType</code> at the root level, which may be different when a comment is liked). This also corresponds to what additional data will be included as <code class="prettyprint">data.{likedItemType}</code> (ex. <code class="prettyprint">data.media</code> when <code class="prettyprint">data.likedItemType</code> == <code class="prettyprint">media</code>)</p>
 
-<blockquote>
-<p>followedUser/rootEventComment</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-content: {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ"
-},
-"refId": "7804d8c9-9cbc-48c1-9007-43b16b99ec6f",
-...
-</code></pre>
-<p><strong>Category: &ldquo;followedEvent&rdquo;</strong><br>
-<em>Kind: &ldquo;response&rdquo;</em><br>
-A user added a response to an event room you follow. </p>
+<h2 id="responsereceive">responseReceive</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bec6706b-5d48-48e3-9c88-74b95cab427c"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"responseReceive"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-31T18:04:44.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C23E68ED-BC85-448C-99F0-461050A11F16"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414867</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Someone"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C23E68ED-BC85-448C-99F0-461050A11F16"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76193</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/C23E68ED-BC85-448C-99F0-461050A11F16/display.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/C23E68ED-BC85-448C-99F0-461050A11F16/thumb.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">you</code></strong><br>
+Generated when someone responds to one of your requests.</p>
 
-<blockquote>
-<p>followedEvent/response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "id": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
-  "type": "response",
-  "mimeType": "image/jpeg"
-},
-"thumb": "https://media.ucic.vc/media/5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8/thumb.jpg",
-...
-</code></pre>
-<p><em>Kind: &ldquo;comment&rdquo;</em>    </p>
+<h2 id="commentreceive">commentReceive</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3787838b-290a-460e-8cec-28ff7cf69583"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commentReceive"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T13:39:55.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"140C0B18-2142-4D77-9A24-E853292A0E47"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414865</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trisha Sharma"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uniqueOtherCommentingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One of comments on media"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"140C0B18-2142-4D77-9A24-E853292A0E47"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"card"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"81b3f571-efeb-4870-a144-76347be2a1e3"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commentReceive"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T13:36:17.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8A7EE382-33CC-4797-BDBC-79E13CFCF3EC"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8A7EE382-33CC-4797-BDBC-79E13CFCF3EC"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414865</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trisha Sharma"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uniqueOtherCommentingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<p>A user added a root level comment to an event you follow . Note: the <code class="prettyprint">refId</code> is the specific root level comment the alert refers to.</p>
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">you</code></strong><br>
+Generated when someone adds a comment to one of your media items. Comments on the same piece of media stack onto the same alert. Note that the data only includes the text of the comment when there is only 1 comment from 1 user. This is based on the UI designs for this alert, where it only makes sense to include the actual text of the comment while the alert is only referring to a single comment, rather than multiple.</p>
 
-<blockquote>
-<p>followedEvent/comment</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "id": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
-  "type": "response",
-  "mimeType": "image/jpeg"
-},
-"thumb": "https://media.ucic.vc/media/5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8/thumb.jpg",
-"refId": "5D74DD0A-3EA7-4F6C-A04A-6C5F8C9220C8",
-...
-</code></pre>
-<p><strong>Category: &ldquo;eventRequest&rdquo;</strong><br>
-<em>Kind: &ldquo;response&rdquo;</em><br>
-A user added a response to an event room request you asked.</p>
+<h2 id="followoncomment">followOnComment</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f1898e5-c872-4372-a401-28e3455c76d6"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"followOnComment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T13:58:14.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C23E68ED-BC85-448C-99F0-461050A11F16"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"commentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df67fbed-853d-460d-95d5-10e7779ba624"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414863</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non-Khan Khomment 5"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">you</code></strong><br>
+Generated when someone comments on an item after you comment on it. Only generated for the first comment after one of yours. Note that comments on the same item from the same user will replace the existing alert for this combination if you comment again and then the same user comments again.</p>
 
-<blockquote>
-<p>eventRequest/response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemId": "94C547B4-C827-4D12-AC43-D05E2C723D18",
-  "itemType": "response",
-  "mimeType": "image/jpeg"
-},
-"thumb": "https://media.ucic.vc/media/94C547B4-C827-4D12-AC43-D05E2C723D18/thumb.jpg",
-...
-</code></pre>
-<p><em>Kind: &ldquo;like&rdquo;</em>
-A user liked an event question you asked.</p>
+<h2 id="eventmedia">eventMedia</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c611e16d-b99d-4707-a42e-863257e362a5"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eventMedia"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T14:52:22.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"714033A2-C854-420E-8C60-C3D0599A9123"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414863</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"714033A2-C854-420E-8C60-C3D0599A9123"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76195</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/714033A2-C854-420E-8C60-C3D0599A9123/display.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/714033A2-C854-420E-8C60-C3D0599A9123/thumb.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedEvent</code></strong><br>
+Generated when someone adds a piece of media to an event that you follow.</p>
 
-<blockquote>
-<p>eventRequest/like</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemType": "question",
-  "itemId": "300763"
-},
-...
-</code></pre>
-<p><strong>Category: &ldquo;eventItemComment&rdquo;</strong><br>
-<em>Kind: &ldquo;like&rdquo;</em><br>
-A user liked your comment on an event room item. Note: <code class="prettyprint">refId</code> refers to the specific liked comment on the item. Note2: <code class="prettyprint">mimeType</code> and <code class="prettyprint">thumb</code> will not be present if the root level item is a comment. </p>
+<h2 id="eventcomments">eventComments</h2>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7f2d841a-b30a-419b-96b6-814236faf081"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eventComments"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T14:34:15.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bc93be56-74f3-488b-9b99-0382a0dbc590"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0d8513f6-dddb-4852-810c-4ad0bb3874e0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"since"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T14:34:06.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414865</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trisha Sharma"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uniqueCommentingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fbf964c4-6fb5-4bbf-be9b-59c1ae0e3149"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eventComments"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T14:27:41.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5856c686-14b5-46d8-b028-421941501ec4"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"since"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T14:27:39.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414865</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trisha Sharma"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uniqueCommentingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comment on followed event 3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedEvent</code></strong><br>
+Generated when someone adds a comment to an event you follow. Note that multiple comments added to the same event will stack on the same alert while the alert is unseen. Note also that the comment text is only included when the alert refers to a single comment.</p>
 
-<blockquote>
-<p>eventItemComment/like</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemType": "response",
-  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
-  "mimeType": "image/jpeg"
-},
-"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
-...
-</code></pre>
-<p><em>Kind: &ldquo;followOnComment&rdquo;</em><br>
-A user commented on an event room item after you did.  Note: <code class="prettyprint">refId</code> refers to the comment that was created after yours, thus creating this alert. Note2: <code class="prettyprint">mimeType</code> and <code class="prettyprint">thumb</code> will not be present if the root level item is a comment. </p>
+<h2 id="eventquestions">eventQuestions</h2>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8c94329f-533a-42ab-8223-e1c960d03c70"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eventQuestions"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T19:22:18.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"since"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T19:11:51.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414865</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trisha Sharma"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"questionCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uniqueAskingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d540b584-7029-4278-8f7d-29e221104bfd"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eventQuestions"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T18:59:14.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"since"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T18:55:19.814Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414865</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trisha Sharma"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"questionCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"uniqueAskingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The 13th Best Test Question"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedEvent</code></strong><br>
+Generated when someone adds a question to an event you follow. Note that multiple questions added to the same event will stack on the same alert while the alert is unseen. Note also that the question text is only included when the alert refers to a single question.</p>
 
-<blockquote>
-<p>eventItemComment/followOnComment</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemType": "response",
-  "itemId": "ACDDF71B-1E1E-4445-A0CC-943301479A92",
-  "mimeType": "image/jpeg"
-},
-"thumb": "https://media.ucic.vc/media/ACDDF71B-1E1E-4445-A0CC-943301479A92/thumb.jpg",
-...
-</code></pre>
-<p><strong>Category: &ldquo;eventResponse&rdquo;</strong><br>
-<em>Kind: &ldquo;comment&rdquo;</em><br>
-A user commented on a <code class="prettyprint">response</code> or <code class="prettyprint">media</code> item that you created. </p>
+<h2 id="followusermedia">followUserMedia</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72098985-4232-4f45-93c6-6fcb2ceb27fe"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"followUserMedia"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T20:03:48.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">227108</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir_issac"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"medias"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23A225CF-FB12-4121-8DC1-715873EF4B8A"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76199</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/23A225CF-FB12-4121-8DC1-715873EF4B8A/display.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/23A225CF-FB12-4121-8DC1-715873EF4B8A/thumb.jpg"</span><span class="w">
+    </span><span class="p">},{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"348AC3DC-A57B-4C31-A937-30C1615CF69C"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76200</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/348AC3DC-A57B-4C31-A937-30C1615CF69C/display.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/348AC3DC-A57B-4C31-A937-30C1615CF69C/thumb.jpg"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedUser</code></strong><br>
+Generated when someone you follow adds media. Note that media for the same user stack while the alert is unread. The idea is for the client to open the followed user&rsquo;s &ldquo;sent&rdquo; media profile section with the alert.</p>
 
-<blockquote>
-<p>eventResponse/comment</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemType": "media",
-  "itemId": "03BAE8F6-BE39-4913-A4B8-2D910C6F148A",
-  "mimeType": "image/jpeg"
-},
-"thumb": "https://media.ucic.vc/media/03BAE8F6-BE39-4913-A4B8-2D910C6F148A/thumb.jpg",
-...
-</code></pre>
-<p><em>Kind: &ldquo;like&rdquo;</em><br>
-A user liked a <code class="prettyprint">response</code> or <code class="prettyprint">media</code> item that you created. </p>
+<h2 id="followedusercomment">followedUserComment</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12f13b21-ecc4-4514-af66-5d0a2bca5cf6"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"followedUserComment"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T20:14:46.000Z"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6fbbddb8-2b44-447a-994e-c7b429c9f935"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P7jsRKmjzod6AErynK"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Curren$y"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"commentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6fbbddb8-2b44-447a-994e-c7b429c9f935"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">227108</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir_issac"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Commmmment 2"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedUser</code></strong><br>
+Generated when someone you follow comments on something. </p>
 
-<blockquote>
-<p>eventResponse/like</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemType": "media",
-  "itemId": "03BAE8F6-BE39-4913-A4B8-2D910C6F148A",
-  "mimeType": "image/jpeg"
-},
-"thumb": "https://media.ucic.vc/media/03BAE8F6-BE39-4913-A4B8-2D910C6F148A/thumb.jpg",
-...
-</code></pre>
-<p><strong>Category: &ldquo;rootComment&rdquo;</strong><br>
-<em>Kind: &ldquo;reply&rdquo;</em><br>
-A user replied with a comment on a root level <code class="prettyprint">comment</code> item that you created in an event room. Note: <code class="prettyprint">refId</code> refers to the specific added comment on the item.</p>
-
-<blockquote>
-<p>rootComment/reply</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemType": "comment",
-  "itemId": "9e32a980-3f80-4d31-b941-d9dca21f8aba"
-},
-"refId": "88c61150-19b9-4450-9489-367d2a5a0d62",
-...
-</code></pre>
-<p><em>Kind: &ldquo;like&rdquo;</em><br>
-A user liked a root level <code class="prettyprint">comment</code> item that you created in an event room.</p>
-
-<blockquote>
-<p>rootComment/like</p>
-</blockquote>
-<pre class="highlight plaintext"><code>...
-"content": {
-  "eventTitle": "Permian Basin Fair &amp; Exposition",
-  "eventId": "Oa8w5r4rrXOZ",
-  "itemType": "comment",
-  "itemId": "9e32a980-3f80-4d31-b941-d9dca21f8aba"
-},
-...
-</code></pre>
-<h2 id="update-a-user-39-s-event-39-s-seen-status">Update a user&rsquo;s event&rsquo;s seen status</h2>
-<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "seen": true }'</span> <span class="s2">"https://node.ucic.vc/api/v04/events/DEC604AC-C29F-4764-B9C6-2CEC7351ABB6"</span> 
-</code></pre><pre class="highlight javascript"><code>
-</code></pre>
-<blockquote>
-<p>The above command returns 204 on success</p>
-</blockquote>
-
-<p>This endpoint updates the current user&rsquo;s event&rsquo;s status.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">PUT https://node.ucic.vc/api/v04/events/&lt;ID&gt;</code></p>
-
-<h3 id="body-parameters">Body Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>seen</td>
-<td>Boolean</td>
-<td>Seen status of event</td>
-</tr>
-</tbody></table>
-
-<h2 id="update-all-user-39-s-events-to-seen">Update all user&rsquo;s events to seen</h2>
-<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{}'</span> <span class="s2">"https://node.ucic.vc/api/v04/events/bulkSeen"</span> 
-</code></pre><pre class="highlight javascript"><code>
-</code></pre>
-<blockquote>
-<p>The above command returns 204 on success:</p>
-</blockquote>
-
-<p>This endpoint marks all of the user&rsquo;s events as seen. No body parameters are necessary.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">PUT https://node.ucic.vc/api/v04/events/bulkSeen</code></p>
+<h2 id="followeduserlikedquestion">followedUserLikedQuestion</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ea412d0-fa56-4a57-9dda-bab55d25b5ff"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"followedUserLikedQuestion"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-01T20:27:01.000Z"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"301255"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">227108</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir_issac"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The 15th Best Test Question"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedUser</code></strong><br>
+Generated when someone you follow likes a question.</p>
 
           <h1 id="event-rooms">Event Rooms</h1>
 
@@ -5334,7 +5505,7 @@ Note: the response will contain only the field(s) that were modified by the requ
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/followers/:id</code></p>
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/users/following/:id</code></p>
 
 <h3 id="url-params">URL Params</h3>
 
