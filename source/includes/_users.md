@@ -309,7 +309,7 @@ Returns an array of the users that the user specified by the url id param follow
 
 ### HTTP Request
 
-`GET https://node.ucic.vc/api/v04/users/followers/:id`
+`GET https://node.ucic.vc/api/v04/users/following/:id`
 
 ### URL Params
 | param | Type    | Description                              |

@@ -15,7 +15,7 @@ includes:
   - cards
   - comments
   - conversations
-  - events
+  - alerts
   - eventrooms
   - like
   - map
