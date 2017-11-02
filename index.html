@@ -2418,6 +2418,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"externalURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.ca"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"subCategoryIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"community"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"businessExpo"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UN"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -2464,12 +2468,17 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
 <tr>
 <td>sort</td>
 <td>String</td>
-<td>The type of sort to apply. Currently supports <code class="prettyprint">live</code>, <code class="prettyprint">popular</code>, <code class="prettyprint">following</code></td>
+<td>The type of sort to apply. Currently supports <code class="prettyprint">live</code>, <code class="prettyprint">popular</code>, <code class="prettyprint">following</code> (note: ignored if <code class="prettyprint">filter == &quot;top&quot;</code>)</td>
 </tr>
 <tr>
-<td>categories</td>
+<td>filter</td>
 <td>String</td>
-<td>A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: &amp;categories=sports,culture,shows. If omitted, event rooms of any category may be returned</td>
+<td>supported values <code class="prettyprint">top</code>, <code class="prettyprint">my</code>, <code class="prettyprint">subcategory</code></td>
+</tr>
+<tr>
+<td>subcategory</td>
+<td>String</td>
+<td>a comma separated list of specific subcategories of events to return. Only applies if <code class="prettyprint">?filter=subcategory</code>.</td>
 </tr>
 <tr>
 <td>limit</td>
@@ -2502,6 +2511,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
   </span><span class="nt">"externalURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.ca"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Dummy event created to centralize testing of various event room aspects"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"subCategoryIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"community"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"businessExpo"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UN"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -3382,19 +3395,24 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <td>(Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer</td>
 </tr>
 <tr>
-<td>categories</td>
+<td>filter</td>
 <td>String</td>
-<td>A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: <code class="prettyprint">&amp;categories=sports,culture,shows</code></td>
+<td>supported values <code class="prettyprint">top</code>, <code class="prettyprint">my</code>, <code class="prettyprint">subcategory</code></td>
+</tr>
+<tr>
+<td>subcategory</td>
+<td>String</td>
+<td>a comma separated list of specific subcategories of events to return. Only applies if <code class="prettyprint">?filter=subcategory</code>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>integer</td>
-<td>The maximum number of full markers to return. Default is 35 if not provided.</td>
+<td>The maximum number of full markers to return. Default is 35 if not provided. (note: ignored if <code class="prettyprint">filter == &quot;top&quot;</code>)</td>
 </tr>
 <tr>
 <td>sort</td>
 <td>string</td>
-<td>The type of sort to apply. Currently supports <code class="prettyprint">live</code>, <code class="prettyprint">popular</code>, <code class="prettyprint">following</code></td>
+<td>The type of sort to apply. Currently supports <code class="prettyprint">live</code>, <code class="prettyprint">popular</code>, <code class="prettyprint">following</code> (note: ignored if <code class="prettyprint">filter == &quot;top&quot;</code>)</td>
 </tr>
 </tbody></table>
 
