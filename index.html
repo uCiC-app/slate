@@ -1873,7 +1873,18 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/alert/:category"</span> -H <
 
 <p><strong>Note:</strong> Alerts that refer to an event room item will contain <code class="prettyprint">itemType</code> and <code class="prettyprint">itemId</code> which will always refer to the root level item in which the interaction took place for the purpose of retrieval of this item with the route <a href="https://ucic-app.github.io/ucic-docs/#get-single-event-room-item">Get Single Event Room Item</a></p>
 
-<p><strong>Note 2:</strong> In the event of an event room item alert that refers to an <code class="prettyprint">extMedia</code> item specifically, any <code class="prettyprint">content</code> that would normally contain a String <code class="prettyprint">mimeType</code> fiield will instead contain a Boolean <code class="prettyprint">video</code> field for the purpose of placing a &ldquo;play&rdquo; button overlay on the thumbnail. This is done because the mimetypes of external media are more diverse and not explicitly calculated. </p>
+<h2 id="get-unseen-alert-counts">Get unseen Alert counts</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"you"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"followedEvent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"followedUser"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This route returns the number of alerts that are currently unseen for the user, broken down by category.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/alert/unseen</code></p>
 
 <h2 id="newfollower">newFollower</h2>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
@@ -1958,7 +1969,6 @@ Generated when you get a new follower. Additional followers stack on the same al
     </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B_195685_1507756538"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"likedItemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"otherLikers"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="nt">"latestUser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414860</span><span class="p">,</span><span class="w">
@@ -1969,6 +1979,7 @@ Generated when you get a new follower. Additional followers stack on the same al
     </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B_195685_1507756538"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76165</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video/mp4"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/B_195685_1507756538/original.mp4"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/10C52B61-97A9-492F-AFD9-4286E620BFD7/thumb.jpg"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -2000,6 +2011,7 @@ Note, the <code class="prettyprint">data.likedItemType</code> indicates what typ
     </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C23E68ED-BC85-448C-99F0-461050A11F16"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76193</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/C23E68ED-BC85-448C-99F0-461050A11F16/display.jpg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/C23E68ED-BC85-448C-99F0-461050A11F16/thumb.jpg"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -2029,9 +2041,7 @@ Generated when someone responds to one of your requests.</p>
     </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nt">"uniqueOtherCommentingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One of comments on media"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"140C0B18-2142-4D77-9A24-E853292A0E47"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"card"</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One of comments on media"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="err">,</span><span class="p">{</span><span class="w">
@@ -2109,6 +2119,7 @@ Generated when someone comments on an item after you comment on it. Only generat
     </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"714033A2-C854-420E-8C60-C3D0599A9123"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76195</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/714033A2-C854-420E-8C60-C3D0599A9123/display.jpg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/714033A2-C854-420E-8C60-C3D0599A9123/thumb.jpg"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -2161,7 +2172,7 @@ Generated when someone adds a piece of media to an event that you follow.</p>
     </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nt">"uniqueCommentingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comment on followed event 3"</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comment on followed event 3"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}]</span><span class="w">
@@ -2210,7 +2221,7 @@ Generated when someone adds a comment to an event you follow. Note that multiple
     </span><span class="nt">"questionCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nt">"uniqueAskingUserCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The 13th Best Test Question"</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The 13th Best Test Question"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}]</span><span class="w">
@@ -2236,11 +2247,13 @@ Generated when someone adds a question to an event you follow. Note that multipl
     </span><span class="nt">"medias"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23A225CF-FB12-4121-8DC1-715873EF4B8A"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76199</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/23A225CF-FB12-4121-8DC1-715873EF4B8A/display.jpg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/23A225CF-FB12-4121-8DC1-715873EF4B8A/thumb.jpg"</span><span class="w">
     </span><span class="p">},{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"348AC3DC-A57B-4C31-A937-30C1615CF69C"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76200</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/348AC3DC-A57B-4C31-A937-30C1615CF69C/display.jpg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/348AC3DC-A57B-4C31-A937-30C1615CF69C/thumb.jpg"</span><span class="w">
     </span><span class="p">}]</span><span class="w">
@@ -2269,7 +2282,7 @@ Generated when someone you follow adds media. Note that media for the same user 
        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
      </span><span class="p">},</span><span class="w">
      </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Commmmment 2"</span><span class="w">
+       </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Commmmment 2"</span><span class="w">
      </span><span class="p">}</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2295,13 +2308,100 @@ Generated when someone you follow comments on something. </p>
        </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
      </span><span class="p">},</span><span class="w">
      </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The 15th Best Test Question"</span><span class="w">
+       </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The 15th Best Test Question"</span><span class="w">
      </span><span class="p">}</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><strong>Category: <code class="prettyprint">followedUser</code></strong><br>
 Generated when someone you follow likes a question.</p>
+
+<h2 id="followeduserlikedcomment">followedUserLikedComment</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c8732b97-4741-4101-b6f4-9e261556a0d3"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"followedUserLikedComment"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-02T14:15:23.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C23E68ED-BC85-448C-99F0-461050A11F16"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"commentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"460e7bee-54fb-41f0-9825-34eaf546200f"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">227108</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir_issac"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One of comments."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedUser</code></strong><br>
+Generated when someone you follow likes a comment.</p>
+
+<h2 id="followeduserlikedmedia">followedUserLikedMedia</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adbffe6e-1080-4af3-995a-a971a3d72ab3"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"followedUserLikedMedia"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-02T14:47:51.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">227108</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir_issac"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"medias"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E95E09CC-6901-46AB-A207-A399069EABA7"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"MI"</span><span class="p">:</span><span class="w"> </span><span class="mi">76113</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/E95E09CC-6901-46AB-A207-A399069EABA7/display.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/E95E09CC-6901-46AB-A207-A399069EABA7/thumb.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedUser</code></strong><br>
+Generated when someone you follow likes a piece of media. Note that the same user liking multiple media will stack on the same alert while it is unseen. The idea is for the client to link to the followed user&rsquo;s &ldquo;liked&rdquo; media profile section from the alert.</p>
+
+<h2 id="followeduserfollowed">followedUserFollowed</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"68074f85-a77b-4f83-b8f9-e015bc52a924"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"followedUserFollowed"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-02T14:57:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"seen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">227108</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir_issac"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DZ.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"newFollowees"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414853</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/CA.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">414854</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PixelApi25Berlin"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/assets/tags/DE.png"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>Category: <code class="prettyprint">followedUser</code></strong><br>
+Generated when someone you follow follows someone. Note that the same followee following multiple users will stack on the same alert while it is unseen. Client should link to the followee&rsquo;s &ldquo;followed users&rdquo; profile section from the alert.</p>
 
           <h1 id="event-rooms">Event Rooms</h1>
 
