@@ -158,16 +158,17 @@ Note: many of the events are submitted by users of the Predict HQ api and as suc
 
 ### Query Parameters
 
-| Parameter  | Type              | Description                              |
-| ---------- | ----------------- | ---------------------------------------- |
-| north      | Decimal (38)      | Northern latitude boundary of bounding box.  Max: 90, Min: 90 |
-| south      | Decimal (38)      | Southern latitude boundary of bounding box.  Max: 90, Min: -90 |
-| east       | Decimal (38)      | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
-| west       | Decimal (38)      | Western longitude boundary of bounding box. Max: 180, Min: -180 |
-| layer      | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
-| categories | String            | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: `&categories=sports,culture,shows` |
-| limit      | integer           | The maximum number of full markers to return. Default is 35 if not provided. |
-| sort       | string            | The type of sort to apply. Currently supports `live`, `popular`, `following` |
+| Parameter   | Type              | Description                              |
+| ----------- | ----------------- | ---------------------------------------- |
+| north       | Decimal (38)      | Northern latitude boundary of bounding box.  Max: 90, Min: 90 |
+| south       | Decimal (38)      | Southern latitude boundary of bounding box.  Max: 90, Min: -90 |
+| east        | Decimal (38)      | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
+| west        | Decimal (38)      | Western longitude boundary of bounding box. Max: 180, Min: -180 |
+| layer       | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
+| filter      | String            | supported values `top`, `my`, `subcategory` |
+| subcategory | String            | a comma separated list of specific subcategories of events to return. Only applies if `?filter=subcategory`. |
+| limit       | integer           | The maximum number of full markers to return. Default is 35 if not provided. (note: ignored if `filter == "top"`) |
+| sort        | string            | The type of sort to apply. Currently supports `live`, `popular`, `following` (note: ignored if `filter == "top"`) |
 
 ## Get Event Map Layer Categories
 

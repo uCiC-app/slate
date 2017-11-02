@@ -18,6 +18,10 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
   "title": "The Best Test Event",
   "externalURL": "http://google.ca",
   "categoryId": "news",
+  "subCategoryIds": [
+    "community",
+    "businessExpo"
+  ],
   "scope": "locality",
   "country": "UN",
   "city": null,
@@ -55,13 +59,14 @@ This route returns a list of event rooms that contain a minimum of one piece of 
 
 ### Query Parameters
 
-| Parameter  | Type                     | Description                              |
-| ---------- | ------------------------ | ---------------------------------------- |
-| sort       | String                   | The type of sort to apply. Currently supports `live`, `popular`, `following` |
-| categories | String                   | A comma-seperated list of event category IDs to return. Use the GET /map/eventCategories route below to retrive the list of supported event categories. Example usage in query url: &categories=sports,culture,shows. If omitted, event rooms of any category may be returned |
-| limit      | integer                  | The maximum number of event rooms to return |
-| offset     | integer                  | The number of event rooms to skip in the return for paginating results |
-| cursor     | unix timestamp (seconds) | minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page. |
+| Parameter   | Type                     | Description                              |
+| ----------- | ------------------------ | ---------------------------------------- |
+| sort        | String                   | The type of sort to apply. Currently supports `live`, `popular`, `following` (note: ignored if `filter == "top"`) |
+| filter      | String                   | supported values `top`, `my`, `subcategory` |
+| subcategory | String                   | a comma separated list of specific subcategories of events to return. Only applies if `?filter=subcategory`. |
+| limit       | integer                  | The maximum number of event rooms to return |
+| offset      | integer                  | The number of event rooms to skip in the return for paginating results |
+| cursor      | unix timestamp (seconds) | minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page. |
 
 ## Get Event Room info
 
@@ -83,6 +88,10 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
   "externalURL": "http://google.ca",
   "description": "A Dummy event created to centralize testing of various event room aspects",
   "categoryId": "news",
+  "subCategoryIds": [
+    "community",
+    "businessExpo"
+  ],
   "scope": "locality",
   "country": "UN",
   "city": null,
