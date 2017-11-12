@@ -2828,6 +2828,16 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 <td>A comma separated list of what item types to return. supports any combination of <code class="prettyprint">question</code>, <code class="prettyprint">media</code>, <code class="prettyprint">comment</code></td>
 </tr>
 <tr>
+<td>limit</td>
+<td>integer</td>
+<td>The maximum number of items to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>integer</td>
+<td>The number of items to skip in the return for paginating results</td>
+</tr>
+<tr>
 <td>cursor</td>
 <td>unix timestamp (seconds)</td>
 <td>minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page.</td>
@@ -4631,7 +4641,10 @@ The videoId must be a unique String of length up to 36 characters. Use the follo
     </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atlantis"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Da Atlantic"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UN"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="w">
+    </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"subCategoryIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"politicsNews"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
