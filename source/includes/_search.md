@@ -26,7 +26,10 @@ curl -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/v04/sea
     "city": "Atlantis",
     "region": "Da Atlantic",
     "country": "UN",
-    "categoryId": "news"
+    "categoryId": "news",
+    "subCategoryIds": [
+      "politicsNews"
+    ]
   }]
 }
 ```
