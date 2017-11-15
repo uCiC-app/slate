@@ -6340,22 +6340,22 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </tbody></table>
 
-<h2 id="request">Request</h2>
+<h2 id="eventquestionresponse-20">EventQuestionResponse (20)</h2>
 
 <blockquote>
 <p>Sample Payload</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Falak wants you to take a photo of \"Is it busy there now?\""</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46445"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E2E79146-4FD1-4835-BA76-B83E7291A373"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This notification represents a user request for image/video.  It is sent to response candidates when a request is created.</p>
+<p>This notification represents a user responding to a request created by the client user.  </p>
 
 <h3 id="notification-parameters">Notification Parameters</h3>
 
@@ -6367,48 +6367,48 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </thead><tbody>
 <tr>
-<td>alert</td>
+<td>eventTitle</td>
 <td>String</td>
-<td>Display text with user question and request type</td>
+<td>Title of event the interaction took place in</td>
 </tr>
 <tr>
-<td>badge</td>
+<td>eventId</td>
 <td>String</td>
-<td>Presently unused</td>
+<td>ID of event the interaction took place in</td>
 </tr>
 <tr>
-<td>ID</td>
+<td>itemType</td>
 <td>String</td>
-<td>Request identifier (currently integer)</td>
+<td>The type of the root event room item the interaction took place in</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The ID of the root event room item the interaction took place in</td>
 </tr>
 <tr>
 <td>type</td>
 <td>String</td>
-<td>The type of notification, Request is type 0</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>The request format identifier. 0 is photo and 1 is video</td>
+<td>The PN type. EventQuestionResponse is 20</td>
 </tr>
 </tbody></table>
 
-<h2 id="message">Message</h2>
+<h2 id="eventitemcomment-21">EventItemComment (21)</h2>
 
 <blockquote>
 <p>Sample Payload</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guy Streetley  has sent you a message"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EB57B50B-21D3-41AF-B1F3-8E3F8235AAB1"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+ </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E2E79146-4FD1-4835-BA76-B83E7291A373"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This notification represents an incoming message.  It is sent to the other participants in a conversation.</p>
+<p>This notification represents someone having commented on a piece of media created by the client user.</p>
 
 <h3 id="notification-parameters">Notification Parameters</h3>
 
@@ -6420,48 +6420,48 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </thead><tbody>
 <tr>
-<td>alert</td>
+<td>eventTitle</td>
 <td>String</td>
-<td>Display text including username that sent the message</td>
+<td>Title of event the interaction took place in</td>
 </tr>
 <tr>
-<td>badge</td>
+<td>eventId</td>
 <td>String</td>
-<td>Presently unused</td>
+<td>ID of event the interaction took place in</td>
 </tr>
 <tr>
-<td>ID</td>
+<td>itemType</td>
 <td>String</td>
-<td>Conversation UUID</td>
+<td>The type of the root event room item the interaction took place in</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The ID of the root event room item the interaction took place in</td>
 </tr>
 <tr>
 <td>type</td>
 <td>String</td>
-<td>The type of notification, Message is type 1</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>The request format identifier.  Unused for message</td>
+<td>The PN type. EventItemComment is 21</td>
 </tr>
 </tbody></table>
 
-<h2 id="response">Response</h2>
+<h2 id="eventitemfollowoncomment-22">EventItemFollowOnComment (22)</h2>
 
 <blockquote>
 <p>Sample Response</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guy  has sent a photo of \"How's the sunset there?\""</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16100"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+ </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E2E79146-4FD1-4835-BA76-B83E7291A373"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This notification represents an incoming response to a user&rsquo;s request.  It is sent to the requester.</p>
+<p>This notification represents someone having commented on an event room item after you commented on it last. </p>
 
 <h3 id="notification-parameters">Notification Parameters</h3>
 
@@ -6473,48 +6473,48 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </thead><tbody>
 <tr>
-<td>alert</td>
+<td>eventTitle</td>
 <td>String</td>
-<td>Display text including username and question (always denotes &lsquo;photo&rsquo; for legacy purposes)</td>
+<td>Title of event the interaction took place in</td>
 </tr>
 <tr>
-<td>badge</td>
+<td>eventId</td>
 <td>String</td>
-<td>Presently unused</td>
+<td>ID of event the interaction took place in</td>
 </tr>
 <tr>
-<td>ID</td>
+<td>itemType</td>
 <td>String</td>
-<td>Response identifier (currently integer)</td>
+<td>The type of the root event room item the interaction took place in</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The ID of the root event room item the interaction took place in</td>
 </tr>
 <tr>
 <td>type</td>
 <td>String</td>
-<td>The type of notification, Response is type 4</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>The request format identifier.  Photo is 0 and Video is 1</td>
+<td>The PN type. EventItemFollowOnComment is 22</td>
 </tr>
 </tbody></table>
 
-<h2 id="comment">Comment</h2>
+<h2 id="followedeventcontent-23">FollowedEventContent (23)</h2>
 
 <blockquote>
 <p>Sample Response </p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Falak commented on your photo"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C6214A68-055D-4D71-A5F4-29727B6A301D"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+ </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E2E79146-4FD1-4835-BA76-B83E7291A373"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This notification represents an incoming comment to a media item.  It is sent to the media creator as well as requester.</p>
+<p>This notification represents someone having submitted a new piece of content to an event room that the client user follows.</p>
 
 <h3 id="notification-parameters">Notification Parameters</h3>
 
@@ -6525,206 +6525,45 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and media type</td>
-</tr>
-<tr>
-<td>badge</td>
-<td>String</td>
-<td>Presently unused</td>
-</tr>
-<tr>
-<td>ID</td>
-<td>String</td>
-<td>Related media/card UUID</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>The type of notification, Comment is type 11</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>The request format identifier.  Unused for comment</td>
-</tr>
-</tbody></table>
-
-<h2 id="like">Like</h2>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guy  likes your photo"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"317666D8-8113-4323-B2FA-C60CA9F4066E"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This notification represents a like to a media item.  It is sent to the media creator as well as requester.</p>
-
-<h3 id="notification-parameters">Notification Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and media type</td>
-</tr>
-<tr>
-<td>badge</td>
-<td>String</td>
-<td>Presently unused</td>
-</tr>
-<tr>
-<td>ID</td>
-<td>String</td>
-<td>Related media/card UUID</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>The type of notification, Like is type 9</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>The request format identifier.  Unused for like</td>
-</tr>
-</tbody></table>
-
-<h2 id="response-on-followed-request">Response on followed Request</h2>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name added a response to \"What's going on over there?\""</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"badge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300101"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This notification represents a response to a request that the receiver is following. </p>
-
-<h3 id="notification-parameters">Notification Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and request text</td>
-</tr>
-<tr>
-<td>badge</td>
-<td>String</td>
-<td>Presently unused</td>
-</tr>
-<tr>
-<td>ID</td>
-<td>String</td>
-<td>The id of the followed request</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>The type of notification, Response on followed request is 14</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>The request format identifier.  Unused for this PN</td>
-</tr>
-</tbody></table>
-
-<h2 id="response-on-event-room-question">Response on Event Room Question</h2>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name responded to your question \"What's going on over there?\""</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This notification represents a response to a request that the user created in an event room.</p>
-
-<h3 id="notification-parameters">Notification Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and request text</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>The type of notification, Response on event room question is 20</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>1 if response is video</td>
-</tr>
 <tr>
 <td>eventTitle</td>
 <td>String</td>
-<td>The name of the event the notification&rsquo;s action took place in</td>
+<td>Title of event the interaction took place in</td>
 </tr>
 <tr>
 <td>eventId</td>
 <td>String</td>
-<td>The id of the event the notification&rsquo;s action took place in</td>
+<td>ID of event the interaction took place in</td>
 </tr>
 <tr>
 <td>itemType</td>
 <td>String</td>
-<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
+<td>The type of the root event room item the interaction took place in</td>
 </tr>
 <tr>
 <td>itemId</td>
 <td>String</td>
-<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+<td>The ID of the root event room item the interaction took place in</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The PN type. FollowedEventContent is 23</td>
 </tr>
 </tbody></table>
 
-<h2 id="comment-on-event-room-item">Comment on Event Room Item</h2>
+<h2 id="eventrequestreceived-25">EventRequestReceived (25)</h2>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name commented on your {photo/video/comment}"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+ </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300877"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This notification represents receiving the first comment on a root level event room item.</p>
+<p>This notification represents a user having asked a new question to an event that the client user is currently within the bounds of.</p>
 
 <h3 id="notification-parameters">Notification Parameters</h3>
 
@@ -6736,56 +6575,40 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </thead><tbody>
 <tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and request text</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>The type of notification, this one uses 21</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>1 if the root item is a video</td>
-</tr>
-<tr>
 <td>eventTitle</td>
 <td>String</td>
-<td>The name of the event the notification&rsquo;s action took place in</td>
+<td>Title of event the interaction took place in</td>
 </tr>
 <tr>
 <td>eventId</td>
 <td>String</td>
-<td>The id of the event the notification&rsquo;s action took place in</td>
+<td>ID of event the interaction took place in</td>
 </tr>
 <tr>
 <td>itemType</td>
 <td>String</td>
-<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
+<td>The type of the root event room item the interaction took place in</td>
 </tr>
 <tr>
 <td>itemId</td>
 <td>String</td>
-<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+<td>The ID of the root event room item the interaction took place in</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The PN type. EventRequestReceived is 25</td>
 </tr>
 </tbody></table>
 
-<h2 id="event-room-item-follow-on-comment">Event Room Item Follow On Comment</h2>
+<h2 id="missedinteractionsbundle-26">MissedInteractionsBundle (26)</h2>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name also commented on the {photo/video/comment}"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+ </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This notification represents someone commenting on an event room item after you have. You are only alerted with a PN for the first comment after your own.</p>
+<p>This notification represents a user having accumulated a significant number of unseen &ldquo;you&rdquo; category Alerts without having received a push notification for a specified period of time.</p>
 
 <h3 id="notification-parameters">Notification Parameters</h3>
 
@@ -6797,56 +6620,20 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </thead><tbody>
 <tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and request text</td>
-</tr>
-<tr>
 <td>type</td>
 <td>String</td>
-<td>The type of notification, this one uses 22</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>1 if the root item is a video</td>
-</tr>
-<tr>
-<td>eventTitle</td>
-<td>String</td>
-<td>The name of the event the notification&rsquo;s action took place in</td>
-</tr>
-<tr>
-<td>eventId</td>
-<td>String</td>
-<td>The id of the event the notification&rsquo;s action took place in</td>
-</tr>
-<tr>
-<td>itemType</td>
-<td>String</td>
-<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
-</tr>
-<tr>
-<td>itemId</td>
-<td>String</td>
-<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+<td>The PN type. MissedInteractionsBundle is 26</td>
 </tr>
 </tbody></table>
 
-<h2 id="new-followed-event-content">New Followed Event Content</h2>
+<h2 id="missedfollowedeventbundle-27">MissedFollowedEventBundle (27)</h2>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name added a {photo/video/comment} to an event you follow"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+ </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This notification represents someone adding a root level item to an event you follow. Note: this PN has a 3 hour cooldown. Alerts for the alert tab are still created during the cooldown without the push notification.</p>
+<p>This notification represents a user having accumulated a significant number of unseen &ldquo;followedEvent&rdquo; category Alerts without having received a push notification for a specified period of time.</p>
 
 <h3 id="notification-parameters">Notification Parameters</h3>
 
@@ -6858,56 +6645,20 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </thead><tbody>
 <tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and request text</td>
-</tr>
-<tr>
 <td>type</td>
 <td>String</td>
-<td>The type of notification, this one uses 23</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>1 if the root item is a video</td>
-</tr>
-<tr>
-<td>eventTitle</td>
-<td>String</td>
-<td>The name of the event the notification&rsquo;s action took place in</td>
-</tr>
-<tr>
-<td>eventId</td>
-<td>String</td>
-<td>The id of the event the notification&rsquo;s action took place in</td>
-</tr>
-<tr>
-<td>itemType</td>
-<td>String</td>
-<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
-</tr>
-<tr>
-<td>itemId</td>
-<td>String</td>
-<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+<td>The PN type. MissedFollowedEventBundle is 27</td>
 </tr>
 </tbody></table>
 
-<h2 id="new-followed-user-event-content">New Followed User Event Content</h2>
+<h2 id="missedfolloweduserbundle-28">MissedFollowedUserBundle (28)</h2>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name added a {photo/video}"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7b06cf-8604-4526-9397-41d461f96592"</span><span class="w">
+ </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This notification represents a user you follow adding a piece of media to an event room. Note: this PN has a 24 hour cooldown. Alerts for the alert tab are still created during the cooldown without the push notification.</p>
+<p>This notification represents a user having accumulated a significant number of unseen &ldquo;followedUser&rdquo; category Alerts without having received a push notification for a specified period of time.</p>
 
 <h3 id="notification-parameters">Notification Parameters</h3>
 
@@ -6919,94 +6670,9 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </thead><tbody>
 <tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and request text</td>
-</tr>
-<tr>
 <td>type</td>
 <td>String</td>
-<td>The type of notification, this one uses 24</td>
-</tr>
-<tr>
-<td>video</td>
-<td>String</td>
-<td>1 if the root item is a video</td>
-</tr>
-<tr>
-<td>eventTitle</td>
-<td>String</td>
-<td>The name of the event the notification&rsquo;s action took place in</td>
-</tr>
-<tr>
-<td>eventId</td>
-<td>String</td>
-<td>The id of the event the notification&rsquo;s action took place in</td>
-</tr>
-<tr>
-<td>itemType</td>
-<td>String</td>
-<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on</td>
-</tr>
-<tr>
-<td>itemId</td>
-<td>String</td>
-<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
-</tr>
-</tbody></table>
-
-<h2 id="event-request-received">Event Request Received</h2>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name asked a question about \"The Best Test Event\""</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300767"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This notification represents a user asking a question to an event that you are either at or very close to (500m grace are on top of the event radius). </p>
-
-<h3 id="notification-parameters">Notification Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>alert</td>
-<td>String</td>
-<td>Display text including username and request text</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>The type of notification, this one uses 25</td>
-</tr>
-<tr>
-<td>eventTitle</td>
-<td>String</td>
-<td>The name of the event the notification&rsquo;s action took place in</td>
-</tr>
-<tr>
-<td>eventId</td>
-<td>String</td>
-<td>The id of the event the notification&rsquo;s action took place in</td>
-</tr>
-<tr>
-<td>itemType</td>
-<td>String</td>
-<td>The <code class="prettyprint">type</code> of the root event room item the interaction took place with/on. Always <code class="prettyprint">&quot;question&quot;</code> for this PN type</td>
-</tr>
-<tr>
-<td>itemId</td>
-<td>String</td>
-<td>The <code class="prettyprint">id</code> of the root event room item the interaction took place with/on</td>
+<td>The PN type. MissedFollowedUserBundle is 28</td>
 </tr>
 </tbody></table>
 
