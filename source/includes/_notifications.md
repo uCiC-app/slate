@@ -59,349 +59,197 @@ Undo the mute action of the route above.
 | Event Room Question               | `question` | The numeric `requestId` (root `.id` value in the context of a `type="question"` event room item) |
 
 
-## Request
+## EventQuestionResponse (20)
 
 > Sample Payload
 
 ```json
 {
   "data": {
-      "alert": "Falak wants you to take a photo of \"Is it busy there now?\"",
-      "badge": "0",
-      "ID": "46445",
-      "type": "0",
-      "video": "0"
+    "eventTitle": "The Best Test Event",
+    "eventId": "1234567890",
+    "itemType": "response",
+    "itemId": "E2E79146-4FD1-4835-BA76-B83E7291A373",
+    "type": "20"
   }
 }
 ```
 
-This notification represents a user request for image/video.  It is sent to response candidates when a request is created.
+This notification represents a user responding to a request created by the client user.  
 
 ### Notification Parameters
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text with user question and request type |
-| badge     | String | Presently unused                         |
-| ID        | String | Request identifier (currently integer)   |
-| type      | String | The type of notification, Request is type 0 |
-| video     | String | The request format identifier. 0 is photo and 1 is video |
+| eventTitle | String | Title of event the interaction took place in |
+| eventId   | String | ID of event the interaction took place in |
+| itemType  | String | The type of the root event room item the interaction took place in |
+| itemId  | String | The ID of the root event room item the interaction took place in |
+| type | String | The PN type. EventQuestionResponse is 20 |
 
-
-## Message
+## EventItemComment (21)
 
 > Sample Payload
 
 ```json
 {
-  "data": {
-      "alert": "Guy Streetley  has sent you a message",
-      "badge": "0",
-      "ID": "EB57B50B-21D3-41AF-B1F3-8E3F8235AAB1",
-      "type": "1",
-      "video": "0"
+ "data": {
+   "eventTitle": "The Best Test Event",
+   "eventId": "1234567890",
+   "itemType": "media",
+   "itemId": "E2E79146-4FD1-4835-BA76-B83E7291A373",
+   "type": "21"
   }
 }
 ```
 
-This notification represents an incoming message.  It is sent to the other participants in a conversation.
+This notification represents someone having commented on a piece of media created by the client user.
 
 ### Notification Parameters
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username that sent the message |
-| badge     | String | Presently unused                         |
-| ID        | String | Conversation UUID                        |
-| type      | String | The type of notification, Message is type 1 |
-| video     | String | The request format identifier.  Unused for message |
+| eventTitle | String | Title of event the interaction took place in |
+| eventId   | String | ID of event the interaction took place in |
+| itemType  | String | The type of the root event room item the interaction took place in |
+| itemId  | String | The ID of the root event room item the interaction took place in |
+| type | String | The PN type. EventItemComment is 21 |
 
 
-## Response 
+## EventItemFollowOnComment (22) 
 
 > Sample Response
 
 ```json
 {
-  "data": {
-    "alert": "Guy  has sent a photo of \"How's the sunset there?\"",
-    "badge": "0",
-    "ID": "16100",
-    "type": "4",
-    "video": "1"
+ "data": {
+   "eventTitle": "The Best Test Event",
+   "eventId": "1234567890",
+   "itemType": "media",
+   "itemId": "E2E79146-4FD1-4835-BA76-B83E7291A373",
+   "type": "22"
   }
 }
 ```
 
-This notification represents an incoming response to a user's request.  It is sent to the requester.
+This notification represents someone having commented on an event room item after you commented on it last. 
 
 ### Notification Parameters
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and question (always denotes 'photo' for legacy purposes) |
-| badge     | String | Presently unused                         |
-| ID        | String | Response identifier (currently integer)  |
-| type      | String | The type of notification, Response is type 4 |
-| video     | String | The request format identifier.  Photo is 0 and Video is 1 |
+| eventTitle | String | Title of event the interaction took place in |
+| eventId   | String | ID of event the interaction took place in |
+| itemType  | String | The type of the root event room item the interaction took place in |
+| itemId  | String | The ID of the root event room item the interaction took place in |
+| type | String | The PN type. EventItemFollowOnComment is 22 |
 
 
-## Comment 
+## FollowedEventContent (23) 
 
 > Sample Response 
 
 ```json
 {
-  "data": {
-    "alert": "Falak commented on your photo",
-    "badge": "0",
-    "ID": "C6214A68-055D-4D71-A5F4-29727B6A301D",
-    "type": "11",
-    "video": "0"
+ "data": {
+   "eventTitle": "The Best Test Event",
+   "eventId": "1234567890",
+   "itemType": "media",
+   "itemId": "E2E79146-4FD1-4835-BA76-B83E7291A373",
+   "type": "23"
   }
 }
 ```
 
-This notification represents an incoming comment to a media item.  It is sent to the media creator as well as requester.
+This notification represents someone having submitted a new piece of content to an event room that the client user follows.
 
 ### Notification Parameters
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and media type |
-| badge     | String | Presently unused                         |
-| ID        | String | Related media/card UUID                  |
-| type      | String | The type of notification, Comment is type 11 |
-| video     | String | The request format identifier.  Unused for comment |
+| eventTitle | String | Title of event the interaction took place in |
+| eventId   | String | ID of event the interaction took place in |
+| itemType  | String | The type of the root event room item the interaction took place in |
+| itemId  | String | The ID of the root event room item the interaction took place in |
+| type | String | The PN type. FollowedEventContent is 23 |
 
 
-## Like 
+## EventRequestReceived (25) 
 
 ```json
 {
-  "data": {
-    "alert": "Guy  likes your photo",
-    "badge": "0",
-    "ID": "317666D8-8113-4323-B2FA-C60CA9F4066E",
-    "type": "9",
-    "video": "0"
+ "data": {
+   "eventTitle": "The Best Test Event",
+   "eventId": "1234567890",
+   "itemType": "question",
+   "itemId": "300877",
+   "type": "25"
   }
 }
 ```
 
-This notification represents a like to a media item.  It is sent to the media creator as well as requester.
+This notification represents a user having asked a new question to an event that the client user is currently within the bounds of.
 
 ### Notification Parameters
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and media type |
-| badge     | String | Presently unused                         |
-| ID        | String | Related media/card UUID                  |
-| type      | String | The type of notification, Like is type 9 |
-| video     | String | The request format identifier.  Unused for like |
+| eventTitle | String | Title of event the interaction took place in |
+| eventId   | String | ID of event the interaction took place in |
+| itemType  | String | The type of the root event room item the interaction took place in |
+| itemId  | String | The ID of the root event room item the interaction took place in |
+| type | String | The PN type. EventRequestReceived is 25 |
 
-## Response on followed Request 
+## MissedInteractionsBundle (26)
 
 ```json
 {
-  "data": {
-    "alert": "Name added a response to \"What's going on over there?\"",
-    "badge": "0",
-    "ID": "300101",
-    "type": "14",
-    "video": "0"
+ "data": {
+   "type": "26"
   }
 }
 ```
 
-This notification represents a response to a request that the receiver is following. 
+This notification represents a user having accumulated a significant number of unseen "you" category Alerts without having received a push notification for a specified period of time.
 
 ### Notification Parameters
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| alert     | String | Display text including username and request text |
-| badge     | String | Presently unused                         |
-| ID        | String | The id of the followed request           |
-| type      | String | The type of notification, Response on followed request is 14 |
-| video     | String | The request format identifier.  Unused for this PN |
+| type | String | The PN type. MissedInteractionsBundle is 26 |
 
-
-## Response on Event Room Question
+## MissedFollowedEventBundle (27)
 
 ```json
 {
-  "data": {
-    "alert": "Name responded to your question \"What's going on over there?\"",
-    "type": "20",
-    "video": "0",
-    "eventTitle": "The Best Test Event",
-    "eventId": "1234567890",
-    "itemType": "response",
-    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
+ "data": {
+   "type": "27"
   }
 }
 ```
 
-This notification represents a response to a request that the user created in an event room.
+This notification represents a user having accumulated a significant number of unseen "followedEvent" category Alerts without having received a push notification for a specified period of time.
 
 ### Notification Parameters
 
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| alert      | String | Display text including username and request text |
-| type       | String | The type of notification, Response on event room question is 20 |
-| video      | String | 1 if response is video                   |
-| eventTitle | String | The name of the event the notification's action took place in |
-| eventId    | String | The id of the event the notification's action took place in |
-| itemType   | String | The `type` of the root event room item the interaction took place with/on |
-| itemId     | String | The `id` of the root event room item the interaction took place with/on |
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| type | String | The PN type. MissedFollowedEventBundle is 27 |
 
-## Comment on Event Room Item
+## MissedFollowedUserBundle (28)
 
 ```json
 {
-  "data": {
-    "alert": "Name commented on your {photo/video/comment}",
-    "type": "21",
-    "video": "0",
-    "eventTitle": "The Best Test Event",
-    "eventId": "1234567890",
-    "itemType": "response",
-    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
+ "data": {
+   "type": "28"
   }
 }
 ```
 
-This notification represents receiving the first comment on a root level event room item.
+This notification represents a user having accumulated a significant number of unseen "followedUser" category Alerts without having received a push notification for a specified period of time.
 
 ### Notification Parameters
 
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| alert      | String | Display text including username and request text |
-| type       | String | The type of notification, this one uses 21 |
-| video      | String | 1 if the root item is a video            |
-| eventTitle | String | The name of the event the notification's action took place in |
-| eventId    | String | The id of the event the notification's action took place in |
-| itemType   | String | The `type` of the root event room item the interaction took place with/on |
-| itemId     | String | The `id` of the root event room item the interaction took place with/on |
-
-## Event Room Item Follow On Comment
-
-```json
-{
-  "data": {
-    "alert": "Name also commented on the {photo/video/comment}",
-    "type": "22",
-    "video": "0",
-    "eventTitle": "The Best Test Event",
-    "eventId": "1234567890",
-    "itemType": "response",
-    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
-  }
-}
-```
-
-This notification represents someone commenting on an event room item after you have. You are only alerted with a PN for the first comment after your own.
-
-### Notification Parameters
-
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| alert      | String | Display text including username and request text |
-| type       | String | The type of notification, this one uses 22 |
-| video      | String | 1 if the root item is a video            |
-| eventTitle | String | The name of the event the notification's action took place in |
-| eventId    | String | The id of the event the notification's action took place in |
-| itemType   | String | The `type` of the root event room item the interaction took place with/on |
-| itemId     | String | The `id` of the root event room item the interaction took place with/on |
-
-## New Followed Event Content
-
-```json
-{
-  "data": {
-    "alert": "Name added a {photo/video/comment} to an event you follow",
-    "type": "23",
-    "video": "0",
-    "eventTitle": "The Best Test Event",
-    "eventId": "1234567890",
-    "itemType": "response",
-    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
-  }
-}
-```
-
-This notification represents someone adding a root level item to an event you follow. Note: this PN has a 3 hour cooldown. Alerts for the alert tab are still created during the cooldown without the push notification.
-
-### Notification Parameters
-
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| alert      | String | Display text including username and request text |
-| type       | String | The type of notification, this one uses 23 |
-| video      | String | 1 if the root item is a video            |
-| eventTitle | String | The name of the event the notification's action took place in |
-| eventId    | String | The id of the event the notification's action took place in |
-| itemType   | String | The `type` of the root event room item the interaction took place with/on |
-| itemId     | String | The `id` of the root event room item the interaction took place with/on |
-
-## New Followed User Event Content
-
-```json
-{
-  "data": {
-    "alert": "Name added a {photo/video}",
-    "type": "24",
-    "video": "0",
-    "eventTitle": "The Best Test Event",
-    "eventId": "1234567890",
-    "itemType": "response",
-    "itemId": "ca7b06cf-8604-4526-9397-41d461f96592"
-  }
-}
-```
-
-This notification represents a user you follow adding a piece of media to an event room. Note: this PN has a 24 hour cooldown. Alerts for the alert tab are still created during the cooldown without the push notification.
-
-### Notification Parameters
-
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| alert      | String | Display text including username and request text |
-| type       | String | The type of notification, this one uses 24 |
-| video      | String | 1 if the root item is a video            |
-| eventTitle | String | The name of the event the notification's action took place in |
-| eventId    | String | The id of the event the notification's action took place in |
-| itemType   | String | The `type` of the root event room item the interaction took place with/on |
-| itemId     | String | The `id` of the root event room item the interaction took place with/on |
-
-## Event Request Received
-
-```json
-{
-  "data": {
-    "alert": "Name asked a question about \"The Best Test Event\"",
-    "type": "25",
-    "eventTitle": "The Best Test Event",
-    "eventId": "1234567890",
-    "itemType": "question",
-    "itemId": "300767"
-  }
-}
-```
-
-This notification represents a user asking a question to an event that you are either at or very close to (500m grace are on top of the event radius). 
-
-### Notification Parameters
-
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| alert      | String | Display text including username and request text |
-| type       | String | The type of notification, this one uses 25 |
-| eventTitle | String | The name of the event the notification's action took place in |
-| eventId    | String | The id of the event the notification's action took place in |
-| itemType   | String | The `type` of the root event room item the interaction took place with/on. Always `"question"` for this PN type |
-| itemId     | String | The `id` of the root event room item the interaction took place with/on |
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| type | String | The PN type. MissedFollowedUserBundle is 28 |
