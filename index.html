@@ -3407,7 +3407,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <tr>
 <td>filter</td>
 <td>String</td>
-<td>supported values <code class="prettyprint">top</code>, <code class="prettyprint">my</code>, <code class="prettyprint">subcategory</code></td>
+<td>supported values <code class="prettyprint">my</code>, <code class="prettyprint">subcategory</code></td>
 </tr>
 <tr>
 <td>subcategory</td>
@@ -3417,12 +3417,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <tr>
 <td>limit</td>
 <td>integer</td>
-<td>The maximum number of full markers to return. Default is 35 if not provided. (note: ignored if <code class="prettyprint">filter == &quot;top&quot;</code>)</td>
-</tr>
-<tr>
-<td>sort</td>
-<td>string</td>
-<td>The type of sort to apply. Currently supports <code class="prettyprint">live</code>, <code class="prettyprint">popular</code>, <code class="prettyprint">following</code> (note: ignored if <code class="prettyprint">filter == &quot;top&quot;</code>)</td>
+<td>The maximum number of full markers to return. Default is 35 if not provided. (note: ignored if no filter is specified, defaulting to the &ldquo;top&rdquo; behaviour and returning a very limited number of resutls)</td>
 </tr>
 </tbody></table>
 
