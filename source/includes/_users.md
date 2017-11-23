@@ -165,7 +165,10 @@ curl -X POST "https://node.ucic.vc/api/v04/users/set"
   "username": "BillyJean",
   "avatar": "http://media.ucic.vc/media/427F0DC4-B2B6-4182-8088-D31BB5CB0934/thumb.jpg",
   "email": "not@mylov.er",
-  "tagLine": "Not my Lover."
+  "tagLine": "Not my Lover.",
+  "TI": "twitterIdentifier",
+  "GI": "googleIdentifier",
+  "FI": "facebookIdentifier"
 }
 ```
 
@@ -184,6 +187,9 @@ This endpoint allows the clients to update user information. Specifically, the m
 | avatarBuffer    | String     | (Optional\*) The base 64 encoded image buffer representing the image to change the user's avatar to. |
 | email           | String     | (Optional\*) The new email to set for the user. |
 | tagLine         | String     | (Optional\*) A short bio for the user's profile. Up to 255 characters, an error will be returned if this limit is not respected. |
+| TI              | String     | (Optional\*) The twitter identifier of the user to add to the account. supports `null` value to remove |
+| GI              | String     | (Optional\*) The Google identifier of the user to add to the account. supports `null` value to remove |
+| FI              | String     | (Optional\*) The Facebook identifier of the user to add to the account. supports `null` value to remove |
 
 \*Note: though all five parameters are optional, **at least one must be sent** with the call, or a 400 error message will be returned.
 
