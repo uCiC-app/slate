@@ -5412,7 +5412,10 @@ Note: the response will contain only the field(s) that were modified by the requ
   </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BillyJean"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.ucic.vc/media/427F0DC4-B2B6-4182-8088-D31BB5CB0934/thumb.jpg"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not@mylov.er"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tagLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not my Lover."</span><span class="w">
+  </span><span class="nt">"tagLine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not my Lover."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"TI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitterIdentifier"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"GI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"googleIdentifier"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"FI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebookIdentifier"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allows the clients to update user information. Specifically, the map visibility status, avatar, email, tagline, and username may be changed with this route.</p>
@@ -5454,6 +5457,21 @@ Note: the response will contain only the field(s) that were modified by the requ
 <td>tagLine</td>
 <td>String</td>
 <td>(Optional*) A short bio for the user&rsquo;s profile. Up to 255 characters, an error will be returned if this limit is not respected.</td>
+</tr>
+<tr>
+<td>TI</td>
+<td>String</td>
+<td>(Optional*) The twitter identifier of the user to add to the account. supports <code class="prettyprint">null</code> value to remove</td>
+</tr>
+<tr>
+<td>GI</td>
+<td>String</td>
+<td>(Optional*) The Google identifier of the user to add to the account. supports <code class="prettyprint">null</code> value to remove</td>
+</tr>
+<tr>
+<td>FI</td>
+<td>String</td>
+<td>(Optional*) The Facebook identifier of the user to add to the account. supports <code class="prettyprint">null</code> value to remove</td>
 </tr>
 </tbody></table>
 
