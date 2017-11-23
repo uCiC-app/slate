@@ -107,7 +107,6 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "events": [{
     "id": "640BlGrpE0Kd",
     "title": "Psy-Fi Psychedelic Music and Arts Festival 2017",
-    "externalURL": "http://google.ca",
     "categoryId": "culture",
     "subCategoryIds": [ "community", "festivals" ],
     "scope": "locality",
@@ -133,6 +132,14 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
     }],
     "categoryName": "Festivals and Culture",
     "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/culture.png",
+    "sources": [{
+      "url": "http://www.bbc.com/news/world-asia-india-42090947",
+      "sourceInfo": {
+        "id": "abcdef-12345",
+        "name": "BBC News",
+        "icon": "https://media.ucic.vc/newsIcons/BBC.png"
+      }
+  	}],
     "followerCount": 2,
     "youFollowEvent": false,
     "participantCount": 14,
@@ -165,7 +172,7 @@ Note: many of the events are submitted by users of the Predict HQ api and as suc
 | east        | Decimal (38)      | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
 | west        | Decimal (38)      | Western longitude boundary of bounding box. Max: 180, Min: -180 |
 | layer       | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
-| filter      | String            | supported values `my`, `subcategory` |
+| filter      | String            | supported values `my`, `subcategory`     |
 | subcategory | String            | a comma separated list of specific subcategories of events to return. Only applies if `?filter=subcategory`. |
 | limit       | integer           | The maximum number of full markers to return. Default is 35 if not provided. (note: ignored if no filter is specified, defaulting to the "top" behaviour and returning a very limited number of resutls) |
 

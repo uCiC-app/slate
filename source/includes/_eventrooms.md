@@ -16,7 +16,6 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
 [{
   "id": "1234567890",
   "title": "The Best Test Event",
-  "externalURL": "http://google.ca",
   "categoryId": "news",
   "subCategoryIds": [
     "community",
@@ -41,6 +40,14 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
   "lastMediaPost": "2017-08-15T15:15:53.000Z",
   "categoryName": "News",
   "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png",
+  "sources": [{
+    "url": "http://www.bbc.com/news/world-asia-india-42090947",
+    "sourceInfo": {
+      "id": "abcdef-12345",
+      "name": "BBC News",
+      "icon": "https://media.ucic.vc/newsIcons/BBC.png"
+    }
+  }],
   "followerCount": 2,
   "youFollowEvent": true,
   "latestMedia": {
@@ -85,7 +92,6 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
 {
   "id": "1234567890",
   "title": "The Best Test Event",
-  "externalURL": "http://google.ca",
   "description": "A Dummy event created to centralize testing of various event room aspects",
   "categoryId": "news",
   "subCategoryIds": [
@@ -111,6 +117,14 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
   "active": true,
   "categoryName": "News",
   "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png",
+  "sources": [{
+    "url": "http://www.bbc.com/news/world-asia-india-42090947",
+    "sourceInfo": {
+      "id": "abcdef-12345",
+      "name": "BBC News",
+      "icon": "https://media.ucic.vc/newsIcons/BBC.png"
+    }
+  }],
   "followerCount": 2,
   "youFollowEvent": true,
   "latestMedia": {
@@ -375,8 +389,8 @@ The admin dashboard allows us to import media from twitter for event rooms. Sinc
 | sort      | String                   | Sorted by most recent first. sort supports a value of 'popular' to bring interesting content to the front. |
 | atEvent   | String                   | If a value of `true` is sent for this query param, only items that were generated at the location of the event will be sent (based on the root level item, atEvent of nested items is ignored) |
 | filter    | Comma delimited String   | A comma separated list of what item types to return. supports any combination of `question`, `media`, `comment` |
-| limit       | integer | The maximum number of items to return |
-| offset | integer | The number of items to skip in the return for paginating results |
+| limit     | integer                  | The maximum number of items to return    |
+| offset    | integer                  | The number of items to skip in the return for paginating results |
 | cursor    | unix timestamp (seconds) | minimize repeated/missing items in pagination by providing the timestamp of the query used to fetch the first page. |
 
 ## Get Single Event Room item
