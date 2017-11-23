@@ -2416,7 +2416,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
 <pre class="highlight json"><code><span class="p">[{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"externalURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.ca"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"subCategoryIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"community"</span><span class="p">,</span><span class="w">
@@ -2441,6 +2440,14 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
   </span><span class="nt">"lastMediaPost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-15T15:15:53.000Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"News"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryIcon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.bbc.com/news/world-asia-india-42090947"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sourceInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef-12345"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BBC News"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/newsIcons/BBC.png"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
   </span><span class="nt">"followerCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="nt">"youFollowEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nt">"latestMedia"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2508,7 +2515,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"externalURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.ca"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Dummy event created to centralize testing of various event room aspects"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"subCategoryIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -2534,6 +2540,14 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
   </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"News"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"categoryIcon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.bbc.com/news/world-asia-india-42090947"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sourceInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef-12345"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BBC News"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/newsIcons/BBC.png"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
   </span><span class="nt">"followerCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="nt">"youFollowEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nt">"latestMedia"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3322,7 +3336,6 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
   </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"640BlGrpE0Kd"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Psy-Fi Psychedelic Music and Arts Festival 2017"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"externalURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://google.ca"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"culture"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"subCategoryIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"community"</span><span class="p">,</span><span class="w"> </span><span class="s2">"festivals"</span><span class="w"> </span><span class="p">],</span><span class="w">
     </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
@@ -3348,6 +3361,14 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
     </span><span class="p">}],</span><span class="w">
     </span><span class="nt">"categoryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Festivals and Culture"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"categoryIcon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/culture.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.bbc.com/news/world-asia-india-42090947"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sourceInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef-12345"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BBC News"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/newsIcons/BBC.png"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
     </span><span class="nt">"followerCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="nt">"youFollowEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
