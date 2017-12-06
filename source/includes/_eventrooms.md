@@ -68,7 +68,6 @@ This route returns a list of event rooms that contain a minimum of one piece of 
 
 | Parameter   | Type                     | Description                              |
 | ----------- | ------------------------ | ---------------------------------------- |
-| sort        | String                   | The type of sort to apply. Currently supports `live`, `popular`, `following` (note: ignored if `filter == "top"`) |
 | filter      | String                   | supported values `top`, `my`, `subcategory` |
 | subcategory | String                   | a comma separated list of specific subcategories of events to return. Only applies if `?filter=subcategory`. |
 | limit       | integer                  | The maximum number of event rooms to return |
