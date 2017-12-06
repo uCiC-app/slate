@@ -2576,6 +2576,115 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
 </tr>
 </tbody></table>
 
+<h2 id="get-nearest-event-rooms">Get nearest Event Rooms</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/nearest/3?lat=41.54&amp;lon=-80.7863"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Best Test Event"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Dummy event created to centralize testing of various event room aspects"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"categoryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"news"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"subCategoryIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"community"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"businessExpo"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UN"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">47.3302</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-29.5989</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"mediaCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-09T08:05:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-31T00:05:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lastMediaLike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-15T15:15:53.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"lastMediaPost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-15T15:15:53.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"categoryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"News"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"categoryIcon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.bbc.com/news/world-asia-india-42090947"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sourceInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdef-12345"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BBC News"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/newsIcons/BBC.png"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
+  </span><span class="nt">"followerCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"youFollowEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"latestMedia"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieve the nearest <code class="prettyprint">x</code> active events by distance to the specified lat/lon.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://node.ucic.vc/api/v04/eventRoom/nearest/:num</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>num</td>
+<td>Integer</td>
+<td>The number of events to return</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>lat</td>
+<td>Float</td>
+<td>(required) The latitude of the target point</td>
+</tr>
+<tr>
+<td>lon</td>
+<td>Float</td>
+<td>(required) The longitude of the target point</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Request was missing lat, lon, or both</td>
+</tr>
+</tbody></table>
+
 <h2 id="get-event-room-items">Get Event Room Items</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id/items"</span> -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span>
 </code></pre><pre class="highlight javascript"><code>
