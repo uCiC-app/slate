@@ -148,6 +148,89 @@ This endpoint retrieves the high level info for a given event room.
 | --------- | ------ | ---------------------------------------- |
 | id        | String | The id of the event room to retrieve the info for |
 
+## Get nearest Event Rooms
+
+```shell
+curl "https://node.ucic.vc/api/v04/eventRoom/nearest/3?lat=41.54&lon=-80.7863" -H "Authorization: <AUTHORIZATION_TOKEN>"
+```
+
+```javascript
+
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": "1234567890",
+  "title": "The Best Test Event",
+  "description": "A Dummy event created to centralize testing of various event room aspects",
+  "categoryId": "news",
+  "subCategoryIds": [
+    "community",
+    "businessExpo"
+  ],
+  "scope": "locality",
+  "country": "UN",
+  "city": null,
+  "region": null,
+  "location": {
+    "lat": 47.3302,
+    "lon": -29.5989
+  },
+  "radius": 1000,
+  "mediaCount": 13,
+  "views": 5,
+  "rank": 85,
+  "start": "2017-08-09T08:05:00.000Z",
+  "end": "2017-08-31T00:05:00.000Z",
+  "lastMediaLike": "2017-08-15T15:15:53.000Z",
+  "lastMediaPost": "2017-08-15T15:15:53.000Z",
+  "active": true,
+  "categoryName": "News",
+  "categoryIcon": "https://s3-us-west-2.amazonaws.com/ucic-production/assets/events/news.png",
+  "sources": [{
+    "url": "http://www.bbc.com/news/world-asia-india-42090947",
+    "sourceInfo": {
+      "id": "abcdef-12345",
+      "name": "BBC News",
+      "icon": "https://media.ucic.vc/newsIcons/BBC.png"
+    }
+  }],
+  "followerCount": 2,
+  "youFollowEvent": true,
+  "latestMedia": {
+    "video": false,
+    "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
+  },
+  "participantCount": 99
+}
+```
+Retrieve the nearest `x` active events by distance to the specified lat/lon.
+
+### HTTP Request
+
+`GET https://node.ucic.vc/api/v04/eventRoom/nearest/:num`
+
+### URL Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| num      | Integer | The number of events to return |
+
+### Query Parameters
+
+| Parameter | Type   | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| lat      | Float | (required) The latitude of the target point |
+| lon      | Float | (required) The longitude of the target point |
+
+### Errors
+
+| Code | Description                              |
+| --------- | ---------------------------------------- |
+| 400      | Request was missing lat, lon, or both |
+
+
 ## Get Event Room Items
 
 ```shell
