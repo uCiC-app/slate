@@ -79,13 +79,13 @@ This notification represents a user responding to a request created by the clien
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
 | eventTitle | String | Title of event the interaction took place in |
-| eventId   | String | ID of event the interaction took place in |
-| itemType  | String | The type of the root event room item the interaction took place in |
-| itemId  | String | The ID of the root event room item the interaction took place in |
-| type | String | The PN type. EventQuestionResponse is 20 |
+| eventId    | String | ID of event the interaction took place in |
+| itemType   | String | The type of the root event room item the interaction took place in |
+| itemId     | String | The ID of the root event room item the interaction took place in |
+| type       | String | The PN type. EventQuestionResponse is 20 |
 
 ## EventItemComment (21)
 
@@ -107,13 +107,13 @@ This notification represents someone having commented on a piece of media create
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
 | eventTitle | String | Title of event the interaction took place in |
-| eventId   | String | ID of event the interaction took place in |
-| itemType  | String | The type of the root event room item the interaction took place in |
-| itemId  | String | The ID of the root event room item the interaction took place in |
-| type | String | The PN type. EventItemComment is 21 |
+| eventId    | String | ID of event the interaction took place in |
+| itemType   | String | The type of the root event room item the interaction took place in |
+| itemId     | String | The ID of the root event room item the interaction took place in |
+| type       | String | The PN type. EventItemComment is 21      |
 
 
 ## EventItemFollowOnComment (22) 
@@ -136,13 +136,13 @@ This notification represents someone having commented on an event room item afte
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
 | eventTitle | String | Title of event the interaction took place in |
-| eventId   | String | ID of event the interaction took place in |
-| itemType  | String | The type of the root event room item the interaction took place in |
-| itemId  | String | The ID of the root event room item the interaction took place in |
-| type | String | The PN type. EventItemFollowOnComment is 22 |
+| eventId    | String | ID of event the interaction took place in |
+| itemType   | String | The type of the root event room item the interaction took place in |
+| itemId     | String | The ID of the root event room item the interaction took place in |
+| type       | String | The PN type. EventItemFollowOnComment is 22 |
 
 
 ## FollowedEventContent (23) 
@@ -165,13 +165,13 @@ This notification represents someone having submitted a new piece of content to 
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
 | eventTitle | String | Title of event the interaction took place in |
-| eventId   | String | ID of event the interaction took place in |
-| itemType  | String | The type of the root event room item the interaction took place in |
-| itemId  | String | The ID of the root event room item the interaction took place in |
-| type | String | The PN type. FollowedEventContent is 23 |
+| eventId    | String | ID of event the interaction took place in |
+| itemType   | String | The type of the root event room item the interaction took place in |
+| itemId     | String | The ID of the root event room item the interaction took place in |
+| type       | String | The PN type. FollowedEventContent is 23  |
 
 
 ## EventRequestReceived (25) 
@@ -192,13 +192,13 @@ This notification represents a user having asked a new question to an event that
 
 ### Notification Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
 | eventTitle | String | Title of event the interaction took place in |
-| eventId   | String | ID of event the interaction took place in |
-| itemType  | String | The type of the root event room item the interaction took place in |
-| itemId  | String | The ID of the root event room item the interaction took place in |
-| type | String | The PN type. EventRequestReceived is 25 |
+| eventId    | String | ID of event the interaction took place in |
+| itemType   | String | The type of the root event room item the interaction took place in |
+| itemId     | String | The ID of the root event room item the interaction took place in |
+| type       | String | The PN type. EventRequestReceived is 25  |
 
 ## MissedInteractionsBundle (26)
 
@@ -216,7 +216,7 @@ This notification represents a user having accumulated a significant number of u
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| type | String | The PN type. MissedInteractionsBundle is 26 |
+| type      | String | The PN type. MissedInteractionsBundle is 26 |
 
 ## MissedFollowedEventBundle (27)
 
@@ -234,7 +234,7 @@ This notification represents a user having accumulated a significant number of u
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| type | String | The PN type. MissedFollowedEventBundle is 27 |
+| type      | String | The PN type. MissedFollowedEventBundle is 27 |
 
 ## MissedFollowedUserBundle (28)
 
@@ -252,4 +252,96 @@ This notification represents a user having accumulated a significant number of u
 
 | Parameter | Type   | Description                              |
 | --------- | ------ | ---------------------------------------- |
-| type | String | The PN type. MissedFollowedUserBundle is 28 |
+| type      | String | The PN type. MissedFollowedUserBundle is 28 |
+
+## BreakingNewsGlobal (29) 
+
+```json
+{
+ "data": {
+   "eventTitle": "The Best Test Event",
+   "eventId": "1234567890",
+   "type": "29"
+  }
+}
+```
+
+This notification represents a significant event occuring somewhere on the planet in one of the client user's subscribed subcategories.
+
+### Notification Parameters
+
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| eventTitle | String | Title of event the event |
+| eventId    | String | ID of the event  |
+| type       | String | The PN type. BreakingNewsGlobal is 29  |
+
+## BreakingNewsLocal (30) 
+
+```json
+{
+ "data": {
+   "eventTitle": "The Best Test Event",
+   "eventId": "1234567890",
+   "type": "30"
+  }
+}
+```
+
+This notification represents a significant event occuring at the client user's location.
+
+### Notification Parameters
+
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| eventTitle | String | Title of event the event |
+| eventId    | String | ID of the event  |
+| type       | String | The PN type. BreakingNewsLocal is 30  |
+
+## LocalEventStart (31) 
+
+```json
+{
+ "data": {
+   "eventTitle": "The Best Test Event",
+   "eventId": "1234567890",
+   "type": "30"
+  }
+}
+```
+
+This notification represents an event starting up at the user's location.
+
+### Notification Parameters
+
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| eventTitle | String | Title of event the event |
+| eventId    | String | ID of the event  |
+| type       | String | The PN type. BreakingNewsLocal is 30  |
+
+## BestRecentMedia (32) 
+
+```json
+{
+ "data": {
+   "eventTitle": "The Best Test Event",
+   "eventId": "1234567890",
+   "itemType": "media",
+   "itemId": "E2E79146-4FD1-4835-BA76-B83E7291A373",
+   "type": "32"
+  }
+}
+```
+
+This periodic notification highlights the most liked piece of media in the platform from the last week.
+
+### Notification Parameters
+
+| Parameter  | Type   | Description                              |
+| ---------- | ------ | ---------------------------------------- |
+| eventTitle | String | Title of event media was submitted to |
+| eventId    | String | ID of event the media was submitted to |
+| itemType   | String | The type of the item that is the top media |
+| itemId     | String | The ID of the item that is the top media |
+| type       | String | The PN type. BestRecentMedia is 32  |
