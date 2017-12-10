@@ -31,6 +31,9 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
   },
   "radius": 1000,
   "mediaCount": 13,
+  "commentCount": 7,
+  "questionCount": 4,
+  "postCount": 11,
   "views": 4,
   "rank": 85,
   "start": "2017-08-09T08:05:00.000Z",
@@ -107,6 +110,9 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
   },
   "radius": 1000,
   "mediaCount": 13,
+  "commentCount": 7,
+  "questionCount": 4,
+  "postCount": 11,
   "views": 5,
   "rank": 85,
   "start": "2017-08-09T08:05:00.000Z",
@@ -179,6 +185,9 @@ curl "https://node.ucic.vc/api/v04/eventRoom/nearest/3?lat=41.54&lon=-80.7863" -
   },
   "radius": 1000,
   "mediaCount": 13,
+  "commentCount": 7,
+  "questionCount": 4,
+  "postCount": 11,
   "views": 5,
   "rank": 85,
   "start": "2017-08-09T08:05:00.000Z",
@@ -213,22 +222,22 @@ Retrieve the nearest `x` active events by distance to the specified lat/lon.
 
 ### URL Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| num      | Integer | The number of events to return |
+| Parameter | Type    | Description                    |
+| --------- | ------- | ------------------------------ |
+| num       | Integer | The number of events to return |
 
 ### Query Parameters
 
-| Parameter | Type   | Description                              |
-| --------- | ------ | ---------------------------------------- |
-| lat      | Float | (required) The latitude of the target point |
-| lon      | Float | (required) The longitude of the target point |
+| Parameter | Type  | Description                              |
+| --------- | ----- | ---------------------------------------- |
+| lat       | Float | (required) The latitude of the target point |
+| lon       | Float | (required) The longitude of the target point |
 
 ### Errors
 
-| Code | Description                              |
-| --------- | ---------------------------------------- |
-| 400      | Request was missing lat, lon, or both |
+| Code | Description                           |
+| ---- | ------------------------------------- |
+| 400  | Request was missing lat, lon, or both |
 
 
 ## Get Event Room Items
