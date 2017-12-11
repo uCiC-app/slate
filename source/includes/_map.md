@@ -199,7 +199,6 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "categoryId": "shows",
   "startColour": "#4241DE",
   "endColour": "#C86DD7",
-  "eventCount": 14,
   "subcategories": [{
     "name": "Concerts",
     "subcategoryId": "concerts",
@@ -218,7 +217,6 @@ curl -X GET -H "Authorization: <AUTHORIZATION_TOKEN>" "https://node.ucic.vc/api/
   "categoryId": "expos",
   "startColour": "#F79A1C",
   "endColour": "#FAD961",
-  "eventCount": 6,
   "subcategories": [{
     "name": "Trade Shows",
     "subcategoryId": "tradeShows",
