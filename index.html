@@ -3905,6 +3905,72 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 </tr>
 </tbody></table>
 
+          <h1 id="verify">Verify</h1>
+
+<h2 id="verify-content">Verify Content</h2>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "itemType": "event", "itemId": "1234567890", "verify": true }'</span> <span class="s2">"https://node.ucic.vc/api/v04/verify"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns a 204 status code upon success</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span></code></pre>
+<p>This endpoint lets the client confirm or deny that a piece of content is valid. Currently, only <code class="prettyprint">event</code> itemType is supported, but more may be added in the future. The body param <code class="prettyprint">verify</code> is supplied as a boolean to indicate that the event is (true), or isn&rsquo;t (false) happening.   </p>
+
+<p>Events with a verification score lower than 3 will have an &ldquo;[Unconfirmed]&rdquo; tag at the front of the title. Events with a vScore lower than zero will no longer be returned by the map/list view.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/report/content</code></p>
+
+<h3 id="request-body">Request Body</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>itemType</td>
+<td>String</td>
+<td>currently just &lsquo;event&rsquo;</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>String</td>
+<td>The identifier of the entity being verified.</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>Boolean</td>
+<td><code class="prettyprint">true</code> if the client user is verifying the event, <code class="prettyprint">false</code> if they are debunking it.</td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>missing or invalid itemType in request body</td>
+<td>Client sent an invalid or missing value for <code class="prettyprint">itemType</code></td>
+</tr>
+<tr>
+<td>400</td>
+<td>missing itemId and/or verify req body params</td>
+<td>Client did not include an <code class="prettyprint">itemId</code> and/or <code class="prettyprint">verify</code> in the request</td>
+</tr>
+</tbody></table>
+
           <h1 id="requests">Requests</h1>
 
 <h2 id="create-and-send-a-request">Create and send a request</h2>
