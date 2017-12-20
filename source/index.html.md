@@ -22,6 +22,7 @@ includes:
   - mobile
   - questions
   - report
+  - verify
   - requests
   - responses
   - search
