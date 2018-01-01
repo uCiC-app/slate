@@ -2457,7 +2457,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
     </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
+  </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"verified"</span><span class="err">,</span><span class="w"> </span><span class="nt">"none"</span><span class="err">,</span><span class="w"> </span><span class="nt">"deverified"</span><span class="w"> </span><span class="err">}</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre>
 <p>This route returns a list of event rooms that contain a minimum of one piece of media.</p>
@@ -2555,7 +2556,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
     </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
+  </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"verified"</span><span class="err">,</span><span class="w"> </span><span class="nt">"none"</span><span class="err">,</span><span class="w"> </span><span class="nt">"deverified"</span><span class="w"> </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the high level info for a given event room.</p>
@@ -2634,7 +2636,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
     </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="w">
+  </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"verified"</span><span class="err">,</span><span class="w"> </span><span class="nt">"none"</span><span class="err">,</span><span class="w"> </span><span class="nt">"deverified"</span><span class="w"> </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Retrieve the nearest <code class="prettyprint">x</code> active events by distance to the specified lat/lon.</p>
@@ -3127,6 +3130,113 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/mapQuestions?lat=4
 
 <p><strong>Note:</strong> Either the <code class="prettyprint">lat</code>/<code class="prettyprint">lon</code> pair or the <code class="prettyprint">eventId</code> must be provided when calling this route.<br>
 <strong>Note 2:</strong> When using this route with <code class="prettyprint">eventId</code>, the &ldquo;placeholder&rdquo; question with always be the first question in the first page of results (<code class="prettyprint">offset=0</code>)</p>
+
+<h2 id="create-event-room">Create Event Room</h2>
+<pre class="highlight shell"><code>
+curl -X POST -H <span class="s2">"Authorization: &lt;AUTHORIZATION_TOKEN&gt;"</span> -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{ "title": "The 2nd user created event", "placeId": "ChIJtwVr559GK4gR22ZZ175sFAM", "categoryId": "news", "subcategoryId": "breakingNews" }'</span> <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/create"</span>
+</code></pre><pre class="highlight javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns the following response upon success</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0986911c-33e7-4a64-8a56-501067e039c5"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The above endpoint allows the client to create a new event room. The response contains the identifier of the newly created event so the client can then perform more actions with it, such as uploading media, or opening the room.<br>
+A significant amount of validation is done on the server side, so the client should handle at least the more commonplace errors.  </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://node.ucic.vc/api/v04/eventRoom/create</code></p>
+
+<h3 id="body-parameters">Body Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>(required) The name of the new event</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>(optional) Description of the new event</td>
+</tr>
+<tr>
+<td>placeId</td>
+<td>String</td>
+<td>(required) The <a href="https://developers.google.com/places/place-id">place id</a> of the google maps place the user selected from a google places search to mark the location and scope of the event</td>
+</tr>
+<tr>
+<td>categoryId</td>
+<td>String</td>
+<td>(required) The identifier of the category the event will belong to</td>
+</tr>
+<tr>
+<td>subcategoryId</td>
+<td>String</td>
+<td>(required) The identifier of the subcategory that the event will belong to. Must belong to the parent category specified by <code class="prettyprint">categoryId</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="errors">Errors</h3>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Message</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>429</td>
+<td>&ldquo;Too many create attempts. Please wait <code class="prettyprint">n</code> minutes and try again&rdquo;</td>
+<td>There is a cooldown between allowed event creations. Cooldown varries by user&rsquo;s credibility rating, so the time remaining is included explicitly in the response body as <code class="prettyprint">cooldownMinutesLeft</code>, as well as in the text of the error message</td>
+</tr>
+<tr>
+<td>400</td>
+<td>&ldquo;Event missing <code class="prettyprint">param name</code>&rdquo;</td>
+<td>The specified required body parameter was missing from the http body</td>
+</tr>
+<tr>
+<td>400</td>
+<td>&ldquo;Event <code class="prettyprint">text field</code> is profane&rdquo;</td>
+<td>The <code class="prettyprint">title</code> or <code class="prettyprint">description</code> provided tripped the profanity detector</td>
+</tr>
+<tr>
+<td>400</td>
+<td>&ldquo;Unrecognized categoryId: <code class="prettyprint">invalidId</code>&rdquo;</td>
+<td>The <code class="prettyprint">categoryId</code> provided is not recognized</td>
+</tr>
+<tr>
+<td>400</td>
+<td>&ldquo;Subcategory ID <code class="prettyprint">subcatId</code> is invalid, or does not belong to <code class="prettyprint">categoryId</code>&rdquo;</td>
+<td>The subcategory Id is either unrecognized, or does not belong to the specified <code class="prettyprint">categoryId</code></td>
+</tr>
+<tr>
+<td>400</td>
+<td>&ldquo;invalid placeId&rdquo;</td>
+<td>The <code class="prettyprint">placeId</code> specified did not return a place from the google API</td>
+</tr>
+<tr>
+<td>500</td>
+<td>&ldquo;TypeError: No Place hierarchy with placeid <code class="prettyprint">placeId</code>&rdquo;</td>
+<td>The <code class="prettyprint">placeId</code> specified did not map to a place hierarchy in a way the API could handle</td>
+</tr>
+<tr>
+<td>500</td>
+<td>&ldquo;TypeError: PlaceId <code class="prettyprint">placeId</code> does not map to a country&rdquo;</td>
+<td>The <code class="prettyprint">placeId</code> specified does not belong to a country</td>
+</tr>
+</tbody></table>
 
 <h2 id="follow-event-room">Follow Event Room</h2>
 <pre class="highlight shell"><code>
