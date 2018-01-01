@@ -57,7 +57,8 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
     "video": false,
     "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
   },
-  "participantCount": 99
+  "participantCount": 99,
+  "yourVerification": "verified" // { "verified", "none", "deverified" }
 }]
 ```
 
@@ -136,7 +137,8 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
     "video": false,
     "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
   },
-  "participantCount": 99
+  "participantCount": 99,
+  "yourVerification": "verified" // { "verified", "none", "deverified" }
 }
 ```
 
@@ -211,7 +213,8 @@ curl "https://node.ucic.vc/api/v04/eventRoom/nearest/3?lat=41.54&lon=-80.7863" -
     "video": false,
     "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
   },
-  "participantCount": 99
+  "participantCount": 99,
+  "yourVerification": "verified" // { "verified", "none", "deverified" }
 }
 ```
 Retrieve the nearest `x` active events by distance to the specified lat/lon.
@@ -553,6 +556,7 @@ This endpoint retrieves a specific event room item by its `type` and `id` values
 | itemId    | String | The `id` of the target event room item to retrieve |
 
 
+
 ## Get Event Questions for Popup
 
 ```shell
@@ -616,6 +620,55 @@ This route returns a mix of questions that are user-submitted and those generate
 **Note:** Either the `lat`/`lon` pair or the `eventId` must be provided when calling this route.  
 **Note 2:** When using this route with `eventId`, the "placeholder" question with always be the first question in the first page of results (`offset=0`)
 
+## Create Event Room
+
+```shell
+
+curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: application/json" -d '{ "title": "The 2nd user created event", "placeId": "ChIJtwVr559GK4gR22ZZ175sFAM", "categoryId": "news", "subcategoryId": "breakingNews" }' "https://node.ucic.vc/api/v04/eventRoom/create"
+```
+
+```javascript
+
+```
+
+> The above command returns the following response upon success
+
+```json
+{
+  "status": "success",
+  "eventId": "0986911c-33e7-4a64-8a56-501067e039c5"
+}
+```
+
+The above endpoint allows the client to create a new event room. The response contains the identifier of the newly created event so the client can then perform more actions with it, such as uploading media, or opening the room.  
+A significant amount of validation is done on the server side, so the client should handle at least the more commonplace errors.  
+
+### HTTP Request
+
+`POST https://node.ucic.vc/api/v04/eventRoom/create`
+
+### Body Parameters
+
+| Parameter     | Type   | Description                              |
+| ------------- | ------ | ---------------------------------------- |
+| title         | String | (required) The name of the new event     |
+| description   | String | (optional) Description of the new event  |
+| placeId       | String | (required) The [place id](https://developers.google.com/places/place-id) of the google maps place the user selected from a google places search to mark the location and scope of the event |
+| categoryId    | String | (required) The identifier of the category the event will belong to |
+| subcategoryId | String | (required) The identifier of the subcategory that the event will belong to. Must belong to the parent category specified by `categoryId` |
+
+### Errors
+
+| Code | Message   | Description                              |
+| ---- | ------ | ---------------------------------------- |
+| 429  | "Too many create attempts. Please wait `n` minutes and try again" | There is a cooldown between allowed event creations. Cooldown varries by user's credibility rating, so the time remaining is included explicitly in the response body as `cooldownMinutesLeft`, as well as in the text of the error message     |
+| 400  | "Event missing `param name`" | The specified required body parameter was missing from the http body |
+| 400  | "Event `text field` is profane" | The `title` or `description` provided tripped the profanity detector |
+| 400  | "Unrecognized categoryId: `invalidId`" | The `categoryId` provided is not recognized |
+| 400  | "Subcategory ID `subcatId` is invalid, or does not belong to `categoryId`" | The subcategory Id is either unrecognized, or does not belong to the specified `categoryId` |
+| 400  | "invalid placeId" | The `placeId` specified did not return a place from the google API |
+| 500  | "TypeError: No Place hierarchy with placeid `placeId`" | The `placeId` specified did not map to a place hierarchy in a way the API could handle |
+| 500  | "TypeError: PlaceId `placeId` does not map to a country" | The `placeId` specified does not belong to a country |
 
 ## Follow Event Room
 
