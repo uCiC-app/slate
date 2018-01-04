@@ -2461,7 +2461,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
   </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"verified"</span><span class="err">,</span><span class="w"> </span><span class="nt">"none"</span><span class="err">,</span><span class="w"> </span><span class="nt">"deverified"</span><span class="w"> </span><span class="err">}</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre>
-<p>This route returns a list of event rooms that contain a minimum of one piece of media.</p>
+<p>This route returns a list of event rooms that contain a minimum of one piece of media. </p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -3178,12 +3178,12 @@ A significant amount of validation is done on the server side, so the client sho
 <tr>
 <td>categoryId</td>
 <td>String</td>
-<td>(required) The identifier of the category the event will belong to</td>
+<td>(optional) The identifier of the category the event will belong to</td>
 </tr>
 <tr>
 <td>subcategoryId</td>
 <td>String</td>
-<td>(required) The identifier of the subcategory that the event will belong to. Must belong to the parent category specified by <code class="prettyprint">categoryId</code></td>
+<td>(optional) The identifier of the subcategory that the event will belong to. Must belong to the parent category specified by <code class="prettyprint">categoryId</code></td>
 </tr>
 </tbody></table>
 
@@ -3612,6 +3612,8 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <p>Note: many of the events are submitted by users of the Predict HQ api and as such, the reliability of the data in each field should be taken with a grain of salt; start/end times may not be completely accurate, rank may be overstated, description may be missing, etc.</p>
 
 <p><strong>Note:</strong> Radius expressed in meters.</p>
+
+<p><strong>Note:</strong> When rendering events without a categoryId, the assumption is that it&rsquo;s an event submitted by a user and may use the following marker: https://media.ucic.vc/assets/events/userSub_marker.png</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
