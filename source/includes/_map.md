@@ -162,6 +162,8 @@ Note: many of the events are submitted by users of the Predict HQ api and as suc
 
 **Note:** Radius expressed in meters.
 
+**Note:** When rendering events without a categoryId, the assumption is that it's an event submitted by a user and may use the following marker: https://media.ucic.vc/assets/events/userSub_marker.png
+
 ### HTTP Request
 
 `GET https://node.ucic.vc/api/v04/map?layer=events&categories=sports,festivals,expos,severe-weather&north=72.577&south=68.584&east=72.321&west=69.765&zoom=3`
