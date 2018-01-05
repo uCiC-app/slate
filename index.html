@@ -7173,6 +7173,49 @@ When liking/commenting on the item, use the <code class="prettyprint">.id</code>
 </tr>
 </tbody></table>
 
+<h2 id="trophyearned-33">TrophyEarned (33)</h2>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+ </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quality Photographer"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"trophyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photoLikes"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"tier"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This periodic notification highlights the most liked piece of media in the platform from the last week.</p>
+
+<h3 id="notification-parameters">Notification Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>The readable name of the trophy</td>
+</tr>
+<tr>
+<td>trophyType</td>
+<td>String</td>
+<td>The coded identifier for the trophy</td>
+</tr>
+<tr>
+<td>tier</td>
+<td>Integer</td>
+<td>The tier of the earned trophy</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>The PN type. TrophyEarned is 33</td>
+</tr>
+</tbody></table>
+
           <h1 id="branch-deep-links">Branch Deep Links</h1>
 
 <p>Branch deep links may be generated via the mobile clients, the uCiC API service, or via the Branch browser dashboard. When clicked on a mobile client, the links will route the user to the app (optionally, via the Play/App Store to install) and pass some metadata to the app contained in the link, indicating how the app should react.</p>
