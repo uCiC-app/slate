@@ -72,7 +72,7 @@ This route returns a list of event rooms that contain a minimum of one piece of 
 
 | Parameter   | Type                     | Description                              |
 | ----------- | ------------------------ | ---------------------------------------- |
-| filter      | String                   | supported values `top`, `my`, `subcategory` |
+| filter      | String                   | supported values `top`, `my`, `subcategory`, `userSub` |
 | subcategory | String                   | a comma separated list of specific subcategories of events to return. Only applies if `?filter=subcategory`. |
 | limit       | integer                  | The maximum number of event rooms to return |
 | offset      | integer                  | The number of event rooms to skip in the return for paginating results |

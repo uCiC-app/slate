@@ -177,7 +177,7 @@ Note: many of the events are submitted by users of the Predict HQ api and as suc
 | east        | Decimal (38)      | Eastern longitude boundary of bounding box.  Max: 180, Min: -180 |
 | west        | Decimal (38)      | Western longitude boundary of bounding box. Max: 180, Min: -180 |
 | layer       | String ('events') | (Required) specifies the event map layer is the one to return. If omitted, will return the default (user) map layer |
-| filter      | String            | supported values `my`, `subcategory`     |
+| filter      | String            | supported values `my`, `subcategory`,  `userSub` |
 | subcategory | String            | a comma separated list of specific subcategories of events to return. Only applies if `?filter=subcategory`. |
 | limit       | integer           | The maximum number of full markers to return. Default is 35 if not provided. (note: ignored if no filter is specified, defaulting to the "top" behaviour and returning a very limited number of resutls) |
 
