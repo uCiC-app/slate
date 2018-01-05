@@ -270,11 +270,11 @@ This notification represents a significant event occuring somewhere on the plane
 
 ### Notification Parameters
 
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| eventTitle | String | Title of event the event |
-| eventId    | String | ID of the event  |
-| type       | String | The PN type. BreakingNewsGlobal is 29  |
+| Parameter  | Type   | Description                           |
+| ---------- | ------ | ------------------------------------- |
+| eventTitle | String | Title of event the event              |
+| eventId    | String | ID of the event                       |
+| type       | String | The PN type. BreakingNewsGlobal is 29 |
 
 ## BreakingNewsLocal (30) 
 
@@ -292,11 +292,11 @@ This notification represents a significant event occuring at the client user's l
 
 ### Notification Parameters
 
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| eventTitle | String | Title of event the event |
-| eventId    | String | ID of the event  |
-| type       | String | The PN type. BreakingNewsLocal is 30  |
+| Parameter  | Type   | Description                          |
+| ---------- | ------ | ------------------------------------ |
+| eventTitle | String | Title of event the event             |
+| eventId    | String | ID of the event                      |
+| type       | String | The PN type. BreakingNewsLocal is 30 |
 
 ## LocalEventStart (31) 
 
@@ -314,11 +314,11 @@ This notification represents an event starting up at the user's location.
 
 ### Notification Parameters
 
-| Parameter  | Type   | Description                              |
-| ---------- | ------ | ---------------------------------------- |
-| eventTitle | String | Title of event the event |
-| eventId    | String | ID of the event  |
-| type       | String | The PN type. BreakingNewsLocal is 30  |
+| Parameter  | Type   | Description                          |
+| ---------- | ------ | ------------------------------------ |
+| eventTitle | String | Title of event the event             |
+| eventId    | String | ID of the event                      |
+| type       | String | The PN type. BreakingNewsLocal is 30 |
 
 ## BestRecentMedia (32) 
 
@@ -340,8 +340,32 @@ This periodic notification highlights the most liked piece of media in the platf
 
 | Parameter  | Type   | Description                              |
 | ---------- | ------ | ---------------------------------------- |
-| eventTitle | String | Title of event media was submitted to |
-| eventId    | String | ID of event the media was submitted to |
+| eventTitle | String | Title of event media was submitted to    |
+| eventId    | String | ID of event the media was submitted to   |
 | itemType   | String | The type of the item that is the top media |
 | itemId     | String | The ID of the item that is the top media |
-| type       | String | The PN type. BestRecentMedia is 32  |
+| type       | String | The PN type. BestRecentMedia is 32       |
+
+## TrophyEarned (33) 
+
+```json
+{
+ "data": {
+   "name": "Quality Photographer",
+   "trophyType": "photoLikes",
+   "tier": 2,
+   "type": 33
+  }
+}
+```
+
+This periodic notification highlights the most liked piece of media in the platform from the last week.
+
+### Notification Parameters
+
+| Parameter  | Type    | Description                         |
+| ---------- | ------- | ----------------------------------- |
+| name       | String  | The readable name of the trophy     |
+| trophyType | String  | The coded identifier for the trophy |
+| tier       | Integer | The tier of the earned trophy       |
+| type       | String  | The PN type. TrophyEarned is 33     |
