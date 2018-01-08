@@ -4028,9 +4028,33 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 </blockquote>
 <pre class="highlight json"><code><span class="w">
 </span></code></pre>
-<p>This endpoint lets the client confirm or deny that a piece of content is valid. Currently, only <code class="prettyprint">event</code> itemType is supported, but more may be added in the future. The body param <code class="prettyprint">verify</code> is supplied as a boolean to indicate that the event is (true), or isn&rsquo;t (false) happening.   </p>
+<p>This endpoint lets the client confirm or deny that a piece of content is valid. The body param <code class="prettyprint">verify</code> is supplied as a boolean to indicate that the event is (true), or isn&rsquo;t (false) happening.   </p>
 
-<p>Events with a verification score lower than 3 will have an &ldquo;[Unconfirmed]&rdquo; tag at the front of the title. Events with a vScore lower than zero will no longer be returned by the map/list view.</p>
+<p>Events with a verification score lower than 3 will have an &ldquo;[Unconfirmed]&rdquo; tag at the front of the title. Events with a vScore lower than zero will no longer be returned by the map/list view.  </p>
+
+<p>Media/extMedia with a score lower than zero is reoved from client-facing results.</p>
+
+<p><strong>What id to use</strong></p>
+
+<table><thead>
+<tr>
+<th>itemType</th>
+<th>which itemId to use</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>event</td>
+<td>The <code class="prettyprint">event.id</code> param</td>
+</tr>
+<tr>
+<td>media</td>
+<td>The <code class="prettyprint">eventRoomItem.id</code> param (aka the &ldquo;cardId&rdquo;)</td>
+</tr>
+<tr>
+<td>extMedia</td>
+<td>The <code class="prettyprint">eventRoomItem.id</code> param</td>
+</tr>
+</tbody></table>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -4048,7 +4072,7 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/unfollow/:id"</spa
 <tr>
 <td>itemType</td>
 <td>String</td>
-<td>currently just &lsquo;event&rsquo;</td>
+<td>currently supports &lsquo;event&rsquo;, &#39;media&rsquo;, &#39;extMedia&rsquo;</td>
 </tr>
 <tr>
 <td>itemId</td>
