@@ -15,9 +15,19 @@ curl -X POST -H "Authorization: <AUTHORIZATION_TOKEN>" -H "Content-Type: applica
 
 ```
 
-This endpoint lets the client confirm or deny that a piece of content is valid. Currently, only `event` itemType is supported, but more may be added in the future. The body param `verify` is supplied as a boolean to indicate that the event is (true), or isn't (false) happening.   
+This endpoint lets the client confirm or deny that a piece of content is valid. The body param `verify` is supplied as a boolean to indicate that the event is (true), or isn't (false) happening.   
 
-Events with a verification score lower than 3 will have an "[Unconfirmed]" tag at the front of the title. Events with a vScore lower than zero will no longer be returned by the map/list view.
+Events with a verification score lower than 3 will have an "[Unconfirmed]" tag at the front of the title. Events with a vScore lower than zero will no longer be returned by the map/list view.  
+
+Media/extMedia with a score lower than zero is reoved from client-facing results.
+
+**What id to use**
+
+| itemType | which itemId to use                      |
+| -------- | ---------------------------------------- |
+| event    | The `event.id` param                     |
+| media    | The `eventRoomItem.id` param (aka the "cardId") |
+| extMedia | The `eventRoomItem.id` param             |
 
 ### HTTP Request
 
@@ -27,7 +37,7 @@ Events with a verification score lower than 3 will have an "[Unconfirmed]" tag a
 
 | Parameter | Type    | Description                              |
 | --------- | ------- | ---------------------------------------- |
-| itemType  | String  | currently just 'event'                   |
+| itemType  | String  | currently supports 'event', 'media', 'extMedia' |
 | itemId    | String  | The identifier of the entity being verified. |
 | verify    | Boolean | `true` if the client user is verifying the event, `false` if they are debunking it. |
 
