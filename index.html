@@ -2458,10 +2458,13 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/list"</span> -H <s
     </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyPtPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyPtTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
   </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"verified"</span><span class="err">,</span><span class="w"> </span><span class="nt">"none"</span><span class="err">,</span><span class="w"> </span><span class="nt">"deverified"</span><span class="w"> </span><span class="err">}</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 </span></code></pre>
-<p>This route returns a list of event rooms that contain a minimum of one piece of media. </p>
+<p>This route returns a list of event rooms that contain a minimum of one piece of media.   </p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -2557,12 +2560,28 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
     </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyPtPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyPtTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
   </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"verified"</span><span class="err">,</span><span class="w"> </span><span class="nt">"none"</span><span class="err">,</span><span class="w"> </span><span class="nt">"deverified"</span><span class="w"> </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves the high level info for a given event room.</p>
+<p>This endpoint retrieves the high level info for a given event room.  </p>
 
-<p><strong>Note:</strong> radius is expressed in meters. </p>
+<p><strong>Note:</strong> radius is expressed in meters.   </p>
+
+<p><strong>Verification data</strong></p>
+
+<p>There are 4 pieces of data provided to do with the verification system: </p>
+
+<ul>
+<li><code class="prettyprint">verifyScore</code>:  The net score, summing the total up and down votes for the veracity of the event</li>
+<li><code class="prettyprint">verifyPtPositive</code>: The total verification points cast in favour of verification of the event</li>
+<li><code class="prettyprint">verifyPtTotal</code>: The total verification points cast for the event</li>
+<li><code class="prettyprint">yourVerification</code>: Indicating how the current client has (or hasn&rsquo;t) voted for the event&rsquo;s validity</li>
+</ul>
+
+<p>Current scheme is to display the verification as a % of <code class="prettyprint">verifyPtPositive</code>/<code class="prettyprint">verifyPtTotal</code>, but only if <code class="prettyprint">verifyPtTotal</code> &gt;= 3. If <code class="prettyprint">verifyPtTotal</code> is &lt; 3, the event is still &ldquo;pending&rdquo; verification (getting at least some number of points either way) before displaying the % score.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -2637,6 +2656,9 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
     </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"participantCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyPtPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"verifyPtTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
   </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"verified"</span><span class="err">,</span><span class="w"> </span><span class="nt">"none"</span><span class="err">,</span><span class="w"> </span><span class="nt">"deverified"</span><span class="w"> </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -2726,6 +2748,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
       </span><span class="nt">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/thumb.jpg"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/original.png"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"verifyScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"verifyPtPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"verifyPtTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"likeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nt">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -2767,6 +2793,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
         </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4307191455"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On Twitter https://t.co/3mTuWOP53U"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"verifyScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"verifyPtPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"verifyPtTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"likeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3003,6 +3033,10 @@ curl <span class="s2">"https://node.ucic.vc/api/v04/eventRoom/:id"</span> -H <sp
       </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4307191455"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On Twitter https://t.co/3mTuWOP53U"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"verifyScore"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"verifyPtPositive"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"verifyPtTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"yourVerification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"verified"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"likeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nt">"liked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"commentCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
