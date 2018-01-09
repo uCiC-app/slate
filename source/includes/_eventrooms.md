@@ -58,11 +58,14 @@ curl "https://node.ucic.vc/api/v04/eventRoom/list" -H "Authorization: <AUTHORIZA
     "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
   },
   "participantCount": 99,
+  "verifyScore": 2,
+  "verifyPtPositive": 3,
+  "verifyPtTotal": 4,
   "yourVerification": "verified" // { "verified", "none", "deverified" }
 }]
 ```
 
-This route returns a list of event rooms that contain a minimum of one piece of media. 
+This route returns a list of event rooms that contain a minimum of one piece of media.   
 
 ### HTTP Request
 
@@ -138,13 +141,27 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id" -H "Authorization: <AUTHORIZAT
     "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
   },
   "participantCount": 99,
+  "verifyScore": 2,
+  "verifyPtPositive": 3,
+  "verifyPtTotal": 4,
   "yourVerification": "verified" // { "verified", "none", "deverified" }
 }
 ```
 
-This endpoint retrieves the high level info for a given event room.
+This endpoint retrieves the high level info for a given event room.  
 
-**Note:** radius is expressed in meters. 
+**Note:** radius is expressed in meters.   
+
+**Verification data**
+
+There are 4 pieces of data provided to do with the verification system: 
+
+- `verifyScore`:  The net score, summing the total up and down votes for the veracity of the event
+- `verifyPtPositive`: The total verification points cast in favour of verification of the event
+- `verifyPtTotal`: The total verification points cast for the event
+- `yourVerification`: Indicating how the current client has (or hasn't) voted for the event's validity
+
+Current scheme is to display the verification as a % of `verifyPtPositive`/`verifyPtTotal`, but only if `verifyPtTotal` >= 3. If `verifyPtTotal` is < 3, the event is still "pending" verification (getting at least some number of points either way) before displaying the % score.
 
 ### HTTP Request
 
@@ -214,6 +231,9 @@ curl "https://node.ucic.vc/api/v04/eventRoom/nearest/3?lat=41.54&lon=-80.7863" -
     "thumb": "https://media.ucic.vc/media/fba18fda-1986-4abb-8e96-fb24f70ad9bd/thumb.jpg"
   },
   "participantCount": 99,
+  "verifyScore": 2,
+  "verifyPtPositive": 3,
+  "verifyPtTotal": 4,
   "yourVerification": "verified" // { "verified", "none", "deverified" }
 }
 ```
@@ -278,6 +298,10 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
       "thumb": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/thumb.jpg",
       "url": "https://media.ucic.vc/media/A20E9361-78BD-4244-B867-22BC46537FA2/original.png",
       "mimeType": "image/png",
+      "verifyScore": 0,
+      "verifyPtPositive": 1,
+      "verifyPtTotal": 2,
+      "yourVerification": "verified",
       "likeCount": 1,
       "commentCount": 1,
       "comments": [{
@@ -319,6 +343,10 @@ curl "https://node.ucic.vc/api/v04/eventRoom/:id/items" -H "Authorization: <AUTH
         "userId": "4307191455"
       },
       "text": "On Twitter https://t.co/3mTuWOP53U",
+      "verifyScore": 0,
+      "verifyPtPositive": 1,
+      "verifyPtTotal": 2,
+      "yourVerification": "verified",
       "likeCount": 0,
       "liked": false,
       "commentCount": 1,
@@ -522,6 +550,10 @@ curl "https://node.ucic.vc/api/v04/eventRoom/item/:itemType/:itemId" -H "Authori
       "userId": "4307191455"
     },
     "text": "On Twitter https://t.co/3mTuWOP53U",
+    "verifyScore": 0,
+    "verifyPtPositive": 1,
+    "verifyPtTotal": 2,
+    "yourVerification": "verified",
     "likeCount": 0,
     "liked": false,
     "commentCount": 1,
