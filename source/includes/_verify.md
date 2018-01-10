@@ -31,7 +31,7 @@ Media/extMedia with a score lower than zero is reoved from client-facing results
 
 ### HTTP Request
 
-`POST https://node.ucic.vc/api/v04/report/content`
+`POST https://node.ucic.vc/api/v04/verify`
 
 ### Request Body
 
